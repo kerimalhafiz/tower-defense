@@ -70,10 +70,16 @@ Pour chaque semaine on y trouvera :
 ## Semaine 1
 
 ### Ce qui a été réalisé
-
+- reflexion sur la création des chemins
+- definissions d'une interface chemin de laquelle tout les chemins heriteront.
 ### Difficultés rencontrées
+-reflechions sur les possibilites d ajouter plyus tars des chemins
 
 ### Objectifs pour la semaine et répartition du travail par membre
+- Diallo Thierno cheminGrise
+- Diallo Ibrahima Chemin2
+- Kerim Definissions de l'interface
+- Diallo Alpha Abdoulaye creation de la class plateau sans code et assistance pour les autres
 
 ## Semaine 2
 
