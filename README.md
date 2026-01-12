@@ -84,8 +84,8 @@ Pour chaque semaine on y trouvera :
 ## Semaine 2
 
 ### Ce qui a été réalisé
--classe chemin grise
--interface Chemin 
+- classe chemin grise
+- interface Chemin 
 
 ### Difficultés rencontrées
 
