@@ -73,7 +73,7 @@ Pour chaque semaine on y trouvera :
 - reflexion sur la création des chemins
 - definissions d'une interface chemin de laquelle tout les chemins heriteront.
 ### Difficultés rencontrées
--reflechions sur les possibilites d ajouter plyus tars des chemins
+- reflechions sur les possibilites d ajouter plyus tars des chemins
 
 ### Objectifs pour la semaine et répartition du travail par membre
 - Diallo Thierno cheminGrise
