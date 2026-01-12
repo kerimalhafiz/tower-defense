@@ -84,12 +84,34 @@ Pour chaque semaine on y trouvera :
 ## Semaine 2
 
 ### Ce qui a été réalisé
-- classe chemin grise
-- interface Chemin 
+la semaine dernière n'ayant pas pu finaliser nos objectifs et ayant rencontrés beaucoup de soucis et des discussions houleuses entre nous,nous avons decider de rereflchir sur les chemins. 
+- Nous avons realise le diagramme [Diagramme UML](diagramme.png)
+
+ concernat les chemins.Notre reflexion est de créer: 
+# une interface Path 
+- qui aura une methode findPath(Board b)qui prend en parametre un plateau et trouver   "aleatoirement" un chemin, ce chemin retournera une liste de Cellule rangé en ordre selon le trajet.
+- la premiere case étant la case de depart et la derniere celle de sortie.
+- Enf fonction de nos deux modes de jeu actuelle nous créerons pour un debut  2 classes qui implementeront cette interface
+- la mise en place de cette interface est justifie par la possibilte de plutard pouvoir avoir d'autres chemins dans le but de l'ouverture du jeu à des extentions
+# la premier PathOne() 
+- trouvera un chemin correspondant au premier mode de jeu le chemin ne sera pas une ligne droite mais aura au minimun un tournant.
+# La deuxieme PathTwo()
+- trouvera un chemin en ligne droite selon la rentré du balon il ira à droite ou ira à gauche,en bas ou en haut
+- cas special de les 4 cases des extremités ont la possibilité d'aller horizontalement ou verticalement par exemple la case [0][0]
+# divers
+- afin de coder ces premières casse nous mettons pour le moment deux classes Board et Cell juste pour pouvoir tester la validité de notre code (ces deux classes progresseront surement au fils du temps)
+
+
 
 ### Difficultés rencontrées
+- dans certains cas les ballons peuvent se rencontre "comment gerer cela ?"
 
 ### Objectifs pour la semaine et répartition du travail par membre
+- Thierno Abdoulaye Diallo Board
+- Diallo Alpha Abdoulaye PathOne
+- Diallo Ibrahima PathTwo
+- Kerim Abdoulaye Mahamat Cell et Interface Path 
+
 
 ## Semaine 3
 
