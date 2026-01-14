@@ -27,5 +27,11 @@ public class Cell{
    public String toString(){
     return "(x="+ x + ","+ y + ")";
    }
-
+  @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Cell))
+             {return false;}
+        Cell c = (Cell) o;
+        return x == c.x && y == c.y;
+    }
 }
