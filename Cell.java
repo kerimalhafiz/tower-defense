@@ -16,8 +16,10 @@ public class Cell{
    public int getY(){
     return this.y;
    }
-   
-   
+   public  void setvalueX(int new_x){
+      this.x=new_x;
+    
+   }
    
 
 }
