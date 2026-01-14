@@ -1,14 +1,23 @@
+/**
+  this. class in
+ */
 public class Cell{
 
-    private int valeur;
+    private int x;
+    private int y;
 
-    public Cell(){
-        this.valeur=0;
+    public Cell(int x,int y){
+        this.x=x;
+        this.y=y;
     }
-   public int getvaleur(){
-     return  this.valeur;
+   public int getX(){
+     return  this.x;
    }
-   public void  setvaleur(int valeur){
-       this.valeur=valeur;
+   public int getY(){
+    return this.y;
    }
+   
+   
+   
+
 }
