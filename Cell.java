@@ -20,6 +20,9 @@ public class Cell{
       this.x=new_x;
     
    }
+   public void setvalueY(int new_y){
+       this.y=new_y;
+   }
    
 
 }
