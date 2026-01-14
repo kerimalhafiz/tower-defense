@@ -24,5 +24,8 @@ public class Cell{
        this.y=new_y;
    }
    
+   public String toString(){
+    return "(x="+ x + ","+ y + ")";
+   }
 
 }
