@@ -8,4 +8,7 @@ public class Cell{
    public int getvaleur(){
      return  this.valeur;
    }
+   public void  setvaleur(int valeur){
+       this.valeur=valeur;
+   }
 }
