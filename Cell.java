@@ -19,9 +19,21 @@ public class Cell{
         this.x=x;
         this.y=y;
     }
+
+    /**
+     * Returns the x coordinate of the cell.
+     *
+     * @return x coordinate
+     */
    public int getX(){
      return  this.x;
    }
+
+    /**
+     * Returns the y coordinate of the cell.
+     *
+     * @return y coordinate
+     */
    public int getY(){
     return this.y;
    }
