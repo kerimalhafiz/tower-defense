@@ -18,7 +18,13 @@ public class PathOne implements Path{
     } while (lExit == lEnter);
     System.out.println(lEnter +" , "+lExit);
     ArrayList<Cell> listePath = new ArrayList<>();
-
+    //choix de la colonne de changement de direction
+    int milieu=rand.nextInt(p.getnbColonne());
+    //avancer en ligne droite jusqu a la case choisie
+    for (int i=0;i<=milieu;i++){
+    Cell c=p.getCell(lEnter, i);
+    listePath.add(c);
+    }
 
 
 
