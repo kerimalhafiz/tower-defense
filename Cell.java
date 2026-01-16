@@ -6,10 +6,15 @@
  * or balloon positions on the plateau.
  */
 public class Cell{
-
+     // attribut 
     private int x;
     private int y;
-
+    /**
+     * Creates a new cell with given coordinates.
+     *
+     * @param x the x coordinate
+     * @param y the y coordinate
+     */
     public Cell(int x,int y){
         this.x=x;
         this.y=y;
