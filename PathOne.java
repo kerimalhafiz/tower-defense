@@ -48,6 +48,13 @@ public class PathOne implements Path{
     }
     }
 
+    //derniere ligne droite
+    for (int k=milieu+1;k<p.getnbColonne();k++){
+        Cell c=p.getCell(lExit, k);
+        listePath.add(c);
+     
+    }
+
 
 
 
