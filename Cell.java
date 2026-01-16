@@ -1,5 +1,9 @@
 /**
-  this. class in
+ * Represents a single cell on the game board.
+ * 
+ * A cell is identified by its (x, y) coordinates.
+ * It can be used as a basic element for paths, towers,
+ * or balloon positions on the plateau.
  */
 public class Cell{
 
@@ -27,6 +31,7 @@ public class Cell{
    public String toString(){
     return "(x="+ x + ","+ y + ")";
    }
+
   @Override
     public boolean equals(Object o) {
         if (!(o instanceof Cell))
@@ -34,4 +39,6 @@ public class Cell{
         Cell c = (Cell) o;
         return x == c.x && y == c.y;
     }
+
+
 }
