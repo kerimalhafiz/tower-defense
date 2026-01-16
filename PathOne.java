@@ -36,6 +36,17 @@ public class PathOne implements Path{
         listePath.add(c);
       
     } }
+    //trajet pour descendre
+    else{ 
+        for(int j=lEnter-1;j>=lExit;j--){
+        System.out.println("Apres");
+       
+        System.out.println(j + " "+ milieu);
+        Cell c=p.getCell(j, milieu);
+        listePath.add(c);
+        
+    }
+    }
 
 
 
