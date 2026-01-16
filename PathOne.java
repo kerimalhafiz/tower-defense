@@ -19,9 +19,9 @@ public class PathOne implements Path{
     System.out.println(lEnter +" , "+lExit);
     ArrayList<Cell> listePath = new ArrayList<>();
     //choix de la colonne de changement de direction
-    int milieu=rand.nextInt(p.getnbColonne());
+    int turning=rand.nextInt(p.getnbColonne());
     //avancer en ligne droite jusqu a la case choisie
-    for (int i=0;i<=milieu;i++){
+    for (int i=0;i<=turning;i++){
     Cell c=p.getCell(lEnter, i);
     listePath.add(c);
     }
@@ -31,8 +31,8 @@ public class PathOne implements Path{
     for(int j=lEnter+1;j<=lExit;j++){
         System.out.println("Apres");
    
-        System.out.println(j + " "+ milieu);
-        Cell c=p.getCell(j, milieu);
+        System.out.println(j + " "+ turning);
+        Cell c=p.getCell(j, turning);
         listePath.add(c);
       
     } }
@@ -41,15 +41,15 @@ public class PathOne implements Path{
         for(int j=lEnter-1;j>=lExit;j--){
         System.out.println("Apres");
        
-        System.out.println(j + " "+ milieu);
-        Cell c=p.getCell(j, milieu);
+        System.out.println(j + " "+ turning);
+        Cell c=p.getCell(j, turning);
         listePath.add(c);
         
     }
     }
 
     //derniere ligne droite
-    for (int k=milieu+1;k<p.getnbColonne();k++){
+    for (int k=turning+1;k<p.getnbColonne();k++){
         Cell c=p.getCell(lExit, k);
         listePath.add(c);
      
