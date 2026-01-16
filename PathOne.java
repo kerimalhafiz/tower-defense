@@ -54,10 +54,7 @@ public class PathOne implements Path{
         listePath.add(c);
      
     }
-
-
-
-
+    return listePath;
 
     }
 }
