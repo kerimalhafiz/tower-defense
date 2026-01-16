@@ -37,18 +37,40 @@ public class Cell{
    public int getY(){
     return this.y;
    }
+   /**
+     * Updates the x coordinate of the cell.
+     *
+     * @param newX the new x coordinate
+     */
    public  void setvalueX(int new_x){
       this.x=new_x;
     
    }
+   /**
+     * Updates the x coordinate of the cell.
+     *
+     * @param new_y the new x coordinate
+     */
    public void setvalueY(int new_y){
        this.y=new_y;
    }
-   
+   /**
+     * Returns a string representation of the cell.
+     *
+     * @return string in the form "(x=?, y=?)"
+     */
+    @Override
    public String toString(){
     return "(x="+ x + ","+ y + ")";
    }
 
+  /**
+     * Compares this cell with another object.
+     * Two cells are equal if they have the same coordinates.
+     *
+     * @param o the object to compare
+     * @return true if both cells have identical coordinates
+     */
   @Override
     public boolean equals(Object o) {
         if (!(o instanceof Cell))
