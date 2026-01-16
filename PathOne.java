@@ -9,6 +9,7 @@ public class PathOne implements Path{
     
     }
     public ArrayList<Cell> findPath(Board p) {
+    //choix au hasard d'une ligne d'entrée et de sortie    
     Random rand = new Random();
     int lEnter= rand.nextInt(p.getnbLigne());
     int lExit;
