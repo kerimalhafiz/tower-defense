@@ -18,6 +18,7 @@ public class Board {
     public Board(int nbLigne,int nbColonne){
         this.nbLigne = nbLigne;
         this.nbColonne = nbColonne;
+        this.board=new Cell [nbLigne][nbColonne];
 
         /* I fill the array with empty cells */
         for (int i=0 ; i<nbLigne ; i++){
