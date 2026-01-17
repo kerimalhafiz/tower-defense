@@ -11,15 +11,15 @@ public class PathOne implements Path{
     public ArrayList<Cell> findPath(Board p) {
     //choix au hasard d'une ligne d'entrée et de sortie    
     Random rand = new Random();
-    int lEnter= rand.nextInt(p.getnbLigne());
+    int lEnter= rand.nextInt(p.getNbLigne());
     int lExit;
      do {
-        lExit = rand.nextInt(p.getnbLigne());
+        lExit = rand.nextInt(p.getNbLigne());
     } while (lExit == lEnter);
     System.out.println(lEnter +" , "+lExit);
     ArrayList<Cell> listePath = new ArrayList<>();
     //choix de la colonne de changement de direction
-    int turning=rand.nextInt(p.getnbColonne());
+    int turning=rand.nextInt(p.getNbColonne());
     //avancer en ligne droite jusqu a la case choisie
     for (int i=0;i<=turning;i++){
     Cell c=p.getCell(lEnter, i);
@@ -49,7 +49,7 @@ public class PathOne implements Path{
     }
 
     //derniere ligne droite
-    for (int k=turning+1;k<p.getnbColonne();k++){
+    for (int k=turning+1;k<p.getNbColonne();k++){
         Cell c=p.getCell(lExit, k);
         listePath.add(c);
      
