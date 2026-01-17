@@ -22,7 +22,7 @@ public class Board {
         /* I fill the array with empty cells */
         for (int i=0 ; i<nbLigne ; i++){
             for (int j=0 ; j<nbColonne ; j++){
-                 this.board[i][j] = new Cell();
+                 this.board[i][j] = new Cell(i,j);
             }
         }
     }
