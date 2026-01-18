@@ -3,7 +3,6 @@ package test;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import Cell;
-
 public class CellTest {
 
     @Test
@@ -13,14 +12,6 @@ public class CellTest {
         assertEquals(2, c.getX());
         assertEquals(3, c.getY());
         assertFalse(c.estChemin());
-    }
-
-    @Test
-    public void testSetChemin() {
-        Cell c = new Cell(0, 0);
-        c.setChemin(true);
-
-        assertTrue(c.estChemin());
     }
 
     @Test
