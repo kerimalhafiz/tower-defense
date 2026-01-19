@@ -122,9 +122,9 @@ réflexion sur la construction du ballon et la gestion des ballon selon la vites
 le problème est que quand le Ballon est glacé on sait pas encore si la résistance doit diminuer ou pas si le joueur il tire sur le ballon , le  déplacement du Ballon à l'intérieur d'une cellule et le mot avancement d'une tic d'horloge   
 
 ### Objectifs pour la semaine et répartition du travail par membre
-- kerim abdoulaye mahamat alhafiz classe  abtraite du ballon
+- kerim abdoulaye mahamat alhafiz classe  abtraite du ballon et livrable
 - Diallo Alpha Abdoulaye  class ballon1 et la classe de glace
-- Diallo Ibrahima classe Ballon 2 librable
+- Diallo Ibrahima classe Ballon 2 livrable
 - Diallo Alpha Abdoulaye BAllon 3 et la livrable
 
 
