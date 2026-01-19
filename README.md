@@ -116,8 +116,10 @@ la semaine dernière n'ayant pas pu finaliser nos objectifs et ayant rencontrés
 ## Semaine 3
 
 ### Ce qui a été réalisé
+réflexion sur la construction du ballon et la gestion des ballon selon la vitesse et la résistance , donc on va gére le ballon  comme une classe abstraite  avec   deux méthodes abstraite dont l'une elle va s'occuper d'avancement du ballon en fonction de chaque classe puisque nous auront  4 classe autre qui hériterons de la classe ballon dont chaque classe va gérer le ballon avec la vitesse souhaité et la résistance. la dernière classe  est une classe qui s'occupe  de la situation ou le ballon sera glacé dont on  remet la vitesse des ballon glacé à 0  pour un certains durée mais tout en conservant leurs position actuelle  après la durée est écouler, la vitesse reprendre sa vitesse normal et sa position 
 
 ### Difficultés rencontrées
+le problème est quand le ballon est  
 
 ### Objectifs pour la semaine et répartition du travail par membre
 
