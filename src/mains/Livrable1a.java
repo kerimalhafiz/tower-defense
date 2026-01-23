@@ -1,4 +1,7 @@
+package mains;
 import java.util.ArrayList;
+import board.*;
+import paths.*;
 
 /**
  * Main class for Livrable 1a.
