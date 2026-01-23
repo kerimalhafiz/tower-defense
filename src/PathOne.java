@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import java.util.Random;
-
+/**
+ * This class generates a simple path for the board.
+ * The path starts from a random entry row, changes direction once,
+ * and ends on a different exit row.
+ */
 public class PathOne implements Path{
 
     
