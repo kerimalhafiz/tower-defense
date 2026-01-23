@@ -22,7 +22,6 @@ public class PathOne implements Path{
      do {
         lExit = rand.nextInt(p.getNbLigne());
     } while (lExit == lEnter);
-    System.out.println(lEnter +" , "+lExit);
     ArrayList<Cell> listePath = new ArrayList<>();
     //choix de la colonne de changement de direction
     int turning=rand.nextInt(p.getNbColonne());
@@ -35,9 +34,7 @@ public class PathOne implements Path{
     //le balon monte vers la ligne de sortie
     if (lEnter < lExit){
     for(int j=lEnter+1;j<=lExit;j++){
-        System.out.println("Apres");
    
-        System.out.println(j + " "+ turning);
         Cell c=p.getCell(j, turning);
         listePath.add(c);
       
@@ -45,9 +42,7 @@ public class PathOne implements Path{
     //trajet pour descendre
     else{ 
         for(int j=lEnter-1;j>=lExit;j--){
-        System.out.println("Apres");
        
-        System.out.println(j + " "+ turning);
         Cell c=p.getCell(j, turning);
         listePath.add(c);
         
