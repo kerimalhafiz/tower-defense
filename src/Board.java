@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * the board of the game
  */
@@ -78,5 +80,26 @@ public class Board {
         res += "+\n";
         return res;
     }
+public void printWithPath(ArrayList<Cell> path) {
+    
+    System.out.print("    ");
+    for (int j = 0; j < nbColonne; j++) {
+        System.out.print(j + "   ");
+    }
+    System.out.println();
+
+    for (int i = 0; i < nbLigne; i++) {
+        System.out.print(i + " | "); 
+        for (int j = 0; j < nbColonne; j++) {
+            if (path.contains(board[i][j])) {
+                System.out.print("X | ");
+            } else {
+                System.out.print(". | ");
+            }
+        }
+        System.out.println();
+    }
+}
+
     
 }
