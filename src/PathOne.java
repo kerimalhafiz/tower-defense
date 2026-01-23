@@ -7,7 +7,9 @@ import java.util.Random;
  */
 public class PathOne implements Path{
 
-    
+    /**
+     * Creates a PathOne instance.
+     */
     public PathOne(){
         super();
     
