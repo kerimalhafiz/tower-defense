@@ -14,7 +14,7 @@ public interface Path{
      * The path is represented as a list of cells that balloons
      * will follow in order.
      *
-     * @param p the game board on which the path is computed
+     * @param P the game board on which the path is computed
      * @return an ordered list of cells representing the path
      */
     ArrayList<Cell> findPath(Board P);
