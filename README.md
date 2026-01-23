@@ -26,11 +26,13 @@ Un lien vers une image de l'UML doit être fourni (une photo d'un diagramme UML 
 ## Livrable 1
 les commandes :
  ~pour générer les javadoc
- $ javadoc -d docs src/*.java
+ $ javadoc -sourcepath src -subpackages paths board mains  -d docs
+
 ~pour la compilation:
- $ javac -d classes src/*.java
+ $ javac -sourcepath src src/mains/*.java -d classes 
 ~pour l execution:
-  $ java -classpath classes Livrable1a 10 10
+  $ java -classpath classes mains.Livrable1a 10 10 
+
 ~pour la compilation avec l executable jar 
     $ java -jar Livrable1a.jar 10 10
 
