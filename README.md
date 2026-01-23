@@ -24,6 +24,17 @@ Les paragraphes concernant les livrables doivent être remplis avant la date de 
 Un lien vers une image de l'UML doit être fourni (une photo d'un diagramme UML fait à la main est suffisant).
 
 ## Livrable 1
+les commandes :
+ ~pour générer les javadoc
+ $ javadoc -d docs src/*.java
+~pour la compilation:
+ $ javac -d classes src/*.java
+~pour l execution:
+  $ java -classpath classes Livrable1a 10 10
+~pour la compilation avec l executable jar 
+    $ java -jar Livrable1a.jar 10 10
+
+
 
 ### Atteinte des objectifs
 
