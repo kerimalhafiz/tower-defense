@@ -56,7 +56,10 @@ public class Board {
         return this.board[i][j];
     }
 
-    /* the toString method for the board */
+    /**
+     * the toString method for the board *
+     * @return res it the point for display
+    */
     public String tostring(){
         String res = "";
         for (int i = 0 ; i<this.nbLigne ; i++){
