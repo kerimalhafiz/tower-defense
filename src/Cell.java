@@ -40,7 +40,7 @@ public class Cell{
    /**
      * Updates the x coordinate of the cell.
      *
-     * @param new_x the new x coordinate
+     * @param new_x the new_x coordinate
      */
    public  void setvalueX(int new_x){
       this.x=new_x;
