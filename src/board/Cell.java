@@ -1,3 +1,9 @@
+package board;
+import java.util.ArrayList;
+import java.util.List;
+
+import Balloon.Balloon;
+
 /**
  * Represents a single cell on the game board.
  * 
@@ -9,6 +15,7 @@ public class Cell{
      // attribut 
     private int x;
     private int y;
+    private List<Balloon> balloons;
     /**
      * Creates a new cell with given coordinates.
      *
@@ -18,6 +25,7 @@ public class Cell{
     public Cell(int x,int y){
         this.x=x;
         this.y=y;
+        this.balloons = new ArrayList<>();
     }
 
     /**
@@ -79,5 +87,33 @@ public class Cell{
         return x == c.x && y == c.y;
     }
 
+
+    /**
+ * Adds a balloon to this cell.
+ *
+ * @param b the balloon to add
+ */
+public void addBalloon(Balloon b) {
+    balloons.add(b);
+}
+
+/**
+ * Removes a balloon from this cell.
+ *
+ * @param b the balloon to remove
+ */
+public void removeBalloon(Balloon b) {
+    balloons.remove(b);
+}
+
+/**
+ * Returns the list of balloons currently in this cell.
+ *
+ * @return list of balloons
+ */
+public List<Balloon> getBalloons() {
+   return new ArrayList<>(balloons);
+
+}
 
 }
