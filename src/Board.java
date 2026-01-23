@@ -80,6 +80,15 @@ public class Board {
         res += "+\n";
         return res;
     }
+
+/**
+ * Prints the board with a given path.
+ * Cells belonging to the path are displayed with 'X',
+ * while empty cells are displayed with '.'.
+ * Row and column indices are shown to help visualization.
+ *
+ * @param path the list of cells representing the path
+ */
 public void printWithPath(ArrayList<Cell> path) {
     
     System.out.print("    ");
