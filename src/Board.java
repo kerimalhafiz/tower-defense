@@ -1,4 +1,6 @@
-
+/**
+ * the board of the game
+ */
 public class Board {
 
     /* the number of rows of the board */
