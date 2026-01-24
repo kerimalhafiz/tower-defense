@@ -34,6 +34,30 @@ public class Cell{
         return this.position;
     }
 
+    
+    /**
+     * Sets the display value of the cell.
+     * 
+     * Example: "x" for path, "." for empty, or other markers.
+     * 
+     * @param val the new display value of the cell
+     */
+    public void setvalueX(String val) {
+        this.value = val;
+    }
+
+    /**
+     * Returns the string representation of the cell.
+     * 
+     * Currently, it returns the value of the cell.
+     * 
+     * @return the display value of the cell
+     */
+    @Override
+    public String toString() {
+        return this.value;
+    }
+
 
 
 }
