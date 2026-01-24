@@ -40,8 +40,12 @@ les commandes :
 Pour exécuter le programme avec le jar exécutable 
 Celui la aussi se fait soit avec un fichier manifeste soit sans fichier manifeste :
 ## sans fichier manifeste :
-Il faut compiler cette commande : ```  jar cvfe Livrable1b.jar mains.Livrable1a -C classes mains  ```
+Il faut compiler cette commande : ```  jar cvfe Livrable1.jar mains.Livrable1a -C classes mains  ```
 ensuite faut rajouter les parametres  juste apres. 
+Ensuite pour l'executer : ``` java -jar Livrable1.jar   ```
+
+
+pour le deuxieme livrable il faut compiler la commande  ```  jar cvfe Livrable1b.jar mains.Livrable1b -C classes mains  ``` et passer les parametres juste apres .
 Ensuite pour l'executer : ``` java -jar Livrable1b.jar   ```
 
 
