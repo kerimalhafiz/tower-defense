@@ -2,6 +2,7 @@ package mains;
 
 import java.util.ArrayList;
 
+import board.BoardOne;
 import board.Position;
 
 /**

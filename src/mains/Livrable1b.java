@@ -2,6 +2,9 @@ package mains;
 
 import java.util.ArrayList;
 
+import board.BoardTwo;
+import board.Position;
+
 public class Livrable1b {
     
     /**
