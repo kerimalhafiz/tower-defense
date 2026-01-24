@@ -64,6 +64,19 @@ public abstract  class Board {
     public Cell getCell(int i,int j){
         return this.board[i][j];
     }
+    /**
+     * Prints the board to the console using each cell's toString method.
+     * Each row is printed on a separate line.
+     */
+    public void affiche() {
+        for (int i = 0; i < this.nbLigne; i++) {
+            for (int j = 0; j < this.nbColonne; j++) {
+                System.out.print(this.board[i][j] + " "); // Cell.toString()
+            }
+            System.out.println();
+        }
+    }
+
 
     /**
      * the toString method for the board *
