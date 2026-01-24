@@ -25,5 +25,15 @@ public class Cell{
         this.value = ".";
     }
 
+     /**
+     * Returns the position of this cell.
+     * 
+     * @return the Position object representing (x, y)
+     */
+    public Position getPosition() {
+        return this.position;
+    }
+
+
 
 }
