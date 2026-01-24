@@ -1,5 +1,7 @@
 package mains;
 
+import java.util.ArrayList;
+
 public class Livrable1b {
     
     /**
@@ -30,7 +32,27 @@ public class Livrable1b {
         int height = Integer.parseInt(args[0]);
         int width = Integer.parseInt(args[1]);
         int nPaths = Integer.parseInt(args[2]);
+    
+
+    // Create the board with multiple paths
+        BoardTwo board = new BoardTwo(height, width, nPaths);
+        ArrayList<ArrayList<Position>> paths = board.path();
+
+        // Display each path
+        System.out.println("Chemins trouvés :");
+        int index = 0;
+        for (ArrayList<Position> chemin : paths) {
+            System.out.println("Chemin " + index + " :");
+            for (Position pos : chemin) {
+                System.out.println(pos);
+            }
+            index++;
+            System.out.println();
+        }
+
+        // Display the board with all paths marked
+        System.out.println("Grille du plateau :");
+        board.affiche();
+
     }
-
-
 }
