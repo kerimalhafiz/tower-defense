@@ -22,6 +22,15 @@ public class Livrable1a {
      *             args[1] = board width
      */
     public static void main(String[] args) {
-        
+        // Check for correct number of arguments
+        if (args.length != 2) {
+            System.out.println("Error: please provide 2 integers as arguments (height and width).");
+            return;
+        }
+
+        // Parse arguments
+        int height = Integer.parseInt(args[0]);
+        int width = Integer.parseInt(args[1]);
+
       
 }}
