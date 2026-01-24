@@ -8,5 +8,13 @@ public class Position {
         this.ligne=x;
 
     }
+    public int getNbLigne(){return this.ligne;}
+    public int getNbColonne(){return this.colonne;}
+
+    @Override
+    public String toString() {
+    return "Position(" + this.ligne + "," + this.colonne + ")";
+}
+
 
 }
