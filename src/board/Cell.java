@@ -1,8 +1,4 @@
 package board;
-import java.util.ArrayList;
-import java.util.List;
-
-import Balloon.Balloon;
 
 /**
  * Represents a single cell on the game board.
@@ -12,108 +8,56 @@ import Balloon.Balloon;
  * or balloon positions on the plateau.
  */
 public class Cell{
-     // attribut 
-    private int x;
-    private int y;
-    private List<Balloon> balloons;
+      /** Position of the cell on the board */
+    private Position position;
+
+    /** Display value of the cell (default is ".") */
+    private String value;
+
     /**
-     * Creates a new cell with given coordinates.
-     *
-     * @param x the x coordinate
-     * @param y the y coordinate
+     * Constructs a Cell with the given position.
+     * Initializes the value to "." (empty cell).
+     * 
+     * @param p the Position of the cell
      */
-    public Cell(int x,int y){
-        this.x=x;
-        this.y=y;
-        this.balloons = new ArrayList<>();
+    public Cell(Position p) {
+        this.position = p;
+        this.value = ".";
+    }
+
+     /**
+     * Returns the position of this cell.
+     * 
+     * @return the Position object representing (x, y)
+     */
+    public Position getPosition() {
+        return this.position;
+    }
+
+    
+    /**
+     * Sets the display value of the cell.
+     * 
+     * Example: "x" for path, "." for empty, or other markers.
+     * 
+     * @param val the new display value of the cell
+     */
+    public void setvalueX(String val) {
+        this.value = val;
     }
 
     /**
-     * Returns the x coordinate of the cell.
-     *
-     * @return x coordinate
-     */
-   public int getX(){
-     return  this.x;
-   }
-
-    /**
-     * Returns the y coordinate of the cell.
-     *
-     * @return y coordinate
-     */
-   public int getY(){
-    return this.y;
-   }
-   /**
-     * Updates the x coordinate of the cell.
-     *
-     * @param new_x the new_x coordinate
-     */
-   public  void setvalueX(int new_x){
-      this.x=new_x;
-    
-   }
-   /**
-     * Updates the x coordinate of the cell.
-     *
-     * @param new_y the new x coordinate
-     */
-   public void setvalueY(int new_y){
-       this.y=new_y;
-   }
-   /**
-     * Returns a string representation of the cell.
-     *
-     * @return string in the form "(x=?, y=?)"
+     * Returns the string representation of the cell.
+     * 
+     * Currently, it returns the value of the cell.
+     * 
+     * @return the display value of the cell
      */
     @Override
-   public String toString(){
-    return "(x="+ x + ","+ y + ")";
-   }
-
-  /**
-     * Compares this cell with another object.
-     * Two cells are equal if they have the same coordinates.
-     *
-     * @param o the object to compare
-     * @return true if both cells have identical coordinates
-     */
-  @Override
-    public boolean equals(Object o) {
-        if (!(o instanceof Cell))
-             {return false;}
-        Cell c = (Cell) o;
-        return x == c.x && y == c.y;
+    public String toString() {
+        return this.value;
     }
 
 
-    /**
- * Adds a balloon to this cell.
- *
- * @param b the balloon to add
- */
-public void addBalloon(Balloon b) {
-    balloons.add(b);
-}
-
-/**
- * Removes a balloon from this cell.
- *
- * @param b the balloon to remove
- */
-public void removeBalloon(Balloon b) {
-    balloons.remove(b);
-}
-
-/**
- * Returns the list of balloons currently in this cell.
- *
- * @return list of balloons
- */
-public List<Balloon> getBalloons() {
-   return new ArrayList<>(balloons);
-
-}
 
 }
