@@ -4,7 +4,7 @@ import java.util.ArrayList;
 /**
  * the board of the game
  */
-public class Board {
+public abstract  class Board {
 
     /* the number of rows of the board */
     private int nbLigne;
@@ -28,7 +28,7 @@ public class Board {
         /* I fill the array with empty cells */
         for (int i=0 ; i<nbLigne ; i++){
             for (int j=0 ; j<nbColonne ; j++){
-                 this.board[i][j] = new Cell(i,j);
+                 this.board[i][j] = new Cell(new Position(i, j));
             }
         }
     }
