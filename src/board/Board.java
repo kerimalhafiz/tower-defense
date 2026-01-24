@@ -19,7 +19,7 @@ public abstract  class Board {
     private ArrayList<Balloon> listeBallon;
 
     /* the array of cells */
-    private Cell[][] board;
+    protected Cell[][] board;
 
     /**
      * the board class
@@ -125,7 +125,7 @@ public void printWithPath(ArrayList<Cell> path) {
      *
      * @param b the Balloon to add
      */
-    public abstract void addBalloon(Balloon b);
+    //public abstract void addBalloon(Balloon b);
 
     /**
      * Removes a balloon from the board.
@@ -136,7 +136,7 @@ public void printWithPath(ArrayList<Cell> path) {
      *
      * @param b the Balloon to remove
      */
-    public abstract void removeBalloon(Balloon b);
+    //public abstract void removeBalloon(Balloon b);
 
 
 
