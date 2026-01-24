@@ -1,8 +1,8 @@
 package test;
-import org.junit.Test;
-import static org.junit.Assert.*;
-import util.Cell;
-import util.Board;
+import java.util.*;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+import board.*;
 public class BoardTest {
     @Test
     public void testBoardCreation(){
