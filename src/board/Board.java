@@ -1,25 +1,24 @@
 package board;
-import java.util.ArrayList;
-
 import Balloon.Balloon;
+import java.util.ArrayList;
 
 /**
  * the board of the game
  */
 public abstract  class Board {
 
-    /* the number of rows of the board */
+    /** the number of rows of the board */
     private int nbLigne;
 
-    /* the number of columns of the board */
+    /** the number of columns of the board */
     private int nbColonne;
 
-    /*the list of ballon */
+    /**the list of ballon */
 
     private ArrayList<Balloon> listeBallon;
-
-    /* the array of cells */
+    /** The array of cells composing the board. */
     protected Cell[][] board;
+
 
     /**
      * the board class

@@ -1,6 +1,5 @@
 package board;
 
-import Balloon.Balloon;
 import java.util.ArrayList;
 import paths.*;
 
@@ -27,7 +26,7 @@ public class BoardOne extends Board {
         super(nbLigne, nbColonne);
     }
 
- /*    /**
+    /**
      * Generates a random path on this board.
      * <p>
      * This method uses the PathOne class to create a random path starting

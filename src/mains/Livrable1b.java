@@ -1,10 +1,11 @@
 package mains;
 
-import java.util.ArrayList;
-
 import board.BoardTwo;
 import board.Position;
-
+import java.util.ArrayList;
+/**
+ * Classe principale permettant d'exécuter le livrable 1b.
+ */
 public class Livrable1b {
     
     /**
@@ -17,7 +18,7 @@ public class Livrable1b {
     /**
      * Entry point of the program.
      * 
-     * Usage: java mains.Livrable1b <height> <width> <number_of_paths>
+     * Usage: java mains.Livrable1b height width number_of_paths
      * 
      * @param args command-line arguments:
      *             args[0] = board height (number of rows)
