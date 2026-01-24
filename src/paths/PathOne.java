@@ -1,63 +1,88 @@
 package paths;
+
+import board.*;
 import java.util.ArrayList;
 import java.util.Random;
-import board.*;
+
 /**
- * This class generates a simple path for the board.
- * The path starts from a random entry row, changes direction once,
- * and ends on a different exit row.
+ * This class generates a simple random path on a grid.
+ * 
+ * The path starts from a random entry row, moves horizontally until a
+ * turning column, then moves vertically towards a random exit row, 
+ * and finally continues horizontally to the end of the board.
+ * Each cell in the path is marked with an "x".
  */
-public class PathOne implements Path{
+public class PathOne implements Path {
 
     /**
-     * Creates a PathOne instance.
+     * Constructs a PathOne instance.
      */
-    public PathOne(){
+    public PathOne() {
         super();
-    
-    }
-    public ArrayList<Cell> findPath(Board p) {
-    //choix au hasard d'une ligne d'entrée et de sortie    
-    Random rand = new Random();
-    int lEnter= rand.nextInt(p.getNbLigne());
-    int lExit;
-     do {
-        lExit = rand.nextInt(p.getNbLigne());
-    } while (lExit == lEnter);
-    ArrayList<Cell> listePath = new ArrayList<>();
-    //choix de la colonne de changement de direction
-    int turning=rand.nextInt(p.getNbColonne());
-    //avancer en ligne droite jusqu a la case choisie
-    for (int i=0;i<=turning;i++){
-    Cell c=p.getCell(lEnter, i);
-    listePath.add(c);
     }
 
-    //le balon monte vers la ligne de sortie
-    if (lEnter < lExit){
-    for(int j=lEnter+1;j<=lExit;j++){
-   
-        Cell c=p.getCell(j, turning);
-        listePath.add(c);
-      
-    } }
-    //trajet pour descendre
-    else{ 
-        for(int j=lEnter-1;j>=lExit;j--){
-       
-        Cell c=p.getCell(j, turning);
-        listePath.add(c);
-        
-    }
-    }
+    /**
+     * Generates a random path on the given grid of cells.
+     * 
+     * Algorithm:
+     * 1. Choose a random entry row (lEnter) and a random exit row (lExit) that is different.
+     * 2. Choose a random column (turning) where the path changes vertical direction.
+     * 3. Move horizontally from the entry row to the turning column.
+     * 4. Move vertically toward the exit row.
+     * 5. Move horizontally from the turning column to the end of the board.
+     * 6. Each cell in the path is marked with "x" using Cell.setvalueX("x").
+     * 
+     * @param cells a 2D array of cells representing the board/grid
+     * @return an ArrayList of Positions representing the generated path
+     */
+    @Override
+    public ArrayList<Position> findPath(Cell[][] cells) {
 
-    //derniere ligne droite
-    for (int k=turning+1;k<p.getNbColonne();k++){
-        Cell c=p.getCell(lExit, k);
-        listePath.add(c);
-     
-    }
-    return listePath;
+        Random rand = new Random();
+        int nbLigne = cells.length;
+        int nbColonne = cells[0].length;
 
+        // Random entry and exit rows
+        int lEnter = rand.nextInt(nbLigne);
+        int lExit;
+        do {
+            lExit = rand.nextInt(nbLigne);
+        } while (lExit == lEnter);
+
+        ArrayList<Position> listePath = new ArrayList<>();
+
+        // Random column for the path to turn vertically
+        int turning = rand.nextInt(nbColonne);
+
+        // Horizontal movement to the turning column
+        for (int i = 0; i <= turning; i++) {
+            Cell c = cells[lEnter][i];
+            listePath.add(c.getPosition());
+            c.setvalueX("x");
+        }
+
+        // Vertical movement toward the exit row
+        if (lEnter < lExit) {
+            for (int j = lEnter + 1; j <= lExit; j++) {
+                Cell c = cells[j][turning];
+                listePath.add(c.getPosition());
+                c.setvalueX("x");
+            }
+        } else {
+            for (int j = lEnter - 1; j >= lExit; j--) {
+                Cell c = cells[j][turning];
+                listePath.add(c.getPosition());
+                c.setvalueX("x");
+            }
+        }
+
+        // Final horizontal movement to the end of the board
+        for (int k = turning + 1; k < nbColonne; k++) {
+            Cell c = cells[lExit][k];
+            listePath.add(c.getPosition());
+            c.setvalueX("x");
+        }
+
+        return listePath;
     }
 }
