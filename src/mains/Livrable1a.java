@@ -1,7 +1,4 @@
 package mains;
-import java.util.ArrayList;
-import board.*;
-import paths.*;
 
 /**
  * Main class for Livrable 1a.
@@ -25,5 +22,6 @@ public class Livrable1a {
      *             args[1] = board width
      */
     public static void main(String[] args) {
+        
       
-}
+}}
