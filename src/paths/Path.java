@@ -1,6 +1,6 @@
 package paths;
-import java.util.ArrayList;
 import board.*;
+import java.util.ArrayList;
 /**
  * The Path interface represents a strategy used to compute
  * a path on a game board.
@@ -19,5 +19,5 @@ public interface Path{
      * @param P the game board on which the path is computed
      * @return an ordered list of cells representing the path
      */
-    ArrayList<Cell> findPath(Board P);
+    ArrayList<Position> findPath(Cell[][] P);
 }
