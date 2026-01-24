@@ -150,7 +150,7 @@ Apres avoir reçu votre mail nous nous sommes rendu compte qu il fallait des mod
 Tout d'abord nous avons ajoute une classe Position ce qui a entraine la modification de Cell . Nous avons aussi modifie findpath de Path desormais il prends une grille en parrametre au lieu d un board et il renvoit la liste des Positions sur laquel passe le chemin.
 et nous avons aussi creer BoardOne et BoardTwo pour representé les deux table ;elles heritent d'une classe abstraite Board.
 Nous avons aussi finalement décidé de stocker les ballons dans le Board au lieu des cell nous pensont que a partir du board on a plus de maarge de manoeuvre.
-# Compilation 
+# Commande Livrable1
 -javac -d ../bin board/*.java paths/*.java mains/*.java (compiler à partir de src)
 -javadoc -d ../doc board/*.java paths/*.java mains/*.java (documentation a partir de src)
 
