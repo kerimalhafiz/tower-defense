@@ -79,6 +79,10 @@ Le journal de bord doit être rempli à la fin de chaque séance encadrée, et *
 Pour chaque semaine on y trouvera :
 - ce qui a été réalisé, les difficultés rencontrées et comment elles ont été surmontées (on attend du contenu, pas uniquement une phrase du type "tous les objectifs ont été atteints")
 - la liste des objectifs à réaliser d'ici à la prochaine séance encadrée
+Apres avoir reçu votre mail nous nous sommes rendu compte qu il fallait des modification  afin d'avoir le resultat demandé
+Tout d'abord nous avons ajoute une classe Position ce qui a entraine la modification de Cell . Nous avons aussi modifie findpath de Path desormais il prends une grille en parrametre au lieu d un board et il renvoit la liste des Positions sur laquel passe le chemin.
+et nous avons aussi creer BoardOne et BoardTwo pour representé les deux table ;elles heritent d'une classe abstraite Board.
+Nous avons aussi finalement décidé de stocker les ballons dans le Board au lieu des cell nous pensont que a partir du board on a plus de maarge de manoeuvre.
 
 ## Semaine 1
 
