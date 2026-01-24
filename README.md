@@ -37,6 +37,15 @@ les commandes :
     $ java -jar Livrable1a.jar 10 10
 
 
+Pour exécuter le programme avec le jar exécutable 
+Celui la aussi se fait soit avec un fichier manifeste soit sans fichier manifeste :
+## sans fichier manifeste :
+Il faut compiler cette commande : ```  jar cvfe Livrable1b.jar mains.Livrable1a -C classes mains  ```
+ensuite faut rajouter les parametres  juste apres. 
+Ensuite pour l'executer : ``` java -jar Livrable1b.jar   ```
+
+
+
 
 ### Atteinte des objectifs
 
