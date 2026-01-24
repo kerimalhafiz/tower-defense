@@ -1,6 +1,8 @@
 package board;
 import java.util.ArrayList;
 
+import Balloon.Balloon;
+
 /**
  * the board of the game
  */
@@ -11,6 +13,10 @@ public abstract  class Board {
 
     /* the number of columns of the board */
     private int nbColonne;
+
+    /*the list of ballon */
+
+    private ArrayList<Balloon> listeBallon;
 
     /* the array of cells */
     private Cell[][] board;
@@ -110,6 +116,29 @@ public void printWithPath(ArrayList<Cell> path) {
         System.out.println();
     }
 }
+/**
+     * Adds a balloon to the board.
+     * <p>
+     * This is an abstract method and must be implemented by subclasses
+     * to define how a Balloon is added to the board.
+     * </p>
+     *
+     * @param b the Balloon to add
+     */
+    public abstract void addBalloon(Balloon b);
+
+    /**
+     * Removes a balloon from the board.
+     * <p>
+     * This is an abstract method and must be implemented by subclasses
+     * to define how a Balloon is removed from the board.
+     * </p>
+     *
+     * @param b the Balloon to remove
+     */
+    public abstract void removeBalloon(Balloon b);
+
+
 
     
 }
