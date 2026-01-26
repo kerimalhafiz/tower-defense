@@ -171,10 +171,15 @@ Nous avons aussi finalement décidé de stocker les ballons dans le Board au lie
 ## Semaine 4
 
 ### Ce qui a été réalisé
+reflexion sur le deplacement du ballon.On a reflechi sur plusieurs methodes concernant comment faire avancer le ballon dans une cellule  .et on sait dit qu'il faut diviser la cellule en plusieurs sous cellules tout en respectant un nombre precis (par exemple en 3 ou 4 sous-cellules ) notamment pour toutes les cellules. Nous avons eu l'idée de gerer la resistance et la vitesse comme etant deux choses en lien , c'est-à-dire on a des types de ballons , par exemple des ballons de resistance 1,2,3,4, celles de vitesse 1 avancent a chaque tic d'horloge en respectant la vitesse , on peut deplacer le ballon d'une seule case sur ce cas .Celle de vitesse 2 , on peut l'avancer de 2 sous-cellules , celle de vitesse  3 doit doit être avancer de 3 sous-cellules . On sait par contre que la vitesse peut aussi être un floatant par exemple 1/2,1/3,1/4 , donc sur ce cas ,notre cellule peut etre diviser par 4 sous-cellules.
 
 ### Difficultés rencontrées
-
+les difficultés rencontrées sont le fait de pouvoir avancer un le choix de modelisation de  du ballon comme class abtract ,ou une class simple ou interface mais on  va choisir  l bonne maniere, autres difficultés c'est l implementation de la methode move() qui fait avancer le ballon donc c'est un peu compliquer pour nous la division des cases .les autres diffultés sont de type mineurs .
 ### Objectifs pour la semaine et répartition du travail par membre
+- kerim abdoulaye mahamat alhafiz classe  abtraite du ballon et livrable
+- Diallo Alpha Abdoulaye  class ballon1 et la classe de glace et le lirable1
+- Diallo Ibrahima classe Ballon 2 livrable
+- Diallo Thierno Abdoulaye BAllon 3 et la livrable
 
 ## Semaine 5
 
