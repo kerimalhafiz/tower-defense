@@ -48,7 +48,7 @@ public abstract class Balloon {
     /**
      * Moves the balloon along the given path.
      */
-    public abstract void move(List<Position> path);  
+    //public abstract void move(List<Position> path);  
 
     /**
      * Applies damage to the balloon.
