@@ -2,19 +2,43 @@ package test;
 import java.util.*;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
-import board.*;
+import TowerDefence.board.*;
 public class BoardTest {
     @Test
-    public void testBoardCreation(){
+    public void testBoardCreationIsCorrect(){
         Board board = new Board(10,10);
         assertEquals(10,board.getNbLigne());
         assertEquals(10,board.getNbColonne());
         Cell c = board.getCell(1,2);
-        assertEquals(1,c.getX());
-        assertEquals(2,c.getY());
+        assertEquals(new Position(1, 2),c.getPosition());
         Cell c1 = board.getCell(3,0);
-        assertEquals(3,c1.getX());
-        assertEquals(0,c1.getY());
+        assertEquals(new Position(3, 0),c1.getPosition());
+        assertEquals(3,c1.getPosition().getNbLigne());
+        assertEquals(2,c.getPosition().getNbColonne());
+    }
+    @Test
+    public void testBoardOne(){
+        BoardOne board1 = new BoardOne(10, 10);
+        BoardOne board11 = new BoardOne(12, 13);
+        assertEquals(10,board1.getNbLigne());
+        assertEquals(10,board1.getNbColonne());
+        assertEquals(12,board11.getNbLigne());
+        assertEquals(13,board11.getNbColonne());
+        Cell c2 = board1.getCell(2, 3);
+        assertEquals(new Position(2,3),c2.getPosition());
+        Cell c3 = board11.getCell(4, 3);
+        assertEquals(new Position(4,3),c3.getPosition());
+        assertEquals(4,c3.getPosition().getNbLigne());
+    }
+
+    @Test
+    public void testBoardTwo(){
+        BoardTwo b1 = new BoardTwo(14,15,2);
+        assertEquals(14,b1.getNbLigne());
+        assertEquals(15,b1.getNbColonne());
+        Cell c4 = b1.getCell(2,5);
+        assertEquals(new Position(2,5),c4.getPosition());
+        assertEquals(5,c4.getPosition().getNbColonne());
     }
     
 }
