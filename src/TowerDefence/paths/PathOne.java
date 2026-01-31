@@ -74,6 +74,36 @@ public class PathOne implements Path {
         }
     }
 
+    /**
+     * Moves vertically in a given column from row deb to fin.
+     * Handles both upward and downward movement.
+     *
+     * @param deb   starting row
+     * @param fin   ending row
+     * @param col   column index
+     * @param cells grid of cells
+     * @param l     list storing the path positions
+     */
+    public void vertical(int deb, int fin, int col, Cell[][] cells, ArrayList<Position> l) {
+
+        // Move down
+        if (deb < fin) {
+            for (int j = deb + 1; j <= fin; j++) {
+                Cell c = cells[j][col];
+                l.add(c.getPosition());
+                c.setvalueX("x");
+            }
+        }
+        // Move up
+        else {
+            for (int j = deb - 1; j >= fin; j--) {
+                Cell c = cells[j][col];
+                l.add(c.getPosition());
+                c.setvalueX("x");
+            }
+        }
+    }
+
 
     /**
      * Generates a random path on the given grid of cells.
