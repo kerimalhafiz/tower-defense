@@ -2,6 +2,7 @@ package TowerDefence.paths;
 
 import TowerDefence.board.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 /**
@@ -20,6 +21,42 @@ public class PathOne implements Path {
     public PathOne() {
         super();
     }
+
+    /**
+     * Generates a sorted list of unique random turning columns.
+     * Each column represents a point where the path will change
+     * from horizontal to vertical movement.
+     *
+     * @param cells the grid of cells
+     * @return an ArrayList of column indices where turns occur
+    */
+    public ArrayList<Integer> lTurnings(Cell[][] cells) {
+
+        Random rand = new Random();
+        int nbColonne = cells[0].length;
+
+        // Number of turns is limited to half the board width
+        int turning;
+        do {
+            turning = rand.nextInt(nbColonne / 2);
+        } while (turning == 0);
+
+        ArrayList<Integer> lTurning = new ArrayList<>();
+
+        // Generate unique random columns
+        for (int i = 0; i < turning; i++) {
+            int j = rand.nextInt(nbColonne);
+            while (lTurning.contains(j)) {
+                j = rand.nextInt(nbColonne);
+            }
+            lTurning.add(j);
+        }
+
+        // Sort columns in ascending order to ensure forward movement
+        Collections.sort(lTurning);
+        return lTurning;
+    }
+
 
     /**
      * Generates a random path on the given grid of cells.
@@ -51,4 +88,5 @@ public class PathOne implements Path {
 
         ArrayList<Position> listePath = new ArrayList<>();
 
+}
 }
