@@ -42,6 +42,14 @@ public class BoardTest {
         assertEquals(5,c4.getPosition().getNbColonne());
     }
     @Test
+    public void testPathIsNotEmpty() {
+        BoardOne cells = new BoardOne(10, 10);
+        Path path = new PathOne();
+        ArrayList<Position> res = path.findPath(cells);
+        assertNotNull(res);
+        assertFalse(res.isEmpty());
+    }
+    @Test
     public void testPathInsideGrid() {
         int rows = 6, cols = 7;
         BoardOne b1 = new BoardOne(rows,cols);
@@ -52,5 +60,6 @@ public class BoardTest {
             assertTrue(p.getNbColonne() >= 0 && p.getNbColonne() < cols);
         }
     }
+
     
 }
