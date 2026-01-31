@@ -7,14 +7,16 @@ import TowerDefence.board.*;
  */
 public abstract class Balloon {
 
-    protected float speed; // ca aussi vous connaissez 
-    protected int resistance;// vous connaissez deja ca 
+    protected static final float PROGRESS_MIN = 0.0f;// for me i chose the cell to cut in 2 it's start to 0.0
+    protected static final float PROGRESS_MAX = 1.0f; // it's the finish of  1.0
+    protected static final int LAST_PATH_OFFSET = 1;
+    protected float speed; 
+    protected int resistance;
     protected float progress; // position inside the current cell
     protected boolean frozen; // si mon ballon est gele ou pas 
-    protected int frozenTicks;// durée restant pour l ecoulement du tic 
+    protected int frozenTicks;// time  rest to ecoul of frozen
 
-    protected static int points = 0; //  quand on creer le ballon il sont tous a 0 point c'est apres avoir detruit on augement
-      // les autres sont facile a comprendre debruoiller vous 
+    protected static int points = 0; //when start the balloon the point attibuate
     public Balloon(float speed, int resistance) {
         this.speed = speed;
         this.resistance = resistance;
@@ -26,7 +28,7 @@ public abstract class Balloon {
     /**
      * Moves the balloon along the given path.
      */
-    public abstract void move(List<Cell> path); // ici chaque devrav suivre le chemin que nous on donne 
+    public abstract void move(List<Position> path);  
 
     /**
      * Applies damage to the balloon.
@@ -60,7 +62,10 @@ public abstract class Balloon {
             }
         }
     }
-
+     /**
+      *   hi test if the resistance is 0  return True to guid fo player the ballon is push
+      * @return True if the resistance=0
+      */
     public boolean isDestroyed() {
         return resistance <= 0;
     }
