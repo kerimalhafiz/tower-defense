@@ -1,5 +1,7 @@
 package TowerDefence.Balloon;
 import TowerDefence.board.*;
+
+import java.lang.invoke.StringConcatFactory;
 import java.util.*;
 
 public class BalloonRfor extends Balloon {
@@ -9,9 +11,10 @@ public class BalloonRfor extends Balloon {
       * the resistence specifique
       * @param speed  the vitesse of the balloon
       * @param resistance the resistence 
+      * @param id the identifiant of balloon
       */
-    public BalloonRfor(float speed, int resistance){
-        super(speed, resistance);
+    public BalloonRfor(float speed, int resistance,String id){
+        super(speed, resistance,id);
     }
     
     /**
