@@ -106,19 +106,20 @@ public class PathOne implements Path {
 
 
     /**
-     * Generates a random path on the given grid of cells.
-     * 
+     * Generates a random path on the given grid.
+     *
      * Algorithm:
-     * 1. Choose a random entry row (lEnter) and a random exit row (lExit) that is different.
-     * 2. Choose a random column (turning) where the path changes vertical direction.
-     * 3. Move horizontally from the entry row to the turning column.
-     * 4. Move vertically toward the exit row.
-     * 5. Move horizontally from the turning column to the end of the board.
-     * 6. Each cell in the path is marked with "x" using Cell.setvalueX("x").
-     * 
-     * @param cells a 2D array of cells representing the board/grid
-     * @return an ArrayList of Positions representing the generated path
-     */
+     * 1. Choose a random starting row at column 0.
+     * 2. Generate a list of turning columns.
+     * 3. For each turning column:
+     *    - Move horizontally to the column.
+     *    - Choose a new random row.
+     *    - Move vertically to that row.
+     * 4. Finish with a horizontal move to the last column.
+     *
+     * @param cells a 2D array representing the board
+     * @return an ArrayList of Positions representing the path
+    */
     @Override
     public ArrayList<Position> findPath(Cell[][] cells) {
 
@@ -127,13 +128,44 @@ public class PathOne implements Path {
         int nbColonne = cells[0].length;
 
         // Random entry and exit rows
-        int lEnter = rand.nextInt(nbLigne);
-        int lExit;
-        do {
-            lExit = rand.nextInt(nbLigne);
-        } while (lExit == lEnter);
+        int currentRow = rand.nextInt(nbLigne);
+        int currentCol = 0;
 
-        ArrayList<Position> listePath = new ArrayList<>();
+        
+        ArrayList<Position> l = new ArrayList<>();
+        ArrayList<Integer> lTurning = this.lTurnings(cells);
 
+        // If no turns are generated, go straight horizontally
+        if (lTurning.isEmpty()) {
+            horizontal(0, nbColonne - 1, currentRow, cells, l);
+            return l;
+        }
+
+        for (int i = 0; i < lTurning.size(); i++) {
+
+            int turnCol = lTurning.get(i);
+
+            // Horizontal movement to the turning column
+            horizontal(currentCol, turnCol, currentRow, cells, l);
+            currentCol = turnCol;
+
+            // Choose a different row
+            int nextRow;
+            do {
+                nextRow = rand.nextInt(nbLigne);
+            } while (nextRow == currentRow);
+
+            // Vertical movement
+            vertical(currentRow, nextRow, currentCol, cells, l);
+            currentRow = nextRow;
+        }
+
+        // Final horizontal movement to the end of the board
+        if (currentCol < nbColonne - 1) {
+            horizontal(currentCol + 1, nbColonne - 1, currentRow, cells, l);
+        }
+
+        return l;
+    }
 }
-}
+
