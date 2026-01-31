@@ -1,6 +1,7 @@
 package TowerDefence.board;
 import TowerDefence.Balloon.*;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * the board of the game
@@ -175,6 +176,56 @@ public void printWithPath(ArrayList<Cell> path) {
         }
         System.out.println();
     }
+}
+    public void move(List<Position> path, Balloon b) {
+
+    int i = 0;
+    float time = 0;
+
+    Cell previousCell = null; // mémorise la cellule précédente
+
+    while (i < path.size()) {
+
+        // Si le ballon est gelé
+        if (b.isFrozen()) {
+            b.updateFrozenState();
+            continue;
+        }
+
+        // Accumulation du temps
+        time += b.getSpeed();
+
+        // Avancée cellule par cellule
+        while (time >= 1 && i < path.size()) {
+            this.affiche();
+            System.out.println("suite       :");
+            Position current = path.get(i);
+            Cell currentCell = this.getCell(
+                current.getNbLigne(),
+                current.getNbColonne()
+            );
+
+            //  On enlève le ballon de l’ancienne cellule
+            if (previousCell != null) {
+                previousCell.setvalueX(null);
+            }
+
+            // 🟢 On place le ballon dans la nouvelle cellule
+            currentCell.setvalueX(b);
+
+            // Mise à jour
+            previousCell = currentCell;
+            time -= 1;
+            i++;
+        }
+    }
+
+    //  Nettoyage final : le ballon sort du plateau
+    if (previousCell != null) {
+        previousCell.setvalueX(null);
+    }
+
+    System.out.println("Ballon sorti du chemin");
 }
     
 }
