@@ -45,6 +45,14 @@ public class Cell{
     public void setvalueX(String val) {
         this.value = val;
     }
+    /*la methode equals */
+    public boolean equals(Object other){
+        if (!(other instanceof Cell)){
+            return false;
+        }
+        Cell c = (Cell) other;
+        return position.equals(c.getPosition());
+    }
 
     /**
      * Returns the string representation of the cell.
