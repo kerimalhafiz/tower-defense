@@ -24,7 +24,7 @@ public class Cell{
      */
     public Cell(Position p) {
         this.position = p;
-        this.value = ".";
+        this.value = null;
     }
 
      /**
@@ -65,7 +65,10 @@ public class Cell{
      */
     @Override
     public String toString() {
-        return this.value;
+        if(this.value==null){
+            return ".";
+        }
+        else{return this.value.toString();}
     }
 
 
