@@ -18,6 +18,7 @@ public abstract class Balloon {
     protected int currentPathIndex=0;
     protected String id;
     protected static int points = 0; //when start the balloon the point attibuate
+    protected float time; //the time 
     public Balloon(float speed, int resistance,String id) {
         this.speed = speed;
         this.resistance = resistance;
