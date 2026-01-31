@@ -29,6 +29,14 @@ public abstract class Balloon {
     public String getId(){
         return this.id;
     }
+    public float getSpeed(){
+        return this.speed;
+
+    }
+    public boolean isFrozen(){
+        return this.frozen;
+    }
+
 
     /**
      * Moves the balloon along the given path.
