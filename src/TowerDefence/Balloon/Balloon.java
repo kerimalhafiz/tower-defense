@@ -74,7 +74,7 @@ public abstract class Balloon {
     /**
      * Updates the frozen state.
      */
-    protected void updateFrozenState() {
+    public void updateFrozenState() {
         if (frozen) {
             frozenTicks--;
             if (frozenTicks <= 0) {

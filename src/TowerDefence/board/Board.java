@@ -149,7 +149,7 @@ public void printWithPath(ArrayList<Cell> path) {
      *
      * @param b the Balloon to remove
      */
-    public abstract void removeBalloon(Balloon b);
+    //public abstract void removeBalloon(Balloon b);
 
 
    public void afficheWithBalloons(ArrayList<BalloonRfor> balloons, ArrayList<ArrayList<Position>> paths) {
@@ -236,5 +236,6 @@ public void printWithPath(ArrayList<Cell> path) {
         "Ballon " + b.getId() + " sorti du chemin, temps = " + b.getTime()
     );
 }
+
     
 }
