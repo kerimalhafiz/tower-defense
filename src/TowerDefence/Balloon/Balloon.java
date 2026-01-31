@@ -15,6 +15,7 @@ public abstract class Balloon {
     protected float progress; // position inside the current cell
     protected boolean frozen; // si mon ballon est gele ou pas 
     protected int frozenTicks;// time  rest to ecoul of frozen
+    protected int currentPathIndex=0;
 
     protected static int points = 0; //when start the balloon the point attibuate
     public Balloon(float speed, int resistance) {
@@ -68,5 +69,19 @@ public abstract class Balloon {
       */
     public boolean isDestroyed() {
         return resistance <= 0;
+    }
+    /**
+     * it s the getter return index actuell
+     * @return currentPathIndex the index current 
+     */
+    public int getcurrentPathIndex(){
+        return this.currentPathIndex;
+    }
+     /**
+      * the progress actuel 
+      * @return progress the progression of the ballon
+      */
+    public float getprogress(){
+        return this.progress;
     }
 }
