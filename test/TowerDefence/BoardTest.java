@@ -72,7 +72,24 @@ public class BoardTest {
             assertTrue(p.getNbColonne() >= 0 && p.getNbColonne() < cols);
         }
     }
-    
-
-    
-}
+        @Test
+        public void testPathLigneOrColonneIsCorrect() {
+            int rows = 10;
+            int cols = 10;
+            Cell[][] cells = new Cell[rows][cols];
+            for (int i = 0;i<rows;i++){
+                for (int j = 0;j<cols;j++){
+                    cells[i][j] = new Cell(new Position(i,j));
+                }
+            }
+            Path p = new PathTwo();
+            ArrayList<Position> res = p.findPath(cells);
+            for (int i = 0;i<res.size()-1;i++){
+                Position p1 = res.get(i);
+                Position p2 = res.get(i+1);
+                int dl = Math.abs(p1.getNbLigne()-p2.getNbLigne());
+                int dc = Math.abs(p1.getNbColonne()-p2.getNbColonne());
+                assertTrue((dl == 1 && dc ==0) || (dl==0 && dc==1));
+            }
+        }
+    }
