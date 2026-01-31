@@ -1,5 +1,7 @@
 package TowerDefence.board;
 
+import TowerDefence.Balloon.Balloon;
+
 /**
  * Represents a single cell on the game board.
  * 
@@ -12,7 +14,7 @@ public class Cell{
     private Position position;
 
     /** Display value of the cell (default is ".") */
-    private String value;
+    private Balloon value;
 
     /**
      * Constructs a Cell with the given position.
@@ -42,7 +44,7 @@ public class Cell{
      * 
      * @param val the new display value of the cell
      */
-    public void setvalueX(String val) {
+    public void setvalueX(Balloon val) {
         this.value = val;
     }
     /*la methode equals */

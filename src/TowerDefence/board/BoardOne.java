@@ -2,6 +2,7 @@ package TowerDefence.board;
 
 import java.util.ArrayList;
 import TowerDefence.paths.*;
+import TowerDefence.board.*;
 
 /**
  * Concrete implementation of a Board.
@@ -61,7 +62,7 @@ public class BoardOne extends Board {
  * @param b the Balloon to remove
  */
 
-//public abstract void removeBalloon(Balloon b);
+public abstract void removeBalloon(Balloon b);
 
 }
 
