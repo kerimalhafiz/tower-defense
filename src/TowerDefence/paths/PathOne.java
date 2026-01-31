@@ -56,6 +56,23 @@ public class PathOne implements Path {
         Collections.sort(lTurning);
         return lTurning;
     }
+    /**
+     * Moves horizontally on a given row from column deb to fin.
+     * Each visited cell is added to the path and marked with "x".
+     *
+     * @param deb   starting column
+     * @param fin   ending column
+     * @param ligne row index
+     * @param cells grid of cells
+     * @param l     list storing the path positions
+     */
+    public void horizontal(int deb, int fin, int ligne, Cell[][] cells, ArrayList<Position> l) {
+        for (int i = deb; i <= fin; i++) {
+            Cell c = cells[ligne][i];
+            l.add(c.getPosition());
+            c.setvalueX("x");
+        }
+    }
 
 
     /**
