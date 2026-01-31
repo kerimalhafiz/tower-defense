@@ -182,9 +182,12 @@ public void printWithPath(ArrayList<Cell> path) {
     int i = 0;
     float time = 0;
 
-    Cell previousCell = null; // mémorise la cellule précédente
+    int cmp = 0;                 // compteur d’itérations (temps)
+    Cell previousCell = null;
 
     while (i < path.size()) {
+
+        cmp++;                   // ⏱️ une itération = 1 unité de temps
 
         // Si le ballon est gelé
         if (b.isFrozen()) {
@@ -192,40 +195,46 @@ public void printWithPath(ArrayList<Cell> path) {
             continue;
         }
 
-        // Accumulation du temps
+        // Accumulation du temps selon la vitesse
         time += b.getSpeed();
 
         // Avancée cellule par cellule
         while (time >= 1 && i < path.size()) {
+
             this.affiche();
-            System.out.println("suite       :");
+            System.out.println("suite :");
+
             Position current = path.get(i);
             Cell currentCell = this.getCell(
                 current.getNbLigne(),
                 current.getNbColonne()
             );
 
-            //  On enlève le ballon de l’ancienne cellule
+            // Quitte l’ancienne cellule
             if (previousCell != null) {
                 previousCell.setvalueX(null);
             }
 
-            // 🟢 On place le ballon dans la nouvelle cellule
+            // Entre dans la nouvelle cellule
             currentCell.setvalueX(b);
 
-            // Mise à jour
             previousCell = currentCell;
             time -= 1;
             i++;
         }
     }
 
-    //  Nettoyage final : le ballon sort du plateau
+    // Nettoyage final : le ballon sort du plateau
     if (previousCell != null) {
         previousCell.setvalueX(null);
     }
 
-    System.out.println("Ballon sorti du chemin");
+    // On stocke le temps dans le ballon
+    b.setTime(cmp);
+
+    System.out.println(
+        "Ballon " + b.getId() + " sorti du chemin, temps = " + b.getTime()
+    );
 }
     
 }
