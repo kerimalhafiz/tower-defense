@@ -92,19 +92,68 @@ NB: dans ce fichier il doit y avoir 2 lignes a l'interieur.(la seconde est vide)
 
 
 
-
-
-
 ### Atteinte des objectifs
 
 ### Difficultés restant à résoudre
 
 ## Livrable 2
+Choix de modélisation
+
+La modélisation repose principalement sur l’utilisation de la classe abstraite Balloon.
+Ce choix permet de factoriser le comportement commun à tous les ballons (position sur le chemin, progression, vitesse, etc.) tout en laissant la possibilité de définir des comportements spécifiques via l’héritage.
+
+Grâce à cette approche, chaque type de ballon peut être représenté par une classe concrète qui étend Balloon et implémente la méthode abstraite move.
+Par exemple :
+
+un ballon pouvant geler,
+
+un ballon ayant une résistance particulière,
+
+ou encore un ballon avec une vitesse variable selon le terrain,
+
+peut être ajouté simplement en créant une nouvelle classe héritant de Balloon, sans modifier le reste du code.
+
+Cette modélisation respecte le principe d’ouverture/fermeture : le système est ouvert à l’extension mais fermé à la modification.
+Elle facilite également l’évolution du projet et la maintenance du code.
+
+Le plateau est représenté par la classe Board, elle aussi abstraite, ce qui permet d’implémenter plusieurs types de plateaux.
+La classe BoardTwo est une implémentation concrète permettant de générer plusieurs chemins rectilignes à l’aide de la classe PathTwo.
+
+### INSTRUCTIONS PRECISES :
+### COMPILATION DU PROGRAMME
+Pour compiler notre  programme, il faut executer cette commande:
+```javac -sourcepath src src/TowerDefence/*.java -d classes ```
+pour executer :
+    ```java -classpath classes TowerDefence.Livrable2bMain param param parm parm```
+pour la cretation du jar executable :
+    ```jar cvfe Livrable2b.jar TowerDefence.Livrable2bMain -C classes .```
+pour l'execution avec le jar :
+    ``` java -jar Livrable2b.jar parm parm parm parm ```
+pour la documentation:
+```javadoc -sourcepath src -subpackages TowerDefence -d docs ```
+
+
 
 ### Atteinte des objectifs
+pour le livrable2b
+Création d’un plateau aléatoire de taille paramétrable
+
+Génération de chemins rectilignes aléatoires
+
+Création de ballons avec des vitesses aléatoires
+
+Déplacement des ballons le long des chemins en fonction du temps (ticks)
+
+Arrêt automatique de la simulation lorsque tous les ballons ont terminé leur parcours
+
+Affichage de l’état du plateau à chaque tick
+
+Mise en place de tests unitaires pour les méthodes publiques principales
+
+Compilation, exécution et lancement des tests via la ligne de commande
 
 ### Difficultés restant à résoudre
-
+   
 ## Livrable 3
 
 ### Atteinte des objectifs
