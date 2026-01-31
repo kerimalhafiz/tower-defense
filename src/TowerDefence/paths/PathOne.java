@@ -51,38 +51,4 @@ public class PathOne implements Path {
 
         ArrayList<Position> listePath = new ArrayList<>();
 
-        // Random column for the path to turn vertically
-        int turning = rand.nextInt(nbColonne);
-
-        // Horizontal movement to the turning column
-        for (int i = 0; i <= turning; i++) {
-            Cell c = cells[lEnter][i];
-            listePath.add(c.getPosition());
-            c.setvalueX("x");
-        }
-
-        // Vertical movement toward the exit row
-        if (lEnter < lExit) {
-            for (int j = lEnter + 1; j <= lExit; j++) {
-                Cell c = cells[j][turning];
-                listePath.add(c.getPosition());
-                c.setvalueX("x");
-            }
-        } else {
-            for (int j = lEnter - 1; j >= lExit; j--) {
-                Cell c = cells[j][turning];
-                listePath.add(c.getPosition());
-                c.setvalueX("x");
-            }
-        }
-
-        // Final horizontal movement to the end of the board
-        for (int k = turning + 1; k < nbColonne; k++) {
-            Cell c = cells[lExit][k];
-            listePath.add(c.getPosition());
-            c.setvalueX("x");
-        }
-
-        return listePath;
-    }
 }
