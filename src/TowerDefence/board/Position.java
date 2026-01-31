@@ -40,6 +40,14 @@ public class Position {
     public int getNbColonne() {
         return this.colonne;
     }
+    /*la methode equals */
+    public boolean equals(Object o){
+        if (!(o instanceof Position)){
+            return false;
+        }
+        Position p = (Position) o;
+        return ligne == p.ligne && colonne == p.colonne;   
+    }
 
     /**
      * Retourne une représentation textuelle de la position.
