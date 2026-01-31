@@ -16,14 +16,18 @@ public abstract class Balloon {
     protected boolean frozen; // si mon ballon est gele ou pas 
     protected int frozenTicks;// time  rest to ecoul of frozen
     protected int currentPathIndex=0;
-
+    protected String id;
     protected static int points = 0; //when start the balloon the point attibuate
-    public Balloon(float speed, int resistance) {
+    public Balloon(float speed, int resistance,String id) {
         this.speed = speed;
         this.resistance = resistance;
         this.progress = 0;
         this.frozen = false; // au debut aucun ballon n'est gele ou glacer 
         this.frozenTicks = 0;
+        this.id=id;
+    }
+    public String getId(){
+        return this.id;
     }
 
     /**
