@@ -1,4 +1,5 @@
 package test;
+import java.nio.file.Path;
 import java.util.*;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
@@ -39,6 +40,17 @@ public class BoardTest {
         Cell c4 = b1.getCell(2,5);
         assertEquals(new Position(2,5),c4.getPosition());
         assertEquals(5,c4.getPosition().getNbColonne());
+    }
+    @Test
+    public void testPathInsideGrid() {
+        int rows = 6, cols = 7;
+        BoardOne b1 = new BoardOne(rows,cols);
+        Path path = new PathOne();
+        ArrayList<Position> res = path.findPath(b1);
+        for (Position p : res) {
+            assertTrue(p.getNbLigne() >= 0 && p.getNbLigne() < rows);
+            assertTrue(p.getNbColonne() >= 0 && p.getNbColonne() < cols);
+        }
     }
     
 }
