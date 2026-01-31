@@ -70,7 +70,6 @@ public class PathOne implements Path {
         for (int i = deb; i <= fin; i++) {
             Cell c = cells[ligne][i];
             l.add(c.getPosition());
-            c.setvalueX("x");
         }
     }
 
@@ -91,7 +90,6 @@ public class PathOne implements Path {
             for (int j = deb + 1; j <= fin; j++) {
                 Cell c = cells[j][col];
                 l.add(c.getPosition());
-                c.setvalueX("x");
             }
         }
         // Move up
@@ -99,7 +97,6 @@ public class PathOne implements Path {
             for (int j = deb - 1; j >= fin; j--) {
                 Cell c = cells[j][col];
                 l.add(c.getPosition());
-                c.setvalueX("x");
             }
         }
     }

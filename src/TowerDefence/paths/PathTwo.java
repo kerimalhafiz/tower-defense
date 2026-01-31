@@ -57,13 +57,11 @@ public class PathTwo implements Path {
                 for (int col = 0; col < nbColonne; col++) {
                     Cell c = cells[ligne][col];
                     listPath.add(c.getPosition());
-                    c.setvalueX("x");
                 }
             } else { // right to left
                 for (int col = nbColonne - 1; col >= 0; col--) {
                     Cell c = cells[ligne][col];
                     listPath.add(c.getPosition());
-                    c.setvalueX("x");
                 }
             }
 
@@ -75,13 +73,11 @@ public class PathTwo implements Path {
                 for (int lig = 0; lig < nbLigne; lig++) {
                     Cell c = cells[lig][colonne];
                     listPath.add(c.getPosition());
-                    c.setvalueX("x");
                 }
             } else { // bottom to top
                 for (int lig = nbLigne - 1; lig >= 0; lig--) {
                     Cell c = cells[lig][colonne];
                     listPath.add(c.getPosition());
-                    c.setvalueX("x");
                 }
             }
         }

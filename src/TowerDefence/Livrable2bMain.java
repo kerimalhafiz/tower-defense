@@ -1,62 +1,72 @@
 package TowerDefence;
-import TowerDefence.board.*;
-import java.util.*;
-import TowerDefence.Balloon.*;
 
-public class Livrable2bMain { 
+
+import TowerDefence.Balloon.Balloon;
+import TowerDefence.Balloon.BasicBalloon;
+import TowerDefence.board.*;
+import java.util.ArrayList;
+import java.util.Random;
+/**
+ * Classe principale permettant d'exécuter le livrable 1b.
+ */
+public class Livrable2bMain {
+ 
+
     public static void main(String[] args) {
-        if (args.length!=4) {
-            System.out.println("erreur c'est  une erreur veuillez entrer  nombre de colone ,ligne, le nombre de chemin et le nombre de balloon");
+
+   if (args.length != 3) {
+            System.out.println(
+                "Usage : java Livrable2b <height> <width> <number_of_paths>"
+            );
+            return;
         }
+
+        //  Lecture des arguments
         int height = Integer.parseInt(args[0]);
         int width = Integer.parseInt(args[1]);
         int nPaths = Integer.parseInt(args[2]);
-        int nbBalloon = Integer.parseInt(args[3]);
 
+        //  Création du plateau avec nPaths chemins
         BoardTwo board = new BoardTwo(height, width, nPaths);
-        ArrayList<ArrayList<Position>> paths = board.path();
+        ArrayList<ArrayList<Position>> paths = board.path(); // liste de chemins
 
-        // Création des ballons, un par chemin
-        Random rand = new Random();
-        ArrayList<BalloonRfor> balloons = new ArrayList<>();
-        for (int i = 0; i < Math.min(nbBalloon, paths.size()); i++) {
-            float speed = 0.1f + rand.nextFloat() * 0.4f; 
-            balloons.add(new BalloonRfor(speed, 4,"Ballon1"));
+        //  Affichage des chemins (optionnel)
+        System.out.println("Chemins trouvés :");
+        int idx = 0;
+        for (ArrayList<Position> chemin : paths) {
+            System.out.println("Chemin " + idx + " : " + chemin.size() + " cases");
+            idx++;
         }
 
-int tick = 0;
-boolean finished;
-do {
-    tick++;
-    finished = true;
+        //  Création des ballons (1 par chemin) avec vitesses aléatoires
+        ArrayList<Balloon> balloons = new ArrayList<>();
+        Random rand = new Random();
 
-    // Déplacer tous les ballons
-    for (int i = 0; i < balloons.size(); i++) {
-        BalloonRfor b = balloons.get(i);
-        ArrayList<Position> chemin = paths.get(i);
-        b.move(chemin);
-        if (b.getcurrentPathIndex() < chemin.size()) 
-            finished = false;
-        System.out.println(
-        "Ballon " + i +
-        " -> case " + b.getcurrentPathIndex()+
-        " progress=" + b.getprogress()
-);
+        for (int i = 0; i < paths.size(); i++) {
+            float speed = 0.5f + rand.nextFloat() * 2.0f; // vitesse entre 0.5 et 2.5
+            balloons.add(new BasicBalloon(speed, 1,"Ballon "+i)); // ID = i+1
+        }
 
+        //  Déplacement de chaque ballon sur son chemin
+        for (int i = 0; i < paths.size(); i++) {
+            Balloon b = balloons.get(i);
+            ArrayList<Position> chemin = paths.get(i);
+
+            System.out.println(
+                "\nDéplacement du ballon " + b.getId() +
+                " sur le chemin " + i +
+                " (vitesse = " + b.getSpeed() + ")"
+            );
+
+            board.move(chemin, b); // met à jour b.setTime()
+
+            System.out.println(
+                "Ballon " + b.getId() +
+                " sorti du chemin au temps t = " + b.getTime()
+            );
+            System.out.println("--------------------------");
+        }
+
+        System.out.println("Tous les ballons ont terminé leur parcours.");
     }
-
-    //display 
-    board.afficheWithBalloons(balloons, paths);
-
-    System.out.println("Tick: " + tick);
-
-    // it the small delay for see the tic of horloge 
-    try { Thread.sleep(200); } catch (InterruptedException e) {}
-
-} while (!finished);
-
-System.out.println("Tous les ballons ont terminé leur parcours après " + tick + " ticks !");
-
 }
-}
-
