@@ -37,7 +37,10 @@ Pour generer la documentation il faut executer cette commande :
 
 ### COMPILATION Des tests:
 Pour compiler et executer  qui m'ont ete demandes de resoudre dans ce tp il faut executer cette commande :
-```javac -classpath "junit-console.jar;classes" -d classes test/TowerDefence/*.java``
+```javac -classpath "junit-console.jar;classes"  test/TowerDefence/*.java``
+
+Pour l'exécuter :
+ ``` java -jar junit-console.jar -classpath "test;classes" -scan-classpath ```
 
 
 ### EXECUTION DU PROGRAMME :
