@@ -1,7 +1,7 @@
 package TowerDefence;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
-import board.*;
+import TowerDefence.board.*;
 public class CellTest {
 
     @Test

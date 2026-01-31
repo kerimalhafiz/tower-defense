@@ -1,9 +1,10 @@
-package TowerDefence.test;
+package TowerDefence;
 
 import java.util.*;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 import TowerDefence.board.*;
+import TowerDefence.paths.*;
 public class BoardTest {
     @Test
     public void testBoardCreationIsCorrect(){
@@ -60,6 +61,7 @@ public class BoardTest {
             assertTrue(p.getNbColonne() >= 0 && p.getNbColonne() < cols);
         }
     }
+    
 
     
 }
