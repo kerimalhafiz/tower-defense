@@ -1,13 +1,14 @@
-package TowerDefence.test;
+package TowerDefence;
 
 import java.util.*;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 import TowerDefence.board.*;
+import TowerDefence.paths.*;
 public class BoardTest {
     @Test
     public void testBoardCreationIsCorrect(){
-        Board board = new Board(10,10);
+        Board board = new BoardOne(10,10);
         assertEquals(10,board.getNbLigne());
         assertEquals(10,board.getNbColonne());
         Cell c = board.getCell(1,2);
@@ -43,8 +44,14 @@ public class BoardTest {
     }
     @Test
     public void testPathIsNotEmpty() {
-        BoardOne cells = new BoardOne(10, 10);
-        Path path = new PathOne();
+        int rows = 10, cols = 10;
+        Cell[][] cells = new Cell[rows][cols];
+        for (int i = 0;i<rows;i++){
+            for (int j=0;j<cols;j++){
+                cells[i][j] = new Cell(new Position(i, j));
+            }
+        }
+        PathOne path = new PathOne();
         ArrayList<Position> res = path.findPath(cells);
         assertNotNull(res);
         assertFalse(res.isEmpty());
@@ -52,9 +59,14 @@ public class BoardTest {
     @Test
     public void testPathInsideGrid() {
         int rows = 6, cols = 7;
-        BoardOne b1 = new BoardOne(rows,cols);
-        Path path = new PathOne();
-        ArrayList<Position> res = path.findPath(b1);
+        Cell[][] cells = new Cell[rows][cols];
+        for (int i = 0; i<rows;i++){
+            for (int j = 0;j<cols;j++){
+                cells[i][j] = new Cell(new Position(i, j));
+            }
+        }
+        PathOne path = new PathOne();
+        ArrayList<Position> res = path.findPath(cells);
         for (Position p : res) {
             assertTrue(p.getNbLigne() >= 0 && p.getNbLigne() < rows);
             assertTrue(p.getNbColonne() >= 0 && p.getNbColonne() < cols);
