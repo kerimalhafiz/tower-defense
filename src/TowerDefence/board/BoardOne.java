@@ -62,7 +62,7 @@ public class BoardOne extends Board {
  * @param b the Balloon to remove
  */
 
-public abstract void removeBalloon(Balloon b);
+//public abstract void removeBalloon(Balloon b);
 
 }
 

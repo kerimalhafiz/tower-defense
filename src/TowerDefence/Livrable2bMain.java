@@ -21,7 +21,7 @@ public class Livrable2bMain {
         ArrayList<BalloonRfor> balloons = new ArrayList<>();
         for (int i = 0; i < Math.min(nbBalloon, paths.size()); i++) {
             float speed = 0.1f + rand.nextFloat() * 0.4f; 
-            balloons.add(new BalloonRfor(speed, 4));
+            balloons.add(new BalloonRfor(speed, 4,"Ballon1"));
         }
 
 int tick = 0;

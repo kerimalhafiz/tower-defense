@@ -37,7 +37,11 @@ public abstract class Balloon {
     public boolean isFrozen(){
         return this.frozen;
     }
-    public float setTime(float time) {
+    public void setTime(float i){
+        this.time=i;
+    }
+    public float getTime(){
+        return this.time;
     }
 
 
