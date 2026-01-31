@@ -1,4 +1,4 @@
-package board;
+package TowerDefence.board;
 
 /**
  * Represents a single cell on the game board.

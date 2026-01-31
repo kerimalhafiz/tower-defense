@@ -1,9 +1,9 @@
-package mains;
-
+package TowerDefence;
+import TowerDefence.board.*;
 import java.util.ArrayList;
 
-import board.BoardOne;
-import board.Position;
+
+
 
 /**
  * Main class for Livrable 1a.
@@ -11,21 +11,8 @@ import board.Position;
  * This program creates a board with a single random path
  * starting from the left side and ending on the right side.
  */
-public class Livrable1a {
-    /**
-     * Default constructor.
-     */
-    public Livrable1a() {
-        // nothing to initialize
-    }
-
-    /**
-     * Entry point of the program.
-     *
-     * @param args command-line arguments:
-     *             args[0] = board height
-     *             args[1] = board width
-     */
+public class Livrable1aMain {
+    
     public static void main(String[] args) {
         // Check for correct number of arguments
         if (args.length != 2) {

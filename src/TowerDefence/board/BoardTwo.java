@@ -1,7 +1,7 @@
-package board;
+package TowerDefence.board;
 
 import java.util.ArrayList;
-import paths.PathTwo;
+import TowerDefence.paths.*;
 
 /**
  * Concrete implementation of a Board with multiple straight paths.

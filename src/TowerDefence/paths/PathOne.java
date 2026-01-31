@@ -1,6 +1,6 @@
-package paths;
+package TowerDefence.paths;
 
-import board.*;
+import TowerDefence.board.*;
 import java.util.ArrayList;
 import java.util.Random;
 

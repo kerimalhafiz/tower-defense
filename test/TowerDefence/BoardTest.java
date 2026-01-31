@@ -1,8 +1,8 @@
-package test;
+package TowerDefence;
 import java.util.*;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
-import board.*;
+import TowerDefence.board.*;
 public class BoardTest {
     @Test
     public void testBoardCreation(){

@@ -24,29 +24,70 @@ Les paragraphes concernant les livrables doivent être remplis avant la date de 
 Un lien vers une image de l'UML doit être fourni (une photo d'un diagramme UML fait à la main est suffisant).
 
 ## Livrable 1
-les commandes :
- ~pour générer les javadoc
- $ javadoc -sourcepath src -subpackages paths board mains  -d docs
+### INSTRUCTIONS PRECISES :
+### COMPILATION DU PROGRAMME
+Pour compiler notre  programme, il faut executer cette commande:
+```javac -sourcepath src src/TowerDefence/*.java -d classes ``` 
 
-~pour la compilation:
- $ javac -sourcepath src src/mains/*.java -d classes 
-~pour l execution:
-  $ java -classpath classes mains.Livrable1a 10 10 
+ 
+### GENERERATION DU DOC :
+Pour generer la documentation il faut executer cette commande :
+```javadoc -sourcepath src -subpackages TowerDefence -d docs ```
+ 
 
-~pour la compilation avec l executable jar 
-    $ java -jar Livrable1a.jar 10 10
+### COMPILATION Des tests:
+Pour compiler et executer  qui m'ont ete demandes de resoudre dans ce tp il faut executer cette commande :
+```javac -classpath "junit-console.jar;classes" test\TowerDefence\*.java``
 
 
-Pour exécuter le programme avec le jar exécutable 
+### EXECUTION DU PROGRAMME :
+Il peut se faire en deux etapes soit :sans jar executable soit avec .
+### Pour exécuter le programme sans le jar exécutable 
+Pour exécuter le  programme de  il suffit de taper la commande ci apres :
+### Pour le livrable1a: 
+ ``` java -classpath classes TowerDefence.Livrable1aMain   ```
+ NB:Ensuite juste apres Livrable1a.Main rajouter les coordonnées que vous vouliez pour votre grille .
+### Pour le livrable1b:
+``` java -classpath classes TowerDefence.Livrable1bMain   ```
+NB:Ensuite juste devant Livrable1b.Main rajouter les coordonnées que vous vouliez pour votre grille et le nombre total  de  chemin que vous souhaitez.(longueur,largeur,nbchemins).
+
+
+###  Pour exécuter le programme avec le jar exécutable 
 Celui la aussi se fait soit avec un fichier manifeste soit sans fichier manifeste :
 ## sans fichier manifeste :
-Il faut compiler cette commande : ```  jar cvfe Livrable1.jar mains.Livrable1a -C classes mains  ```
-ensuite faut rajouter les parametres  juste apres. 
-Ensuite pour l'executer : ``` java -jar Livrable1.jar   ```
+Il faut compiler cette commande : 
+### Pour le livrable1a:
+``` jar cvfe Livrable1a.jar TowerDefence.Livrable1aMain -C classes TowerDefence  ```
 
+Ensuite pour l'executer : ``` java -jar Livrable1a.jar   ```
+NB:Ensuite juste devant Livrable1a.jar rajouter les coordonnées que vous vouliez pour votre grille(Longueur,Largeur).
 
-pour le deuxieme livrable il faut compiler la commande  ```  jar cvfe Livrable1b.jar mains.Livrable1b -C classes mains  ``` et passer les parametres juste apres .
+### Pour le livrable1b:
+``` jar cvfe Livrable1b.jar TowerDefence.Livrable1bMain -C classes TowerDefence  ```
+
 Ensuite pour l'executer : ``` java -jar Livrable1b.jar   ```
+NB:Ensuite juste devant Livrable1b.Main rajouter les coordonnées que vous vouliez pour votre grille et le nombre total  de  chemin que vous souhaitez.(longueur,largeur,nbchemins).
+
+## Avec fichier manifeste :
+### Pour le livrable1a:
+il faut d'abord creer un fichier manifeste nous  ici on a creer   le fichier " TowerDefence" comme manifeste puis à l'interieur on a  mis "Main-Class: TowerDefence.Livrable1aMain
+NB: dans ce fichier il doit y avoir 2 lignes a l'interieur.(la seconde est vide)
+
+ Ensuite il faut taper la commande : ``` jar cvfm Livrable1a.jar TowerDefence-manifest -C classes TowerDefence ```
+
+ Et enfin l'exécuter : ``` java -jar Livrable1a.jar  ```
+ NB:Ensuite juste devant Livrable1a.jar rajouter les coordonnées que vous vouliez pour votre grille(Longueur,Largeur).
+
+ ### Pour le livrable1b:
+ il faut d'abord creer un fichier manifeste nous  ici on a creer   le fichier " TowerDefence1" comme manifeste puis à l'interieur on a  mis "Main-Class: TowerDefence.Livrable1bMain
+ NB: dans ce fichier il doit y avoir 2 lignes a l'interieur.(la seconde est vide)
+
+ Ensuite il faut taper la commande : ``` jar cvfm Livrable1b.jar TowerDefence-manifest -C classes TowerDefence ```
+
+ Et enfin l'exécuter : ``` java -jar Livrable1b.jar  ```
+ NB:Ensuite juste devant Livrable1b.Main rajouter les coordonnées que vous vouliez pour votre grille et le nombre total  de  chemin que vous souhaitez.(longueur,largeur,nbchemins).
+
+
 
 
 

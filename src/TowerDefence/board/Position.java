@@ -1,4 +1,4 @@
-package board;
+package TowerDefence.board;
 
 /**
  * Représente une position sur un plateau à l'aide

@@ -1,6 +1,6 @@
-package Balloon;
+package TowerDefence.Balloon;
 import java.util.List;
-import board.*;
+import TowerDefence.board.*;
 
 /**
  * Abstract class representing a balloon moving on the board.

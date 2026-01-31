@@ -1,5 +1,5 @@
-package paths;
-import board.*;
+package TowerDefence.paths;
+import TowerDefence.board.*;
 import java.util.ArrayList;
 /**
  * The Path interface represents a strategy used to compute
