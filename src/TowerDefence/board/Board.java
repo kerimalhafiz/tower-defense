@@ -201,7 +201,7 @@ public void printWithPath(ArrayList<Cell> path) {
         // Avancée cellule par cellule
         while (time >= 1 && i < path.size()) {
 
-            this.affiche();
+        
             System.out.println("suite :");
 
             Position current = path.get(i);
