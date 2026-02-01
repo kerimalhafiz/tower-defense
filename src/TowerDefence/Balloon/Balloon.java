@@ -1,6 +1,4 @@
 package TowerDefence.Balloon;
-import java.util.List;
-import TowerDefence.board.*;
 
 /**
  * Abstract class representing a balloon moving on the board.
@@ -102,5 +100,8 @@ public abstract class Balloon {
       */
     public float getprogress(){
         return this.progress;
+    }
+    public String toString(){
+        return "X";
     }
 }
