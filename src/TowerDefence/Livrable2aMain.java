@@ -7,12 +7,17 @@ public class Livrable2aMain{
     public static void main(String[] args) {
 
  // 1️ Vérification des arguments
-
+    if (args.length != 3) {
+        System.out.println(
+            "Usage : java Livrable2a <largeur> <hauteur> <nbBallons>"
+        );
+        return;
+    }
 
     // 2️ Lecture des arguments
-    int width = 7;
-    int height = 7;
-    int nbBallons = 3;
+    int width = Integer.parseInt(args[0]);
+    int height = Integer.parseInt(args[1]);
+    int nbBallons = Integer.parseInt(args[2]);
         // 3️ Création du plateau et du chemin
         BoardOne board = new BoardOne(height, width);
         ArrayList<Position> path = board.path();
