@@ -201,8 +201,6 @@ public void printWithPath(ArrayList<Cell> path) {
         // Avancée cellule par cellule
         while (time >= 1 && i < path.size()) {
 
-        
-            System.out.println("suite :");
 
             Position current = path.get(i);
             Cell currentCell = this.getCell(
@@ -232,9 +230,7 @@ public void printWithPath(ArrayList<Cell> path) {
     // On stocke le temps dans le ballon
     b.setTime(cmp);
 
-    System.out.println(
-        "Ballon " + b.getId() + " sorti du chemin, temps = " + b.getTime()
-    );
+    
 }
 
     
