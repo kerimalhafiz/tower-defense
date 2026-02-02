@@ -152,7 +152,7 @@ public void printWithPath(ArrayList<Cell> path) {
     //public abstract void removeBalloon(Balloon b);
 
 
-   public void afficheWithBalloons(ArrayList<BalloonRfor> balloons, ArrayList<ArrayList<Position>> paths) {
+   /* public void afficheWithBalloons(ArrayList<BalloonRfor> balloons, ArrayList<ArrayList<Position>> paths) {
     String[][] display = new String[nbLigne][nbColonne];
     
     for (int i = 0; i < nbLigne; i++) {
@@ -176,7 +176,7 @@ public void printWithPath(ArrayList<Cell> path) {
         }
         System.out.println();
     }
-}
+} */
     public void move(List<Position> path, Balloon b) {
 
     int i = 0;
@@ -187,7 +187,7 @@ public void printWithPath(ArrayList<Cell> path) {
 
     while (i < path.size()) {
 
-        cmp++;                   // ⏱️ une itération = 1 unité de temps
+        cmp++;                   //  une itération = 1 unité de temps
 
         // Si le ballon est gelé
         if (b.isFrozen()) {

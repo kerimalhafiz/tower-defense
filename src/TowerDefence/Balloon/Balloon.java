@@ -5,9 +5,6 @@ package TowerDefence.Balloon;
  */
 public abstract class Balloon {
 
-    protected static final float PROGRESS_MIN = 0.0f;// for me i chose the cell to cut in 2 it's start to 0.0
-    protected static final float PROGRESS_MAX = 1.0f; // it's the finish of  1.0
-    protected static final int LAST_PATH_OFFSET = 1;
     protected float speed; 
     protected int resistance;
     protected float progress; // position inside the current cell
