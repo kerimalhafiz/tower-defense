@@ -6,7 +6,7 @@ import TowerDefence.board.Cell;
  * Abstract class representing a balloon moving on the board.
  */
 public abstract class Balloon {
-    
+
  protected Cell cell;
  protected float speed; 
  protected int resistance;
@@ -122,5 +122,12 @@ public abstract class Balloon {
  }
  public String toString(){
  return "X";
+ }
+ public int getPosition(){
+    return this.position;
+ }
+
+ public void setPosition(){
+    this.position+=1;
  }
 }
