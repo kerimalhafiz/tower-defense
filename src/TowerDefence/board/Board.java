@@ -100,27 +100,19 @@ public abstract  class Board {
         res += "+\n";
         return res;
     }
-
+    /**
+     * 
+     * @param path
+     * @param b
+     */
     public void move(List<Position> path, Balloon b) {
-
-
     b.setTime();
-
         // Si le ballon est gelé
         if (b.isFrozen()) {
             b.updateFrozenState();
             return;
-    
-        }
-
-        // Accumulation du temps selon la vitesse
-       // time += b.getSpeed();//b.progress
         b.AjoutProgress();
-
-        // Avancée cellule par cellule
         while (b.getprogress() >= 1 && b.getposition() < path.size()) {
-
-
             Position current = path.get(b.getposition());
             Cell currentCell = this.getCell(
                 current.getNbLigne(),
@@ -131,11 +123,9 @@ public abstract  class Board {
             if (b.getCell() != null) {
                 b.getCell().setvalueX(null);
             }
-
             // Entre dans la nouvelle cellule
             currentCell.setvalueX(b);
             b.SetCell(currentCell);
-            //time -= 1;
             b.enleveProgress();
             b.setposition();
         }
