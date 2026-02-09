@@ -131,9 +131,6 @@ public abstract  class Board {
             b.enleveProgress();
             b.setPosition();//incremente la position de 1
         }
-    
-
-
     // On stocke le temps dans le ballon
     b.setTime();
 
