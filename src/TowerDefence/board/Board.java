@@ -111,7 +111,9 @@ public abstract  class Board {
         if (b.isFrozen()) {
             b.updateFrozenState();
             return;
+        }
         b.AjoutProgress();
+
         while (b.getprogress() >= 1 && b.getPosition() < path.size()) {
             Position current = path.get(b.getPosition());
             Cell currentCell = this.getCell(
