@@ -101,33 +101,51 @@ public abstract  class Board {
         return res;
     }
 
-/**
- * Prints the board with a given path.
- * Cells belonging to the path are displayed with 'X',
- * while empty cells are displayed with '.'.
- * Row and column indices are shown to help visualization.
- *
- * @param path the list of cells representing the path
- */
-public void printWithPath(ArrayList<Cell> path) {
-    
-    System.out.print("    ");
-    for (int j = 0; j < nbColonne; j++) {
-        System.out.print(j + "   ");
-    }
-    System.out.println();
+    public void move(List<Position> path, Balloon b) {
 
-    for (int i = 0; i < nbLigne; i++) {
-        System.out.print(i + " | "); 
-        for (int j = 0; j < nbColonne; j++) {
-            if (path.contains(board[i][j])) {
-                System.out.print("X | ");
-            } else {
-                System.out.print(". | ");
-            }
+
+    b.setTime();
+
+        // Si le ballon est gelé
+        if (b.isFrozen()) {
+            b.updateFrozenState();
+            return;
+    
         }
-        System.out.println();
-    }
+
+        // Accumulation du temps selon la vitesse
+       // time += b.getSpeed();//b.progress
+        b.AjoutProgress();
+
+        // Avancée cellule par cellule
+        while (b.getprogress() >= 1 && b.getposition() < path.size()) {
+
+
+            Position current = path.get(b.getposition());
+            Cell currentCell = this.getCell(
+                current.getNbLigne(),
+                current.getNbColonne()
+            );
+
+            // Quitte l’ancienne cellule
+            if (b.getCell() != null) {
+                b.getCell().setvalueX(null);
+            }
+
+            // Entre dans la nouvelle cellule
+            currentCell.setvalueX(b);
+            b.SetCell(currentCell);
+            //time -= 1;
+            b.enleveProgress();
+            b.setposition();
+        }
+    
+
+
+    // On stocke le temps dans le ballon
+    b.setTime();
+
+    
 }
 /**
      * Adds a balloon to the board.
