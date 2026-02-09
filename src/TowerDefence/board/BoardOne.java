@@ -1,7 +1,10 @@
 package TowerDefence.board;
 
 import java.util.ArrayList;
+import java.util.List;
+
 import TowerDefence.paths.*;
+import TowerDefence.Balloon.Balloon;
 import TowerDefence.board.*;
 
 /**
@@ -13,7 +16,7 @@ import TowerDefence.board.*;
  * </p>
  */
 public class BoardOne extends Board {
-
+    ArrayList<Position> l;
     /**
      * Constructs a BoardOne with the specified number of rows and columns.
      * <p>
@@ -25,6 +28,7 @@ public class BoardOne extends Board {
      */
     public BoardOne(int nbLigne, int nbColonne) {
         super(nbLigne, nbColonne);
+        ArrayList<Position> l=this.path(this.board);
     }
 
     /**
@@ -37,9 +41,9 @@ public class BoardOne extends Board {
      *
      * @return an ArrayList of Positions representing the generated path
      */
-    public ArrayList<Position> path() {
+    public ArrayList<Position> path(Cell[][] cells) {
         PathOne p = new PathOne();
-        return p.findPath(this.board);
+        return p.findPath(cells);
     }
    /** 
 /**
@@ -63,6 +67,16 @@ public class BoardOne extends Board {
  */
 
 //public abstract void removeBalloon(Balloon b);
+/**
+     * 
+     * @param path
+     * @param b
+     */
+    public void move( Balloon b) {
+        
+        super.move(this.l, b);
+    
+}
 
 }
 
