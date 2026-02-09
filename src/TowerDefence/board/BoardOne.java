@@ -28,7 +28,7 @@ public class BoardOne extends Board {
      */
     public BoardOne(int nbLigne, int nbColonne) {
         super(nbLigne, nbColonne);
-        ArrayList<Position> l=this.path(this.board);
+        this.l=this.path(this.board);
     }
 
     /**
