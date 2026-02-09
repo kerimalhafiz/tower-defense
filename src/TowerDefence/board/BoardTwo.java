@@ -1,6 +1,9 @@
 package TowerDefence.board;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import TowerDefence.Balloon.Balloon;
 import TowerDefence.paths.*;
 
 /**
@@ -38,14 +41,15 @@ public class BoardTwo extends Board {
      * @return an ArrayList of ArrayLists of Positions, where each inner
      *         list represents a single path
      */
-    public ArrayList<ArrayList<Position>> path() {
+    public ArrayList<ArrayList<Position>> path(Cell[][] cells) {
+
         ArrayList<ArrayList<Position>> chemins = new ArrayList<>();
         PathTwo p = new PathTwo();
 
         for (int i = 0; i < this.nPaths; i++) {
-            ArrayList<Position> chemin = p.findPath(this.board);
+            ArrayList<Position> chemin = p.findPath(cells);
             while(chemins.contains(chemin)){
-                chemin = p.findPath(this.board);}
+                chemin = p.findPath(cells);}
             {chemins.add(chemin);} 
         }
 
@@ -74,6 +78,18 @@ public class BoardTwo extends Board {
  */
 
 //public abstract void removeBalloon(Balloon b);
+/**
+     * 
+     * @param path
+     * @param b
+     */
+    public void move( Balloon b) {
+        for (List<Position> path : this.path(this.board)) {
+            super.move(path, b);
+        }
+        
+    
+}
 
 
 }
