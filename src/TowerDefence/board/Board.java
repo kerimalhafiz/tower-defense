@@ -112,8 +112,8 @@ public abstract  class Board {
             b.updateFrozenState();
             return;
         b.AjoutProgress();
-        while (b.getprogress() >= 1 && b.getposition() < path.size()) {
-            Position current = path.get(b.getposition());
+        while (b.getprogress() >= 1 && b.getPosition() < path.size()) {
+            Position current = path.get(b.getPosition());
             Cell currentCell = this.getCell(
                 current.getNbLigne(),
                 current.getNbColonne()
@@ -127,7 +127,7 @@ public abstract  class Board {
             currentCell.setvalueX(b);
             b.SetCell(currentCell);
             b.enleveProgress();
-            b.setposition();//incremente la position de 1
+            b.setPosition();//incremente la position de 1
         }
     
 
