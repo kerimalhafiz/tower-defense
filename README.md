@@ -276,20 +276,35 @@ les difficultés rencontrées sont le fait de pouvoir avancer un le choix de mod
 
 ## Semaine 5
 
+
 ### Ce qui a été réalisé
+gestion d'organisation du group , apres une réunion on s'est rendu compte qu il manque une organisation du rendu du travail, apres on a corrigé les code qui marchait pas pour le livrable2b  et on avait pris comme decision de fixé une date pour chaque livrable avant de rendre , et de creer une class  Game pour eviter de code repetitif .
 
 ### Difficultés rencontrées
-
+   organisation du group, le temps pour  recorrigé le code  global  
 ### Objectifs pour la semaine et répartition du travail par membre
+### Objectifs pour la semaine et répartition du travail par membre
+- kerim abdoulaye mahamat alhafiz  correction du livrable 
+- Diallo Alpha Abdoulaye  class ballon1 et la classe de glace et le lirable1
+- Diallo Ibrahima classe Ballon 2 livrable
+- Diallo Thierno Abdoulaye BAllon 3 et la livrable
 
 ## Semaine 6
 
 ### Ce qui a été réalisé
+correction  des nos travaux des réunions et une organisation pour une meilleurs remise en chemin
 
 ### Difficultés rencontrées
+   la class Boardtwo() qui  a une liste de chemin et que 1  ballon par chemin , dont on va resoudre le diffulté pour faire  fonctionner , la methode remove() on avait pensé  depuis le debut mais pas encore implementé, la methode move() dans la class Boardtwo  aussi  
 
+### Objectifs pour la semaine et répartition du travail par membre  
 ### Objectifs pour la semaine et répartition du travail par membre
+- kerim abdoulaye mahamat alhafiz  correction du class et livrable2 et code générative
+- Diallo Alpha Abdoulaye   correction du class et livrable2 et code générative
+- Diallo Ibrahima classe  diagramme et les methodes du livrable3
+- Diallo Thierno Abdoulaye diagramme et les methodes du livrable3
 
+ 
 ## Semaine 7
 
 ### Ce qui a été réalisé
