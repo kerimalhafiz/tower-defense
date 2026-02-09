@@ -127,7 +127,7 @@ public abstract  class Board {
             currentCell.setvalueX(b);
             b.SetCell(currentCell);
             b.enleveProgress();
-            b.setposition();
+            b.setposition();//incremente la position de 1
         }
     
 
@@ -185,60 +185,6 @@ public abstract  class Board {
         System.out.println();
     }
 } */
-    public void move(List<Position> path, Balloon b) {
-
-    int i = 0;
-    float time = 0;
-
-    int cmp = 0;                 // compteur d’itérations (temps)
-    Cell previousCell = null;
-
-    while (i < path.size()) {
-
-        cmp++;                   //  une itération = 1 unité de temps
-
-        // Si le ballon est gelé
-        if (b.isFrozen()) {
-            b.updateFrozenState();
-            continue;
-        }
-
-        // Accumulation du temps selon la vitesse
-        time += b.getSpeed();
-
-        // Avancée cellule par cellule
-        while (time >= 1 && i < path.size()) {
-
-
-            Position current = path.get(i);
-            Cell currentCell = this.getCell(
-                current.getNbLigne(),
-                current.getNbColonne()
-            );
-
-            // Quitte l’ancienne cellule
-            if (previousCell != null) {
-                previousCell.setvalueX(null);
-            }
-
-            // Entre dans la nouvelle cellule
-            currentCell.setvalueX(b);
-
-            previousCell = currentCell;
-            time -= 1;
-            i++;
-        }
-    }
-
-    // Nettoyage final : le ballon sort du plateau
-    if (previousCell != null) {
-        previousCell.setvalueX(null);
-    }
-
-    // On stocke le temps dans le ballon
-    b.setTime(cmp);
-
-    
 }
 
     
