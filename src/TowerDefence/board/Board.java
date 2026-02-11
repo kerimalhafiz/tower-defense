@@ -135,6 +135,7 @@ public abstract  class Board {
 
     
 }
+
 /**
      * Adds a balloon to the board.
      * <p>
@@ -144,7 +145,12 @@ public abstract  class Board {
      *
      * @param b the Balloon to add
      */
-    public abstract void addBalloon(Balloon b);
+    public abstract void addBalloon(ArrayList<Balloon> b);
+
+public ArrayList<Balloon> getListeBalloons() {
+    
+    return this.listeBallon;
+}
 
     /**
      * Removes a balloon from the board.
