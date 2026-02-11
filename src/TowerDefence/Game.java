@@ -27,8 +27,13 @@ public class Game{
         this.b.addBalloon(this.listeBallon);
         while(this.b.getBalloons().size()!=0){
             for (int i = listeBallon.size() - 1; i >= 0; i--) {
-                Balloon b = listeBallon.get(i);
+                Balloon b = listeBallon.get(i);  
             this.b.move(b);
+            if (b.isOut()){
+                    this.b.getBalloons().remove(i);
+                    System.out.println("Le "+b.getId()+"de vitesse "+b.getSpeed()+" est sortie au temps t ="+b.getTime());
+                    this.b.removeBalloon(b);
+                }
             }
         }
         
