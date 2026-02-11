@@ -5,142 +5,266 @@ import TowerDefence.board.Position;
 import java.util.ArrayList;
 
 /**
- * Abstract class representing a balloon moving on the board.
+ * Abstract class representing a balloon.
+ * 
+ * A Balloon has:
+ * - a speed (movement per tick),
+ * - a resistance (number of damages it can take),
+ * - a progress value inside the current cell,
+ * - a frozen state,
+ * - a path it follows,
+ * - and a position index inside that path.
+ * 
+ * This class provides the base logic for movement, damage handling,
+ * freezing behavior, and path tracking.
  */
 public abstract class Balloon {
 
- protected Cell cell;
- protected float speed; 
- protected int resistance;
- protected float progress; 
-// position inside the current cell
- protected boolean frozen; 
-// si mon ballon est gele ou pas 
- protected int frozenTicks;
-// time rest to ecoul of frozen
- protected int currentPathIndex=0;
- protected String id;
- protected static int points = 0; 
-//when start the balloon the point attibuate
- protected float time; //the time 
- public int position=0;
- protected ArrayList<Position> path;
- 
- public Balloon(float speed, int resistance,String id) {
- this.speed = speed;
- this.resistance = resistance;
- this.progress = 0;
- this.frozen = false; // au debut aucun ballon n'est gele ou glacer 
- this.frozenTicks = 0;
- this.id=id;
- this.time=0;
- this.cell=null;
- this.path=null;
- }
- public void putPath(ArrayList<Position> p){
-   this.path=p;
- }
- public ArrayList<Position> getPath(){
-   return this.path;
- }
- public String getId(){
- return this.id;
- }
- public float getSpeed(){
- return this.speed;
+    /** Current cell occupied by the balloon */
+    protected Cell cell;
 
- }
- public boolean isFrozen(){
- return this.frozen;
- }
- public void AjoutProgress(){
- this.progress+=this.speed;
- }
- public void enleveProgress(){
- this.progress-=1;
- }
- public void setTime(){
- this.time++;
- }
- public float getTime(){
- return this.time;
- }
- public Cell getCell(){
- return this.cell;
- }
- public void SetCell(Cell c){
- this.cell=c;
- }
+    /** Speed of the balloon (distance progressed per tick) */
+    protected float speed;
 
- /**
- * Moves the balloon along the given path.
- */
- //public abstract void move(List<Position> path); 
+    /** Resistance of the balloon (health points) */
+    protected int resistance;
 
- /**
- * Applies damage to the balloon.
- */
- public void takeDamage(int damage) {
- resistance -= damage;
- if (resistance <0) {
- resistance=0;
- }
- if (resistance == 0) {
- points += 10;
- }
- }
+    /** Progress inside the current cell (between 0 and 1) */
+    protected float progress;
 
- /**
- * Freezes the balloon for a given number of ticks.
- */
- public void freeze(int ticks) {
- frozen = true;
- frozenTicks = ticks; // gele le ballon 
- }
+    /** Indicates whether the balloon is frozen */
+    protected boolean frozen;
 
- /**
- * Updates the frozen state.
- */
- public void updateFrozenState() {
- if (frozen) {
- frozenTicks--;
- if (frozenTicks <= 0) {
- frozen = false;
- }
- }
- }
- /**
- * hi test if the resistance is 0 return True to guid fo player the ballon is push
- * @return True if the resistance=0
- */
- public boolean isDestroyed() {
- return resistance <= 0;
- }
- /**
- * it s the getter return index actuell
- * @return currentPathIndex the index current 
- */
- public int getcurrentPathIndex(){
- return this.currentPathIndex;
- }
- /**
- * the progress actuel 
- * @return progress the progression of the ballon
- */
- public float getprogress(){
- return this.progress;
- }
- public String toString(){
- return "X";
- }
- public int getPosition(){
-    return this.position;
- }
+    /** Remaining ticks while the balloon is frozen */
+    protected int frozenTicks;
 
- public void setPosition(){
-    this.position+=1;
- }
+    /** Current index of the balloon on the path */
+    protected int currentPathIndex = 0;
 
- public Boolean isOut(){
-   return this.position>=(this.path.size()-1);//la position enregistrer l avancer sur le chemin 
-}}
+    /** Unique identifier of the balloon */
+    protected String id;
+
+    /** Static points shared by all balloons (global score counter) */
+    protected static int points = 0;
+
+    /** Time elapsed since the balloon started moving */
+    protected float time;
+
+    /** Position index representing advancement along the path */
+    public int position = 0;
+
+    /** The path followed by the balloon */
+    protected ArrayList<Position> path;
+
+    /**
+     * Constructs a Balloon with the given speed, resistance and identifier.
+     *
+     * @param speed movement speed per tick
+     * @param resistance health value of the balloon
+     * @param id unique identifier of the balloon
+     */
+    public Balloon(float speed, int resistance, String id) {
+        this.speed = speed;
+        this.resistance = resistance;
+        this.progress = 0;
+        this.frozen = false;
+        this.frozenTicks = 0;
+        this.id = id;
+        this.time = 0;
+        this.cell = null;
+        this.path = null;
+    }
+
+    /**
+     * Assigns a path to the balloon.
+     *
+     * @param p list of positions representing the path
+     */
+    public void putPath(ArrayList<Position> p) {
+        this.path = p;
+    }
+
+    /**
+     * Returns the current path of the balloon.
+     *
+     * @return the path followed by the balloon
+     */
+    public ArrayList<Position> getPath() {
+        return this.path;
+    }
+
+    /**
+     * Returns the balloon identifier.
+     *
+     * @return balloon id
+     */
+    public String getId() {
+        return this.id;
+    }
+
+    /**
+     * Returns the speed of the balloon.
+     *
+     * @return speed value
+     */
+    public float getSpeed() {
+        return this.speed;
+    }
+
+    /**
+     * Checks if the balloon is currently frozen.
+     *
+     * @return true if frozen, false otherwise
+     */
+    public boolean isFrozen() {
+        return this.frozen;
+    }
+
+    /**
+     * Increases the progress of the balloon according to its speed.
+     */
+    public void AjoutProgress() {
+        this.progress += this.speed;
+    }
+
+    /**
+     * Decreases the progress by one full cell (used when passing to next cell).
+     */
+    public void enleveProgress() {
+        this.progress -= 1;
+    }
+
+    /**
+     * Increments the internal time counter by one tick.
+     */
+    public void setTime() {
+        this.time++;
+    }
+
+    /**
+     * Returns the elapsed time of the balloon.
+     *
+     * @return time value
+     */
+    public float getTime() {
+        return this.time;
+    }
+
+    /**
+     * Returns the current cell occupied by the balloon.
+     *
+     * @return current cell
+     */
+    public Cell getCell() {
+        return this.cell;
+    }
+
+    /**
+     * Sets the current cell of the balloon.
+     *
+     * @param c new cell
+     */
+    public void SetCell(Cell c) {
+        this.cell = c;
+    }
+
+    /**
+     * Applies damage to the balloon.
+     * If resistance becomes zero, global points are increased.
+     *
+     * @param damage amount of damage to apply
+     */
+    public void takeDamage(int damage) {
+        resistance -= damage;
+        if (resistance < 0) {
+            resistance = 0;
+        }
+        if (resistance == 0) {
+            points += 10;
+        }
+    }
+
+    /**
+     * Freezes the balloon for a given number of ticks.
+     *
+     * @param ticks number of ticks to freeze
+     */
+    public void freeze(int ticks) {
+        frozen = true;
+        frozenTicks = ticks;
+    }
+
+    /**
+     * Updates the frozen state at each tick.
+     * When frozenTicks reaches zero, the balloon becomes active again.
+     */
+    public void updateFrozenState() {
+        if (frozen) {
+            frozenTicks--;
+            if (frozenTicks <= 0) {
+                frozen = false;
+            }
+        }
+    }
+
+    /**
+     * Checks if the balloon has been destroyed.
+     *
+     * @return true if resistance is zero or below
+     */
+    public boolean isDestroyed() {
+        return resistance <= 0;
+    }
+
+    /**
+     * Returns the current index of the balloon on the path.
+     *
+     * @return current path index
+     */
+    public int getcurrentPathIndex() {
+        return this.currentPathIndex;
+    }
+
+    /**
+     * Returns the current progress value inside the cell.
+     *
+     * @return progress value
+     */
+    public float getprogress() {
+        return this.progress;
+    }
+
+    /**
+     * String representation of the balloon (displayed on the board).
+     *
+     * @return "X" symbol
+     */
+    public String toString() {
+        return "X";
+    }
+
+    /**
+     * Returns the current position index of the balloon.
+     *
+     * @return position index
+     */
+    public int getPosition() {
+        return this.position;
+    }
+
+    /**
+     * Increments the position index of the balloon.
+     */
+    public void setPosition() {
+        this.position += 1;
+    }
+
+    /**
+     * Checks whether the balloon has reached the end of its path.
+     *
+     * @return true if balloon reached or exceeded last position
+     */
+    public Boolean isOut() {
+        return this.position >= (this.path.size() - 1);
+    }
+}
