@@ -55,7 +55,13 @@ public class BoardOne extends Board {
  * @param b the Balloon to add
  */
 
-//public abstract void addBalloon(Balloon b);
+public  void addBalloon(ArrayList<Balloon> b){
+    this.listeBallon=b;
+    for(Balloon balloon : this.listeBallon){
+        balloon.putPath(this.l);
+        balloon.SetCell(this.getCell(this.l.get(0).getNbLigne(),this.l.get(0).getNbColonne()));
+    }
+}
 
 /**
  * Removes a balloon from the board.

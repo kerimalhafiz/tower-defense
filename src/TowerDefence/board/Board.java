@@ -15,7 +15,7 @@ public abstract  class Board {
 
     /**the list of ballon */
 
-    private ArrayList<Balloon> listeBallon;
+    protected  ArrayList<Balloon> listeBallon;
     /** The array of cells composing the board. */
     protected Cell[][] board;
 
@@ -144,7 +144,7 @@ public abstract  class Board {
      *
      * @param b the Balloon to add
      */
-    //public abstract void addBalloon(Balloon b);
+    public abstract void addBalloon(Balloon b);
 
     /**
      * Removes a balloon from the board.
