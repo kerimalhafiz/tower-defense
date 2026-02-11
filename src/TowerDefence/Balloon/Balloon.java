@@ -142,6 +142,5 @@ public abstract class Balloon {
  }
 
  public Boolean isOut(){
-   return this.cell.getPosition()==this.path.get(this.path.size()-1);//derniere cellulle est la cellule cureent
- }
-}
+   return this.position>=(this.path.size()-1);//la position enregistrer l avancer sur le chemin 
+}}
