@@ -18,7 +18,7 @@ public class BoardTwo extends Board {
 
     /** Number of paths to generate on the board */
     private int nPaths;
-
+    private ArrayList<ArrayList<Position>> l;
     /**
      * Constructs a BoardTwo with the given dimensions and number of paths.
      * 
@@ -29,6 +29,7 @@ public class BoardTwo extends Board {
     public BoardTwo(int l, int c, int n) {
         super(l, c);
         this.nPaths = n;
+        this.l=this.path(board);
     }
 
     /**
@@ -56,7 +57,7 @@ public class BoardTwo extends Board {
         return chemins;
     }
 
-       /** 
+       
 /**
  * Adds a balloon to the board.
  * 
@@ -65,8 +66,21 @@ public class BoardTwo extends Board {
  *
  * @param b the Balloon to add
  */
+    
+public  void addBalloon(ArrayList<Balloon> b){
+    this.listeBallon=b;
+    int i=0;
+    for(Balloon balloon : this.listeBallon){
+        balloon.putPath(this.l.get(i));
+        balloon.SetCell(this.getCell(this.l.get(i).get(0).getNbLigne(),this.l.get(i).get(0).getNbColonne()));
+        i++;
+        if(i>=this.l.size()){
+            i=0;
+        }
+    }
+}
 
-//public abstract void addBalloon(Balloon b);
+
 
 /**
  * Removes a balloon from the board.
