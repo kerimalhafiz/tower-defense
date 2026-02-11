@@ -140,4 +140,8 @@ public abstract class Balloon {
  public void setPosition(){
     this.position+=1;
  }
+
+ public Boolean isOut(){
+   return this.cell.getPosition()==this.path.get(this.path.size()-1);//derniere cellulle est la cellule cureent
+ }
 }
