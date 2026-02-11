@@ -79,8 +79,7 @@ public  void addBalloon(ArrayList<Balloon> b){
      * @param b
      */
     public void move( Balloon b) {
-        
-        super.move(this.l, b);
+        super.move(b);
     
 }
 

@@ -98,9 +98,8 @@ public  void addBalloon(ArrayList<Balloon> b){
      * @param b
      */
     public void move( Balloon b) {
-        for (List<Position> path : this.path(this.board)) {
-            super.move(path, b);
-        }
+     super.move(b);
+        
         
     
 }
