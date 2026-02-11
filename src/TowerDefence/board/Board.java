@@ -130,10 +130,16 @@ public abstract  class Board {
             b.enleveProgress();
             b.setPosition();//incremente la position de 1
         }
+        if(b.isOut()){
+            this.removeBalloon(b);
+        }
     // On stocke le temps dans le ballon
     b.setTime();
 
     
+}
+public ArrayList <Balloon> getBalloons(){
+    return this.listeBallon;
 }
 
 /**
@@ -161,7 +167,10 @@ public ArrayList<Balloon> getListeBalloons() {
      *
      * @param b the Balloon to remove
      */
-    //public abstract void removeBalloon(Balloon b);
+    public void removeBalloon(Balloon b){
+        this.listeBallon.remove(b);
+        b.getCell().setvalueX(null);
+    }
 
 
    /* public void afficheWithBalloons(ArrayList<BalloonRfor> balloons, ArrayList<ArrayList<Position>> paths) {
