@@ -1,6 +1,8 @@
 package TowerDefence.Balloon;
 
 import TowerDefence.board.Cell;
+import TowerDefence.board.Position;
+import java.util.ArrayList;
 
 /**
  * Abstract class representing a balloon moving on the board.
@@ -22,6 +24,7 @@ public abstract class Balloon {
 //when start the balloon the point attibuate
  protected float time; //the time 
  public int position=0;
+ protected ArrayList<Position> path;
  
  public Balloon(float speed, int resistance,String id) {
  this.speed = speed;
@@ -32,6 +35,13 @@ public abstract class Balloon {
  this.id=id;
  this.time=0;
  this.cell=null;
+ this.path=null;
+ }
+ public void putPath(ArrayList<Position> p){
+   this.path=p;
+ }
+ public ArrayList<Position> getPath(){
+   return this.path;
  }
  public String getId(){
  return this.id;

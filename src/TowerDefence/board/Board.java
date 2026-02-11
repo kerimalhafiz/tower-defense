@@ -1,7 +1,6 @@
 package TowerDefence.board;
 import TowerDefence.Balloon.*;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * the board of the game
@@ -105,7 +104,7 @@ public abstract  class Board {
      * @param path
      * @param b
      */
-    public void move(List<Position> path, Balloon b) {
+    public void move(Balloon b) {
     b.setTime();
         // Si le ballon est gelé
         if (b.isFrozen()) {
@@ -114,8 +113,8 @@ public abstract  class Board {
         }
         b.AjoutProgress();
 
-        while (b.getprogress() >= 1 && b.getPosition() < path.size()) {
-            Position current = path.get(b.getPosition());
+        while (b.getprogress() >= 1 && b.getPosition() <  b.getPath().size()) {
+            Position current =  b.getPath().get(b.getPosition());
             Cell currentCell = this.getCell(
                 current.getNbLigne(),
                 current.getNbColonne()
