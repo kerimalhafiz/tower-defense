@@ -1,3 +1,4 @@
+package TowerDefence;
 import TowerDefence.Balloon.Balloon;
 import TowerDefence.Balloon.BasicBalloon;
 import TowerDefence.board.Board;
@@ -12,6 +13,8 @@ public class Game{
     public Game(Board b,int nbBallons){
       this.b=b;
       this.n=nbBallons;
+      this.listeBallon = new ArrayList<>();
+
     Random rand = new Random();
       for (int i = 1; i <= nbBallons; i++) {
             float speed = 0.5f + rand.nextFloat() * 2.0f; // vitesse aléatoire
@@ -23,7 +26,8 @@ public class Game{
     public void play(){
         this.b.addBalloon(this.listeBallon);
         while(this.b.getBalloons().size()!=0){
-            for(Balloon b:this.b.getListeBalloons()){
+            for (int i = listeBallon.size() - 1; i >= 0; i--) {
+                Balloon b = listeBallon.get(i);
             this.b.move(b);
             }
         }
