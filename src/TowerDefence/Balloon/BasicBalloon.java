@@ -6,7 +6,7 @@ package TowerDefence.Balloon;
  */
 public class BasicBalloon extends Balloon {
 
-    public BasicBalloon(float speed, int resistance,String id) {
+    public BasicBalloon(float speed, int resistance, String id) {
         super(speed, resistance,id);
     }
 }
