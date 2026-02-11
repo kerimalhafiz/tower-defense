@@ -39,8 +39,8 @@ jar:
     - make jar
   artifacts:
     paths:
-      - Livrable2A.jar
-      - Livrable2B.jar
+      - Livrable*A.jar
+      - Livrable*B.jar
 
 docs:
   stage: docs
