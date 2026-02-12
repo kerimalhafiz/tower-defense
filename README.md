@@ -161,7 +161,22 @@ Compilation, exécution et lancement des tests via la ligne de commande
 ### Difficultés restant à résoudre
    
 ## Livrable 3
+###les commades pour la compilation:
 
+compiler:
+```make compile```
+###pour executer :
+    ```make run3a apram``
+    ```make run3b apram``
+###pour la cretation du jar executable  du livrable2b et livrable1a :
+    ```make livrable3b.jar```
+    ```make livrable3a.jar ```
+pour l'execution avec le jar :
+    ``` make runjar3a param```
+    ``` make runjar3a param```
+pour la documentation:
+```make javadoc ```
+ 
 ### Atteinte des objectifs
 
 ### Difficultés restant à résoudre
@@ -284,11 +299,29 @@ les difficultés rencontrées sont le fait de pouvoir avancer un le choix de mod
 
 
 ### Ce qui a été réalisé
-gestion d'organisation du group , apres une réunion on s'est rendu compte qu il manque une organisation du rendu du travail, apres on a corrigé les code qui marchait pas pour le livrable2b  et on avait pris comme decision de fixé une date pour chaque livrable avant de rendre , et de creer une class  Game pour eviter de code repetitif .
+Après une réunion d’équipe, nous nous sommes rendu compte qu’il manquait une réelle organisation concernant le rendu du travail. En effet, certaines parties du projet n’étaient pas suffisamment coordonnées, ce qui a entraîné des erreurs et un manque de cohérence dans le code.
+
+Suite à ce constat, nous avons pris plusieurs décisions :
+
+Nous avons corrigé les parties du code qui ne fonctionnaient pas dans le Livrable 2b.
+
+Nous avons décidé de fixer une date interne pour finaliser chaque livrable avant la date officielle de rendu, afin d’avoir le temps de tester et corriger les éventuels problèmes.
+
+Nous avons amélioré la structure du projet en créant une classe Game afin d’éviter la répétition de code entre les différents programmes principaux (Livrable2a et Livrable2b).
+Cette classe permet de centraliser la logique principale du jeu (gestion du plateau, des chemins, des ballons et du temps), ce qui rend le code plus clair, plus maintenable et plus évolutif.
+
+Ces changements ont permis une meilleure organisation du travail et une amélioration de la qualité globale du projet
 
 ### Difficultés rencontrées
-   organisation du group, le temps pour  recorrigé le code  global  
-### Objectifs pour la semaine et répartition du travail par membre
+Organisation du groupe :
+Nous avons constaté qu’une bonne entente et une confiance mutuelle entre les membres ne suffisent pas toujours à garantir une organisation efficace. Il est nécessaire d’avoir une personne qui coordonne le travail et assure un suivi global du projet.
+
+Nous avons également compris l’importance d’avoir un membre capable d’anticiper les différents scénarios possibles (problèmes techniques, retards, incohérences dans la modélisation, difficultés d’intégration du code). Cette vision d’ensemble permet d’éviter certains blocages et de mieux structurer le développement.
+
+Temps nécessaire pour corriger le code global :
+L’intégration des différentes parties développées par les membres du groupe a nécessité un travail important de relecture et de correction. Le temps consacré au débogage et à l’harmonisation du code a été plus conséquent que prévu.
+
+Ces difficultés nous ont permis de mieux comprendre l’importance d’une organisation claire, d’une répartition précise des responsabilités et d’une planification anticipée.### Objectifs pour la semaine et répartition du travail par membre
 ### Objectifs pour la semaine et répartition du travail par membre
 - kerim abdoulaye mahamat alhafiz  correction du livrable 
 - Diallo Alpha Abdoulaye  class ballon1 et la classe de glace et le lirable1
