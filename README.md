@@ -171,11 +171,15 @@ compiler:
 ###pour la cretation du jar executable  du livrable2b et livrable1a :
     ```make livrable3b.jar```
     ```make livrable3a.jar ```
-pour l'execution avec le jar :
+###pour l'execution avec le jar :
     ``` make runjar3a param```
     ``` make runjar3a param```
-pour la documentation:
+###pour la documentation:
 ```make javadoc ```
+###pour le test
+```make test ```
+
+
  
 ### Atteinte des objectifs
 
