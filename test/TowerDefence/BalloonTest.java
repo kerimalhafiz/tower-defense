@@ -39,4 +39,16 @@ public class BalloonTest {
         b1.takeDamage(3);
         assertTrue(b1.isDestroyed());
     }
+        @Test
+    void testFreezeAndUnfreeze() {
+        b1.freeze(2);
+        assertTrue(b1.isFrozen());
+
+        b1.updateFrozenState(); 
+        assertTrue(b1.isFrozen());
+
+        b1.updateFrozenState(); 
+        assertFalse(b1.isFrozen());
+    }
+
 }
