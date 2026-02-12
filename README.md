@@ -121,14 +121,20 @@ La classe BoardTwo est une implémentation concrète permettant de générer plu
 
 ### INSTRUCTIONS PRECISES :
 ### COMPILATION DU PROGRAMME
-Pour compiler notre  programme, il faut executer cette commande:
-```javac -sourcepath src src/TowerDefence/*.java -d classes ```
-pour executer :
-    ```java -classpath classes TowerDefence.Livrable2bMain param param parm parm```
-pour la cretation du jar executable :
+###Pour compiler notre  programme, il faut executer cette commande:
+```rm -rf classes/*
+javac -sourcepath src -d classes \
+  src/TowerDefence/Livrable2aMain.java \
+  src/TowerDefence/Livrable2bMain.java
+```
+###pour executer :
+    ```java -classpath classes TowerDefence.Livrable2bMain param param parm(sachant que des entier)``
+###pour la cretation du jar executable  du livrable2b et livrable1a :
     ```jar cvfe Livrable2b.jar TowerDefence.Livrable2bMain -C classes .```
+    ```jar cvfe Livrable2a.jar TowerDefence.Livrable2aMain -C classes .```
 pour l'execution avec le jar :
     ``` java -jar Livrable2b.jar parm parm parm parm ```
+     ``` java -jar Livrableab.jar parm parm parm parm ```
 pour la documentation:
 ```javadoc -sourcepath src -subpackages TowerDefence -d docs ```
 

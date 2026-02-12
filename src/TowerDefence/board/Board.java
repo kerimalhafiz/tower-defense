@@ -100,9 +100,8 @@ public abstract  class Board {
         return res;
     }
     /**
-     * 
-     * @param path
-     * @param b
+     *this function move the balloon and also 
+     * @param b the balloon for move in the board 
      */
     public void move(Balloon b) {
     b.setTime();
