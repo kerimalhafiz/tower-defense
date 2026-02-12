@@ -13,6 +13,7 @@ public class Cell{
       /** Position of the cell on the board */
     private Position position;
 
+
     /** Display value of the cell (default is ".") */
     private Balloon value;
 
@@ -70,7 +71,11 @@ public class Cell{
         }
         else{return this.value.toString();}
     }
-
-
-
+    /**
+     * the currenct Balloon
+     * @return value
+     */
+    public Balloon getValue() {
+        return this.value;
+    }
 }

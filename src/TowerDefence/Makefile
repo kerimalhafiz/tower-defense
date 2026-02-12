@@ -23,7 +23,6 @@ run3a:compile
 	java -classpath classes TowerDefence.Livrable3aMain $(ARGS)
 run3b:compile
 	java -classpath classes TowerDefence.Livrable3bMain $(ARGS)
-
 livrable3a.jar:compile
 	jar cvfe livrable3a.jar TowerDefence.Livrable3aMain -C classes .
 livrable3b.jar:compile
