@@ -38,8 +38,8 @@ public class BoardTwo extends Board {
      * For each path, a new straight path is generated using PathTwo
      * and added to the list of paths. Cells that belong to the paths
      * are marked with "x".
-     * 
-     * @return an ArrayList of ArrayLists of Positions, where each inner
+     * @param cells cells 
+     * @return  chemin .an ArrayList of ArrayLists of Positions, where each inner
      *         list represents a single path
      */
     public ArrayList<ArrayList<Position>> path(Cell[][] cells) {
@@ -81,26 +81,13 @@ public  void addBalloon(ArrayList<Balloon> b){
 }
 
 
-
-/**
- * Removes a balloon from the board.
- * 
- * Implementations should remove the balloon from the board
- * (for example, by removing it from a list of balloons or clearing the cell it occupies).
- *
- * @param b the Balloon to remove
- */
-
-//public abstract void removeBalloon(Balloon b);
-/**
-     * 
-     * @param path
-     * @param b
+    /**
+     * the function move the balloon in the current position to the next position 
+     * @param b the currennt balloon for the move  
      */
     public void move( Balloon b) {
-     super.move(b);
-          
-}
+        super.move(b);
+    }
 
 
 }

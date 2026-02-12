@@ -38,8 +38,8 @@ public class BoardOne extends Board {
      * from a random entry row and ending at a different exit row. The path
      * is returned as a list of Positions representing the cells in the path.
      * </p>
-     *
-     * @return an ArrayList of Positions representing the generated path
+     *@param cells  cells of the path
+     * @return  path an ArrayList of Positions representing the generated path
      */
     public ArrayList<Position> path(Cell[][] cells) {
         PathOne p = new PathOne();
@@ -73,9 +73,8 @@ public  void addBalloon(ArrayList<Balloon> b){
  */
 
     /**
-     * 
-     * @param path
-     * @param b
+     * the function move the balloon in the current position to the next position 
+     * @param b the currennt balloon for the move  
      */
     public void move( Balloon b) {
         super.move(b);

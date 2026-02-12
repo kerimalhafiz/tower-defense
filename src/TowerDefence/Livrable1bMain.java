@@ -7,7 +7,16 @@ import java.util.ArrayList;
  * Classe principale permettant d'exécuter le livrable 1b.
  */
 public class Livrable1bMain {
-    
+     /**
+      * the default constructor for the documentation
+      */
+    public Livrable1bMain(){
+
+    }
+    /**
+     *  we create the  board two
+     * @param args string
+     */
     public static void main(String[] args) {
         // Check for correct number of arguments
         if (args.length != 3) {

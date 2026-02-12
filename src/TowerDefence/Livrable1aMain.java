@@ -12,7 +12,14 @@ import java.util.ArrayList;
  * starting from the left side and ending on the right side.
  */
 public class Livrable1aMain {
-    
+     /**
+      * the  default constructor
+      */
+    public Livrable1aMain(){} 
+    /***
+     * it's  the  main run the programme of the create the boardone 
+     * @param args args 
+     */
     public static void main(String[] args) {
         // Check for correct number of arguments
         if (args.length != 2) {

@@ -135,6 +135,10 @@ public abstract  class Board {
 
     
 }
+/**
+ *  it's the getteur we return the listBalloon
+ * @return listeBallon 
+ */
 public ArrayList <Balloon> getBalloons(){
     return this.listeBallon;
 }
@@ -150,10 +154,7 @@ public ArrayList <Balloon> getBalloons(){
      */
     public abstract void addBalloon(ArrayList<Balloon> b);
 
-public ArrayList<Balloon> getListeBalloons() {
-    
-    return this.listeBallon;
-}
+
 
     /**
      * Removes a balloon from the board.

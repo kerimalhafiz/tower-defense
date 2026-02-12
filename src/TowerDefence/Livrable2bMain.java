@@ -6,8 +6,15 @@ import TowerDefence.board.*;
  * Classe principale permettant d'exécuter le livrable 1b.
  */
 public class Livrable2bMain {
+     /**
+      * constructor of the class
+      */
+    public Livrable2bMain(){};
  
-
+    /**
+     *  we create the ballon and move the game
+     * @param args string 
+     */
     public static void main(String[] args) {
 
    if (args.length != 3) {
