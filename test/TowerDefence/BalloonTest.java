@@ -1,82 +1,42 @@
-package test;
-import board.*;
-import java.util.*;
-import Balloons.*;
+package TowerDefence;
+import TowerDefence.*;
+import TowerDefence.Balloon.Balloon;
+import TowerDefence.Balloon.BasicBalloon;
 
-import org.junit.jupiter.api.Test;
+import java.util.*;
+import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.Test;
 
 
 public class BalloonTest {
-    
-  @Test
-    public void testInitialState() {
-        BalloonRfor b = new BalloonRfor(0.5f, 4);
 
-        assertEquals(0, b.getcurrentPathIndex());
-        assertEquals(0.0f, b.getprogress(), 0.0001);
+   private BasicBalloon b1;
+   private BasicBalloon b2;
+   @BeforeEach
+   public void before(){
+    this.b1=new BasicBalloon(2f, 3,"xe");
+    this.b2= new BasicBalloon(3f, 0, "mo");
+   }
+
+
+ @Test
+    void testGettersAndDefaults() {
+        assertEquals("xe", b1.getId());
+        assertEquals(2f, b1.getSpeed(), 1e-6);
+        assertFalse(b1.isFrozen());
+        assertEquals(0f, b1.getprogress(), 1e-6);
+        assertEquals(0f, b1.getTime(), 1e-6);
+        assertEquals(0, b1.getPosition());
+        assertEquals("X", b1.toString());
     }
 
     @Test
-    public void testMoveInsideCell() {
-        BalloonRfor b = new BalloonRfor(0.25f, 4);
-
-        ArrayList<Position> path = new ArrayList<>();
-        path.add(new Position(0, 0));
-        path.add(new Position(0, 1));
-
-        b.move(path);
-
-        assertEquals(0, b.getcurrentPathIndex());
-        assertTrue(b.getprogress() > 0);
-        assertTrue(b.getprogress() < 1);
-    }
-
-    @Test
-    public void testMoveToNextCell() {
-        BalloonRfor b = new BalloonRfor(1.0f, 4);
-
-        ArrayList<Position> path = new ArrayList<>();
-        path.add(new Position(0, 0));
-        path.add(new Position(0, 1));
-
-        b.move(path);
-
-        assertEquals(1, b.getcurrentPathIndex());
-        assertTrue(b.getprogress() < 1);
-    }
-
-    @Test
-    public void testMultipleMoves() {
-        BalloonRfor b = new BalloonRfor(0.5f, 4);
-
-        ArrayList<Position> path = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            path.add(new Position(0, i));
-        }
-
-        for (int i = 0; i < 10; i++) {
-            b.move(path);
-        }
-
-        assertTrue(b.getcurrentPathIndex() > 0);
-        assertTrue(b.getcurrentPathIndex() <= path.size());
-    }
-
-    @Test
-    public void testEndOfPath() {
-        BalloonRfor b = new BalloonRfor(2.0f, 4);
-
-        ArrayList<Position> path = new ArrayList<>();
-        for (int i = 0; i < 3; i++) {
-            path.add(new Position(0, i));
-        }
-
-        for (int i = 0; i < 10; i++) {
-            b.move(path);
-        }
-
-        assertEquals(path.size(), b.getcurrentPathIndex());
-        assertEquals(1.0f, b.getprogress(), 0.0001);
+    void testDestroyed() {
+        assertTrue(b2.isDestroyed());     
+        assertFalse(b1.isDestroyed());     
+        b1.takeDamage(3);
+        assertTrue(b1.isDestroyed());
     }
 }
