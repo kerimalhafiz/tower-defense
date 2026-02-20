@@ -3,6 +3,9 @@ package TowerDefence.tower;
 import TowerDefence.Balloon.*;
 import TowerDefence.board.*;
 import java.util.ArrayList;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 public abstract class Tour {
 
     protected Projectile projectile;
@@ -10,6 +13,7 @@ public abstract class Tour {
     protected int cadence;
     protected double cout;
     protected Position position;
+    private ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
 
     public Tour(Projectile projectile, int portee, int cadence, double cout, Position position) {
         this.projectile = projectile;
@@ -17,6 +21,8 @@ public abstract class Tour {
         this.cadence = cadence;
         this.cout = cout;
         this.position = position;
+        
+        
     }
 
 
@@ -66,5 +72,18 @@ public abstract void tirer(Board b);
     public abstract void augmenterPortee();
     public abstract void augmenterCadence();
     public abstract void augmenterPuissance();
+
+
+
+    public void startTir(Board b) {
+        scheduler.scheduleAtFixedRate(() -> tirer(b),
+                0,                 // délai initial
+                cadence,           // période
+                TimeUnit.MILLISECONDS);
+    }
+
+     public void stopTir() {
+        scheduler.shutdownNow();
+    }
 
 }
