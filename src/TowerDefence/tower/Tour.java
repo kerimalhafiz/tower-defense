@@ -55,6 +55,9 @@ public abstract class Tour {
 }
     return voisins;
 }
+public String toString(){
+    return "T";
+}
 
 
 public abstract void tirer(Board b);
