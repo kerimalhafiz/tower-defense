@@ -18,15 +18,15 @@ public class TourBombe extends Tour{
 
         if (!cibles.isEmpty()) {
             for (Balloon b : cibles) { 
-                if (!b.isDestroyed() && !b.isOut()){
-                    b.takeDamage(projectile.getDamage());
-                    board.affiche();
-                }
+                b.takeDamage(projectile.getDamage());
+                board.affiche();
+                System.out.println("le ballon :"+b.getId()+"a ete detruit");
+                
                 
             }
         }
     }
-     public void augmenterPortee() {
+    public void augmenterPortee() {
         this.portee *= 1.5;
     }
 
