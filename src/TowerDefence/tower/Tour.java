@@ -78,14 +78,14 @@ public abstract void tirer(Board b);
 
 
     public void startTir(Board b) {
-        scheduler.scheduleAtFixedRate(() -> tirer(b),
-                0,                 // délai initial
-                cadence,           // période
-                TimeUnit.MILLISECONDS);
+    scheduler.scheduleAtFixedRate(() -> tirer(b),
+            0,                 // délai initial
+            cadence,           // période
+            TimeUnit.MILLISECONDS);
     }
 
-     public void stopTir() {
-        scheduler.shutdownNow();
+    public void stopTir() {
+    scheduler.shutdownNow();
     }
 
 }
