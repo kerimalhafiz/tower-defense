@@ -24,10 +24,10 @@ public class Gorille extends Tour {
         if (!cibles.isEmpty()) {
             Random rand = new Random();
             Balloon cible = cibles.get(rand.nextInt(cibles.size())); 
-            if (!cible.isDestroyed() && !cible.isOut()){
-                cible.takeDamage(projectile.getDamage());
-                board.affiche();
-            }
+            cible.takeDamage(projectile.getDamage());
+            board.affiche();
+            System.out.println("le ballon :"+cible.getId()+"a ete detruit");
+            
             
         }
     }
