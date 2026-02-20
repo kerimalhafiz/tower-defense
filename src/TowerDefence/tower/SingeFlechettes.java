@@ -4,18 +4,18 @@ import TowerDefence.Balloon.*;
 
 public class SingeFlechettes extends Tour{
 
- static  final double nb=1.25; 
-static  final double nv=0.75; 
-    protected 
+   private static  final double nb=1.25; 
+   private static  final double nv=0.75; 
+    
     public SingeFlechettes(Position position){
         super(new Projectile(1,"flechettes"),100,1000,200,position);
     }
     public void augmenterPortee(){
-        this.portee *=1.25;
+        this.portee *=nb;
     }
 
     public void augmenterCadence(){
-        this.cadence  *= 0.75;
+        this.cadence  *= nv;
     }
     public void augmenterPuissance() {
         this.projectile = new Projectile(this.projectile.getDamage()+1,"flechette");
