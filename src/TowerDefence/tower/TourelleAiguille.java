@@ -1,0 +1,12 @@
+ublic class TourelleAiguille extends Tour{
+    public TourelleAiguille(Position position){
+        super(new Projectile(1),80,1200,350,position);
+    }
+    public void augmenterPortee(){
+        this.portee = this.portee*1,2;
+    }
+
+    public void augmenterCadence(){
+        this.cadence = this.cadence * 0,75
+    }
+}
