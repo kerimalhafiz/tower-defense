@@ -10,8 +10,8 @@ public class SingeFlechettes extends Tour{
    
    
     
-    public SingeFlechettes(Position position){
-        super(new Projectile("flechettes",1),100,1000,200,position);
+    public SingeFlechettes(){
+        super(new Projectile("flechettes",1),100,1000,200);
     }
     public void augmenterPortee(){
         this.portee *=1.25;

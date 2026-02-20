@@ -1,22 +1,25 @@
 package TowerDefence.tower;
+import java.util.ArrayList;
+
+import TowerDefence.Balloon.Balloon;
 import TowerDefence.board.Board;
 import TowerDefence.board.Position;
 
 public class SingeTireurElite extends Tour{
-    private static  final double nb=1.25; 
-    private static  final double nv=0.75;
-    private static final double val_infinie = 10000;
-    public SingeTireurElite(Position position){
-        super(new Projectile(4,"singe tireur elite"),val_infinie,2000,500,position);
+    
+    
+   
+    public SingeTireurElite(){
+        super(new Projectile("singe tireur elite",4),10000,2000,500);
     }
     public void augmenterCadence(){
-        this.cadence *= nv;
+        this.cadence *= 0.75;
     }
     public void augmenterPuissance() {
-        this.projectile = new Projectile(this.projectile.getDamage()+2,"singe tireur elite");
+        projectile.setDamage(projectile.getDamage() + 2);
         
     }
-    public void cibler(Board board){};
+    
     public void tirer(Board b){
         ArrayList<Balloon> ballons_voisin =neighborhood(b);
         if (ballons_voisin == null){
@@ -27,7 +30,7 @@ public class SingeTireurElite extends Tour{
                 ballon.takeDamage(this.projectile.getDamage());
             }
         }
-    };
-    public void augmenterPortee(){};
+    }
+    
   
 }

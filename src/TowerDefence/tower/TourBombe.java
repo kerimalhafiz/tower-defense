@@ -8,8 +8,8 @@ import TowerDefence.board.*;
 public class TourBombe extends Tour{
 
 
-    public TourBombe(Position position) {
-        super(new Projectile("TourBombe",2), 150, 1800, 600, position);
+    public TourBombe() {
+        super(new Projectile("TourBombe",2), 150, 1800, 600);
     }
 
 

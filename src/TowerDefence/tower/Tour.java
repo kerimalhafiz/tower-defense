@@ -71,7 +71,7 @@ public String toString(){
 public abstract void tirer(Board b);
 
     
-    public abstract void augmenterPortee();
+    //public abstract void augmenterPortee();
     public abstract void augmenterCadence();
     public abstract void augmenterPuissance();
 

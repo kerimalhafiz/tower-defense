@@ -11,8 +11,8 @@ public class Gorille extends Tour {
 
 
 
-    public Gorille(Position position) {
-        super(new Projectile("Gorille",2), 200, 300, 1200, position);
+    public Gorille() {
+        super(new Projectile("Gorille",2), 200, 300, 1200);
     }
 
     
