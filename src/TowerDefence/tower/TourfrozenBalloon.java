@@ -10,9 +10,7 @@ public class TourfrozenBalloon extends Tour {
     super(null, portee, cadence, cout);
     this.effect=effect;
    }
- 
 
-    public void cibler(Board board){};
     public void tirer(Board b){
         ArrayList<Balloon> candidate=neighborhood(b);
         if (candidate.isEmpty()) {
@@ -36,7 +34,7 @@ public class TourfrozenBalloon extends Tour {
         if (target!=null) {
             target.freeze(effect);
         }
-    };
+    }
     public void augmenterPortee(){
         this.portee+=100;
     };
