@@ -72,8 +72,8 @@ public abstract class Tour {
         return null;
     }
     public void tirer(Board b){
-        Balloon b=cibler(board);
-        b.takeDamage(projectile.getDamage());
+        Balloon balloon=cibler(b);
+        balloon.takeDamage(projectile.getDamage());
 
     }
 }

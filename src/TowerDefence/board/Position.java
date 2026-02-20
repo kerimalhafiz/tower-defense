@@ -59,5 +59,6 @@ public class Position {
     public String toString() {
         return "Position(" + this.ligne + "," + this.colonne + ")";
     }
+    
 }
 
