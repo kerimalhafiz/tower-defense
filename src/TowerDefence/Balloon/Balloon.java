@@ -267,4 +267,11 @@ public abstract class Balloon {
     public Boolean isOut() {
         return this.position >= (this.path.size() - 1);
     }
+    /***
+     * which subtracts the speed
+     * @param Speed  soustaire   
+     */
+    public void Subtractspeed(int Speed){
+        this.speed-=Speed;
+    }
 }
