@@ -6,7 +6,6 @@ import TowerDefence.Balloon.Balloon;
 import TowerDefence.board.Board;
 import TowerDefence.board.Cell;
 
-import iava.util.List;
 
 import TowerDefence.board.Position;
 
@@ -62,13 +61,8 @@ public abstract class Tour {
 
     return voisins;
 }
-}
-
-    public abstract Balloon cibler(Board board){
-      
-    }
-    public abstract void tirer(Board b){
+}public abstract cibler(Board board){}
+public abstract void tirer(Board b){}
 
     }
 
-}
