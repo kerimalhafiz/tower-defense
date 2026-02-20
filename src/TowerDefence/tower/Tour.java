@@ -70,7 +70,10 @@ public abstract class Tour {
             }
         }
         return null;
+    }
+    public void tirer(Board b){
+        Balloon b=cibler(board);
+        b.takeDamage(projectile.getDamage());
 
     }
-
 }
