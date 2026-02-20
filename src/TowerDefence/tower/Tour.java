@@ -53,9 +53,8 @@ public abstract class Tour {
             }
         }
     }
-
-    return voisins;
 }
+    return voisins;
 }
 public abstract void cibler(Board board);
 
