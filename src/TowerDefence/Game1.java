@@ -31,8 +31,5 @@ public class Game1 extends Game {
 
         }
         super.play();
-        
-
- 
 
     }}
