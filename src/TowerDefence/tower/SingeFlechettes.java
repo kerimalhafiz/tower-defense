@@ -26,9 +26,9 @@ static  final double nv=0.75;
         if (ballons_voisin == null){
             return;
         }
-        for (Balloon b : ballons_voisin){
-            if (!b.isDestroyed() && !b.isOut()){
-                b.takeDamage(this.projectile.getDamage());
+        for (Balloon ballon : ballons_voisin){
+            if (!ballon.isDestroyed() && !ballon.isOut()){
+                ballon.takeDamage(this.projectile.getDamage());
             }
         }
     };
