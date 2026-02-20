@@ -12,14 +12,14 @@ import TowerDefence.board.Position;
 
 public abstract class Tour {
 
-    protected Proiectile proiectile;
+    protected Projectile projectile;
     protected int portee;
     protected int cadence;
     protected double cout;
     protected Position position;
 
-    public Tour(Proiectile proiectile, int portee, int cadence, double cout, Position position) {
-        this.proiectile = proiectile;
+    public Tour(Projectile projectile, int portee, int cadence, double cout, Position position) {
+        this.projectile = projectile;
         this.portee = portee;
         this.cadence = cadence;
         this.cout = cout;
@@ -28,8 +28,8 @@ public abstract class Tour {
 
 
 
-    public Proiectile getProiectile() {
-        return proiectile;
+    public Projectile getprojectile() {
+        return this.projectile;
     }
 
     public int getPortee() {
@@ -73,7 +73,8 @@ public abstract class Tour {
     }
     public void tirer(Board b){
         Balloon balloon=cibler(b);
-        balloon.takeDamage(projectile.getDamage());
+        balloon.takeDamage(this.projectile.getDamage());
 
     }
+
 }
