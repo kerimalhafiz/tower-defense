@@ -44,8 +44,8 @@ public abstract class Tour {
         return cout;
     }
 
-    private ArrayList<Cell> neighborhood(Board board) {
-    ArrayList<Cell> voisins = new ArrayList<>();
+    protected ArrayList<Balloon> neighborhood(Board board) {
+    ArrayList<Balloon> voisins = new ArrayList<>();
 
     for (int dx = -portee; dx <= portee; dx++) {
         for (int dy = -portee; dy <= portee; dy++) {
@@ -54,26 +54,20 @@ public abstract class Tour {
 
             if (newX >= 0 && newX < board.getNbLigne() &&
                 newY >= 0 && newY < board.getNbColonne()) {
-                voisins.add(board.getCell(newX, newY));
+                if(board.getCell(newX, newY).getValue()!=null){
+                    voisins.add(board.getCell(newX, newY).getValue());
             }
         }
     }
 
     return voisins;
 }
+}
 
-    public Balloon cibler(Board board){
-        ArrayList<Cell>cells=this.neighborhood(board);
-        for(Cell c :cells){
-            if(c.getValue()!=null){
-                return c.getValue();
-            }
-        }
-        return null;
+    public abstract Balloon cibler(Board board){
+      
     }
-    public void tirer(Board b){
-        Balloon balloon=cibler(b);
-        balloon.takeDamage(this.projectile.getDamage());
+    public abstract void tirer(Board b){
 
     }
 
