@@ -13,27 +13,31 @@ public class TourRballoon extends Tour{
 
 
 
-    public void cibler(Board board){};
-    public void tirer(Board b){
-    
+ public void tirer(Board b){
         ArrayList<Balloon> candidate=neighborhood(b);
         if (candidate.isEmpty()) {
             return;
         }
         Balloon target=null;
+        int bestevolu=Integer.MAX_VALUE;
         for(Balloon bl:candidate){
-            if (bl==null||bl.isDestroyed()||bl.isOut())continue;
-            if (target==null ||bl.getPosition()>target.getPosition()){
+            if (bl==null||bl.isDestroyed()||bl.isOut()||bl.getPath()==null)continue;
+           int m=(bl.getPath().size()-1)-bl.getPosition();
+           if (m<bestevolu) {
+                bestevolu=m;
+                target=bl;
+           }
+           else if (m==bestevolu && target!=null){
                 target=bl;
             }
                 
             
         }
         if (target!=null) {
-            target.freeze(effect);
+            target.Subtractspeed(effect);
         }
-
-    };
+    }
+    
     public void augmenterPortee(){
         this.portee+=100;
     };
