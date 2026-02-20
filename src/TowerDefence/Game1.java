@@ -1,12 +1,11 @@
 package TowerDefence;
+import TowerDefence.board.Board;
+import TowerDefence.tower.Gorille;
+import TowerDefence.tower.*;
+
 import java.util.ArrayList;
 import java.util.Random;
 
-import TowerDefence.board.Board;
-import TowerDefence.tower.Gorille;
-import TowerDefence.tower.Tour;
-import TowerDefence.tower.TourBombe;
-import TowerDefence.tower.TourfrozenBalloon;
 
 public class Game1 extends Game {
     ArrayList<Tour> towers;
@@ -17,11 +16,13 @@ public class Game1 extends Game {
         Random r=new Random();
         int x;
         int y;
+        towers=new ArrayList<>();
         Gorille gorille=new Gorille();
         TourBombe bombe =new TourBombe();
         towers.add(bombe);
         towers.add(gorille);
-        for(Tower t:this.towers){
+        for(Tour t:this.towers){
+       
             x=r.nextInt(this.b.getNbLigne());
             y=r.nextInt(this.b.getNbColonne());
             

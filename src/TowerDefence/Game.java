@@ -19,7 +19,7 @@ import java.util.Random;
  */
 public class Game{
     /** The game board */
-    private Board b;
+    protected  Board b;
     /** Number of balloons to generate */
     protected int n;
     /** List of balloons currently in the game */
