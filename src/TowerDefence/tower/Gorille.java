@@ -1,9 +1,8 @@
 package TowerDefence.tower;
 
-import java.util.ArrayList;
-
 import TowerDefence.Balloon.*;
 import TowerDefence.board.*;
+import java.util.ArrayList;
 import java.util.Random;
 
 
@@ -26,7 +25,11 @@ public class Gorille extends Tour {
             Balloon cible = cibles.get(rand.nextInt(cibles.size())); 
             cible.takeDamage(projectile.getDamage());
             board.affiche();
-            System.out.println("le ballon :"+cible.getId()+"a ete detruit");
+            if(cible.isDestroyed()){
+                board.removeBalloon(cible);
+                System.out.println("le ballon :"+cible.getId()+"a ete detruit");
+            }
+            
             
             
         }

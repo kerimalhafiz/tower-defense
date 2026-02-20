@@ -70,14 +70,15 @@ public class Game{
             // If balloon reached the end of the path
             if (b.isOut()){
                     this.b.getBalloons().remove(i);
-                    System.out.println("Le "+b.getId()+"de vitesse "+b.getSpeed()+" est sortie au temps t ="+b.getTime());
+                  
                     this.b.removeBalloon(b);
                     this.b.affiche();
+                    this.listeBallon.remove(b);
                 }
             if(b.isDestroyed()){
-                System.out.println("Le "+b.getId()+"de vitesse "+b.getSpeed()+" a été detruit au temps t ="+b.getTime());
                 this.b.removeBalloon(b);
                 this.b.affiche();
+                this.listeBallon.remove(b);
             
             }
             }

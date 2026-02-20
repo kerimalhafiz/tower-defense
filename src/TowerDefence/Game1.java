@@ -1,6 +1,5 @@
 package TowerDefence;
 import TowerDefence.board.Board;
-import TowerDefence.tower.Gorille;
 import TowerDefence.tower.*;
 
 import java.util.ArrayList;
@@ -34,10 +33,18 @@ public class Game1 extends Game {
     }
 
     public void play(){
+
         for(Tour t:this.towers){
             t.startTir(this.b);
 
         }
         super.play();
+
+        for(Tour t:this.towers){
+            t.stopTir();
+
+        }
+
+        
 
     }}

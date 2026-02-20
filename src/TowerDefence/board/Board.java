@@ -79,6 +79,7 @@ public abstract boolean  putTower(Tour t, int x, int y);
             }
             System.out.println();
         }
+        System.err.println("\n");
     }
 
 
