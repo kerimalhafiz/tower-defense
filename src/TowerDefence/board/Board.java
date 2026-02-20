@@ -121,6 +121,7 @@ public abstract  class Board {
 
             // Quitte l’ancienne cellule
             if (b.getCell() != null) {
+                
                 b.getCell().setvalueX(null);
             }
             // Entre dans la nouvelle cellule

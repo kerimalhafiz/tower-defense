@@ -1,9 +1,8 @@
 package TowerDefence.tower;
 
-import java.util.ArrayList;
-
-import TowerDefence.board.*;
 import TowerDefence.Balloon.*;
+import TowerDefence.board.*;
+import java.util.ArrayList;
 public abstract class Tour {
 
     protected Projectile projectile;
