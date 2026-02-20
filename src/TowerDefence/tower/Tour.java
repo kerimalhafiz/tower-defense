@@ -56,7 +56,7 @@ public abstract class Tour {
 }
     return voisins;
 }
-public abstract void cibler(Board board);
+
 
 public abstract void tirer(Board b);
 
