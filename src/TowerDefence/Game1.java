@@ -18,8 +18,12 @@ public class Game1 extends Game {
         towers=new ArrayList<>();
         Gorille gorille=new Gorille();
         TourBombe bombe =new TourBombe();
+        TourRballoon Ralentit=new TourRballoon(5.0);
+        TourfrozenBalloon frozen=new TourfrozenBalloon(4);
         towers.add(bombe);
         towers.add(gorille);
+        towers.add(frozen);
+        towers.add(Ralentit);
         for(Tour t:this.towers){
        
             x=r.nextInt(this.b.getNbLigne());

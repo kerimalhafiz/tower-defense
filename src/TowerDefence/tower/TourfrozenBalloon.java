@@ -6,8 +6,8 @@ import  java.util.*;
 
 public class TourfrozenBalloon extends Tour {
     protected int effect;
-    public TourfrozenBalloon(int portee, int cadence, int cout,int effect){
-    super(null, portee, cadence, cout);
+    public TourfrozenBalloon( int effect){
+    super(null, 100, 1500, 400);
     this.effect=effect;
    }
 
@@ -21,17 +21,23 @@ public class TourfrozenBalloon extends Tour {
         for(Balloon bl:candidate){
             if (bl==null||bl.isDestroyed()||bl.isOut()||bl.getPath()==null)continue;
            int m=(bl.getPath().size()-1)-bl.getPosition();
+              System.out.println("Ballon " + bl.getId() +
+                " | position: " + bl.getPosition() +
+                " | restant: " + m);
            if (m<bestevolu) {
                 bestevolu=m;
                 target=bl;
            }
            else if (m==bestevolu && target!=null){
+                   if (bl.getprogress() > target.getprogress()) {
                 target=bl;
+                   }
             }
                 
             
         }
         if (target!=null) {
+            System.out.println(">>> CIBLE CHOISIE : " + target.getId());
             target.freeze(effect);
         }
     }

@@ -271,7 +271,7 @@ public abstract class Balloon {
      * which subtracts the speed
      * @param Speed  soustaire   
      */
-    public void Subtractspeed(int Speed){
+    public void Subtractspeed(double Speed){
         this.speed-=Speed;
     }
 }

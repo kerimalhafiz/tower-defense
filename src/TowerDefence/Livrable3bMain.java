@@ -1,7 +1,7 @@
 package TowerDefence;
 import TowerDefence.board.BoardTwo;
 
-public class Livrable3b {
+public class Livrable3bMain {
   public static void main(String[] args) {
 
    if (args.length != 3) {
