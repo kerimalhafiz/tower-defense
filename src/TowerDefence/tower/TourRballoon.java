@@ -9,10 +9,23 @@ public class TourRballoon extends Tour{
     }
 
 
-    
+
     public void cibler(Board board){};
     public void tirer(Board b){};
-    public void augmenterPortee(){};
-    public  void augmenterCadence(){};
+    public void augmenterPortee(){
+        this.portee+=100;
+    };
+    public  void augmenterCadence(){
+        this.cadence+=1500;
+    };
     public  void augmenterPuissance(){};
+
+    public float geteffect(){
+        return this.effet;
+    }
+    public void seteffect(float temp){
+        this.effet=temp;
+
+    }
+
 }

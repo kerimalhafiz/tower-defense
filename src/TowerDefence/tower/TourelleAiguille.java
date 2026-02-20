@@ -9,10 +9,14 @@ public class TourelleAiguille extends Tour{
     }
 
     public void augmenterPortee(){
-        this.portee = this.portee*1.2;
+        this.portee *= 1.2;
     }
 
     public void augmenterCadence(){
-        this.cadence = this.cadence * 0,75;
+        this.cadence  *= 0.75;
     }
+      public void cibler(Board board){};
+    public void tirer(Board b){};
+   
+    public  void augmenterPuissance(){};
 }
