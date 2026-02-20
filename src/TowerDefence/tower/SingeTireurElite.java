@@ -1,4 +1,6 @@
-public class SingeFlechettes extends Tour{
+package TowerDefence.tower;
+import TowerDefence.board.Position;
+public class SingeTireurElite extends Tour{
     public SingeTireurElite(Position position){
         super(new Projectile(4),integer.MAX_VALUE,2000,500,position);
     }

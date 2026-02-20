@@ -1,14 +1,9 @@
-package tower;
+package TowerDefence.tower;
 
 import java.util.ArrayList;
 
-import TowerDefence.Balloon.Balloon;
-import TowerDefence.board.Board;
-import TowerDefence.board.Cell;
-
-
-import TowerDefence.board.Position;
-
+import TowerDefence.board.*;
+import TowerDefence.Balloon.*;
 public abstract class Tour {
 
     protected Projectile projectile;
@@ -61,11 +56,14 @@ public abstract class Tour {
 
     return voisins;
 }
-}public abstract cibler(Board board){}
-public abstract void tirer(Board b){}
+}
+public abstract void cibler(Board board);
 
-    }
+public abstract void tirer(Board b);
+
+    
     public abstract void augmenterPortee();
     public abstract void augmenterCadence();
     public abstract void augmenterPuissance();
 
+}

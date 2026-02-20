@@ -1,4 +1,12 @@
+package TowerDefence.tower;
+import TowerDefence.board.*;
+import TowerDefence.Balloon.*;
+
 public class SingeFlechettes extends Tour{
+
+ static  final double nb=1.25; 
+static  final double nv=0.75; 
+
     public SingeFlechettes(Position position){
         super(new Projectile(1),100,1000,200,position);
     }
@@ -12,4 +20,5 @@ public class SingeFlechettes extends Tour{
     public void augmenterPuissance() {
         this.projectile = new Projectile(this.projectile.getDamage()+1);
     }
+    
 }
