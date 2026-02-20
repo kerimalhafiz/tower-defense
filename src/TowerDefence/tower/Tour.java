@@ -76,5 +76,8 @@ public abstract class Tour {
         balloon.takeDamage(this.projectile.getDamage());
 
     }
+    public abstract void augmenterPortee();
+    public abstract void augmenterCadence();
+    public abstract void augmenterPuissance();
 
 }
