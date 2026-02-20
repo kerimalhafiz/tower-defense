@@ -69,7 +69,8 @@ public boolean  putTower(Tour t,int x,int y){
     if (this.l.contains(new Position(x, y))){//pas de tours syur le chemin des ballons
         return false;
     }
-    this.getCell(x, y).putTower(t);    
+    this.getCell(x, y).putTower(t);   
+    t.setPosition(this.getCell(x, y).getPosition()); 
     return true;}
 
 

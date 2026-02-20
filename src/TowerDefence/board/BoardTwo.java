@@ -39,7 +39,8 @@ public class BoardTwo extends Board {
         return false;
     }
 }
-    this.getCell(x, y).putTower(t);    
+    this.getCell(x, y).putTower(t);  
+      t.setPosition(this.getCell(x, y).getPosition());   
     return true;}
 
     /**
