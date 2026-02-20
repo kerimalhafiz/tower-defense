@@ -6,8 +6,8 @@ import  java.util.*;
 
 public class TourfrozenBalloon extends Tour {
     protected int effect;
-    public TourfrozenBalloon(int portee, int cadence, int cout,Position position,int effect){
-    super(null, portee, cadence, cout, position);
+    public TourfrozenBalloon(int portee, int cadence, int cout,int effect){
+    super(null, portee, cadence, cout);
     this.effect=effect;
    }
  

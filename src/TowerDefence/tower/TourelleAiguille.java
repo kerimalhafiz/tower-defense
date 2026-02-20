@@ -1,11 +1,13 @@
 package TowerDefence.tower;
 import TowerDefence.board.*;
+import TowerDefence.Balloon.*;
+import java.util.ArrayList;
 
 
 public class TourelleAiguille extends Tour{
 
-    public TourelleAiguille(Position position){
-        super(new Projectile(1,"aiguille"),80,1200,350,position);
+    public TourelleAiguille(){
+        super(new Projectile("aiguille",1),80,1200,350);
     }
 
     public void augmenterPortee(){

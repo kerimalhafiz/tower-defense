@@ -6,8 +6,8 @@ import TowerDefence.board.*;
 public class TourRballoon extends Tour{
 
     protected int  effect;
-    public TourRballoon(Position position,int effect){
-        super(null, 100, 1500, 400, position);
+    public TourRballoon(int effect){
+        super(null, 100, 1500, 400);
         this.effect=effect;
     }
 
