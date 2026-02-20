@@ -1,16 +1,10 @@
 package TowerDefence.tower;
-<<<<<<< HEAD
 import java.util.ArrayList;
 
 import TowerDefence.Balloon.Balloon;
 import TowerDefence.board.Board;
 import TowerDefence.board.Position;
 
-=======
-import TowerDefence.board.*;
-import TowerDefence.Balloon.*;
-import java.util.*;
->>>>>>> 8b29966 (packahes)
 public class SingeTireurElite extends Tour{
     
     
