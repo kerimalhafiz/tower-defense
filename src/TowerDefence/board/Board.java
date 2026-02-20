@@ -39,7 +39,7 @@ public abstract  class Board {
         }
     }
 
-public abstract boolean  putTower(Tour t);
+public abstract boolean  putTower(Tour t, int x, int y);
 
     
 

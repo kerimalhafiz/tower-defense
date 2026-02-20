@@ -1,9 +1,8 @@
 package TowerDefence;
-import java.util.ArrayList;
-import java.util.Random;
-
 import TowerDefence.board.Board;
 import TowerDefence.tower.Tour;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class Game1 extends Game {
     ArrayList<Tour> towers;
@@ -14,7 +13,7 @@ public class Game1 extends Game {
         Random r=new Random();
         int x;
         int y;
-        for(Tower t:this.towers){
+        for(Tour t:this.towers){
             x=r.nextInt(this.b.getNbLigne());
             y=r.nextInt(this.b.getNbColonne());
             
