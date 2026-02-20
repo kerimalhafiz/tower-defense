@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import TowerDefence.paths.*;
+import TowerDefence.tower.Tour;
 import TowerDefence.Balloon.Balloon;
 import TowerDefence.board.*;
 
@@ -62,6 +63,15 @@ public  void addBalloon(ArrayList<Balloon> b){
         balloon.SetCell(this.getCell(this.l.get(0).getNbLigne(),this.l.get(0).getNbColonne()));
     }
 }
+
+
+public boolean  putTower(Tour t,int x,int y){
+    if (this.l.contains(new Position(x, y))){//pas de tours syur le chemin des ballons
+        return false;
+    }
+    this.getCell(x, y).putTower(t);    
+    return true;}
+
 
 /**
  * Removes a balloon from the board.

@@ -5,6 +5,7 @@ import java.util.List;
 
 import TowerDefence.Balloon.Balloon;
 import TowerDefence.paths.*;
+import TowerDefence.tower.Tour;
 
 /**
  * Concrete implementation of a Board with multiple straight paths.
@@ -31,6 +32,15 @@ public class BoardTwo extends Board {
         this.nPaths = n;
         this.l=this.path(board);
     }
+
+    public boolean  putTower(Tour t,int x,int y){
+    for (ArrayList<Position>p:this.l )   { 
+    if (p.contains(new Position(x, y))){//pas de tours syur le chemin des ballons
+        return false;
+    }
+}
+    this.getCell(x, y).putTower(t);    
+    return true;}
 
     /**
      * Generates multiple straight paths on the board.

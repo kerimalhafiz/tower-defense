@@ -1,5 +1,6 @@
 package TowerDefence.board;
 import TowerDefence.Balloon.*;
+import TowerDefence.tower.Tour;
 import java.util.ArrayList;
 
 /**
@@ -37,6 +38,10 @@ public abstract  class Board {
             }
         }
     }
+
+public abstract boolean  putTower(Tour t);
+
+    
 
     /**
      * get the number of rows of this board 

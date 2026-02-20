@@ -1,6 +1,7 @@
 package TowerDefence.board;
 
 import TowerDefence.Balloon.Balloon;
+import TowerDefence.tower.Tour;
 
 /**
  * Represents a single cell on the game board.
@@ -16,6 +17,7 @@ public class Cell{
 
     /** Display value of the cell (default is ".") */
     private Balloon value;
+    private Tour tower;
 
     /**
      * Constructs a Cell with the given position.
@@ -67,7 +69,12 @@ public class Cell{
     @Override
     public String toString() {
         if(this.value==null){
-            return ".";
+            if(this.tower==null){
+                return ".";
+            }
+            else{
+                return this.tower.toString();
+            }
         }
         else{return this.value.toString();}
     }
@@ -77,5 +84,10 @@ public class Cell{
      */
     public Balloon getValue() {
         return this.value;
+    }
+
+    public void putTower(Tour t) {
+        this.tower=t;
+        
     }
 }
