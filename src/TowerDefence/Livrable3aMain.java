@@ -19,7 +19,7 @@ public class Livrable3aMain {
         int nbBallons = Integer.parseInt(args[2]);
         // 3️ Création du plateau et du chemin
         BoardOne board = new BoardOne(height, width);
-       Game game1=new Game(board, nbBallons);
+       Game game1=new Game1(board, nbBallons);
        game1.play();
      
 
