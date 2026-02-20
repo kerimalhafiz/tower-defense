@@ -1,17 +1,39 @@
 package TowerDefence.tower;
+import java.util.ArrayList;
+
+import TowerDefence.Balloon.Balloon;
 import TowerDefence.board.*;
 public class TourRballoon extends Tour{
 
-    protected float effet;
-    public TourRballoon(int portee,int cadence,int cout,Position position,float effect){
-        super(null, portee, cadence, cout, position);
-        this.effet=effect;
+    protected int  effect;
+    public TourRballoon(Position position,int effect){
+        super(null, 100, 1500, 400, position);
+        this.effect=effect;
     }
 
 
 
     public void cibler(Board board){};
-    public void tirer(Board b){};
+    public void tirer(Board b){
+    
+        ArrayList<Balloon> candidate=neighborhood(b);
+        if (candidate.isEmpty()) {
+            return;
+        }
+        Balloon target=null;
+        for(Balloon bl:candidate){
+            if (bl==null||bl.isDestroyed()||bl.isOut())continue;
+            if (target==null ||bl.getPosition()>target.getPosition()){
+                target=bl;
+            }
+                
+            
+        }
+        if (target!=null) {
+            target.freeze(effect);
+        }
+
+    };
     public void augmenterPortee(){
         this.portee+=100;
     };
@@ -21,10 +43,10 @@ public class TourRballoon extends Tour{
     public  void augmenterPuissance(){};
 
     public float geteffect(){
-        return this.effet;
+        return this.effect;
     }
-    public void seteffect(float temp){
-        this.effet=temp;
+    public void seteffect(int temp){
+        this.effect=temp;
 
     }
 
