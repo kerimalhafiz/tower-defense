@@ -1,39 +1,47 @@
 package TowerDefence.tower;
 import TowerDefence.board.*;
-
-import java.util.ArrayList;
-
 import TowerDefence.Balloon.*;
-import java.util.*;
 
 public class SingeFlechettes extends Tour{
 
-   
-   
+   private static  final double nb=1.25; 
+   private static  final double nv=0.75; 
     
-    public SingeFlechettes(){
-        super(new Projectile("flechettes",1),100,1000,200);
+    public SingeFlechettes(Position position){
+        super(new Projectile("flechettes",1),100,1000,200,position);
     }
     public void augmenterPortee(){
-        this.portee *=1.25;
+        this.portee *=nb;
     }
 
     public void augmenterCadence(){
-        this.cadence  *= 0.75;
+        this.cadence  *= nv;
     }
     public void augmenterPuissance() {
-        projectile.setDamage(projectile.getDamage() + 1);
+        this.projectile.setDamage(this.projectile.getDamage()+1);
     }
-   
+    public void cibler(Board board){};
     public void tirer(Board b){
         ArrayList<Balloon> ballons_voisin =neighborhood(b);
-        if (ballons_voisin == null){
+        if (ballons_voisin isempty()){
             return;
         }
+        Balloon b_proche = null;
         for (Balloon ballon : ballons_voisin){
-            ballon.takeDamage(this.projectile.getDamage());
-            
+            if (ballon == null || ballon isDestroyed() || ballon isOut()){
+                continue;
+            }
+            if (cible == null || b.getPosition() > cible.getPosition()){
+                b_proche = ballon;
+            }
         }
+        if (b_proche != null){
+            b_proche.takeDamage(this.projectile.getDamage())
+            if (ballon.isDestroyed()){
+                System.out.println("le ballon"  + ballon.getId() + " a été detruit");
+            }
+        }
+        
     };
    
     
