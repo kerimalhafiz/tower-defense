@@ -15,7 +15,7 @@ public abstract class Tour {
     protected Position position;
     private ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
 
-    public Tour(Projectile projectile, int portee, int cadence, double cout, Position position) {
+    public Tour(Projectile projectile, int portee, int cadence, double cout) {
         this.projectile = projectile;
         this.portee = portee;
         this.cadence = cadence;
@@ -25,7 +25,9 @@ public abstract class Tour {
         
     }
 
-
+    public void setPosition(Position p){
+        this.position=p;
+    }
 
     public Projectile getprojectile() {
         return this.projectile;

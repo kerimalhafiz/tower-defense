@@ -113,6 +113,7 @@ public abstract boolean  putTower(Tour t);
         // Si le ballon est gelé
         if (b.isFrozen()) {
             b.updateFrozenState();
+            
             return;
         }
         b.AjoutProgress();
