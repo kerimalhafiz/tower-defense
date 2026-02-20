@@ -73,6 +73,11 @@ public class Game{
                     System.out.println("Le "+b.getId()+"de vitesse "+b.getSpeed()+" est sortie au temps t ="+b.getTime());
                     this.b.removeBalloon(b);
                 }
+            if(b.isDestroyed()){
+                System.out.println("Le "+b.getId()+"de vitesse "+b.getSpeed()+" a été detruit au temps t ="+b.getTime());
+                this.b.removeBalloon(b);
+            
+            }
             }
         }
         
