@@ -1,34 +1,43 @@
 package TowerDefence.tower;
 import TowerDefence.board.*;
-import java.util.*;
-import TowerDefence.Balloon.*;
 
 
-
-public class TourelleAiguille extends Tour{
-
+public class TourelleAiguille extends Tour{ 
+    private static  final double nv=0.75; 
+    private static  final double nc=1.2; 
     public TourelleAiguille(){
-        super(new Projectile("aiguille",1),80,1200,350);
+        super(new Projectile("aiguille",1),80,1200,350,position);
     }
 
     public void augmenterPortee(){
-        this.portee *= 1.2;
+        this.portee *= nc;
     }
 
     public void augmenterCadence(){
-        this.cadence  *= 0.75;
+        this.cadence  *= nv;
     }
-      public void cibler(Board board){};
+    //public void cibler(Board board){};
     public void tirer(Board b){
         ArrayList<Balloon> ballons_voisin =neighborhood(b);
-        if (ballons_voisin == null){
+        if (ballons_voisin isempty()){
             return;
         }
+        Balloon b_proche = null;
         for (Balloon ballon : ballons_voisin){
-            if (!ballon.isDestroyed() && !ballon.isOut()){
-                ballon.takeDamage(this.projectile.getDamage());
+            if (ballon == null || ballon isDestroyed() || ballon isOut()){
+                continue;
+            }
+            if (cible == null || b.getPosition() > cible.getPosition()){
+                b_proche = ballon;
             }
         }
+        if (b_proche != null){
+            b_proche.takeDamage(this.projectile.getDamage())
+            if (ballon.isDestroyed()){
+                System.out.println("le ballon"  + ballon.getId() + " a été detruit");
+            }
+        }
+        
     };
    
     public  void augmenterPuissance(){};
