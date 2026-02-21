@@ -16,4 +16,7 @@ public class Projectile {
     public void setDamage(int damage){
         this.damage= damage;
     }
+    public String getName(){
+        return this.name;
+    }
 }
