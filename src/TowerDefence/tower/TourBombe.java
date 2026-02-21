@@ -20,6 +20,7 @@ public class TourBombe extends Tour{
             for (Balloon b : cibles) { 
                 b.takeDamage(projectile.getDamage());
                 board.affiche();
+                
                 System.out.println("le ballon :"+b.getId()+"a ete detruit");
                 
                 

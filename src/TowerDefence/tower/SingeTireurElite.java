@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 import TowerDefence.Balloon.Balloon;
 import TowerDefence.board.Board;
-import TowerDefence.board.Position;
+
 
 public class SingeTireurElite extends Tour{
     

@@ -20,7 +20,7 @@ public abstract class Tour {
         this.portee = portee;
         this.cadence = cadence;
         this.cout = cout;
-        this.position = position;
+        
         
         
     }
