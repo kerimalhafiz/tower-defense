@@ -16,23 +16,30 @@ public class Game1 extends Game {
         int x;
         int y;
         towers=new ArrayList<>();
+        SingeFlechettes fleche = new SingeFlechettes();
+        SingeFlechettes fleche1 = new SingeFlechettes();
+        SingeTireurElite tireur = new SingeTireurElite();
+        SingeTireurElite tireur1 = new SingeTireurElite();
+        TourelleAiguille aiguille = new TourelleAiguille();
+        TourelleAiguille aiguille1 = new TourelleAiguille();
         Gorille gorille=new Gorille();
-        Gorille gorille1 =new Gorille();
         TourBombe bombe =new TourBombe();
-        TourBombe bombe1 =new TourBombe();
-
         TourRballoon Ralentit=new TourRballoon(5.0);
         TourfrozenBalloon frozen=new TourfrozenBalloon(4);
-        TourRballoon Ralentit2=new TourRballoon(9.0);
+         TourRballoon Ralentit2=new TourRballoon(9.0);
         TourfrozenBalloon frozen2=new TourfrozenBalloon(9);
+        towers.add(fleche);
+        towers.add(fleche1);
+        towers.add(tireur);
+        towers.add(tireur1);
+        towers.add(aiguille);
+        towers.add(aiguille1);
         towers.add(bombe);
         towers.add(gorille);
         towers.add(frozen);
         towers.add(Ralentit);
-        towers.add(frozen2);
+         towers.add(frozen2);
         towers.add(Ralentit2);
-        towers.add(gorille1);
-        towers.add(bombe1);
         for(Tour t:this.towers){
        
             x=r.nextInt(this.b.getNbLigne());
