@@ -17,16 +17,8 @@ public class TourBombe extends Tour{
 
         if (!cibles.isEmpty()) {
             for (Balloon b : cibles) { 
-<<<<<<< HEAD
-                b.takeDamage(projectile.getDamage());
-                board.affiche();
-                
-                System.out.println("le ballon :"+b.getId()+"a ete detruit");
-                
-                
-=======
                 b.takeDamage(projectile.getDamage());  
->>>>>>> eaeb1fc7ae51f52e48f8fc174fbfc2f146bc3ed2
+
             }
         }
     }
