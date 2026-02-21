@@ -20,7 +20,7 @@ public class Game1 extends Game {
         TourBombe bombe =new TourBombe();
         TourRballoon Ralentit=new TourRballoon(5.0);
         TourfrozenBalloon frozen=new TourfrozenBalloon(4);
-         TourRballoon Ralentit2=new TourRballoon(9.0);
+        TourRballoon Ralentit2=new TourRballoon(9.0);
         TourfrozenBalloon frozen2=new TourfrozenBalloon(9);
         towers.add(bombe);
         towers.add(gorille);
