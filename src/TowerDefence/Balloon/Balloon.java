@@ -12,6 +12,7 @@ import java.util.ArrayList;
  * - a resistance (number of damages it can take),
  * - a progress value inside the current cell,
  * - a frozen state,
+ * 
  * - a path it follows,
  * - and a position index inside that path.
  * 
@@ -175,37 +176,46 @@ public abstract class Balloon {
      * @param damage amount of damage to apply
      */
     public void takeDamage(int damage) {
-        resistance -= damage;
-        if (resistance < 0) {
-            resistance = 0;
-        }
-        if (resistance == 0) {
-            points += 10;
-        }
+    resistance -= damage;
+    if (resistance < 0) {
+        resistance = 0;
     }
+
+    System.out.println(this.time + " : " + this.id + " touché (" + damage + " dmg)");
+
+    if (resistance == 0) {
+        points += 10;
+        System.out.println(this.time + " : " + this.id + " détruit");
+    }
+}
+
 
     /**
      * Freezes the balloon for a given number of ticks.
      *
      * @param ticks number of ticks to freeze
      */
-    public void freeze(int ticks) {
-        frozen = true;
-        frozenTicks = ticks;
-    }
+   public void freeze(int ticks) {
+    frozen = true;
+    frozenTicks = ticks;
+    System.out.println(this.time + " : " + this.id + " gelé pendant " + ticks + " ticks");
+}
+
 
     /**
      * Updates the frozen state at each tick.
      * When frozenTicks reaches zero, the balloon becomes active again.
      */
     public void updateFrozenState() {
-        if (frozen) {
-            frozenTicks--;
-            if (frozenTicks <= 0) {
-                frozen = false;
-            }
+    if (frozen) {
+        frozenTicks--;
+        if (frozenTicks <= 0) {
+            frozen = false;
+            System.out.println(this.time + " : " + this.id + " redémarre");
         }
     }
+}
+
 
     /**
      * Checks if the balloon has been destroyed.
@@ -271,7 +281,9 @@ public abstract class Balloon {
      * which subtracts the speed
      * @param Speed  soustaire   
      */
-    public void Subtractspeed(int Speed){
-        this.speed-=Speed;
-    }
+    public void Subtractspeed(double Speed){
+    this.speed -= Speed;
+    System.out.println(this.time + " : " + this.id + " ralenti");
+}
+
 }

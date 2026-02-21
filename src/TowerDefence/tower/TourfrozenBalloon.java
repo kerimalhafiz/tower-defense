@@ -1,13 +1,13 @@
 package TowerDefence.tower;
-import TowerDefence.board.*;
 import TowerDefence.Balloon.*;
+import TowerDefence.board.*;
 import  java.util.*;
 
 
 public class TourfrozenBalloon extends Tour {
     protected int effect;
-    public TourfrozenBalloon(int portee, int cadence, int cout,int effect){
-    super(null, portee, cadence, cout);
+    public TourfrozenBalloon( int effect){
+    super(null, 100, 1500, 400);
     this.effect=effect;
    }
 
@@ -21,17 +21,21 @@ public class TourfrozenBalloon extends Tour {
         for(Balloon bl:candidate){
             if (bl==null||bl.isDestroyed()||bl.isOut()||bl.getPath()==null)continue;
            int m=(bl.getPath().size()-1)-bl.getPosition();
+              
            if (m<bestevolu) {
                 bestevolu=m;
                 target=bl;
            }
            else if (m==bestevolu && target!=null){
+                   if (bl.getprogress() > target.getprogress()) {
                 target=bl;
+                   }
             }
                 
             
         }
         if (target!=null) {
+            
             target.freeze(effect);
         }
     }

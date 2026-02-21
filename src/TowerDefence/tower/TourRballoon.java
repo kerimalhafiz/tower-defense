@@ -1,12 +1,11 @@
 package TowerDefence.tower;
-import java.util.ArrayList;
-
 import TowerDefence.Balloon.Balloon;
 import TowerDefence.board.*;
+import java.util.ArrayList;
 public class TourRballoon extends Tour{
 
-    protected int  effect;
-    public TourRballoon(int effect){
+    protected double  effect;
+    public TourRballoon(double  effect){
         super(null, 100, 1500, 400);
         this.effect=effect;
     }
@@ -46,7 +45,7 @@ public class TourRballoon extends Tour{
     };
     public  void augmenterPuissance(){};
 
-    public float geteffect(){
+    public double geteffect(){
         return this.effect;
     }
     public void seteffect(int temp){

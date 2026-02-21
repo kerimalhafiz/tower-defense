@@ -1,36 +1,53 @@
 package TowerDefence.tower;
+
 import java.util.ArrayList;
 
 import TowerDefence.Balloon.Balloon;
+<<<<<<< HEAD
 import TowerDefence.board.Board;
 
 
+=======
+import TowerDefence.board.*;
+>>>>>>> eaeb1fc7ae51f52e48f8fc174fbfc2f146bc3ed2
 public class SingeTireurElite extends Tour{
-    
-    
-   
-    public SingeTireurElite(){
+    private static  final double nb=1.25; 
+    private static  final double nv=0.75;
+    public SingeTireurElite(Position position){
         super(new Projectile("singe tireur elite",4),10000,2000,500);
     }
     public void augmenterCadence(){
-        this.cadence *= 0.75;
+        this.cadence *= nv;
     }
     public void augmenterPuissance() {
-        projectile.setDamage(projectile.getDamage() + 2);
+        this.projectile.setDamage(this.projectile.getDamage()+2);
         
     }
-    
+    public void cibler(Board board){};
     public void tirer(Board b){
-        ArrayList<Balloon> ballons_voisin =neighborhood(b);
-        if (ballons_voisin == null){
+        ArrayList<Balloon> ballons_voisin = neighborhood(b);
+        if (ballons_voisin.isEmpty()){
             return;
         }
+        Balloon b_proche = null;
         for (Balloon ballon : ballons_voisin){
-            if (!ballon.isDestroyed() && !ballon.isOut()){
-                ballon.takeDamage(this.projectile.getDamage());
+            if (ballon == null || ballon.isDestroyed() || ballon.isOut()){
+                continue;
+            }
+            if (b_proche == null || ballon.getPosition() > b_proche.getPosition()){
+                b_proche = ballon;
             }
         }
-    }
-    
+        if (b_proche != null){
+            b_proche.takeDamage(this.projectile.getDamage());
+            if (b_proche.isDestroyed()){
+                System.out.println("le ballon"  + b_proche.getId() + " a été detruit");
+            }
+
+            b_proche.takeDamage(this.projectile.getDamage());
+        }
+        
+    };
+    public void augmenterPortee(){};
   
 }

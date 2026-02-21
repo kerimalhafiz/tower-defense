@@ -43,7 +43,7 @@ public class Game{
     Random rand = new Random();
       for (int i = 1; i <= nbBallons; i++) {
             float speed = 0.5f + rand.nextFloat() * 2.0f; // vitesse aléatoire
-            this.listeBallon.add(new BasicBalloon(speed, rand.nextInt(3)+1,"Ballon "+i+":"));
+            this.listeBallon.add(new BasicBalloon(speed, rand.nextInt(10)+1,"Ballon "+i+":"));
         }
 
     }
@@ -58,31 +58,51 @@ public class Game{
      * 
      * The loop stops when no balloons remain on the board.
      */
-    public void play(){
-        // Add all balloons to the board
-        this.b.addBalloon(this.listeBallon);
-        while(this.b.getBalloons().size()!=0){
-        // Iterate backwards to safely remove balloons
-            for (int i = listeBallon.size() - 1; i >= 0; i--) {
-                Balloon b = listeBallon.get(i);
-            // Move the balloon  
-            this.b.move(b);
-            // If balloon reached the end of the path
-            if (b.isOut()){
-                    this.b.getBalloons().remove(i);
-                  
-                    this.b.removeBalloon(b);
-                    this.b.affiche();
-                    this.listeBallon.remove(b);
-                }
-            if(b.isDestroyed()){
-                this.b.removeBalloon(b);
-                this.b.affiche();
-                this.listeBallon.remove(b);
-            
+public void play() {
+
+    // Ajouter les ballons au plateau
+    this.b.addBalloon(this.listeBallon);
+
+    // Boucle principale du jeu
+    while (!this.listeBallon.isEmpty()) {
+
+        // Parcours à l’envers pour supprimer sans bug
+        for (int i = this.listeBallon.size() - 1; i >= 0; i--) {
+
+            Balloon ballon = this.listeBallon.get(i);
+
+            // Déplacer le ballon
+            this.b.move(ballon);
+
+            // Si ballon sorti du plateau
+            if (ballon.isOut()) {
+                System.out.println(ballon.getTime() + " : "
+                                   + ballon.getId() + " est sorti");
+
+                this.b.removeBalloon(ballon);   // enlève de la cellule + board
+                this.listeBallon.remove(i);     // enlève de la liste du jeu
+                continue;
             }
+
+            // Si ballon détruit
+            if (ballon.isDestroyed()) {
+                // PAS d’affichage ici : déjà fait dans Balloon.takeDamage()
+                this.b.removeBalloon(ballon);
+                this.listeBallon.remove(i);
+                continue;
             }
         }
-        
+
+        // Petit délai pour éviter que la boucle tourne trop vite
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
+
+    // Fin de partie
+    System.out.println("\nTous les ballons ont terminé leur parcours !");
+}
+
 }
