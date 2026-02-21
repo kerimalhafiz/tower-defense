@@ -1,9 +1,8 @@
 package TowerDefence.tower;
 
-import java.util.ArrayList;
-
 import TowerDefence.Balloon.Balloon;
 import TowerDefence.board.*;
+import java.util.ArrayList;
 
 public class TourBombe extends Tour{
 
@@ -18,11 +17,7 @@ public class TourBombe extends Tour{
 
         if (!cibles.isEmpty()) {
             for (Balloon b : cibles) { 
-                b.takeDamage(projectile.getDamage());
-                board.affiche();
-                System.out.println("le ballon :"+b.getId()+"a ete detruit");
-                
-                
+                b.takeDamage(projectile.getDamage());  
             }
         }
     }

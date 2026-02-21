@@ -33,9 +33,6 @@ public class TourelleAiguille extends Tour{
         }
         if (b_proche != null){
             b_proche.takeDamage(this.projectile.getDamage())
-            if (ballon.isDestroyed()){
-                System.out.println("le ballon"  + ballon.getId() + " a été detruit");
-            }
         }
         
     };
