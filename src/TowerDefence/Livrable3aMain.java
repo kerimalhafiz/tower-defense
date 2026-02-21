@@ -7,7 +7,7 @@ public class Livrable3aMain {
 
            if (args.length != 3) {
             System.out.println(
-                "Usage : java Livrable2b <height> <width> <number_of_ballons>"
+                "Usage : java Livrable3a <height> <width> <number_of_ballons>"
             );
             return;
         }

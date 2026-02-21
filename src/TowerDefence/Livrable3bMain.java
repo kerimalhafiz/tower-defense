@@ -6,7 +6,7 @@ public class Livrable3bMain {
 
    if (args.length != 3) {
             System.out.println(
-                "Usage : java Livrable2b <height> <width> <number_of_paths>"
+                "Usage : java Livrable3b <height> <width> <number_of_paths>"
             );
             return;
         }
