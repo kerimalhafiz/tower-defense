@@ -7,26 +7,55 @@ import TowerDefence.Balloon.*;
 
 
 
-
+/**
+ * SingeFlechettes (Dart Monkey) tower.
+ * 
+ * This tower attacks the balloon that has progressed the most
+ * along the path (the closest to the exit).
+ */
 public class SingeFlechettes extends Tour{
 
    private static  final double nb=1.25; 
    private static  final double nv=0.75; 
-    
+    /**
+     * Constructor.
+     * 
+     * Creates a dart monkey with:
+     * - Projectile "flechettes" dealing 1 damage
+     * - Range: 100
+     * - Cadence: 1000
+     * - Cost: 200
+     */
     public SingeFlechettes(){
         super(new Projectile("flechettes",1),100,1000,200);
     }
+
+    /**
+     * Increases the tower range by 25%.
+     */
     public void augmenterPortee(){
         this.portee *=nb;
     }
-
+      
+    /**
+     * Increases firing speed (reduces cooldown).
+     */
     public void augmenterCadence(){
         this.cadence  *= nv;
     }
+
+    /**
+     * Increases projectile damage by 1.
+     */
     public void augmenterPuissance() {
         this.projectile.setDamage(this.projectile.getDamage()+1);
     }
-    public void cibler(Board board){};
+
+     
+    /**
+     * Shoots at the balloon that is the most advanced on the path.
+     * @param b the board when the balloon move 
+     */
     public void tirer(Board b){
         ArrayList<Balloon> ballons_voisin = neighborhood(b);
         if (ballons_voisin.isEmpty()){
