@@ -8,9 +8,9 @@ public class Livrable3aMain {
 
 
     // 2️ Lecture des arguments
-        int width = 10;
-        int height = 5;
-        int nbBallons = 5;
+        int width = 20;
+        int height = 15;
+        int nbBallons = 15;
         // 3️ Création du plateau et du chemin
         BoardOne board = new BoardOne(height, width);
        Game game1=new Game1(board, nbBallons);
