@@ -8,7 +8,7 @@ import TowerDefence.board.*;
 public class SingeTireurElite extends Tour{
     private static  final double nb=1.25; 
     private static  final double nv=0.75;
-    public SingeTireurElite(Position position){
+    public SingeTireurElite(){
         super(new Projectile("singe tireur elite",4),10000,2000,500);
     }
     public void augmenterCadence(){

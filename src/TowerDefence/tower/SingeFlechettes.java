@@ -13,7 +13,7 @@ public class SingeFlechettes extends Tour{
    private static  final double nb=1.25; 
    private static  final double nv=0.75; 
     
-    public SingeFlechettes(Position position){
+    public SingeFlechettes(){
         super(new Projectile("flechettes",1),100,1000,200);
     }
     public void augmenterPortee(){

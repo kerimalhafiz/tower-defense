@@ -1,12 +1,8 @@
-package test;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
-
-
-import board.*;
-import paths.*;
+import TowerDefence.board.*;
+import TowerDefence.paths.*;
 
 import java.util.ArrayList;
 
