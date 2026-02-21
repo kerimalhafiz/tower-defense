@@ -3,13 +3,8 @@ package TowerDefence.tower;
 import java.util.ArrayList;
 
 import TowerDefence.Balloon.Balloon;
-<<<<<<< HEAD
-import TowerDefence.board.Board;
 
-
-=======
 import TowerDefence.board.*;
->>>>>>> eaeb1fc7ae51f52e48f8fc174fbfc2f146bc3ed2
 public class SingeTireurElite extends Tour{
     private static  final double nb=1.25; 
     private static  final double nv=0.75;
