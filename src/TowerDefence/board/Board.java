@@ -173,10 +173,15 @@ public ArrayList <Balloon> getBalloons(){
      *
      * @param b the Balloon to remove
      */
-    public void removeBalloon(Balloon b){
-        
+   public void removeBalloon(Balloon b){
+    if (b.getCell() != null) {
         b.getCell().setvalueX(null);
     }
+    if (this.listeBallon != null) {
+        this.listeBallon.remove(b);
+    }
+}
+
 
 
    /* public void afficheWithBalloons(ArrayList<BalloonRfor> balloons, ArrayList<ArrayList<Position>> paths) {
