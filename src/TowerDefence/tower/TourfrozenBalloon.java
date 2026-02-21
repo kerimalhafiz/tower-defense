@@ -1,6 +1,6 @@
 package TowerDefence.tower;
-import TowerDefence.board.*;
 import TowerDefence.Balloon.*;
+import TowerDefence.board.*;
 import  java.util.*;
 
 
@@ -21,9 +21,7 @@ public class TourfrozenBalloon extends Tour {
         for(Balloon bl:candidate){
             if (bl==null||bl.isDestroyed()||bl.isOut()||bl.getPath()==null)continue;
            int m=(bl.getPath().size()-1)-bl.getPosition();
-              System.out.println("Ballon " + bl.getId() +
-                " | position: " + bl.getPosition() +
-                " | restant: " + m);
+              
            if (m<bestevolu) {
                 bestevolu=m;
                 target=bl;
@@ -37,7 +35,7 @@ public class TourfrozenBalloon extends Tour {
             
         }
         if (target!=null) {
-            System.out.println(">>> CIBLE CHOISIE : " + target.getId());
+            
             target.freeze(effect);
         }
     }
