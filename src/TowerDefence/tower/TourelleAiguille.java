@@ -6,6 +6,8 @@ public class TourelleAiguille extends Tour{
     
     public TourelleAiguille(){
         super(new Projectile("aiguille",1),80,1200,350);
+        evolutions.add(new EvolutionCadence(0.25,200));
+        evolutions.add(new EvolutionPortee(0.20,150));
     }
 
     
