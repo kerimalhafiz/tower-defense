@@ -1,41 +1,80 @@
-package TowerDefence.tower;
+ackage TowerDefence.tower;
+
 import TowerDefence.Balloon.*;
 import TowerDefence.board.*;
-import  java.util.*;
+import java.util.ArrayList;
 
-
+/**
+ * Freeze tower.
+ *
+ * This tower does not deal damage. Instead, it freezes a balloon
+ * for a certain number of ticks.
+ *
+ * Initial characteristics (from the project specification):
+ * - Cost: 400
+ * - Range: 100
+ * - Cadence: 1500 ms
+ * - No projectile (special effect tower)
+ *
+ * The tower targets the balloon that is closest to the end of its path.
+ * If two balloons are equally close, it selects the one that is more
+ * advanced inside its current cell (greater progress value).
+ */
 public class TourfrozenBalloon extends Tour {
-    protected int effect;
-    public TourfrozenBalloon( int effect){
-    super(null, 100, 1500, 400);
-    this.effect=effect;
-   }
 
-    public void tirer(Board b){
-        ArrayList<Balloon> candidate=neighborhood(b);
+    /** Duration of the freezing effect (in ticks). */
+    protected int effect;
+
+    /**
+     * Creates a freeze tower with a specified freeze duration.
+     *
+     * @param effect number of ticks during which the balloon will be frozen
+     */
+    public TourfrozenBalloon(int effect) {
+        super(null, 100, 1500, 400);
+        this.effect = effect;
+    }
+
+    /**
+     * Applies the freeze effect to the most advanced balloon in range.
+     *
+     * The method:
+     * 1) collects balloons in range,
+     * 2) selects the balloon closest to the end of its path,
+     * 3) freezes that balloon for {@code effect} ticks.
+     *
+     * @param b the game board
+     */
+    public void tirer(Board b) {
+        ArrayList<Balloon> candidate = neighborhood(b);
+
         if (candidate.isEmpty()) {
             return;
         }
-        Balloon target=null;
-        int bestevolu=Integer.MAX_VALUE;
-        for(Balloon bl:candidate){
-            if (bl==null||bl.isDestroyed()||bl.isOut()||bl.getPath()==null)continue;
-           int m=(bl.getPath().size()-1)-bl.getPosition();
-              
-           if (m<bestevolu) {
-                bestevolu=m;
-                target=bl;
-           }
-           else if (m==bestevolu && target!=null){
-                   if (bl.getprogress() > target.getprogress()) {
-                target=bl;
-                   }
+
+        Balloon target = null;
+        int bestevolu = Integer.MAX_VALUE;
+
+        for (Balloon bl : candidate) {
+            if (bl == null || bl.isDestroyed() || bl.isOut() || bl.getPath() == null)
+                continue;
+
+            // Remaining distance to the end of the path
+            int m = (bl.getPath().size() - 1) - bl.getPosition();
+
+            if (m < bestevolu) {
+                bestevolu = m;
+                target = bl;
             }
-                
-            
+            // Tie-break: choose the balloon more advanced in its current cell
+            else if (m == bestevolu && target != null) {
+                if (bl.getprogress() > target.getprogress()) {
+                    target = bl;
+                }
+            }
         }
-        if (target!=null) {
-            
+
+        if (target != null) {
             target.freeze(effect);
         }
     }
