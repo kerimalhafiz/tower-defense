@@ -37,13 +37,7 @@ public class TourRballoon extends Tour{
         }
     }
     
-    public void augmenterPortee(){
-        this.portee+=100;
-    };
-    public  void augmenterCadence(){
-        this.cadence+=1500;
-    };
-    public  void augmenterPuissance(){};
+   
 
     public double geteffect(){
         return this.effect;
