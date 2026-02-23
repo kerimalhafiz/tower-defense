@@ -27,6 +27,7 @@ public abstract class Evolution {
         }
     } */
 
-
+public abstract void appliquer(Tour t);
+public abstract void retirer(Tour t);
 
 }
