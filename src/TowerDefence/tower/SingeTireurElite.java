@@ -6,19 +6,12 @@ import TowerDefence.Balloon.Balloon;
 
 import TowerDefence.board.*;
 public class SingeTireurElite extends Tour{
-    //private static  final double nb=1.25; 
-    private static  final double nv=0.75;
+    
     public SingeTireurElite(){
         super(new Projectile("singe tireur elite",4),10000,2000,500);
     }
-    public void augmenterCadence(){
-        this.cadence *= nv;
-    }
-    public void augmenterPuissance() {
-        this.projectile.setDamage(this.projectile.getDamage()+2);
-        
-    }
-    public void cibler(Board board){};
+    
+    
     public void tirer(Board b){
         ArrayList<Balloon> ballons_voisin = neighborhood(b);
         if (ballons_voisin.isEmpty()){
@@ -42,7 +35,7 @@ public class SingeTireurElite extends Tour{
             b_proche.takeDamage(this.projectile.getDamage());
         }
         
-    };
-    public void augmenterPortee(){};
+    }
+    
   
 }
