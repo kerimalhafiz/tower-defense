@@ -26,7 +26,10 @@ public class TourRballoon extends Tour{
     /**
      * Shoots (applies effect) to the balloon closest to the end of the path
      * within the tower's range.
+<<<<<<< HEAD
      * @param b the board 
+=======
+>>>>>>> 890b240 (dajout des commentaires)
      */
  public void tirer(Board b){
         ArrayList<Balloon> candidate=neighborhood(b);
@@ -52,10 +55,39 @@ public class TourRballoon extends Tour{
             target.Subtractspeed(effect);
         }
     }
+<<<<<<< HEAD
     
    
+=======
+
+<<<<<<< HEAD
+    /**
+=======
 
     /**
+     * Increases tower range.
+     */
+    public void augmenterPortee(){
+        this.portee+=100;
+    };
+
+    /**
+     * Increases attack cooldown (slower firing).
+     */
+    public  void augmenterCadence(){
+        this.cadence+=1500;
+    }
+>>>>>>> ce755bc (ajout des commentaires)
+
+    /**
+     * No power upgrade (support tower).
+     */
+    public  void augmenterPuissance(){
+        // No projectile → no damage upgrade
+    };
+    
+     /**
+>>>>>>> 890b240 (dajout des commentaires)
     *  getteur of effect
      * @return current slowing effect value
      */
@@ -63,7 +95,12 @@ public class TourRballoon extends Tour{
         return this.effect;
     }
 
+<<<<<<< HEAD
     /**
+=======
+
+     /**
+>>>>>>> 890b240 (dajout des commentaires)
      * Sets a new slowing effect value.
      * @param temp new effect value
      */
