@@ -6,7 +6,10 @@ import TowerDefence.Balloon.Balloon;
 
 import TowerDefence.board.*;
 public class SingeTireurElite extends Tour{
-    
+    /**
+     * Creates a Sniper Monkey tower with predefined characteristics
+     * and available evolutions.
+     */
     public SingeTireurElite(){
         super(new Projectile("flechette tres pointue",4),10000,2000,500);
         evolutions.add(new EvolutionCadence(0.25,200));
@@ -44,12 +47,8 @@ public class SingeTireurElite extends Tour{
             b_proche.takeDamage(this.projectile.getDamage());
             if (b_proche.isDestroyed()){
                 System.out.println("le ballon"  + b_proche.getId() + " a été detruit");
-            }
-
-            b_proche.takeDamage(this.projectile.getDamage());
+            } 
         }
-        
     }
-    
   
 }

@@ -55,14 +55,6 @@ public class TourRballoon extends Tour{
             target.Subtractspeed(effect);
         }
     }
-<<<<<<< HEAD
-    
-   
-=======
-
-<<<<<<< HEAD
-    /**
-=======
 
     /**
      * Increases tower range.
@@ -77,7 +69,6 @@ public class TourRballoon extends Tour{
     public  void augmenterCadence(){
         this.cadence+=1500;
     }
->>>>>>> ce755bc (ajout des commentaires)
 
     /**
      * No power upgrade (support tower).
@@ -87,7 +78,6 @@ public class TourRballoon extends Tour{
     };
     
      /**
->>>>>>> 890b240 (dajout des commentaires)
     *  getteur of effect
      * @return current slowing effect value
      */
@@ -95,12 +85,7 @@ public class TourRballoon extends Tour{
         return this.effect;
     }
 
-<<<<<<< HEAD
     /**
-=======
-
-     /**
->>>>>>> 890b240 (dajout des commentaires)
      * Sets a new slowing effect value.
      * @param temp new effect value
      */

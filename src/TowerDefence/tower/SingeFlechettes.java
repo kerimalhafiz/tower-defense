@@ -3,10 +3,26 @@ package TowerDefence.tower;
 import TowerDefence.board.*;
 import java.util.ArrayList;
 import TowerDefence.Balloon.*;
-
-
-
-
+/**
+ * Dart Monkey tower.
+ *
+ * This is a basic damage-dealing tower.
+ * It throws dart projectiles at balloons within its range.
+ *
+ * Initial characteristics:
+ * - Projectile: "flechettes" (damage = 1)
+ * - Range: 100
+ * - Cadence: 1000 ms
+ * - Cost: 200
+ *
+ * The tower targets the balloon that is the most advanced
+ * along the path (highest position value).
+ *
+ * Available upgrades:
+ * - Cadence upgrade
+ * - Range upgrade
+ * - Damage upgrade
+ */
 public class SingeFlechettes extends Tour{
 
     /**
@@ -26,6 +42,18 @@ public class SingeFlechettes extends Tour{
      * @param board the game board
      */
     public void cibler(Board board){};
+    /**
+     * Makes the tower attack.
+     *
+     * The method:
+     * 1) collects balloons within range,
+     * 2) ignores invalid balloons (null, destroyed, or out),
+     * 3) selects the most advanced balloon (highest position),
+     * 4) applies damage using the projectile,
+     * 5) prints a message if the balloon is destroyed.
+     *
+     * @param b the game board
+     */
     public void tirer(Board b){
         ArrayList<Balloon> ballons_voisin = neighborhood(b);
         if (ballons_voisin.isEmpty()){
