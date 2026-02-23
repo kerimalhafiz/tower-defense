@@ -3,19 +3,12 @@ import TowerDefence.board.*;
 import TowerDefence.Balloon.*;
 import java.util.ArrayList;
 public class TourelleAiguille extends Tour{ 
-    private static  final double nv=0.75; 
-    private static  final double nc=1.2; 
+    
     public TourelleAiguille(){
         super(new Projectile("aiguille",1),80,1200,350);
     }
 
-    public void augmenterPortee(){
-        this.portee *= nc;
-    }
-
-    public void augmenterCadence(){
-        this.cadence  *= nv;
-    }
+    
     //public void cibler(Board board){};
     public void tirer(Board b){
         ArrayList<Balloon> ballons_voisin = neighborhood(b);
@@ -38,7 +31,7 @@ public class TourelleAiguille extends Tour{
             }
         }
         
-    };
+    }
    
-    public  void augmenterPuissance(){};
+   
 }
