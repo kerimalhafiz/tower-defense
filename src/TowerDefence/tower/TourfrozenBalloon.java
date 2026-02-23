@@ -80,7 +80,11 @@ public class TourfrozenBalloon extends Tour {
     }
    
 
-    public float geteffect(){
+    /**
+    *  getteur of effect
+     * @return current slowing effect value
+     */
+    public double geteffect(){
         return this.effect;
     }
     public void seteffect(int  temp){
