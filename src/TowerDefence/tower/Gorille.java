@@ -5,15 +5,10 @@ import TowerDefence.board.*;
 import java.util.ArrayList;
 import java.util.Random;
 
-<<<<<<< HEAD
-
-
-=======
 /**
  * Gorille tower
  * this tower randomly attacks one balloon withings its range
- */
->>>>>>> 890b240 (dajout des commentaires)
+ */ 
 public class Gorille extends Tour {
 
     /**
@@ -56,34 +51,8 @@ public class Gorille extends Tour {
             
         }
     }
-<<<<<<< HEAD
 
     
-=======
-     /**
-      * increases the tower's range 50%
-      */
-    public void augmenterPortee() {
-        this.portee *= 1.5;
-    }
-
-    /**
-      * increases firing speed (reduce delay between shots)
-      * lower cadence value means faster attack
-      */
-    @Override
-    public void augmenterCadence() {
-        this.cadence *= 0.33; 
-    }
-    /**
-     * increases projectile damage by 2
-     */
-    @Override
-    public void augmenterPuissance() {
-        projectile.setDamage(projectile.getDamage() + 2);
-    }
-
->>>>>>> ce755bc (ajout des commentaires)
     
 
     
