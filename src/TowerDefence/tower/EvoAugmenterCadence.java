@@ -9,6 +9,15 @@ public class EvoAugmenterCadence extends Evolution {
         this.pourcentage=pourcentage;
     }
 
-    
+    public  void appliquer(Tour t) {
+        t.cadence *= pourcentage;
+    }
+
+    public void retirer(Tour t) {
+        t.cadence /= pourcentage;
+    }
+
     
 }
+    
+
