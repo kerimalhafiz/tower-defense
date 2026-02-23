@@ -1,10 +1,10 @@
 package TowerDefence.tower;
 
-public class EvoAugmenterPuissance extends Evolution {
+public class EvolutionPuissance extends Evolution {
 
     private int  ajout;
 
-    public EvoAugmenterPuissance(int  ajout,double cout ){
+    public EvolutionPuissance(int  ajout,double cout ){
         super("Puissance", cout);
         this.ajout= ajout ;
 

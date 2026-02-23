@@ -1,12 +1,12 @@
 package TowerDefence.tower;
 
-public class EvoChangerProjectile extends Evolution {
+public class EvolutionProjectile extends Evolution {
 
     private Projectile nouveau;
     private Projectile ancien;
 
 
-    public EvoChangerProjectile(Projectile p, double cout) {
+    public EvolutionProjectile(Projectile p, double cout) {
         super("Nouveau projectile", cout);
         this.nouveau = p;
     }
