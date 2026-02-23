@@ -55,9 +55,14 @@ public class TourRballoon extends Tour{
     
    
 
+    /**
+    *  getteur of effect
+     * @return current slowing effect value
+     */
     public double geteffect(){
         return this.effect;
     }
+
     public void seteffect(int temp){
         this.effect=temp;
 
