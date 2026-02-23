@@ -10,22 +10,12 @@ import TowerDefence.Balloon.*;
 
 public class SingeFlechettes extends Tour{
 
-   private static  final double nb=1.25; 
-   private static  final double nv=0.75; 
+   
     
     public SingeFlechettes(){
         super(new Projectile("flechettes",1),100,1000,200);
     }
-    public void augmenterPortee(){
-        this.portee *=nb;
-    }
-
-    public void augmenterCadence(){
-        this.cadence  *= nv;
-    }
-    public void augmenterPuissance() {
-        this.projectile.setDamage(this.projectile.getDamage()+1);
-    }
+    
     public void cibler(Board board){};
     public void tirer(Board b){
         ArrayList<Balloon> ballons_voisin = neighborhood(b);
