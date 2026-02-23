@@ -487,8 +487,8 @@ Le Diagramme UMl des Evolutions a ete approuve
 ### Objectifs pour la semaine et répartition du travail par membre  
 -Diallo Alpha Abdoulaye   `Evolution` et corection et mise à jours du `Readme`
 -Diallo Ibrahima ` EvolutionCadence EvolutionProjectile EvoliutionPorte EvolutionPuissance`
--Diallo Thierno Abdoulaye doit revoir ses tours car sa maniere de chercher le ballon le plus proche n'est pas très fonctionelles(à voir avec Kerim)`SingeFlechette,TourAiguile et SingeTireurElite`
--Kerim Abdoulaye `Documentation du code`
+-Diallo Thierno Abdoulaye doit revoir ses tours car sa maniere de chercher le ballon le plus proche n'est pas très fonctionelles(à voir avec Kerim)`SingeFlechette,TourAiguile et SingeTireurElite`et `Documentation du code`
+-Kerim Abdoulaye `Documentation ` et  `Diagramme UML `
 
 
 ## Semaine 9
