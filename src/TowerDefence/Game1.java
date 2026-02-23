@@ -87,19 +87,21 @@ public class Game1 extends Game {
         }
     }
 
-    public void play(){
-
-        for(Tour t:this.towers){
+    /**
+     * Runs the game.
+     *
+     * Before starting the main game loop (super.play()), each tower starts
+     * its automatic shooting process. After the loop ends, each tower stops shooting.
+     */
+    public void play() {
+        for (Tour t : this.towers) {
             t.startTir(this.b);
-
         }
+
         super.play();
 
-        for(Tour t:this.towers){
+        for (Tour t : this.towers) {
             t.stopTir();
-
         }
-
-        
-
-    }}
+    }
+}
