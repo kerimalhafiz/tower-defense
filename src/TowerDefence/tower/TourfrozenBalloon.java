@@ -39,13 +39,7 @@ public class TourfrozenBalloon extends Tour {
             target.freeze(effect);
         }
     }
-    public void augmenterPortee(){
-        this.portee+=100;
-    };
-    public  void augmenterCadence(){
-        this.cadence+=1500;
-    };
-    public  void augmenterPuissance(){};
+   
 
     public float geteffect(){
         return this.effect;
