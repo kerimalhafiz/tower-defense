@@ -14,6 +14,7 @@ public abstract class Tour {
     protected double cout;
     protected Position position;
     private ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
+    protected ArrayList<Evolution> evolutions = new ArrayList<>();
 
     public Tour(Projectile projectile, int portee, int cadence, double cout) {
         this.projectile = projectile;
