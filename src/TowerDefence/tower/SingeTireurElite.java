@@ -8,9 +8,9 @@ import TowerDefence.board.*;
 public class SingeTireurElite extends Tour{
     
     public SingeTireurElite(){
-        super(new Projectile("singe tireur elite",4),10000,2000,500);
+        super(new Projectile("flechette tres pointue",4),10000,2000,500);
         evolutions.add(new EvolutionCadence(0.25,200));
-        evolutions.add(new EvolutionPortee(0.20,150));
+        evolutions.add(new EvolutionPuissance(2,300));
        
     }
     
