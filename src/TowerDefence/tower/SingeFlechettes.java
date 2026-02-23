@@ -14,6 +14,9 @@ public class SingeFlechettes extends Tour{
     
     public SingeFlechettes(){
         super(new Projectile("flechettes",1),100,1000,200);
+        evolutions.add(new EvolutionCadence(0.25,150));
+        evolutions.add(new EvolutionPortee(0.25,100));
+        evolutions.add(new EvolutionPuissance(1,250));
     }
     
     public void cibler(Board board){};
