@@ -22,23 +22,8 @@ public class TourBombe extends Tour{
             }
         }
     }
-    public void augmenterPortee() {
-        this.portee *= 1.5;
-    }
-
-    @Override
-    public void augmenterCadence() {
-        this.cadence *= 0.75;
-    }
-
-    @Override
-    public void augmenterPuissance() {
-        projectile.setDamage(projectile.getDamage() + 1);
-    }
-
-    public void changerProjectile() {
-        this.projectile = new Projectile("ExtraBombe",2);
-    }
+    
+    
 }
     
 
