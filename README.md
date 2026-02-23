@@ -23,7 +23,43 @@ Les paragraphes concernant les livrables doivent être remplis avant la date de 
 
 Un lien vers une image de l'UML doit être fourni (une photo d'un diagramme UML fait à la main est suffisant).
 
-## Livrable 1
+## Livrable 1 Plateaux et chemins
+
+##  Modélisation du plateau
+
+Le plateau est modélisé par une classe abstraite `Board`.
+
+Deux implémentations concrètes ont été créées :
+
+- `BoardOne` : plateau avec un chemin unique  
+- `BoardTwo` : plateau avec plusieurs trajectoires indépendantes  
+
+### Pourquoi ce choix ?
+
+Ce choix permet :
+
+- de gérer plusieurs modes de jeu  
+- de factoriser les comportements communs  
+- de faciliter l’ajout de nouveaux types de plateaux  
+
+---
+
+## Modélisation des chemins
+
+Nous avons créé une **interface `Path`**.
+
+Chaque type de chemin implémente cette interface :
+
+- `PathOne` → chemin avec tournants  
+- `PathTwo` → trajectoires droites  
+
+### Pourquoi ce choix ?
+
+- séparer la logique des chemins du plateau  
+- faciliter l’extensibilité  
+- respecter le principe Ouvert/Fermé  
+
+---
 ### INSTRUCTIONS PRECISES :
 ### COMPILATION DU PROGRAMME
 Pour compiler notre  programme, il faut executer cette commande:
@@ -97,28 +133,41 @@ NB: dans ce fichier il doit y avoir 2 lignes a l'interieur.(la seconde est vide)
 ### Difficultés restant à résoudre
 
 ## Livrable 2
-Choix de modélisation
+# Choix de modelisation
 
-La modélisation repose principalement sur l’utilisation de la classe abstraite Balloon.
-Ce choix permet de factoriser le comportement commun à tous les ballons (position sur le chemin, progression, vitesse, etc.) tout en laissant la possibilité de définir des comportements spécifiques via l’héritage.
+## Modélisation des ballons
 
-Grâce à cette approche, chaque type de ballon peut être représenté par une classe concrète qui étend Balloon et implémente la méthode abstraite move.
-Par exemple :
+Les ballons sont représentés par une **classe abstraite `Balloon`**.
 
-un ballon pouvant geler,
+Tous les ballons partagent :
 
-un ballon ayant une résistance particulière,
+- position  
+- vitesse  
+- résistance  
+- progression  
 
-ou encore un ballon avec une vitesse variable selon le terrain,
 
-peut être ajouté simplement en créant une nouvelle classe héritant de Balloon, sans modifier le reste du code.
+### Pourquoi ce choix ?
 
-Cette modélisation respecte le principe d’ouverture/fermeture : le système est ouvert à l’extension mais fermé à la modification.
-Elle facilite également l’évolution du projet et la maintenance du code.
+- éviter la duplication de code  
+- faciliter l’ajout de nouveaux types de ballons  
+- permettre le polymorphisme  
 
-Le plateau est représenté par la classe Board, elle aussi abstraite, ce qui permet d’implémenter plusieurs types de plateaux.
-La classe BoardTwo est une implémentation concrète permettant de générer plusieurs chemins rectilignes à l’aide de la classe PathTwo.
+---
 
+## Stockage des ballons
+
+Les ballons sont stockés directement dans la classe `Board`.
+
+### Pourquoi ce choix ?
+Nous avons longuement discuter de ou mettre les ballons puis nous nous sommes dis que dans board on aura plus de marge de manoeuvre.
+Cela permet :
+
+- une gestion globale des ballons  
+- un déplacement simplifié  
+- une meilleure cohérence de la simulation  
+
+---
 ### INSTRUCTIONS PRECISES :
 ### COMPILATION DU PROGRAMME
 ###Pour compiler notre  programme, il faut executer cette commande:
@@ -161,6 +210,55 @@ Compilation, exécution et lancement des tests via la ligne de commande
 ### Difficultés restant à résoudre
    
 ## Livrable 3
+
+# Choix de modelisation Tours et tir
+
+##  Modélisation des tours
+
+Les tours sont représentées par une **classe abstraite `Tour`**.
+
+Chaque type de tour hérite de cette classe.
+
+Toutes les tours possèdent :
+
+- une portée  
+- une cadence  
+- un projectile  
+- une position  
+Mais chaque tour tire de differente maniere et les ballons sur les quels sont tirees sont aussi choisi differement
+
+### Pourquoi ce choix ?
+
+- factoriser le code commun  
+- permettre des comportements de tir différents  
+- simplifier l’ajout de nouvelles tours  
+
+---
+
+## Gestion du tir automatique
+
+Chaque tour utilise un `ScheduledExecutorService` pour tirer automatiquement.
+Cet element une connaisance recente(on a effectue des recherches pour trouver ce module) nous pensons la cadence comme le temps entre chaque tire (de ce fait une tour avec 100ms de cadence executera sa methode tirer apres chaque 100ms et faudra pas oublier qu une evolution servira a diminuer ce temps pas à l augmenter)
+
+### Pourquoi ce choix ?
+
+- gestion du temps indépendante  
+- cadence spécifique à chaque tour  
+
+
+---
+
+##  Modélisation des projectiles
+
+Les projectiles sont représentés par une classe `Projectile`.
+l'ajout de nouveau projectille ne sera pas un probleme juste son nom et son nombre de degat.
+
+### Pourquoi ce choix ?
+
+- permettre des dégâts variables  
+- faciliter le changement de projectile  
+- simplifier les évolutions  
+
 ###les commades pour la compilation:
 
 compiler:
@@ -186,6 +284,25 @@ compiler:
 ### Difficultés restant à résoudre
 
 ## Livrable 4
+# choix de modelisation
+
+##  Modélisation des évolutions
+
+Les évolutions seront modélisées par des **classes dédiées `Evolution`**.
+toutes heriteront de la classe abtraite `Evolution` qui aura de methode abstraite `appliquer et retirer`ces deux methodes respectivement applique l effet de l evolution ou le retire au besoin
+Chaque évolution :
+
+- possède un coût  
+- ne peut être appliquée qu’une seule fois  
+- peut être cumulée  
+- peut être revendue  
+- modifie les caractéristiques de la tour  
+
+### Pourquoi ce choix ?
+
+- séparer la logique des améliorations des tours  
+- faciliter l’ajout de nouvelles évolutions  
+---
 
 ### Atteinte des objectifs
 
@@ -207,13 +324,21 @@ compiler:
 
 Le journal de bord doit être rempli à la fin de chaque séance encadrée, et **avant** de quitter la salle. 
 
-Pour chaque semaine on y trouvera :
-- ce qui a été réalisé, les difficultés rencontrées et comment elles ont été surmontées (on attend du contenu, pas uniquement une phrase du type "tous les objectifs ont été atteints")
-- la liste des objectifs à réaliser d'ici à la prochaine séance encadrée
-Apres avoir reçu votre mail nous nous sommes rendu compte qu il fallait des modification  afin d'avoir le resultat demandé
-Tout d'abord nous avons ajoute une classe Position ce qui a entraine la modification de Cell . Nous avons aussi modifie findpath de Path desormais il prends une grille en parrametre au lieu d un board et il renvoit la liste des Positions sur laquel passe le chemin.
-et nous avons aussi creer BoardOne et BoardTwo pour representé les deux table ;elles heritent d'une classe abstraite Board.
-Nous avons aussi finalement décidé de stocker les ballons dans le Board au lieu des cell nous pensont que a partir du board on a plus de maarge de manoeuvre.
+Depuis le début du projet, nous avons rencontré, entre autres, quelques difficultés. Nous avions des idées divergentes sur le concept, mais le plus grand problème était la fébrilité de certains membres du groupe au moment de rendre le livrable 2.
+
+Nous nous sommes rendu compte que tout allait de travers. Nous avons donc convoqué une réunion le vendredi après les cours. Pendant cette réunion, chacun a pu donner son point de vue et exprimer ses ressentis. Les discussions ont été houleuses, mais une fois que chacun a accepté sa part de responsabilité, nous avons repris tout le projet ensemble et réorganisé le diagramme UML du livrable 2, car nos ballons n’avaient pas le bon comportement. Nous avons également fixé un délai pour chaque membre et pour son travail.
+
+Malheureusement, ce délai n’a pas été respecté et nous étions donc en retard une fois de plus. Nous aurions normalement dû être en train de travailler sur le livrable 3, mais avec les DS qui approchaient, la situation ne s’est pas améliorée.
+
+Nous nous sommes de nouveau réunis. Les membres concernés ont accepté leur part de responsabilité et nous avons tenu une séance de code collective, qui a été fructueuse. Le livrable 2 a finalement bien fonctionné et les ballons se comportent correctement.
+
+Le livrable 3 a été réalisé un peu au dernier moment, mais cette fois le retard n’était plus dû à un membre en particulier. Les DS nous ont beaucoup ralentis. Dès le jeudi 19, nous nous y sommes remis. Nous avons corrigé l’UML que Ibrahima et Thierno avaient réalisé pour le livrable 3.
+
+Dans une bonne ambiance, souvent en ligne et au téléphone, nous avons codé ensemble. Le travail avait été réparti à l’avance et chacun a apporté son aide aux autres, par exemple pour trouver le ballon le plus proche de la sortie Kerim et Alpha y ont travailé ensemble.
+
+Notre constat est qu’une bonne ambiance de groupe et la volonté de chacun permettent d’avancer plus vite.
+
+Le livrable 4 est en cours à ce jour, lundi 23 février. Le concept a été approuvé. Nous accusons néanmoins un certain retard sur les tests, que nous allons combler rapidement. Nous essayons également de vérifier l’écart de commits entre les membres : Ibrahima Diallo est actuellement celui qui en compte le moins, mais cela devrait se stabiliser rapidement.
 
 ## Semaine 1
 
@@ -303,9 +428,6 @@ les difficultés rencontrées sont le fait de pouvoir avancer un le choix de mod
 
 
 ### Ce qui a été réalisé
-Après une réunion d’équipe, nous nous sommes rendu compte qu’il manquait une réelle organisation concernant le rendu du travail. En effet, certaines parties du projet n’étaient pas suffisamment coordonnées, ce qui a entraîné des erreurs et un manque de cohérence dans le code.
-
-Suite à ce constat, nous avons pris plusieurs décisions :
 
 Nous avons corrigé les parties du code qui ne fonctionnaient pas dans le Livrable 2b.
 
@@ -341,28 +463,33 @@ correction  des nos travaux des réunions et une organisation pour une meilleurs
    la class Boardtwo() qui  a une liste de chemin et que 1  ballon par chemin , dont on va resoudre le diffulté pour faire  fonctionner , la methode remove() on avait pensé  depuis le debut mais pas encore implementé, la methode move() dans la class Boardtwo  aussi  
 
 ### Objectifs pour la semaine et répartition du travail par membre  
-### Objectifs pour la semaine et répartition du travail par membre
+
 - kerim abdoulaye mahamat alhafiz  correction du class et livrable2 et code générative
 - Diallo Alpha Abdoulaye   correction du class et livrable2 et code générative
 - Diallo Ibrahima classe  diagramme et les methodes du livrable3
 - Diallo Thierno Abdoulaye diagramme et les methodes du livrable3
-
  
 ## Semaine 7
 
 ### Ce qui a été réalisé
-
+-Diallo Alpha Abdoulaye   `Tour `et livrable3a livrable3b
+-Diallo Ibrahima ` Gorill et TourBombe`
+-Diallo Thierno Abdoulaye `SingeFlechette,TourAiguile et SingeTireurElite`
+-Kerim Abdoulaye `TourFrozenBallon et TourRballoon`
+NB: Game 1 herite de Game et a ete rempli par chaque membre
 ### Difficultés rencontrées
-
-### Objectifs pour la semaine et répartition du travail par membre
 
 ## Semaine 8
-
 ### Ce qui a été réalisé
+Le Diagramme UMl des Evolutions a ete approuve
 
-### Difficultés rencontrées
 
-### Objectifs pour la semaine et répartition du travail par membre
+### Objectifs pour la semaine et répartition du travail par membre  
+-Diallo Alpha Abdoulaye   `Evolution` et corection et mise à jours du `Readme`
+-Diallo Ibrahima ` EvolutionCadence EvolutionProjectile EvoliutionPorte EvolutionPuissance`
+-Diallo Thierno Abdoulaye doit revoir ses tours car sa maniere de chercher le ballon le plus proche n'est pas très fonctionelles(à voir avec Kerim)`SingeFlechette,TourAiguile et SingeTireurElite`
+-Kerim Abdoulaye `Documentation du code`
+
 
 ## Semaine 9
 
