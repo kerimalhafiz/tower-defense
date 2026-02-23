@@ -1,4 +1,4 @@
-ackage TowerDefence.tower;
+package TowerDefence.tower;
 
 import TowerDefence.Balloon.*;
 import TowerDefence.board.*;
