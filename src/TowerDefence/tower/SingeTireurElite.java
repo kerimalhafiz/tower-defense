@@ -14,7 +14,18 @@ public class SingeTireurElite extends Tour{
        
     }
     
-    
+    /**
+     * Makes the tower attack.
+     *
+     * The method:
+     * 1) collects balloons within range,
+     * 2) ignores invalid balloons (null, destroyed, or out),
+     * 3) selects the most advanced balloon (highest position),
+     * 4) applies damage using the projectile,
+     * 5) prints a message if the balloon is destroyed.
+     *
+     * @param b the game board
+     */
     public void tirer(Board b){
         ArrayList<Balloon> ballons_voisin = neighborhood(b);
         if (ballons_voisin.isEmpty()){
