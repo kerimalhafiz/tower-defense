@@ -34,20 +34,7 @@ public class Gorille extends Tour {
         }
     }
 
-    public void augmenterPortee() {
-        this.portee *= 1.5;
-    }
-
-    @Override
-    public void augmenterCadence() {
-        this.cadence *= 0.33; 
-    }
-
-    @Override
-    public void augmenterPuissance() {
-        projectile.setDamage(projectile.getDamage() + 2);
-    }
-
+    
     
 
     
