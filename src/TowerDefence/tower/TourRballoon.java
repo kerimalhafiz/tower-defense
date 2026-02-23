@@ -26,10 +26,7 @@ public class TourRballoon extends Tour{
     /**
      * Shoots (applies effect) to the balloon closest to the end of the path
      * within the tower's range.
-<<<<<<< HEAD
      * @param b the board 
-=======
->>>>>>> 890b240 (dajout des commentaires)
      */
  public void tirer(Board b){
         ArrayList<Balloon> candidate=neighborhood(b);
@@ -77,7 +74,8 @@ public class TourRballoon extends Tour{
         // No projectile → no damage upgrade
     };
     
-     /**
+     
+    /**
     *  getteur of effect
      * @return current slowing effect value
      */
