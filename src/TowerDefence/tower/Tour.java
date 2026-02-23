@@ -24,6 +24,7 @@ public abstract class Tour {
         
         
         
+        
     }
 
     public void setPosition(Position p){
