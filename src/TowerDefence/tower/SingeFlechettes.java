@@ -15,7 +15,6 @@ import TowerDefence.Balloon.*;
  */
 public class SingeFlechettes extends Tour{
 
-<<<<<<< HEAD
    
     
     public SingeFlechettes(){
@@ -26,7 +25,7 @@ public class SingeFlechettes extends Tour{
     }
     
     public void cibler(Board board){};
-=======
+
    private static  final double nb=1.25; 
    private static  final double nv=0.75; 
     /**
@@ -68,7 +67,6 @@ public class SingeFlechettes extends Tour{
      * Shoots at the balloon that is the most advanced on the path.
      * @param b the board when the balloon move 
      */
->>>>>>> ce755bc (ajout des commentaires)
     public void tirer(Board b){
         ArrayList<Balloon> ballons_voisin = neighborhood(b);
         if (ballons_voisin.isEmpty()){
