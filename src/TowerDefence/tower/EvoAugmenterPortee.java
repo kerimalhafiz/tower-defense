@@ -7,4 +7,13 @@ public class EvoAugmenterPortee extends Evolution{
         super("Cadence", cout);
         this.pourcentage=pourcentage;
     }
+
+
+    public  void appliquer(Tour t) {
+        t.cadence *= pourcentage;
+    }
+
+    public void retirer(Tour t) {
+        t.cadence /= pourcentage;
+    }
 }
