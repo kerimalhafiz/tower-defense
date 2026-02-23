@@ -5,6 +5,25 @@ import java.util.ArrayList;
 import TowerDefence.Balloon.Balloon;
 
 import TowerDefence.board.*;
+/**
+ * Sniper Monkey tower.
+ *
+ * This is a long-range damage-dealing tower.
+ * It throws a very sharp dart at balloons anywhere on the map.
+ *
+ * Initial characteristics:
+ * - Projectile: "flechette tres pointue" (damage = 4)
+ * - Range: 10000 (can reach almost the entire board)
+ * - Cadence: 2000 ms
+ * - Cost: 500
+ *
+ * The tower targets the most advanced balloon on the path
+ * (highest position value).
+ *
+ * Available upgrades:
+ * - Cadence upgrade
+ * - Damage upgrade
+ */
 public class SingeTireurElite extends Tour{
     /**
      * Creates a Sniper Monkey tower with predefined characteristics
