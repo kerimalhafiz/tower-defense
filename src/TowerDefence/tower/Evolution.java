@@ -9,24 +9,6 @@ public abstract class Evolution {
         this.acheter=false;
         this.cout=c;
     }
-   /*  public boolean acheter(Player p; Tour t){
-        if(!this.acheter&&p.getMoney()>=this.cout){
-            //retirer l argentdu solde du joueur
-            this.appliquer(t);
-            this.acheter=true;
-            return true;
-        }
-        return false;
-    }*/
-
-   /*  public void vendre(Player p,Tour t){
-        if(this.acheter){
-            //on credite le solde du joueur
-            this.retirer(t)//on enleve l effet de l'evolution
-            this.acheter=false;
-        }
-    } */
-
 public abstract void appliquer(Tour t);
 public abstract void retirer(Tour t);
 
