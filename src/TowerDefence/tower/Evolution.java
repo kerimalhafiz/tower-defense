@@ -40,6 +40,15 @@ public abstract class Evolution {
         }
         return false;
     }*/
+   /*  public void vendre(Player p,Tour t){
+        if(this.acheter){
+            //on credite le solde du joueur
+            this.retirer(t)//on enleve l effet de l'evolution
+            this.acheter=false;
+        }
+    } */
+
+
 
 
     /**
