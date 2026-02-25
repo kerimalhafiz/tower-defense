@@ -1,6 +1,8 @@
 package Tour;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 import TowerDefence.board.*;
 import TowerDefence.tower.*;
@@ -23,5 +25,17 @@ public class TourRalentitBalloonTest {
     this.towe2=new TourRballoon(3);
     }
 
-    
+    @Test
+     public void RalentitBalloonTest_boardone(){
+        ArrayList <Balloon> list=new ArrayList<>();
+        list.add(balloon1);
+        list.add(balloon2);
+        boardOne.addBalloon(list);
+        tower1.setPosition(new Position(0,0));
+        boardOne.getCell(0, 0).setvalueX(balloon1);
+        assertFalse(balloon1.isFrozen());
+        tower1.tirer(boardOne);
+        assertTrue("le ballon est ralentit", balloon1.isFrozen());
+        assertFalse(balloon2.isFrozen());
+     }
 }
