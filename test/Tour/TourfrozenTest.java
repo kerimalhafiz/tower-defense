@@ -1,5 +1,6 @@
 package Tour;
 
+import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
 
 import TowerDefence.Balloon.Balloon;
@@ -30,12 +31,11 @@ public class TourfrozenTest {
         this.board1=new BoardOne(10, 12);
         this.board2=new BoardTwo(12, 12, 5);
         this.T1=new TourfrozenBalloon(3);
+        this.T2=new TourfrozenBalloon(2);
     }
     
 
-    /**
-     * 
-     */
+   @Test
     public void  frozenBalloontest_board(){
      
         ArrayList<Balloon> list=new  ArrayList<>();
@@ -51,6 +51,22 @@ public class TourfrozenTest {
         assertTrue(b1.isFrozen());
 
 
+    }
+    @Test
+    public void frozenBalloontest_boardTwo(){
+        ArrayList<Balloon> list2=new ArrayList<>();
+        list2.add(b1);
+        list2.add(b2);
+        board2.addBalloon(list2);
+        T2.setPosition(new Position(0, 0));
+        board2.getCell(0, 0).setvalueX(b1);
+        
+        assertFalse(b1.isFrozen());
+        T2.tirer(board2);
+        //le ballon doit etre gele 
+        assertTrue(b1.isFrozen());
+
+        
     }
  
 
