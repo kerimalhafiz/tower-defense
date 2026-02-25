@@ -40,7 +40,7 @@ public class EvolutionCadence extends Evolution {
      * @param t the tower to downgrade
      */
     public void retirer(Tour t) {
-        t.cadence /= pourcentage;
+        t.cadence =(int)(t.cadence/pourcentage);
     }
 
 }
