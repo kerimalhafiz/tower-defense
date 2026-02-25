@@ -1,5 +1,6 @@
 package TowerDefence;
 
+import TowerDefence.tower.Evolution;
 import TowerDefence.tower.Tour;
 import java.util.ArrayList;
 
@@ -37,6 +38,18 @@ public boolean  acheter(Tour t){
         return true;
     }
     return false;
+}
+public void acheterEvolution(Tour t){
+    ArrayList<Evolution>evo=t.getEvolutions();
+    int i=0;
+    while(i<evo.size()&&(!evo.get(i).Isbuy())&&evo.get(i).getCout()<=this.credit){
+        i++;
+    }
+    if(i<evo.size()){
+    evo.get(i).appliquer(t);
+    evo.get(i).buy();
+}
+
 }
 
 
