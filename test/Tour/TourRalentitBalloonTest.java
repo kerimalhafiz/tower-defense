@@ -14,7 +14,7 @@ public class TourRalentitBalloonTest {
     private Board boardOne;
     private Board boardTwo;
     private Tour tower1;
-    private Tour towe2;
+    private Tour tower2;
     @BeforeEach
     public  void before(){
      this.balloon1=new BasicBalloon(2,2,"basic");
@@ -22,7 +22,7 @@ public class TourRalentitBalloonTest {
      this.boardOne=new BoardOne(10, 12);
     this.boardTwo=new  BoardTwo(12, 12, 8);
     this.tower1=new TourRballoon(4);
-    this.towe2=new TourRballoon(3);
+    this.tower2=new TourRballoon(3);
     }
 
     @Test
@@ -38,4 +38,18 @@ public class TourRalentitBalloonTest {
         assertTrue("le ballon est ralentit", balloon1.isFrozen());
         assertFalse(balloon2.isFrozen());
      }
+      @Test
+     public void RalentitBalloonTest_boardtwo(){
+        ArrayList <Balloon> list=new ArrayList<>();
+        list.add(balloon1);
+        list.add(balloon2);
+        boardOne.addBalloon(list);
+        tower2.setPosition(new Position(0,0));
+        boardOne.getCell(0, 0).setvalueX(balloon1);
+        assertFalse(balloon1.isFrozen());
+        tower2.tirer(boardOne);
+        assertTrue("le ballon est ralentit", balloon1.isFrozen());
+        assertFalse(balloon2.isFrozen());
+     }
+
 }
