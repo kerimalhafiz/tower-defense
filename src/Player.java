@@ -13,6 +13,9 @@ public void diminueCreditDe(int n){
 public int getCredit(){
     return this.credit;
 }
+public void diminueVieDe(int n){
+    this.vies-=n;
+}
 
 
 
