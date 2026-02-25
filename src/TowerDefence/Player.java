@@ -40,6 +40,7 @@ public boolean  acheter(Tour t){
     }
     return false;
 }
+
 private void acheterEvolution(Tour t){
     ArrayList<Evolution>evo=t.getEvolutions();
     int i=0;
@@ -52,6 +53,7 @@ private void acheterEvolution(Tour t){
     this.credit-=evo.get(i).getCout();
     System.out.println("Evolution de la tour nom de l evolution: "+evo.get(i).getNom());
 }}
+
 public void evoluer(){
     Random r = new Random();
     int i=r.nextInt(this.towers.size());

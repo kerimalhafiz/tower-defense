@@ -497,6 +497,14 @@ le 25/02:
 Les objectifs precedents ont été atteint à 95%.le diagramme UML sera fait lorsque Kerim ira mieux.
 -Thierno Abdoulaye et Diallo Ibrahima se chargeront des test
 -Alpha Abdoulaye a avancé sur la classe Player
+Reunion telephonique de groupe le 25/02 entre 14h à 15h nous avons revus la difference de commits
+-Alpha Abdoulaye:138
+-Kerim Abdoulaye:96
+-Thierno Abdoulaye Diallo:74
+-Diallo Ibrahima:72
+Alpha Abdoulaye a presnté son travail sur le Player il doit desormais s'arreter
+Les autres membres du groupe doivent remonter sur le nombre de commits en faisant le travail qui leur a été assigné ci-haut.
+
 
 ## Semaine 9
 
