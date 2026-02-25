@@ -49,6 +49,7 @@ public void acheterEvolution(Tour t){
     evo.get(i).appliquer(t);
     evo.get(i).buy();
     this.credit-=evo.get(i).getCout();
+    System.out.println("Evolution de la tour nom de l evolution: "+evo.get(i).getNom());
 }
 
 }
