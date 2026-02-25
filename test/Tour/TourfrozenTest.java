@@ -1,17 +1,10 @@
 package Tour;
-
-import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
-
-import TowerDefence.Balloon.Balloon;
-import TowerDefence.Balloon.BasicBalloon;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 import TowerDefence.board.*;
-
 import TowerDefence.tower.*;
-
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
+import TowerDefence.Balloon.*;
 import java.util.*;
 
 public class TourfrozenTest {
