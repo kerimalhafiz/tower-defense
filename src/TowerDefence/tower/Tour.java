@@ -36,6 +36,7 @@ public abstract class Tour {
     protected double cout;
     /** Position of the tower on the board. */
     protected Position position;
+    protected int ancienneCadence;
     
     private ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
 
@@ -52,6 +53,7 @@ public abstract class Tour {
         this.projectile = projectile;
         this.portee = portee;
         this.cadence = cadence;
+        this.ancienneCadence=cadence;
         this.cout = cout;
         this.evolutions=new ArrayList<>();
         
@@ -150,17 +152,15 @@ public String toString(){
      *
      * @param b the game board
   */
-public abstract void tirer(Board b);
+public  void tirer(Board b){
+    if(this.ancienneCadence!=this.cadence){
+        this.stopTir();
+        this.startTir(b);
+        this.ancienneCadence=this.cadence;
+    }
+}
 
 
-        /**
-     * Increases the shooting cadence of the tower.
-     */
-    public abstract void augmenterCadence();
-     /**
-     * Increases the power of the tower.
-     */
-    public abstract void augmenterPuissance();
 
 
 /**
