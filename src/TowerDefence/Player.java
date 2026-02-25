@@ -3,6 +3,8 @@ package TowerDefence;
 import TowerDefence.tower.Evolution;
 import TowerDefence.tower.Tour;
 import java.util.ArrayList;
+import java.util.Random;
+import java.util.random.*;
 
 public class Player {
 
@@ -50,6 +52,12 @@ public void acheterEvolution(Tour t){
     evo.get(i).buy();
     this.credit-=evo.get(i).getCout();
     System.out.println("Evolution de la tour nom de l evolution: "+evo.get(i).getNom());
+}}
+public void evoluer(){
+    Random r = new Random();
+    int i=r.nextInt(this.towers.size());
+    Tour t=this.towers.get(i);
+    this.acheterEvolution(t);   
 }
 
 }
