@@ -29,7 +29,7 @@ public class EvolutionCadence extends Evolution {
      * @param t the tower to upgrade
      */
     public void appliquer(Tour t) {
-        t.cadence *= pourcentage;
+        t.cadence = (int)(t.cadence*pourcentage);
     }
 
     /**
