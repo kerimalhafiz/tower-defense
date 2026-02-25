@@ -58,6 +58,10 @@ public abstract class Tour {
         
         
     }
+
+    public ArrayList<Evolution>getEvolutions(){
+        return this.evolutions;
+    }
  
     /**
      * Sets the position of the tower on the board.
