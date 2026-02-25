@@ -25,7 +25,7 @@ import java.util.concurrent.TimeUnit;
  * Subclasses must implement the shooting behavior and evolution logic.
  */
 public abstract class Tour {
-
+    protected  static final double PRIX =12;
         /** The projectile used by the tower (null for special towers). */
     protected Projectile projectile;
     /** Range of the tower (in board cells). */
@@ -57,6 +57,9 @@ public abstract class Tour {
         
         
         
+    }
+    public double getCout(){
+        return this.PRIX;
     }
   
     /**
