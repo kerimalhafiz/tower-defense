@@ -311,7 +311,8 @@ Chaque évolution :
 ## Livrable 5
 
 ### Atteinte des objectifs
-
+-Création de la classe Player Diallo Alpha Abdoulaye
+-definissions des methodes pour leur actions.Diallo Alpha Abdoulaye
 ### Difficultés restant à résoudre
 
 ## Livrable 6
@@ -339,6 +340,9 @@ Dans une bonne ambiance, souvent en ligne et au téléphone, nous avons codé en
 Notre constat est qu’une bonne ambiance de groupe et la volonté de chacun permettent d’avancer plus vite.
 
 Le livrable 4 est en cours à ce jour, lundi 23 février. Le concept a été approuvé. Nous accusons néanmoins un certain retard sur les tests, que nous allons combler rapidement. Nous essayons également de vérifier l’écart de commits entre les membres : Ibrahima Diallo est actuellement celui qui en compte le moins, mais cela devrait se stabiliser rapidement.
+En ce jour du 25/02 Thierno Abdoulaye et Ibrahima Diallo se chargeront de nous mettre à jour sur les test.
+Kerim est souffrant il se chargera du diagramme plustard.
+Diallo Alpha Abdoulaye a travaillé sur la classe Player dans l attente de ce ue doit avoir le livrable4.
 
 ## Semaine 1
 
@@ -489,7 +493,10 @@ Le Diagramme UMl des Evolutions a ete approuve
 -Diallo Ibrahima ` EvolutionCadence EvolutionProjectile EvoliutionPorte EvolutionPuissance`
 -Diallo Thierno Abdoulaye doit revoir ses tours car sa maniere de chercher le ballon le plus proche n'est pas très fonctionelles(à voir avec Kerim)`SingeFlechette,TourAiguile et SingeTireurElite`et `Documentation du code`
 -Kerim Abdoulaye `Documentation ` et  `Diagramme UML `
-
+le 25/02:
+Les objectifs precedents ont été atteint à 95%.le diagramme UML sera fait lorsque Kerim ira mieux.
+-Thierno Abdoulaye et Diallo Ibrahima se chargeront des test
+-Alpha Abdoulaye a avancé sur la classe Player
 
 ## Semaine 9
 
