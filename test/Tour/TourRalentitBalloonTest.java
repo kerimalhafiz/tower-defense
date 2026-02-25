@@ -45,7 +45,7 @@ public class TourRalentitBalloonTest {
         tower2.setPosition(new Position(0,0));
         boardOne.getCell(0, 0).setvalueX(balloon1);
         assertFalse(balloon1.isFrozen());
-        tower2.tirer(boardOne);
+        tower2.tirer(boardTwo);
         assertTrue( balloon1.isFrozen());
         assertFalse(balloon2.isFrozen());
      }
