@@ -4,7 +4,6 @@ import TowerDefence.tower.Evolution;
 import TowerDefence.tower.Tour;
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.random.*;
 
 public class Player {
 
@@ -44,9 +43,10 @@ public boolean  acheter(Tour t){
 public void acheterEvolution(Tour t){
     ArrayList<Evolution>evo=t.getEvolutions();
     int i=0;
-    while(i<evo.size()&&(!evo.get(i).Isbuy())&&evo.get(i).getCout()<=this.credit){
+    while(i<evo.size()&&((evo.get(i).Isbuy())||evo.get(i).getCout()>this.credit)){
         i++;
     }
+    System.out.println(i);
     if(i<evo.size()){
     evo.get(i).appliquer(t);
     evo.get(i).buy();
@@ -66,4 +66,4 @@ public void evoluer(){
 
 
 
-}
+
