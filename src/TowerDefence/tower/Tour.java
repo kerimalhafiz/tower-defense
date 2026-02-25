@@ -36,10 +36,10 @@ public abstract class Tour {
     protected double cout;
     /** Position of the tower on the board. */
     protected Position position;
-    protected ArrayList<Evolution> evolutions;
+    
     private ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
 
-    protected ArrayList<Evolution> evolutions = new ArrayList<>();
+    protected ArrayList<Evolution> evolutions;
 
       /**
      * Constructs a Tower with its main characteristics. 
