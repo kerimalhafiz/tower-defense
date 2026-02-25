@@ -4,10 +4,13 @@ import org.junit.jupiter.api.BeforeEach;
 
 import TowerDefence.Balloon.Balloon;
 import TowerDefence.Balloon.BasicBalloon;
-import TowerDefence.board.Board;
-import TowerDefence.board.BoardOne;
-import TowerDefence.board.BoardTwo;
+import TowerDefence.board.*;
+
 import TowerDefence.tower.*;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 import java.util.*;
 
 public class TourfrozenTest {
@@ -30,13 +33,23 @@ public class TourfrozenTest {
     }
     
 
+    /**
+     * 
+     */
     public void  frozenBalloontest_board(){
      
         ArrayList<Balloon> list=new  ArrayList<>();
         list.add(b1);
         list.add(b2);
         board1.addBalloon(list);
+        T1.setPosition(new Position(0, 0) );
     
+        board1.getCell(0, 0).setvalueX(b1);
+        assertFalse(b1.isFrozen());
+        T1.tirer(board1);
+        //le ballon doit etre ggele 
+        assertTrue(b1.isFrozen());
+
 
     }
  
