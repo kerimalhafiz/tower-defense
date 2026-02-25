@@ -40,7 +40,7 @@ public boolean  acheter(Tour t){
     }
     return false;
 }
-public void acheterEvolution(Tour t){
+private void acheterEvolution(Tour t){
     ArrayList<Evolution>evo=t.getEvolutions();
     int i=0;
     while(i<evo.size()&&((evo.get(i).Isbuy())||evo.get(i).getCout()>this.credit)){
