@@ -34,6 +34,12 @@ public abstract class Evolution {
     public double getCout(){
         return this.cout;
     }
+    public boolean Isbuy(){
+        return this.acheter;
+    }
+    public void buy(){
+        this.acheter=true;
+    }
 
     /**
      * Applies the evolution effect to a tower.
