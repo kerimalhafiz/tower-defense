@@ -58,10 +58,7 @@ public abstract class Tour {
         
         
     }
-    public double getCout(){
-        return this.PRIX;
-    }
-  
+ 
     /**
      * Sets the position of the tower on the board.
      *
@@ -104,7 +101,7 @@ public abstract class Tour {
      * @return cost value
      */
     public double getCout() {
-        return cout;
+        return this.PRIX;
     }
 
      /**
