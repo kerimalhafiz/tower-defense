@@ -46,7 +46,6 @@ public void acheterEvolution(Tour t){
     while(i<evo.size()&&((evo.get(i).Isbuy())||evo.get(i).getCout()>this.credit)){
         i++;
     }
-    System.out.println(i);
     if(i<evo.size()){
     evo.get(i).appliquer(t);
     evo.get(i).buy();
