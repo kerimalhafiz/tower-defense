@@ -36,6 +36,7 @@ public class Gorille extends Tour {
      * it is removed from the board 
      */
     public void tirer(Board board) {
+        super.tirer(board);
         ArrayList<Balloon> cibles = neighborhood(board);
         
         if (!cibles.isEmpty()) {

@@ -1,10 +1,8 @@
 package TowerDefence.tower;
 
-import java.util.ArrayList;
-
 import TowerDefence.Balloon.Balloon;
-
 import TowerDefence.board.*;
+import java.util.ArrayList;
 /**
  * Sniper Monkey tower.
  *
@@ -49,6 +47,7 @@ public class SingeTireurElite extends Tour{
      * @param b the game board
      */
     public void tirer(Board b){
+        super.tirer(b);
         ArrayList<Balloon> ballons_voisin = neighborhood(b);
         if (ballons_voisin.isEmpty()){
             return;

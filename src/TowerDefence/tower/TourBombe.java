@@ -46,6 +46,7 @@ public class TourBombe extends Tour{
      * @param board the game board
      */
     public void tirer(Board board) {
+        super.tirer(board);
         ArrayList<Balloon> cibles = neighborhood(board);
 
         if (!cibles.isEmpty()) {

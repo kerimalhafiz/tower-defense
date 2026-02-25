@@ -46,6 +46,7 @@ public class TourfrozenBalloon extends Tour {
      * @param b the game board
      */
     public void tirer(Board b) {
+        
         ArrayList<Balloon> candidate = neighborhood(b);
 
         if (candidate.isEmpty()) {
