@@ -71,7 +71,7 @@ public class TourBombe extends Tour{
      * so increasing the cadence means decreasing this value.
      * According to the specification, the cadence improvement corresponds to 25% faster shooting.
      */
-    @Override
+    //@Override
     public void augmenterCadence() {
         this.cadence *= 0.75;
     }
