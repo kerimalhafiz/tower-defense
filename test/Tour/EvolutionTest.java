@@ -20,5 +20,8 @@ public class EvolutionTest {
     @Test
     public void testAcheter(){
         Evolution e1 = new Evolution("cadence",200);
+        assertFalse(e.isbuy());
+        e.buy();
+        assertTrue(e.isbuy());
     }
 }
