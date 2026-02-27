@@ -34,7 +34,7 @@ public abstract class Evolution {
     public double getCout(){
         return this.cout;
     }
-    public boolean Isbuy(){
+    public boolean isbuy(){
         return this.acheter;
     }
     public void buy(){
