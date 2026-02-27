@@ -43,4 +43,14 @@ public class EvolutionTestCadence {
         //verifie que la cadence a bien ete multiplier par deux fois 
         assertEquals((int)(res *0.75 * 0.75), tour.getCadence());
     }
+    @Test
+    public void retirer_plusieurs_fois_apres_application(){
+        int res= tour.getCadence();
+        evo.appliquer(tour);
+        evo.appliquer(tour);
+        evo.retirer(tour);
+        evo.retirer(tour);
+        //verifie que la cadence a bien ete multiplier par deux fois 
+        assertEquals(res, tour.getCadence());
+    }
 }
