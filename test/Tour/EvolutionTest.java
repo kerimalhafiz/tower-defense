@@ -11,7 +11,7 @@ import java.util.*;
 public class EvolutionTest {
     @Test
     public void testConstructeur(){
-        Evolution e = new Evolution("portee",150);
+        Evolution e = new EvolutionCadence("portee",150);
         assertEquals("portee",e.getNom());
         assertEquals(150,e.getCout());
         assertfalse(e.isbuy());
@@ -19,19 +19,19 @@ public class EvolutionTest {
     }
     @Test
     public void testAcheter(){
-        Evolution e1 = new Evolution("cadence",200);
+        Evolution e1 = new EvolutionCadence("cadence",200);
         assertFalse(e.isbuy());
         e.buy();
         assertTrue(e.isbuy());
     }
     @Test
     public void testGetCout(){
-        Evolution e2 = new Evolution("puissance",300);
+        Evolution e2 = new EvolutionPuissance("puissance",300);
         assertEquals(300,e2.getCout());
     }
     @Test
     public void testGetNom(){
-        Evolution e3 = new Evolution("projectile",100);
+        Evolution e3 = new EvolutionProjectile("projectile",100);
         assertEquals("projectile",e3.getNom());
     }
 
