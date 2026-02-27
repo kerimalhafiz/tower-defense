@@ -24,4 +24,15 @@ public class EvolutionTestCadence {
         // verfie que tour1 reste inchanger car pas d'evo appliquer
         assertEquals(res1, tour1.getCadence());
     }
+    @Test
+    public void retirer_Evo_restaurer_cadence(){
+        int res= tour.getCadence();
+        int res1= tour1.getCadence();
+        evo.appliquer(tour);
+        evo.retirer(tour);
+        //verifie que la cadence revient a sa valeur iniitiale
+        assertEquals(res, tour.getCadence());
+        // verfie que tour1 reste inchanger car pas d'evo appliquer
+        assertEquals(res1, tour1.getCadence());
+    }
 }
