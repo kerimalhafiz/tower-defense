@@ -29,5 +29,10 @@ public class EvolutionTest {
         Evolution e2 = new Evolution("puissance",300);
         assertEquals(300,e2.getCout());
     }
+    @Test
+    public void testGetNom(){
+        Evolution e3 = new Evolution("projectile",100);
+        assertEquals("projectile",e3.getNom());
+    }
 
 }
