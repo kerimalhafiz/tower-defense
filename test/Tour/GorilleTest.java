@@ -82,6 +82,23 @@ public class GorilleTest {
 
     }
 
+    @Test 
+    public void tirer_plusieurs_ballons(){
+        ArrayList<Balloon> l1= new ArrayList<>();
+        l1.add(b1);
+        l1.add(b2);
+        board1.addBalloon(l1);
+        tour2.setPosition(new Position(1, 1));
+        board1.getCell(1,1).setvalueX(b1);
+        board1.getCell(1,2).setvalueX(b2);
+        int res1 = b1.getResistance();
+        int res2= b2.getResistance();
+        tour2.tirer(board1);
+        // verifie si au moins un ballon a ete touche
+        assertTrue(b1.getResistance()<res1 || b2.getResistance()< res2);
+        
+    }
+
    
     
 }
