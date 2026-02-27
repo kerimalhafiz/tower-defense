@@ -57,43 +57,7 @@ public class TourBombe extends Tour{
         }
     }
 
-    /**
-     * Increases the tower range.
-     * According to the specification, the bomb tower range can be increased by 50%.
-     */
-    public void augmenterPortee() {
-        this.portee *= 1.5;
-    }
 
-      /**
-     * Increases the shooting cadence (shoots more often).
-     * In this project, cadence represents the time between two shots (in milliseconds),
-     * so increasing the cadence means decreasing this value.
-     * According to the specification, the cadence improvement corresponds to 25% faster shooting.
-     */
-    //@Override
-    //public void augmenterCadence() {
-        //this.cadence *= 0.75;
-    //}
-   
-    /**
-     * Increases the power of the tower by increasing the projectile damage level.
-     * According to the specification, this evolution increases damage by +1.
-     */
-    //@Override
-    //public void augmenterPuissance() {
-        //projectile.setDamage(projectile.getDamage() + 1);
-    //}
-
-      /**
-     * Changes the projectile used by this tower.
-     *
-     * According to the specification, the bomb tower can switch from "Bombe"
-     * to "Extra bombe".
-     */
-    //public void changerProjectile() {
-       // this.projectile = new Projectile("ExtraBombe",2);
-   // }
 }
     
 
