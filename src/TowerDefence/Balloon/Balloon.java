@@ -112,6 +112,15 @@ public abstract class Balloon {
         return this.speed;
     }
 
+
+    /**
+     * Returns the resistance of the balloon.
+     * @return resistance balloon
+     */
+    public int getResistance(){
+        return this.resistance;
+    }
+
     /**
      * Checks if the balloon is currently frozen.
      *
