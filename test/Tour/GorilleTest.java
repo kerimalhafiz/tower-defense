@@ -65,6 +65,23 @@ public class GorilleTest {
         // verifie si la resistance du ballon a diminiuer 
         assertTrue(b2.getResistance() < 1 );
     }
+
+    @Test
+    public void tirer_ballon_detruit(){
+        ArrayList<Balloon> l1= new ArrayList<>();
+        l1.add(b2);
+       
+        board1.addBalloon(l1);
+        tour2.setPosition(new Position(1, 1));
+        board1.getCell(1,1).setvalueX(b2);
+        tour2.tirer(board1);
+        // verifie si le ballon b2 de resistance 1 a ete supprimer de ma liste de ballon puisqu'il a ete touche
+
+        assertFalse(board1.getBalloons().contains(b2));
+      
+
+    }
+
    
     
 }
