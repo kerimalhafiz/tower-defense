@@ -16,5 +16,16 @@ public class EvoPuissanceTest {
     }
 
     
+    @Test
+    public void appliquer_puissance(){
+        int res= tour.getprojectile().getDamage();
+        int res1= tour1.getprojectile().getDamage();
+        evo.appliquer(tour);
+        
+        assertEquals(res+1, tour.getprojectile().getDamage());
+        
+        assertEquals(res1, tour1.getprojectile().getDamage());
+    }
+
     
 }
