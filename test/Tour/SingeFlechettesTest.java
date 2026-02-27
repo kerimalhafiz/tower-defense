@@ -49,6 +49,32 @@ public class SingeFlechettesTest {private Balloon b1;
         assertTrue(b1.getResistance() < resistance );
     }
 
+
+    @Test 
+    public void tirer_le_ballon_le_plus_proche_de_la_sortie(){
+        //Faire avancer b2 dans mon chemin 
+        b2.setPosition();
+        ArrayList<Balloon> l= new ArrayList<>();
+        l.add(b1);
+        l.add(b2);
+        
+        board1.addBalloon(l);
+        tour.setPosition(new Position(0, 0));
+        board1.getCell(0,0).setvalueX(b1);
+        board1.getCell(0,1).setvalueX(b2);
+        
+
+        int res = b1.getResistance();
+        int res1 = b2.getResistance();
+        tour.tirer(board1);
+        // verifie que b2 doit perdre sa resistance car c'est le plus avancer 
+        assertTrue(b2.getResistance()< res1);
+
+        // verifie que b1 ne doit pas etre toucher
+        assertEquals(res, b1.getResistance());
+
+    }
+
     
 
 
