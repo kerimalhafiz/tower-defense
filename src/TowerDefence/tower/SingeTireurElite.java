@@ -64,9 +64,10 @@ public class SingeTireurElite extends Tour{
         if (b_proche != null){
             b_proche.takeDamage(this.projectile.getDamage());
             if (b_proche.isDestroyed()){
-                System.out.println("le ballon"  + b_proche.getId() + " a été detruit");
-            } 
+                b.removeBalloon(b_proche);
+            }
         }
+        
     }
   
 }

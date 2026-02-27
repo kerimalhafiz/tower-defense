@@ -60,7 +60,6 @@ public class SingeFlechettes extends Tour{
         if (ballons_voisin.isEmpty()){
             return;
         }
-
         Balloon b_proche = null;
         for (Balloon ballon : ballons_voisin){
             if (ballon == null || ballon.isDestroyed() || ballon.isOut()){
@@ -73,10 +72,10 @@ public class SingeFlechettes extends Tour{
         if (b_proche != null){
             b_proche.takeDamage(this.projectile.getDamage());
             if (b_proche.isDestroyed()){
-                System.out.println("le ballon"  + b_proche.getId() + " a été detruit");
+                b.removeBalloon(b_proche);
             }
-            b_proche.takeDamage(this.projectile.getDamage());
         }
+        
     }
 
 }
