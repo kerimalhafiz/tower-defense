@@ -18,7 +18,7 @@ public class EvolutionPortee extends Evolution{
      * @param cout cost of the evolution
      */
     public EvolutionPortee(double pourcentage,double cout){
-        super("Cadence", cout);
+        super("Portee", cout);
         this.pourcentage=pourcentage;
     }
 
@@ -29,7 +29,7 @@ public class EvolutionPortee extends Evolution{
      * @param t the tower to upgrade
      */
     public void appliquer(Tour t) {
-        t.cadence *= pourcentage;
+        t.portee *= pourcentage;
     }
 
     /**
@@ -40,6 +40,6 @@ public class EvolutionPortee extends Evolution{
      * @param t the tower to downgrade
      */
     public void retirer(Tour t) {
-        t.cadence /= pourcentage;
+        t.portee /= pourcentage;
     }
 }
