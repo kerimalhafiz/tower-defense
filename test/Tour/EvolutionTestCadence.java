@@ -35,4 +35,12 @@ public class EvolutionTestCadence {
         // verfie que tour1 reste inchanger car pas d'evo appliquer
         assertEquals(res1, tour1.getCadence());
     }
+    @Test
+    public void appliquer_plusieurs_fois_cadence(){
+        int res= tour.getCadence();
+        evo.appliquer(tour);
+        evo.appliquer(tour);
+        //verifie que la cadence a bien ete multiplier par deux fois 
+        assertEquals((int)(res *0.75 * 0.75), tour.getCadence());
+    }
 }
