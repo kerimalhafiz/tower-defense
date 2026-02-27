@@ -7,7 +7,7 @@ import TowerDefence.tower.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-
+import java.util.ArrayList;
 public class TourBombeTest {
     private Balloon b1;
     private Balloon b2;
@@ -35,6 +35,19 @@ public class TourBombeTest {
         assertEquals(1800, tour.getCadence());
         assertEquals(600, tour.getCout());
         assertEquals(4, tour.getEvolutions().size());
+    }
+
+    @Test 
+    public void tirer_sur_un_ballon(){
+        ArrayList<Balloon> l= new ArrayList<>();
+        l.add(b1);
+        
+        board1.addBalloon(l);
+        tour.setPosition(new Position(0, 0));
+        board1.getCell(0,0).setvalueX(b1);
+        int resistance = b1.getResistance();
+        tour.tirer(board1);
+        assertTrue(b1.getResistance() < resistance );
     }
 
 
