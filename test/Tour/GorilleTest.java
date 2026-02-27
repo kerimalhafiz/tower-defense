@@ -6,7 +6,7 @@ import TowerDefence.board.*;
 import TowerDefence.tower.*;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+import java.util.ArrayList;
 
 
 public class GorilleTest {
@@ -39,7 +39,19 @@ public class GorilleTest {
         assertEquals(1200, tour1.getCout());
         assertEquals(3, tour1.getEvolutions().size());
     }
+    @Test
+    public void tirer_applique_degats_board1(){
+        ArrayList<Balloon> l= new ArrayList<>();
+        l.add(b1);
+        
+        board1.addBalloon(l);
+        tour1.setPosition(new Position(0, 0));
+        board1.getCell(0,0).setvalueX(b1);
+        int resistance = b1.getResistance();
+        tour1.tirer(board1);
 
+        assertTrue(b1.getResistance() < resistance );
+    }
    
     
 }
