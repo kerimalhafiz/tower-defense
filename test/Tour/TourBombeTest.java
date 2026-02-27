@@ -51,6 +51,24 @@ public class TourBombeTest {
     }
 
 
+    @Test
+    public void tirer_sur_plusieurs_ballons(){
+        ArrayList<Balloon> l1= new ArrayList<>();
+        l1.add(b1);
+        l1.add(b2);
+        board1.addBalloon(l1);
+        tour.setPosition(new Position(0, 0));
+        board1.getCell(0,0).setvalueX(b1);
+        board1.getCell(0,1).setvalueX(b2);
+        int res1 = b1.getResistance();
+        int res2= b2.getResistance();
+        tour.tirer(board1);
+        // verifie si tous  les ballons ont ete touches
+        assertTrue(b1.getResistance()<res1);
+        assertTrue(b2.getResistance()< res2);
+    }
+
+
     
 
     
