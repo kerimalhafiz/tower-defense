@@ -24,4 +24,10 @@ public class EvolutionTest {
         e.buy();
         assertTrue(e.isbuy());
     }
+    @Test
+    public void testGetCout(){
+        Evolution e2 = new Evolution("puissance",300);
+        assertEquals(300,e2.getCout());
+    }
+
 }
