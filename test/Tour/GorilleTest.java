@@ -52,6 +52,19 @@ public class GorilleTest {
 
         assertTrue(b1.getResistance() < resistance );
     }
+    @Test
+    public void tirer_applique_degats_board2(){
+        ArrayList<Balloon> l1= new ArrayList<>();
+        l1.add(b2);
+        
+        board2.addBalloon(l1);
+        tour2.setPosition(new Position(1, 1));
+        board2.getCell(1,1).setvalueX(b2);
+        
+        tour2.tirer(board2);
+        // verifie si la resistance du ballon a diminiuer 
+        assertTrue(b2.getResistance() < 1 );
+    }
    
     
 }
