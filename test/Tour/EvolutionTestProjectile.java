@@ -14,4 +14,15 @@ public class EvolutionTestProjectile {
         this.tour1= new SingeTireurElite();
         this.evo= new EvolutionProjectile(new Projectile("flechette tres pointue", 2),400);
     }
+    @Test
+    public void appliquer_projectile(){
+        String res= tour.getprojectile().getName();
+        String res1= tour1.getprojectile().getName();
+        
+        evo.appliquer(tour);
+        
+        assertEquals(res, tour.getprojectile().getName());
+        
+        assertEquals(res1, tour1.getprojectile().getName());
+    }
 }
