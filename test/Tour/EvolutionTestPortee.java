@@ -13,5 +13,14 @@ public class EvolutionTestPortee{
         this.tour1= new TourBombe();
         this.evo= new EvolutionPortee(1.2,150);
     }
-    
+    @Test
+    public void appliquer_portee(){
+        int res= tour.getPortee();
+        int res1= tour1.getPortee();
+        evo.appliquer(tour);
+        //verifie que la portee est reduite
+        assertEquals((int)(res*1.2), tour.getPortee());
+        // verfie que tour1 reste inchanger car pas d'evo appliquer
+        assertEquals(res1, tour1.getPortee());
+    }
 }
