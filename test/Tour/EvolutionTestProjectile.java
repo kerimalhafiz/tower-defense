@@ -25,4 +25,16 @@ public class EvolutionTestProjectile {
         
         assertEquals(res1, tour1.getprojectile().getName());
     }
+    @Test
+    public void retirer_projectile(){
+        String res= tour.getprojectile().getName();
+        String res1= tour1.getprojectile().getName();
+        
+        evo.appliquer(tour);
+        evo.retirer(tour);
+        
+        assertEquals(res, tour.getprojectile().getName());
+        
+        assertEquals(res1, tour1.getprojectile().getName());
+    }
 }
