@@ -28,9 +28,5 @@ livrable3a.jar:jar
 livrable3b.jar:jar
 	java -classpath classes TowerDefence.Livrable3bMain $(ARGS)
 
-runjar3a:livrable3a.jar 
-	java -jar livrable3a.jar $(ARGS)
-runjar3b:livrable3b.jar 
-	java -jar livrable3b.jar $(ARGS)
 clean:
 	rm -rf classes docs livrable3a.jar livrable3b.jar 
