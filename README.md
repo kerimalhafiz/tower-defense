@@ -266,9 +266,8 @@ compiler:
 ###pour executer :
     ```make run3a ARGS="param1 param 2 param 3"``
     ```make run3b ARGS="param1 param 2 param 3"``
-###pour la cretation du jar executable  du livrable2b et livrable1a :
-    ```make livrable3b.jar ```
-    ```make livrable3a.jar ```
+###pour la cretation du jar executable  du livrable3b et livrable3a :
+    ```make jar ```
 ###pour la documentation:
 ```make docs ```
 ###pour le test
