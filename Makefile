@@ -12,14 +12,12 @@ classes:
 	javac -sourcepath src src/TowerDefence/paths/*.java -d classes
 	javac -sourcepath src src/TowerDefence/tower/*.java -d classes
 
-
-
-compile-tests:classes
+test:classes
 	javac -classpath junit-console.jar:classes test/TowerDefence/*.java 
 	javac -classpath junit-console.jar:classes test/Tour/*.java
 	javac -classpath junit-console.jar:classes test/pathsT/*.java
 
-test: compile-tests
+runtesst: 
 	java -jar junit-console.jar -classpath test:classes -scan-classpath
 run3a:classes
 	java -classpath classes TowerDefence.Livrable3aMain $(ARGS)
