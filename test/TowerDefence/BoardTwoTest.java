@@ -1,3 +1,4 @@
+package TowerDefence;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
@@ -20,7 +21,7 @@ public class BoardTwoTest {
     @Test
     public void testPathNotNull() {
         BoardTwo board = new BoardTwo(10, 10, 2);
-        ArrayList<ArrayList<Position>> paths = board.path();
+        ArrayList<ArrayList<Position>> paths = board.path(board.getBoard());
 
         assertNotNull(paths, "Paths list should not be null");
     }
@@ -29,7 +30,7 @@ public class BoardTwoTest {
     public void testNumberOfPaths() {
         int n = 4;
         BoardTwo board = new BoardTwo(10, 10, n);
-        ArrayList<ArrayList<Position>> paths = board.path();
+        ArrayList<ArrayList<Position>> paths = board.path(board.getBoard());
 
         assertEquals(n, paths.size(), "Number of generated paths should match nPaths");
     }
@@ -37,7 +38,7 @@ public class BoardTwoTest {
     @Test
     public void testEachPathNotEmpty() {
         BoardTwo board = new BoardTwo(10, 10, 3);
-        ArrayList<ArrayList<Position>> paths = board.path();
+        ArrayList<ArrayList<Position>> paths = board.path(board.getBoard());
 
         for (ArrayList<Position> path : paths) {
             assertFalse(path.isEmpty(), "Each path should not be empty");
@@ -47,7 +48,7 @@ public class BoardTwoTest {
     @Test
     public void testPathPositionsInsideBoard() {
         BoardTwo board = new BoardTwo(8, 15, 3);
-        ArrayList<ArrayList<Position>> paths = board.path();
+        ArrayList<ArrayList<Position>> paths = board.path(board.getBoard());
 
         for (ArrayList<Position> path : paths) {
             for (Position p : path) {
