@@ -16,7 +16,7 @@ public class PathTwoTest {
         PathTwo path = new PathTwo();
 
         // Generate the path
-        ArrayList<Position> result = path.findPath(board.getCell());
+        ArrayList<Position> result = path.findPath(board.getBoard());
 
         // 1. Path must not be null or empty
         assertNotNull(result);
