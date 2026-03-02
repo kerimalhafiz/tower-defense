@@ -261,18 +261,18 @@ l'ajout de nouveau projectille ne sera pas un probleme juste son nom et son nomb
 
 ###les commades pour la compilation:
 
-compiler:
-```make compile```
-###pour executer :
-    ```make run3a ARGS="param1 param 2 param 3"``
-    ```make run3b ARGS="param1 param 2 param 3"``
+###pour compiler:
+```make classes```
 ###pour la cretation du jar executable  du livrable3b et livrable3a :
     ```make jar ```
 ###pour la documentation:
 ```make docs ```
 ###pour le test
 ```make test ```
-
+###pour executer :
+    ```make  runtests```
+###pour  supprimer les compilé :
+    ```make  clean```
 
  
 ### Atteinte des objectifs
