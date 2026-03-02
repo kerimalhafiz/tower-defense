@@ -4,6 +4,7 @@
         "test"
     ],
     "java.project.referencedLibraries": [
-        "junit-console.jar"
+        "junit-console.jar",
+        "/home/l2/ibrahima.diallo8.etu/Documents/Projet/l2s4-projet-2026/junit-console.jar"
     ]
 }

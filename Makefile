@@ -16,7 +16,10 @@ compile:
 	javac -sourcepath src src/TowerDefence/Livrable3bMain.java -d classes
 
 compile-tests:compile
-	javac -classpath junit-console.jar:classes test/TowerDefence/*.java
+	javac -classpath junit-console.jar:classes test/TowerDefence/*.java 
+	javac -classpath junit-console.jar:classes test/Tour/*.java
+	javac -classpath junit-console.jar:classes test/pathsT/*.java
+
 test: compile-tests
 	java -jar junit-console.jar -classpath test:classes -scan-classpath
 run3a:compile
