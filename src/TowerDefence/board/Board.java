@@ -38,7 +38,10 @@ public abstract  class Board {
             }
         }
     }
-
+    
+    public Cell[][] getBoard(){
+        return this.board;
+    }
 public abstract boolean  putTower(Tour t, int x, int y);
 
     
