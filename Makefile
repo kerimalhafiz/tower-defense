@@ -9,26 +9,23 @@ javadoc:
 
 classes:
 	mkdir -p classes
-
-compile:
-	mkdir -p classes
 	javac -sourcepath src src/TowerDefence/Livrable3aMain.java -d classes
 	javac -sourcepath src src/TowerDefence/Livrable3bMain.java -d classes
 
-compile-tests:compile
+compile-tests:classes
 	javac -classpath junit-console.jar:classes test/TowerDefence/*.java 
 	javac -classpath junit-console.jar:classes test/Tour/*.java
 	javac -classpath junit-console.jar:classes test/pathsT/*.java
 
 test: compile-tests
 	java -jar junit-console.jar -classpath test:classes -scan-classpath
-run3a:compile
+run3a:classes
 	java -classpath classes TowerDefence.Livrable3aMain $(ARGS)
-run3b:compile
+run3b:classes
 	java -classpath classes TowerDefence.Livrable3bMain $(ARGS)
-livrable3a.jar:compile
+livrable3a.jar:classes
 	jar cvfe livrable3a.jar TowerDefence.Livrable3aMain -C classes .
-livrable3b.jar:compile
+livrable3b.jar:classes
 	jar cvfe livrable3b.jar TowerDefence.Livrable3bMain -C classes .
 runjar3a:livrable3a.jar 
 	java -jar livrable3a.jar $(ARGS)
