@@ -1,17 +1,12 @@
 all:docs classes livrable3a.jar livrable3b.jar 
 
 docs:
-	mkdir -p docs 
-
-javadoc:
 	mkdir -p docs
 	javadoc -sourcepath src -subpackages TowerDefence -d docs
 
 classes:
 	mkdir -p classes
-	javac -sourcepath src src/TowerDefence/Livrable3aMain.java -d classes
-	javac -sourcepath src src/TowerDefence/Livrable3bMain.java -d classes
-
+	javac -sourcepath src src/TowerDefence/*.java -d classes
 compile-tests:classes
 	javac -classpath junit-console.jar:classes test/TowerDefence/*.java 
 	javac -classpath junit-console.jar:classes test/Tour/*.java
