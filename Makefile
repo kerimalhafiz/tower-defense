@@ -7,6 +7,13 @@ docs:
 classes:
 	mkdir -p classes
 	javac -sourcepath src src/TowerDefence/*.java -d classes
+	javac -sourcepath src src/TowerDefence/Balloon/*.java -d classes
+	javac -sourcepath src src/TowerDefence/board/*.java -d classes
+	javac -sourcepath src src/TowerDefence/paths/*.java -d classes
+	javac -sourcepath src src/TowerDefence/tower/*.java -d classes
+
+
+
 compile-tests:classes
 	javac -classpath junit-console.jar:classes test/TowerDefence/*.java 
 	javac -classpath junit-console.jar:classes test/Tour/*.java
@@ -27,4 +34,4 @@ runjar3a:livrable3a.jar
 runjar3b:livrable3b.jar 
 	java -jar livrable3b.jar $(ARGS)
 clean:
-	rm -rf classes docs livrable3a.jar livrable3b.jar $(ARGS)
+	rm -rf classes docs livrable3a.jar livrable3b.jar 

@@ -44,7 +44,7 @@ public boolean  acheter(Tour t){
 private void acheterEvolution(Tour t){
     ArrayList<Evolution>evo=t.getEvolutions();
     int i=0;
-    while(i<evo.size()&&((evo.get(i).Isbuy())||evo.get(i).getCout()>this.credit)){
+    while(i<evo.size()&&((evo.get(i).isbuy())||evo.get(i).getCout()>this.credit)){
         i++;
     }
     if(i<evo.size()){
