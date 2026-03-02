@@ -3,7 +3,5 @@
         "src",
         "test"
     ],
-    "java.project.referencedLibraries": [
-        "junit-console.jar"
-    ]
+    "java.project.referencedLibraries": []
 }
