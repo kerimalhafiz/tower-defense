@@ -32,7 +32,7 @@ public class Livrable1aMain {
         int width = Integer.parseInt(args[1]);
                 // Create a board with a single random path
         BoardOne board = new BoardOne(height, width);
-        ArrayList<Position> path = board.path();
+        ArrayList<Position> path = board.path(board.getBoard());
 
         // Display the path coordinates
         System.out.println("Chemin trouvé :");
