@@ -505,11 +505,13 @@ Les autres membres du groupe doivent remonter sur le nombre de commits en faisan
 ## Semaine 9
 
 ### Ce qui a été réalisé
-
+On a discuté sur les evolutions comme on l'avait deja fait pendant les congés d'hiver 
+chacun avait les evolutions dans les classes tours tout en definissant juste pour chaque tour les methodes qui concernent les evolutions (augmenterPuissance,augmenterCadence etc) qui provenait de la classe abstraite Tour.Au final on s'est decider de gerer les evolutions a part tout en definissant  une classe Evolution abstraite et ses classes filles avec . Ibrahima Diallo s'est chargé de gerer cela avec alpha Abdoulaye et Thierno Abdoulaye diallo  et ibrahima diallo ont ecrit les test pour cette classe Evolution.
 ### Difficultés rencontrées
-
+On a eu du soucis a compiler nos classes pour que ça soit coherent avec le papeline que le prof avait ajouté , y avait des erreurs de compilation suite aux nombreuses modifications qui ont lieux dans le projet avec les livrables precédant , les classes test produisait d'erreurs à cause du `junit-console.jar` et unpeu d'autres erreurs .On avait aussi un problème avec le makefile.
 ### Objectifs pour la semaine et répartition du travail par membre
-
+Pour cette semaine , on a pu regler les erreurs de compilation et le makefile marche bien maintenant . 
+- Alpha Abdoulaye et Ibrahima se sont chargé de corriger les erreurs  dans le code pour bon test notamment aussi ils ont regler la methode tirer dans les trois classes `SingeFlechettes ,TourelleAiguille,SingeTireurElite` ,comme c'etait la meme fonction qui etait definie pour les trois classes , ils ont utiliser la methode `cibler(Board b)` pour gerer le cas .Kerim Abdoulaye et THierno Abdoulaye, on a gerer le makefile pour son bon fonctionnement pour qu'il ne commetent pas d'erreurs et soit fonctionnel avec avec le papeline que le prof avait mis en ligne , on s'est basé sur le mail reçu pour un bon makefile .
 ## Semaine 10
 
 ### Ce qui a été réalisé
