@@ -114,6 +114,8 @@ public abstract boolean  putTower(Tour t, int x, int y);
      */
     public void move(Balloon b) {
     b.setTime();
+    b.updateSlowedState();
+
         // Si le ballon est gelé
         if (b.isFrozen()) {
             b.updateFrozenState();
