@@ -31,9 +31,9 @@ public class TourRalentitBalloonTest {
         boardOne.addBalloon(list);
         tower1.setPosition(new Position(0,0));
         boardOne.getCell(0, 0).setvalueX(balloon1);
-        assertFalse(balloon1.isFrozen());
+        assertFalse(balloon1.isSlowed());
         tower1.tirer(boardOne);
-        assertFalse( balloon1.isFrozen());
+        assertTrue( balloon1.isSlowed());
         assertFalse(balloon2.isFrozen());
      }
       @Test
@@ -43,10 +43,10 @@ public class TourRalentitBalloonTest {
         list.add(balloon2);
         boardTwo.addBalloon(list);
         tower2.setPosition(new Position(0,0));
-        boardOne.getCell(0, 0).setvalueX(balloon1);
-        assertFalse(balloon1.isFrozen());
+        boardTwo.getCell(0, 0).setvalueX(balloon1);
+        assertFalse(balloon1.isSlowed());
         tower2.tirer(boardTwo);
-        assertFalse( balloon1.isFrozen());
+        assertTrue( balloon1.isSlowed());
         assertFalse(balloon2.isFrozen());
      }
 
