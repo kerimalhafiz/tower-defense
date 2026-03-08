@@ -302,6 +302,11 @@ public abstract class Balloon {
     this.speed -= Speed;
     System.out.println(this.time + " : " + this.id + " ralenti");
 }
+   /**
+    * it's slow the speed for the tick of time
+    * @param factor i use this for slowed the speed
+    * @param tick  use this for number of tick
+    */
    public void slow(float factor,int tick){
       if (tick<=0) {
         return;
@@ -316,6 +321,10 @@ public abstract class Balloon {
 
 
    }
+   /**
+    * it update de slowedtick
+    * and restor the speed normal
+    */
    public void updateSlowedState(){
      if(slowed){
         slowedTick--;
@@ -328,6 +337,10 @@ public abstract class Balloon {
         }
      }
    }
+   /**
+    * it'the getteur
+    * @return slowed the state
+    */
    public boolean isSlowed(){
       return this.slowed;
    }
