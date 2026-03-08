@@ -54,8 +54,8 @@ public class Game1 extends Game {
         Gorille gorille = new Gorille();
         TourBombe bombe = new TourBombe();
 
-        TourRballoon ralentit = new TourRballoon(5.0);
-        TourRballoon ralentit2 = new TourRballoon(9.0);
+        TourRballoon ralentit = new TourRballoon(3);
+        TourRballoon ralentit2 = new TourRballoon(2);
 
         TourfrozenBalloon frozen = new TourfrozenBalloon(4);
         TourfrozenBalloon frozen2 = new TourfrozenBalloon(9);
