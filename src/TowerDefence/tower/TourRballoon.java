@@ -11,13 +11,13 @@ import java.util.ArrayList;
  * instead,it slow down the balloon that is closest to the en of the  
  */
 public class TourRballoon extends Tour{
-        protected double  effect;
+        protected int  effect;
 
     /**
      * constructor
      * @param effect  effect the slowing effect applied to the target balloon
      */
-    public TourRballoon(double  effect){
+    public TourRballoon(int  effect){
         super(null, 100, 1500, 400);
         this.effect=effect;
     }
@@ -31,7 +31,7 @@ public class TourRballoon extends Tour{
  public void tirer(Board b){
       Balloon target=this.cibler(b);
         if (target!=null) {
-            target.Subtractspeed(effect);
+            target.slow(0.5f, effect);
         }
     }
 
