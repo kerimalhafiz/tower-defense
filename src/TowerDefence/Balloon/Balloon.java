@@ -56,7 +56,14 @@ public abstract class Balloon {
 
     /** The path followed by the balloon */
     protected ArrayList<Position> path;
-
+    /**baseSpeed for the memorisation */
+    protected float baseSpeed;
+    /**it attribut for precise de state of balloon */
+    protected boolean slowed=false;
+    /** slowedTick for the  speed  */
+    protected int slowedTick=0;
+    /**slowedfactor */
+    protected float slowedfactor=1.0f;
     /**
      * Constructs a Balloon with the given speed, resistance and identifier.
      *
@@ -74,6 +81,7 @@ public abstract class Balloon {
         this.time = 0;
         this.cell = null;
         this.path = null;
+        this.baseSpeed=speed;
     }
 
     /**
@@ -294,5 +302,36 @@ public abstract class Balloon {
     this.speed -= Speed;
     System.out.println(this.time + " : " + this.id + " ralenti");
 }
+   public void slow(float factor,int tick){
+      if (tick<=0) {
+        return;
+      }
+      if (factor<=0) factor=0.1f;
+      this.slowed=true;
+      this.slowedTick=tick;
+      this.slowedfactor=factor;
+      this.speed=baseSpeed*slowedfactor;
+    System.out.println(this.time + " : " + this.id + " ralenti");
+
+
+
+   }
+   public void updateSlowedState(){
+     if(slowed){
+        slowedTick--;
+        if (slowedTick<=0) {
+            slowed=false;
+            slowedfactor=1.0f;
+            this.speed=baseSpeed;
+            System.out.println(this.time + " : " + this.id + " ralenti");
+
+        }
+     }
+   }
+   public boolean isSlowed(){
+      return this.slowed;
+   }
 
 }
+
+
