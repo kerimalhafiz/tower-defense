@@ -10,7 +10,7 @@ public class BasicBalloon extends Balloon {
     * special for this class or speed special
     * @param speed speed of the ballon can to the ballon to move 
     * @param resistance resistane
-    * @param id the id for see the trace of balloon 
+    * @param id the id for see the trace of ballon 
     */
     public BasicBalloon(float speed, int resistance, String id) {
         super(speed, resistance,id);
