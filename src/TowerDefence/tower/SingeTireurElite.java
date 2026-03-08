@@ -48,24 +48,9 @@ public class SingeTireurElite extends Tour{
      */
     public void tirer(Board b){
         super.tirer(b);
-        ArrayList<Balloon> ballons_voisin = neighborhood(b);
-        if (ballons_voisin.isEmpty()){
-            return;
-        }
-        Balloon b_proche = null;
-        for (Balloon ballon : ballons_voisin){
-            if (ballon == null || ballon.isDestroyed() || ballon.isOut()){
-                continue;
-            }
-            if (b_proche == null || ballon.getPosition() > b_proche.getPosition()){
-                b_proche = ballon;
-            }
-        }
+        Balloon b_proche=this.cibler(b);
         if (b_proche != null){
             b_proche.takeDamage(this.projectile.getDamage());
-            if (b_proche.isDestroyed()){
-                b.removeBalloon(b_proche);
-            }
         }
         
     }

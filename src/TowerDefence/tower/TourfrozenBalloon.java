@@ -47,34 +47,7 @@ public class TourfrozenBalloon extends Tour {
      */
     public void tirer(Board b) {
         
-        ArrayList<Balloon> candidate = neighborhood(b);
-
-        if (candidate.isEmpty()) {
-            return;
-        }
-
-        Balloon target = null;
-        int bestevolu = Integer.MAX_VALUE;
-
-        for (Balloon bl : candidate) {
-            if (bl == null || bl.isDestroyed() || bl.isOut() || bl.getPath() == null)
-                continue;
-
-            // Remaining distance to the end of the path
-            int m = (bl.getPath().size() - 1) - bl.getPosition();
-
-            if (m < bestevolu) {
-                bestevolu = m;
-                target = bl;
-            }
-            // Tie-break: choose the balloon more advanced in its current cell
-            else if (m == bestevolu && target != null) {
-                if (bl.getprogress() > target.getprogress()) {
-                    target = bl;
-                }
-            }
-        }
-
+    Balloon target=this.cibler(b);
         if (target != null) {
             target.freeze(effect);
         }

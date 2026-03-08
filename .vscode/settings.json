@@ -3,7 +3,12 @@
         "src",
         "test"
     ],
+<<<<<<< HEAD
+    "java.project.referencedLibraries": []
+=======
     "java.project.referencedLibraries": [
-        "junit-console.jar"
+        "junit-console.jar",
+        "/home/l2/ibrahima.diallo8.etu/Documents/Projet/l2s4-projet-2026/junit-console.jar"
     ]
+>>>>>>> 6af53ebe7e53dc29030ec48d73eea2b84c15bdca
 }

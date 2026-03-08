@@ -32,6 +32,9 @@ public class BoardTwo extends Board {
         this.nPaths = n;
         this.l=this.path(board);
     }
+    public ArrayList<ArrayList<Position>> getPath(){
+        return this.l;
+    }
 
     public boolean  putTower(Tour t,int x,int y){
     for (ArrayList<Position>p:this.l )   { 

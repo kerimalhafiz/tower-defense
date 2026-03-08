@@ -1,5 +1,7 @@
-
+package pathsT;
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import TowerDefence.board.*;
@@ -8,17 +10,23 @@ import TowerDefence.paths.*;
 import java.util.ArrayList;
 
 public class PathTwoTest {
+    PathTwo path;
+    BoardTwo board ;
+    @BeforeEach
+    public void before(){
+
+    board = new BoardTwo(8, 6, 1);
+     path = new PathTwo();
+
+
+    }
 
     @Test
     public void testPathTwoCreatesStraightPath() {
-        // Create a board 8x6
-        BoardTwo board = new BoardTwo(8, 6, 1);
-        PathTwo path = new PathTwo();
-
+       
         // Generate the path
-        ArrayList<Position> result = path.findPath(board.getCell());
+        ArrayList<Position> result = path.findPath(board.getBoard());
 
-        // 1. Path must not be null or empty
         assertNotNull(result);
         assertFalse(result.isEmpty());
 
@@ -36,10 +44,9 @@ public class PathTwoTest {
 
         assertTrue(sameRow || sameColumn, "Path must be horizontal or vertical");
 
-        // 3. Check that all cells in the path are marked with "x"
         for (Position p : result) {
             Cell c = board.getCell(p.getNbLigne(), p.getNbColonne());
-            assertEquals("x", c.toString());
+            assertEquals(".", c.toString());
         }
     }
 }

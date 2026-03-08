@@ -32,7 +32,7 @@ public class Livrable1bMain {
 
     // Create the board with multiple paths
         BoardTwo board = new BoardTwo(height, width, nPaths);
-        ArrayList<ArrayList<Position>> paths = board.path();
+        ArrayList<ArrayList<Position>> paths = board.path(board.getBoard());
 
         // Display each path
         System.out.println("Chemins trouvés :");
