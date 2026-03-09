@@ -1,4 +1,4 @@
-all:docs classes livrable3a.jar livrable3b.jar 
+all:docs classes livrable3a.jar livrable3b.jar livrable4a.jar livrable4b.jar 
 docs:
 	mkdir -p docs
 	javadoc -sourcepath src -subpackages TowerDefence -d docs
