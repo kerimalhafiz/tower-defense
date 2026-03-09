@@ -1,5 +1,4 @@
 all:docs classes livrable3a.jar livrable3b.jar 
-
 docs:
 	mkdir -p docs
 	javadoc -sourcepath src -subpackages TowerDefence -d docs
@@ -21,12 +20,18 @@ runtests:
 jar:classes
 	jar cvfe livrable3a.jar TowerDefence.Livrable3aMain -C classes .
 	jar cvfe livrable3b.jar TowerDefence.Livrable3bMain -C classes .
+	jar cvfe livrable4a.jar TowerDefence.Livrable4aMain -C classes .
+	jar cvfe livrable4b.jar TowerDefence.Livrable4bMain -C classes .
 
 livrable3a.jar:jar
 	java -classpath classes TowerDefence.Livrable3aMain $(ARGS)
 
 livrable3b.jar:jar
 	java -classpath classes TowerDefence.Livrable3bMain $(ARGS)
+livrable4a.jar:jar
+	java -classpath classes TowerDefence.Livrable4aMain $(ARGS)
 
+livrable4b.jar:jar
+	java -classpath classes TowerDefence.Livrable4bMain $(ARGS)
 clean:
-	rm -rf classes docs livrable3a.jar livrable3b.jar 
+	rm -rf classes docs livrable3a.jar livrable3b.jar livrable4a.jar livrable4b.jar
