@@ -47,11 +47,12 @@ public class SingeTireurElite extends Tour{
      * @param b the game board
      */
     public void tirer(Board b){
-        super.tirer(b);
-        Balloon b_proche=this.cibler(b);
+         super.tirer(b);
+        /**Balloon b_proche=this.cibler(b);
         if (b_proche != null){
             b_proche.takeDamage(this.projectile.getDamage());
-        }
+        }*/
+       super.generate(b);
         
     }
   

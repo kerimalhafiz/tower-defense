@@ -222,4 +222,10 @@ public  void tirer(Board b){
     }
      return target;
 }
+public void generate(Board b){
+     Balloon b_proche=this.cibler(b);
+      if (b_proche != null){
+            b_proche.takeDamage(this.projectile.getDamage());
+        }
+}
 }
