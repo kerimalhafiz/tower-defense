@@ -1,6 +1,5 @@
 package TowerDefence;
-import TowerDefence.*;
-import TowerDefence.Balloon.Balloon;
+
 import TowerDefence.Balloon.BasicBalloon;
 import TowerDefence.board.*;
 
