@@ -43,6 +43,9 @@ public abstract class Evolution {
     public String getNom(){
         return this.nom;
     }
+    public void unbuy(){
+        this.acheter=false;
+    }
 
     /**
      * Applies the evolution effect to a tower.
