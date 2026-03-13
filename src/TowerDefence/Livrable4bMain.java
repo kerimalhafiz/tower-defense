@@ -1,6 +1,7 @@
 package TowerDefence;
 
 import TowerDefence.board.BoardTwo;
+import TowerDefence.tower.Tour;
 
 public class Livrable4bMain {
     public static void main(String[] args) {
@@ -18,6 +19,11 @@ public class Livrable4bMain {
         for(int manche =1 ;manche<=10;manche++){
             System.out.println("\n===Manche"+ manche+ "===");
 
+            if(manche<=5){
+                for(Tour tower:game.getTours()){
+                    tower.towersApplication();
+                }
+            }
             game.play();
         }
         
