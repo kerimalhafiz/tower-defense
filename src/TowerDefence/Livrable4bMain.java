@@ -13,7 +13,8 @@ public class Livrable4bMain {
         int nbChemins =(Integer.parseInt(args[2]));
 
         BoardTwo board= new BoardTwo(height, width, nbChemins);
-
+        Game1 game= new Game1(board, nbChemins);
+        
         
     }
     
