@@ -241,4 +241,8 @@ public void towersApplication(){
     }
     System.out.println(this.getClass().getSimpleName()+"-> aucune évolution ");
 }
+public void towers_revome(){
+    
+}
+
 }
