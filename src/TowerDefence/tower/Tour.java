@@ -242,7 +242,17 @@ public void towersApplication(){
     System.out.println(this.getClass().getSimpleName()+"-> aucune évolution ");
 }
 public void towers_revome(){
-    
+    for(int i=this.evolutions.size()-1;i>=0;i--){
+        Evolution e=this.evolutions.get(i);
+        if (e.isbuy()) {
+            e.retirer(this);
+            e.unbuy();
+            System.err.println(this.getClass().getSimpleName()+"-> evolution retirée "+e.getNom());
+            
+            
+        }
+    }
+ System.out.println(this.getClass().getSimpleName()+"-> aucune evolution");
 }
 
 }
