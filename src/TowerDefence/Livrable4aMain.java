@@ -4,6 +4,10 @@ import TowerDefence.board.BoardOne;
 import TowerDefence.tower.Tour;
 
 public class Livrable4aMain {
+     /**
+      * constructor
+      */
+    public Livrable4aMain(){};
 
  public static void main(String[] args) {
     if (args.length!=3) {

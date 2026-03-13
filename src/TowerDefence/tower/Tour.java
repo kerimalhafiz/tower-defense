@@ -227,12 +227,20 @@ public  void tirer(Board b){
     }
      return target;
 }
+/**
+ * he select the balloon witch very proche
+ * in board of size
+ * @param b the  board 
+ */
 public void generate(Board b){
      Balloon b_proche=this.cibler(b);
       if (b_proche != null){
             b_proche.takeDamage(this.projectile.getDamage());
         }
 }
+/**
+ * it's  applay evolution towers
+ */
 public void towersApplication(){
     for(Evolution e:this.evolutions){
         if (!e.isbuy()) {
@@ -246,6 +254,9 @@ public void towersApplication(){
     }
     System.out.println(this.getClass().getSimpleName()+"-> aucune évolution ");
 }
+/**
+ * this methode remove the evolution towers
+ */
 public void towers_revome(){
     for(int i=this.evolutions.size()-1;i>=0;i--){
         Evolution e=this.evolutions.get(i);

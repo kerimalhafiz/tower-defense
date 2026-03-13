@@ -37,12 +37,22 @@ public abstract class Evolution {
     public boolean isbuy(){
         return this.acheter;
     }
+    /**
+     *  he active the buy
+     */
     public void buy(){
         this.acheter=true;
     }
+    /**
+     * 
+     * @return nom the current name
+     */
     public String getNom(){
         return this.nom;
     }
+    /**
+     *  its desactive the buy
+     */
     public void unbuy(){
         this.acheter=false;
     }

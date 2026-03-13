@@ -10,6 +10,10 @@ import TowerDefence.board.BoardOne;
  * initializes the game, and launches it.
  */
 public class Livrable3aMain {
+    /**
+     * constructor
+     */
+    public Livrable3aMain(){};
 
     /**
      * Entry point of the program.
