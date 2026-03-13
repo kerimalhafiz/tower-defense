@@ -104,4 +104,8 @@ public class Game1 extends Game {
             t.stopTir();
         }
     }
+
+    public ArrayList<Tour>getTours(){
+        return this.towers;
+    }
 }
