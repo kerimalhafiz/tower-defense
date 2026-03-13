@@ -236,7 +236,7 @@ public void towersApplication(){
             System.out.println(this.getClass().getSimpleName() +
             "-> evolutioon apliquée : "+e.getNom() );
 
-            
+           return; 
         }
     }
     System.out.println(this.getClass().getSimpleName()+"-> aucune évolution ");
@@ -249,7 +249,7 @@ public void towers_revome(){
             e.unbuy();
             System.err.println(this.getClass().getSimpleName()+"-> evolution retirée "+e.getNom());
             
-            
+            return;
         }
     }
  System.out.println(this.getClass().getSimpleName()+"-> aucune evolution");
