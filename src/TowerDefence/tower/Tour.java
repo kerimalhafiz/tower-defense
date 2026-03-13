@@ -228,4 +228,17 @@ public void generate(Board b){
             b_proche.takeDamage(this.projectile.getDamage());
         }
 }
+public void towersApplication(){
+    for(Evolution e:this.evolutions){
+        if (!e.isbuy()) {
+            e.appliquer(this);
+            e.buy();
+            System.out.println(this.getClass().getSimpleName() +
+            "-> evolutioon apliquée : "+e.getNom() );
+
+            
+        }
+    }
+    System.out.println(this.getClass().getSimpleName()+"-> aucune évolution ");
+}
 }
