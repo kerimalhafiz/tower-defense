@@ -24,6 +24,11 @@ public class Livrable4bMain {
                     tower.towersApplication();
                 }
             }
+            else{
+                for (Tour tower :game.getTours()){
+                    tower.towers_revome();
+                }
+            }
             game.play();
         }
         
