@@ -182,9 +182,9 @@ public ArrayList <Balloon> getBalloons(){
     if (b.getCell() != null) {
         b.getCell().setvalueX(null);
     }
-    if (this.listeBallon != null) {
+   /** if (this.listeBallon != null) {
         this.listeBallon.remove(b);
-    }
+    }*/
 }
 
 
