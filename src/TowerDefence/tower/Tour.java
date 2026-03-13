@@ -175,6 +175,10 @@ public  void tirer(Board b){
  * @param b the game board on which the tower operates
  */
     public void startTir(Board b) {
+        if (scheduler==null || scheduler.isShutdown()||scheduler.isTerminated()) {
+            scheduler=Executors.newSingleThreadScheduledExecutor();
+            
+        }
     scheduler.scheduleAtFixedRate(() -> tirer(b),
             0,                 // délai initial
             cadence,           // période
@@ -191,7 +195,8 @@ public  void tirer(Board b){
  * a new scheduler is created.
  */
     public void stopTir() {
-    scheduler.shutdownNow();
+        if(scheduler!=null && !scheduler.isShutdown()){
+    scheduler.shutdownNow();}
     }
     
     public Balloon cibler(Board b){
