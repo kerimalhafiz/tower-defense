@@ -1,5 +1,7 @@
 package TowerDefence;
 
+import TowerDefence.board.BoardOne;
+
 public class Livrable4a {
 
  public static void main(String[] args) {
@@ -12,5 +14,8 @@ public class Livrable4a {
     int width=Integer.parseInt(args[0]);
     int height=Integer.parseInt(args[1]);
     int nbBallons=Integer.parseInt(args[2]);
+
+    BoardOne board=new BoardOne(height, width);
+    Game game=new Game(board, nbBallons);
  }
 }
