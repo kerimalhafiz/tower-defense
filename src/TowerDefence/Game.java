@@ -40,12 +40,17 @@ public class Game{
       this.n=nbBallons;
       this.listeBallon = new ArrayList<>();
 
-    Random rand = new Random();
-      for (int i = 1; i <= nbBallons; i++) {
+   
+
+    }
+
+    public void createBalloons(){
+        this.listeBallon=new ArrayList<>();
+         Random rand = new Random();
+      for (int i = 1; i <= this.n; i++) {
             float speed = 0.5f + rand.nextFloat() * 2.0f; // vitesse aléatoire
             this.listeBallon.add(new BasicBalloon(speed, rand.nextInt(10)+1,"Ballon "+i+":"));
         }
-
     }
       /**
      * Starts and runs the game loop.
@@ -61,6 +66,7 @@ public class Game{
 public void play() {
 
     // Ajouter les ballons au plateau
+    createBalloons();
     this.b.addBalloon(this.listeBallon);
 
     // Boucle principale du jeu
