@@ -15,19 +15,34 @@ public Player(){
     this.vies=20;
     this.towers=new ArrayList<>();
 }
-
+/**
+ * les credits qu'un joueur detient pour pour acheter une tour
+ * @param n le nombre de credit 
+ */
 public void setCredit(int n){
     this.credit=n;
 }
+/**
+ * obtient le nombre qu'a un joueur
+ * @return les credits du joueur
+ */
 public double  getCredit(){
     return this.credit;
 }
+/**
+ * diminue le nombre de vie 
+ * @param n le nombre de vie qu'a un joueur
+ */
 public void diminueVieDe(double  n){
     this.vies-=n;
     if (this.vies<0){
         this.vies=0;
     }
 }
+/**
+ * renvoie le nombre de vie que detient un joueur
+ * @return le nombre de vie d'un joueur 
+ */
 public int getVie(){
     return this.vies;
 }
@@ -40,7 +55,10 @@ public boolean  acheter(Tour t){
     }
     return false;
 }
-
+/**
+ * la methode qui permet d'acheter une evolution
+ * @param t le tour au quel on doit acheter l'evoluton
+ */
 private void acheterEvolution(Tour t){
     ArrayList<Evolution>evo=t.getEvolutions();
     int i=0;
