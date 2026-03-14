@@ -516,13 +516,17 @@ Pour cette semaine , on a pu regler les erreurs de compilation et le makefile ma
 ## Semaine 10
 
 ### Ce qui a été réalisé
+Pour cette semaine on a discuté sur les Evolutions qui ont été dejà codé pendant les congés , on a aussi discuté sur le fait qu'il y avait de la diplucation de code sur notre fonction `tire(Board b)` .
 ## Diagramme d'évolution par semaine
-
 ![Diagramme semaine10](diagrammeSemaineEvolution.png)
 ### Difficultés rencontrées
-
+on a rencontré des difficultés sur la corrections des erreurs des erreurs puisqu'il avait eu quelques modifications tout au long du travail , donc on a forcement eu des erreurs de compilation dont on sait chargé de corriger , notamment aussi le prof avait verifié notre duplication de code sur l'une de nos methodes (`tire(Board b)`) , on devait cherché à bien abstraitre cette methode pour ne pas qu'il y ai duplication , on a essayé de corriger ce problème en classe après discussion avec le prof , on a creer une nouvelle methode `generative` dans la classe mère puis mis le code qui etait dupliqué  à l'interieur ```Balloon b_proche=this.cibler(b);
+      if (b_proche != null){
+            b_proche.takeDamage(this.projectile.getDamage());
+        }```,
+et Ibrahima s'est chargé de faire le livrable 4b , Kerim le livrable 4a , et quelques modifications necessaires dans le code.
 ### Objectifs pour la semaine et répartition du travail par membre
-
+Pour la semaine nos livrables concernant les evolutions fonctionnent  correctement , au niveau de la documentation , il ya quelques warning dont moi même j'essayerais de corriger soit demain ou après demain , et la on devrait attendre le dernier mot du prof pour savoir si tout est normal concernant les evolutions s'il y aurait des modifications a faire , mais la tout est en rapport avec ce qui est attendu . 
 ## Semaine 11
 
 ### Ce qui a été réalisé
