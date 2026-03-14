@@ -11,7 +11,8 @@ import java.util.ArrayList;
  * instead,it slow down the balloon that is closest to the en of the  
  */
 public class TourRballoon extends Tour{
-        protected int  effect;
+    // the effect applied to the balloon
+    protected int  effect;
 
     /**
      * constructor

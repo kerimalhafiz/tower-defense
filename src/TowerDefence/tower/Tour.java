@@ -198,7 +198,11 @@ public  void tirer(Board b){
         if(scheduler!=null && !scheduler.isShutdown()){
     scheduler.shutdownNow();}
     }
-    
+    /**
+     * la methode qui retourne le ballon ciblé
+     * @param b le board sur le on cible les ballons
+     * @return le ballon ciblé 
+     */
     public Balloon cibler(Board b){
         ArrayList<Balloon> candidate = neighborhood(b);
         Balloon target = null;
