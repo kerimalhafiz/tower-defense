@@ -60,7 +60,10 @@ public abstract class Tour {
         
         
     }
-
+    /**
+     * la liste des evolutions
+     * @return la liste des evolutions 
+     */
     public ArrayList<Evolution>getEvolutions(){
         return this.evolutions;
     }
