@@ -29,23 +29,6 @@ public class Livrable4aMain {
 
     BoardOne board=new BoardOne(height, width);
     Game1 game=new Game1(board, nbBallons);
-    for(int manche=1;manche<=10;manche++){
-        System.out.println("\n===Manche"+manche+"===");
-        if (manche>=1 && manche<=5) {
-            for(Tour t:game.getTours()){
-                t.towersApplication();
-            }
-            
-        }
-        else{
-            if(manche >=6 && manche<=10){
-                for(Tour t:game.getTours()){
-                    t.towers_revome();
-                }
-            }
-        }
-        game.play();
-
-    }
+    game.display_manche(10);
  }
 }

@@ -113,7 +113,7 @@ public class Game1 extends Game {
     public ArrayList<Tour>getTours(){
         return this.towers;
     }
-    public void  display_manche(int nbNombre){
+    protected void  display_manche(int nbNombre){
     
         for(int manche =1 ;manche<=nbNombre ;manche++){
             System.out.println("\n===Manche"+ manche+ "===");
