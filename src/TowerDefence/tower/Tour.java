@@ -26,20 +26,35 @@ import java.util.concurrent.TimeUnit;
  */
 public abstract class Tour {
    
-        /** The projectile used by the tower (null for special towers). */
+    /** 
+     * The projectile used by the tower (null for special towers). 
+     * */
     protected Projectile projectile;
-    /** Range of the tower (in board cells). */
+    /** 
+     * Range of the tower (in board cells). 
+     * */
     protected int portee;
-        /** Time between two shots in milliseconds. */
+    /** 
+     * Time between two shots in milliseconds. 
+    */
     protected int cadence;
-        /** Cost of the tower. */
+    /** 
+    * Cost of the tower. 
+    * */
     protected double cout;
-    /** Position of the tower on the board. */
+    /** 
+     * Position of the tower on the board.
+     */
     protected Position position;
+    /**
+     * l'ancienne cadence 
+     */
     protected int ancienneCadence;
     
     private ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
-
+    /**
+     * la liste de toutes les evolutions
+     */
     protected ArrayList<Evolution> evolutions;
 
       /**

@@ -4,12 +4,25 @@ import TowerDefence.tower.Evolution;
 import TowerDefence.tower.Tour;
 import java.util.ArrayList;
 import java.util.Random;
-
+/**
+ * la classe player 
+ */
 public class Player {
-
+/**
+les credits du joueur pour acheter des tours 
+ */
 protected double credit;
+/**
+le nombre de vie qu'un joueur peut avoir 
+*/
 protected int vies;
+/**
+la liste des tours  
+*/
 ArrayList<Tour>towers;
+/**
+ * le constructeur de la classe player  
+ * */
 public Player(){
     this.credit=2500;
     this.vies=20;
@@ -46,7 +59,11 @@ public void diminueVieDe(double  n){
 public int getVie(){
     return this.vies;
 }
-
+/**
+ * renvoie true si on a pu acheter la tour et false sinon 
+ * @param t la tour qu'on veut acheter 
+ * @return true si on a pu acheter la tour et false sinon 
+ */
 public boolean  acheter(Tour t){
     if(this.credit>=t.getCout()){
         this.credit-=t.getCout();
@@ -71,7 +88,9 @@ private void acheterEvolution(Tour t){
     this.credit-=evo.get(i).getCout();
     System.out.println("Evolution de la tour nom de l evolution: "+evo.get(i).getNom());
 }}
-
+/**
+ * achete une tour choisie au hasard parmis les tours 
+ */
 public void evoluer(){
     Random r = new Random();
     int i=r.nextInt(this.towers.size());

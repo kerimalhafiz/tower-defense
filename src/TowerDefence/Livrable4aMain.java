@@ -2,13 +2,20 @@ package TowerDefence;
 
 import TowerDefence.board.BoardOne;
 import TowerDefence.tower.Tour;
-
+/**
+ * la classe principale pour le livrable4a
+ */
 public class Livrable4aMain {
-     /**
-      * constructor
-      */
-    public Livrable4aMain(){};
+    /**
+     * le constructeur par defaut de la classe 
+     */
+    public Livrable4aMain(){
 
+    }
+/**
+ * le main pour le livrable 4a
+ * @param args les arguments en ligne de commande 
+ */
  public static void main(String[] args) {
     if (args.length!=3) {
         System.out.println(  "Usage : java Livrable4a <height> <width> <number_of_ballons>");

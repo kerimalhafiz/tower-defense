@@ -34,6 +34,10 @@ public abstract class Evolution {
     public double getCout(){
         return this.cout;
     }
+    /**
+     * renvoie true si levolution a été acheter 
+     * @return true si l'evolution a été acheter
+     */
     public boolean isbuy(){
         return this.acheter;
     }

@@ -2,8 +2,20 @@ package TowerDefence;
 
 import TowerDefence.board.BoardTwo;
 import TowerDefence.tower.Tour;
-
+/**
+ * classe principale pour lancer le livrable4b
+ */
 public class Livrable4bMain {
+    /**
+     * le constructeur par defaut du livrable
+     */
+    public Livrable4bMain(){
+        
+    }
+    /**
+     *  le main du livrable4b
+     * @param args les arguments de la ligne de commande 
+     */
     public static void main(String[] args) {
         if (args.length!=3) {
         System.out.println(  "Veuillez entrer trois nombres :hauteur , largeur et nombre de chemins");

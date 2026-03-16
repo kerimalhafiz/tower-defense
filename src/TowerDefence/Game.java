@@ -43,7 +43,9 @@ public class Game{
    
 
     }
-
+    /**
+     * cree les ballons pour la partie
+     */
     public void createBalloons(){
         this.listeBallon=new ArrayList<>();
          Random rand = new Random();
