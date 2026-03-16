@@ -543,7 +543,7 @@ Pour la semaine nos livrables concernant les evolutions fonctionnent  correcteme
 ## Semaine 11
 
 ### Ce qui a été réalisé
-
+- Pour l'implementation de la classe player , on l'avait commencé unpeu en avance pendant les congés , mais pour ne pas aussi s'avanturer là deçu on l'a pas fait totalement , donc on doit faire des mofications concernant cette classe si necessaire , mais  à chaque semaine qu'on a eu a travailler sur le projet , 
 ### Difficultés rencontrées
 
 ### Objectifs pour la semaine et répartition du travail par membre

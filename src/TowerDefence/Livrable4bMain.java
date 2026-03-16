@@ -27,22 +27,7 @@ public class Livrable4bMain {
 
         BoardTwo board= new BoardTwo(height, width, nbChemins);
         Game1 game= new Game1(board, nbChemins);
-
-        for(int manche =1 ;manche<=10;manche++){
-            System.out.println("\n===Manche"+ manche+ "===");
-
-            if(manche<=5){
-                for(Tour tower:game.getTours()){
-                    tower.towersApplication();
-                }
-            }
-            else{
-                for (Tour tower :game.getTours()){
-                    tower.towers_revome();
-                }
-            }
-            game.play();
-        }
+        game.display_manche(10);
         
     }
     

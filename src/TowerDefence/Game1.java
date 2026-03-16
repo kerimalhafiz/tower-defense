@@ -113,4 +113,23 @@ public class Game1 extends Game {
     public ArrayList<Tour>getTours(){
         return this.towers;
     }
+    public void  display_manche(int nbNombre){
+    
+        for(int manche =1 ;manche<=nbNombre ;manche++){
+            System.out.println("\n===Manche"+ manche+ "===");
+
+            if(manche<=5){
+                for(Tour tower:this.getTours()){
+                    tower.towersApplication();
+                }
+            }
+
+            else{
+                for (Tour tower :this.getTours()){
+                    tower.towers_revome();
+                }
+            }
+            this.play();
+        }
+  }
 }
