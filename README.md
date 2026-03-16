@@ -309,6 +309,19 @@ Chaque évolution :
 ### Atteinte des objectifs
 -Création de la classe Player Diallo Alpha Abdoulaye
 -definissions des methodes pour leur actions.Diallo Alpha Abdoulaye
+### Commande
+### pour compiler:
+````make classes```
+### pour la cretation du jar executable  du livrable3b et livrable3a :
+```make jar```
+### pour la documentation:
+```make docs``` 
+### pour le test
+```make test``` 
+### pour executer les tests:
+```make  runtests```
+### pour  supprimer les compilé :
+```make  clean```
 ### Difficultés restant à résoudre
 
 ## Livrable 6
