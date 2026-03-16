@@ -545,8 +545,14 @@ Pour la semaine nos livrables concernant les evolutions fonctionnent  correcteme
 ### Ce qui a été réalisé
 - Pour l'implementation de la classe player , on l'avait commencé unpeu en avance pendant les congés , mais pour ne pas aussi s'avanturer là deçu on l'a pas fait totalement , donc on doit faire des mofications concernant cette classe si necessaire , mais  à chaque semaine qu'on a eu a travailler sur le projet , 
 ### Difficultés rencontrées
+comment on peux resoudre ou simplifier le code la class ballon et  la gestion de player d un terminal vers ia 
+la séparation de responsabilité du ballon de certains actions , pourquoi pas une une class simple et non une class abstract 
 
 ### Objectifs pour la semaine et répartition du travail par membre
+-Diallo Alpha Abdoulaye  ipmplentation de la class player  
+-Diallo Ibrahima reflexion sur comment on bascule  un joeur d un terminal vers ia  
+-Diallo Thierno Abdoulaye  `Documentation ` et  `Diagramme UML ` et le readme 
+-Kerim Abdoulaye `Documentation ` et  `Diagramme UML ` mettre a jour et simplification du code 
 
 ## Semaine 12
 
