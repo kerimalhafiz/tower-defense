@@ -1,4 +1,5 @@
-package TowerDefence;
+
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -8,12 +9,20 @@ import TowerDefence.paths.*;
 import java.util.ArrayList;
 
 public class PathTwoTest {
+   
+    PathTwo path ;
+     BoardTwo board ;
+    @BeforeEach 
+    public void before (){
+        board = new BoardTwo(8, 6, 1);
+        path = new PathTwo();
+
+    }
 
     @Test
     public void testPathTwoCreatesStraightPath() {
         // Create a board 8x6
-        BoardTwo board = new BoardTwo(8, 6, 2);
-        PathTwo path = new PathTwo();
+       
 
         // Generate the path
         ArrayList<Position> result = path.findPath(board.getBoard());

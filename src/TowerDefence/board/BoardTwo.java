@@ -32,10 +32,20 @@ public class BoardTwo extends Board {
         this.nPaths = n;
         this.l=this.path(board);
     }
+    /**
+     * renvoie la liste des chemins que les ballons peuvent suivrent  
+     * @return la liste des chemins des positions du tableau
+     */
     public ArrayList<ArrayList<Position>> getPath(){
         return this.l;
     }
-
+    /**
+     * place une tour comme indiqué
+     * @param t la tour à placer 
+     * @param x la position x sur le plateau
+     * @param y la position y sur le plateau
+     * @return true si la tour a été bien placé
+     */
     public boolean  putTower(Tour t,int x,int y){
     for (ArrayList<Position>p:this.l )   { 
     if (p.contains(new Position(x, y))){//pas de tours syur le chemin des ballons

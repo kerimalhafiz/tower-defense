@@ -26,20 +26,35 @@ import java.util.concurrent.TimeUnit;
  */
 public abstract class Tour {
    
-        /** The projectile used by the tower (null for special towers). */
+    /** 
+     * The projectile used by the tower (null for special towers). 
+     * */
     protected Projectile projectile;
-    /** Range of the tower (in board cells). */
+    /** 
+     * Range of the tower (in board cells). 
+     * */
     protected int portee;
-        /** Time between two shots in milliseconds. */
+    /** 
+     * Time between two shots in milliseconds. 
+    */
     protected int cadence;
-        /** Cost of the tower. */
+    /** 
+    * Cost of the tower. 
+    * */
     protected double cout;
-    /** Position of the tower on the board. */
+    /** 
+     * Position of the tower on the board.
+     */
     protected Position position;
+    /**
+     * l'ancienne cadence 
+     */
     protected int ancienneCadence;
     
     private ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
-
+    /**
+     * la liste de toutes les evolutions
+     */
     protected ArrayList<Evolution> evolutions;
 
       /**
@@ -60,7 +75,10 @@ public abstract class Tour {
         
         
     }
-
+    /**
+     * la liste des evolutions
+     * @return la liste des evolutions 
+     */
     public ArrayList<Evolution>getEvolutions(){
         return this.evolutions;
     }
@@ -175,6 +193,10 @@ public  void tirer(Board b){
  * @param b the game board on which the tower operates
  */
     public void startTir(Board b) {
+        if (scheduler==null || scheduler.isShutdown()||scheduler.isTerminated()) {
+            scheduler=Executors.newSingleThreadScheduledExecutor();
+            
+        }
     scheduler.scheduleAtFixedRate(() -> tirer(b),
             0,                 // délai initial
             cadence,           // période
@@ -191,9 +213,14 @@ public  void tirer(Board b){
  * a new scheduler is created.
  */
     public void stopTir() {
-    scheduler.shutdownNow();
+        if(scheduler!=null && !scheduler.isShutdown()){
+    scheduler.shutdownNow();}
     }
-    
+    /**
+     * la methode qui retourne le ballon ciblé
+     * @param b le board sur le on cible les ballons
+     * @return le ballon ciblé 
+     */
     public Balloon cibler(Board b){
         ArrayList<Balloon> candidate = neighborhood(b);
         Balloon target = null;
@@ -222,4 +249,48 @@ public  void tirer(Board b){
     }
      return target;
 }
+/**
+ * he select the balloon witch very proche
+ * in board of size
+ * @param b the  board 
+ */
+public void generate(Board b){
+     Balloon b_proche=this.cibler(b);
+      if (b_proche != null){
+            b_proche.takeDamage(this.projectile.getDamage());
+        }
+}
+/**
+ * it's  applay evolution towers
+ */
+public void towersApplication(){
+    for(Evolution e:this.evolutions){
+        if (!e.isbuy()) {
+            e.appliquer(this);
+            e.buy();
+            System.out.println(this.getClass().getSimpleName() +
+            "-> evolutioon apliquée : "+e.getNom() );
+
+           return; 
+        }
+    }
+    System.out.println(this.getClass().getSimpleName()+"-> aucune évolution ");
+}
+/**
+ * this methode remove the evolution towers
+ */
+public void towers_revome(){
+    for(int i=this.evolutions.size()-1;i>=0;i--){
+        Evolution e=this.evolutions.get(i);
+        if (e.isbuy()) {
+            e.retirer(this);
+            e.unbuy();
+            System.err.println(this.getClass().getSimpleName()+"-> evolution retirée "+e.getNom());
+            
+            return;
+        }
+    }
+ System.out.println(this.getClass().getSimpleName()+"-> aucune evolution");
+}
+
 }

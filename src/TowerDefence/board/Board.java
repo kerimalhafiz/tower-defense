@@ -38,10 +38,21 @@ public abstract  class Board {
             }
         }
     }
-    
+    /**
+     * renvoie le tableau
+     * @return le tableau de cellule 
+     */
     public Cell[][] getBoard(){
         return this.board;
     }
+/**
+ * Place une tour sur le plateau à la position donnée.
+ *
+ * @param t la tour à placer
+ * @param x position x sur le plateau
+ * @param y position y sur le plateau
+ * @return true si la tour a été placée avec succès, false sinon
+ */
 public abstract boolean  putTower(Tour t, int x, int y);
 
     
@@ -182,9 +193,9 @@ public ArrayList <Balloon> getBalloons(){
     if (b.getCell() != null) {
         b.getCell().setvalueX(null);
     }
-    if (this.listeBallon != null) {
+   /** if (this.listeBallon != null) {
         this.listeBallon.remove(b);
-    }
+    }*/
 }
 
 

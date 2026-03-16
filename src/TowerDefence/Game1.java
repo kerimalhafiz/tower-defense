@@ -21,7 +21,9 @@ import java.util.Random;
  */
 public class Game1 extends Game {
 
-    /** List of towers currently used in the game. */
+    /** 
+     * List of towers currently used in the game. 
+     * */
     ArrayList<Tour> towers;
 
     /**
@@ -103,5 +105,12 @@ public class Game1 extends Game {
         for (Tour t : this.towers) {
             t.stopTir();
         }
+    }
+    /**
+     * renvoie la liste des tours 
+     * @return la liste des tours 
+     */
+    public ArrayList<Tour>getTours(){
+        return this.towers;
     }
 }
