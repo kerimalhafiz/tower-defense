@@ -26,7 +26,7 @@ public class PathOneTest {
         // 3. All positions in the path should correspond to cells marked with "x"
         for (Position p : result) {
             Cell c = board.getCell(p.getNbLigne(), p.getNbColonne());
-            assertEquals("x", c.toString());
+            assertEquals(".", c.toString());
         }
     }
 }

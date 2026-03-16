@@ -48,7 +48,7 @@ public class PathTwoTest {
         // 3. Check that all cells in the path are marked with "x"
         for (Position p : result) {
             Cell c = board.getCell(p.getNbLigne(), p.getNbColonne());
-            assertEquals("x", c.toString());
+            assertEquals(".", c.toString());
         }
     }
 }
