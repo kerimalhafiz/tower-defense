@@ -11,13 +11,19 @@ package TowerDefence.tower;
  */
 public abstract class Evolution {
 
-    /** Name of the evolution. */
+    /** 
+     * Name of the evolution. 
+     * */
     protected String nom;
 
-    /** Cost of the evolution. */
+    /** 
+     * Cost of the evolution. 
+     * */
     protected double cout;
 
-    /** Indicates whether the evolution has been purchased. */
+    /** 
+     * Indicates whether the evolution has been purchased. 
+     * */
     protected boolean acheter;
 
     /**
@@ -31,6 +37,10 @@ public abstract class Evolution {
         this.acheter=false; // Evolution is not purchased by default
         this.cout=c;
     }
+    /**
+     * renvoie le cout de levolution
+     * @return le cout de l'evolution
+     */
     public double getCout(){
         return this.cout;
     }
@@ -48,7 +58,7 @@ public abstract class Evolution {
         this.acheter=true;
     }
     /**
-     * 
+     * renvoie le nom actuel
      * @return nom the current name
      */
     public String getNom(){

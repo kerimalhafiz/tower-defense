@@ -11,12 +11,19 @@ import TowerDefence.tower.Tour;
  * or balloon positions on the plateau.
  */
 public class Cell{
-      /** Position of the cell on the board */
+    /** 
+    * Position of the cell on the board 
+    * */
     private Position position;
 
 
-    /** Display value of the cell (default is ".") */
+    /** 
+     * Display value of the cell (default is ".") 
+     * */
     private Balloon value;
+    /**
+     * la tour
+     */
     private Tour tower;
 
     /**
@@ -85,7 +92,10 @@ public class Cell{
     public Balloon getValue() {
         return this.value;
     }
-
+    /**
+     * place la tour dans cette cellule
+     * @param t la tour à placer dans la cellule 
+     */
     public void putTower(Tour t) {
         this.tower=t;
         
