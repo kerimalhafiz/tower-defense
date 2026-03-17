@@ -245,6 +245,9 @@ Cet element une connaisance recente(on a effectue des recherches pour trouver ce
 - gestion du temps indépendante  
 - cadence spécifique à chaque tour  
 
+
+---
+
 ##  Modélisation des projectiles
 
 Les projectiles sont représentés par une classe `Projectile`.
@@ -256,23 +259,23 @@ l'ajout de nouveau projectille ne sera pas un probleme juste son nom et son nomb
 - faciliter le changement de projectile  
 - simplifier les évolutions  
 
-### les commades pour la compilation:
+###les commades pour la compilation:
 
 ### pour compiler:
 ```make classes```
 ### pour la cretation du jar executable  du livrable3b et livrable3a :
-```make jar ```
+    ```make jar ```
 ### pour l'execution du jar
-```java -jar livrable4a.jar parm parm parm ```
-```java -jar livrable4b.jar parm parm parm ```
+```java -jar livrable3a.jar parm parm parm parm```
+```java -jar livrable3b.jar parm parm parm parm```
 ### pour la documentation:
 ```make docs ```
 ### pour le test
 ```make test ```
 ### pour executer :
-```make  runtests```
+    ```make runtests```
 ### pour  supprimer les compilé :
- ``` make clean```
+    ```make clean```
 
  
 ### Atteinte des objectifs
@@ -301,12 +304,15 @@ Chaque évolution :
 ---
 
 ### Atteinte des objectifs
-
+les classes compilent correctement et tout est  clair .
 ### Difficultés restant à résoudre
 ### pour compiler:
 ````make classes```
 ### pour la cretation du jar executable  du livrable4b et livrable4a :
 ```make jar```
+### pour l'execution du jar
+```java -jar livrable4a.jar parm parm parm ```
+```java -jar livrable4b.jar parm parm parm ```
 ### pour la documentation:
 ```make docs``` 
 ### pour le test
