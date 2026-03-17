@@ -261,17 +261,20 @@ l'ajout de nouveau projectille ne sera pas un probleme juste son nom et son nomb
 
 ###les commades pour la compilation:
 
-###pour compiler:
+### pour compiler:
 ```make classes```
-###pour la cretation du jar executable  du livrable3b et livrable3a :
+### pour la cretation du jar executable  du livrable3b et livrable3a :
     ```make jar ```
-###pour la documentation:
+### pour l'execution du jar
+```java -jar livrable4a.jar parm parm parm ```
+```java -jar livrable4b.jar parm parm parm ```
+### pour la documentation:
 ```make docs ```
-###pour le test
+### pour le test
 ```make test ```
-###pour executer :
+### pour executer :
     ```make  runtests```
-###pour  supprimer les compilé :
+### pour  supprimer les compilé :
     ```make  clean```
 
  
@@ -303,16 +306,9 @@ Chaque évolution :
 ### Atteinte des objectifs
 
 ### Difficultés restant à résoudre
-
-## Livrable 5
-
-### Atteinte des objectifs
--Création de la classe Player Diallo Alpha Abdoulaye
--definissions des methodes pour leur actions.Diallo Alpha Abdoulaye
-### Commande
 ### pour compiler:
 ````make classes```
-### pour la cretation du jar executable  du livrable3b et livrable3a :
+### pour la cretation du jar executable  du livrable4b et livrable4a :
 ```make jar```
 ### pour la documentation:
 ```make docs``` 
@@ -322,6 +318,13 @@ Chaque évolution :
 ```make  runtests```
 ### pour  supprimer les compilé :
 ```make  clean```
+## Livrable 5
+
+### Atteinte des objectifs
+-Création de la classe Player Diallo Alpha Abdoulaye
+-definissions des methodes pour leur actions.Diallo Alpha Abdoulaye
+### Commande
+
 ### Difficultés restant à résoudre
 
 ## Livrable 6
