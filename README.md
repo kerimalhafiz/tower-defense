@@ -284,6 +284,7 @@ l'ajout de nouveau projectille ne sera pas un probleme juste son nom et son nomb
 
 ## Livrable 4
 # choix de modelisation
+![Diagramme ](diagrammeLivrable4.png)
 
 ##  Modélisation des évolutions
 
