@@ -103,7 +103,7 @@ public void play() {
 
         // Petit délai pour éviter que la boucle tourne trop vite
         try {
-            Thread.sleep(200);
+            Thread.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
