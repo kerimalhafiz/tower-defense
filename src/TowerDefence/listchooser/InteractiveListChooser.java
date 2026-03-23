@@ -1,8 +1,10 @@
-package listchooser;
+package TowerDefence.listchooser;
 
 import java.util.List;
 
-import listchooser.util.Input;
+import TowerDefence.listchooser.util.Input;
+
+
 
 public class InteractiveListChooser<T> implements ListChooser<T> {
 
