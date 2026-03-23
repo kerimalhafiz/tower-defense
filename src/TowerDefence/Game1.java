@@ -1,6 +1,7 @@
 package TowerDefence;
 
 import TowerDefence.board.Board;
+import TowerDefence.board.Position;
 import TowerDefence.tower.*;
 
 import java.util.ArrayList;
@@ -82,7 +83,7 @@ public class Game1 extends Game {
             y = r.nextInt(this.b.getNbColonne());
 
             // Retry until a valid position is found
-            while (!(this.b.putTower(t, x, y))) {
+            while (!(this.b.putTower(t, new Position(x, y)))) {
                 x = r.nextInt(this.b.getNbLigne());
                 y = r.nextInt(this.b.getNbColonne());
             }

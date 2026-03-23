@@ -41,15 +41,24 @@ public class FinalGame extends Game{
         this.towers.add(gorille);
         this.towers.add(frozen);
         this.towers.add(ralentit);
-   
-   
 
     }
+    private void achatTour(Player p){
 
-    public void Play(){
+        Tour t=(Tour) this.c.choose("choisir une tour à acheter l indice 0 veut dire que vous n acheter plus", this.towers);
+        p.acheter(t);;
+         while(t!=null){
+        t=(Tour) this.c.choose("choisir une tour à acheter l indice 0 veut dire que vous n acheter plus", this.towers);
+        p.acheter(t);
+        p.towers.add(t);
+         }
+    }
+
+    public void Playerer(){
         Player p=new Player();
         Tour t;
         Tour t1;
+
         do{
         t=(Tour) this.c.choose("choisir une tour à acheter l indice 0 veut dire que vous n acheter plus", this.towers);
         p.acheter(t);
@@ -61,8 +70,7 @@ public class FinalGame extends Game{
         p.acheter(t);
     }while(t!=null);
 
-    
-      
+      return;
 
 
 
