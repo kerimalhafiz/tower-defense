@@ -67,6 +67,8 @@ private void  FaireEvoluer(Player p){
     
 Tour t=(Tour) this.c.choose("choisir une tour a faire evoluer", p.towers);
 while(t!=null){
+    t=(Tour) this.c.choose("choisir une tour a faire evoluer", p.towers);
+
     Evolution e=(Evolution) this.c.choose("choisir une evolution", t.getEvolutions());
     while (e!=null){
         p.acheterEvolution(t, e);
