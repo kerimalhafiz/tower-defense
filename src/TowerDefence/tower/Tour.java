@@ -139,7 +139,7 @@ public abstract class Tour {
      */
     protected ArrayList<Balloon> neighborhood(Board board) {
     ArrayList<Balloon> voisins = new ArrayList<>();
-    int distanceUtilise=portee%(board.getNbColonne()*board.getNbLigne());
+    int distanceUtilise=(int)(this.portee * 0.002 + 1);
     for (int dx = -distanceUtilise; dx <= distanceUtilise; dx++) {
         for (int dy = -distanceUtilise; dy <= distanceUtilise; dy++) {
             int newX = this.position.getNbLigne() + dx;
