@@ -46,7 +46,9 @@ public class BoardTwo extends Board {
      * @param y la position y sur le plateau
      * @return true si la tour a été bien placé
      */
-    public boolean  putTower(Tour t,int x,int y){
+    public boolean  putTower(Tour t,Position position){
+        int x=position.getNbLigne();
+        int y =position.getNbColonne();
     for (ArrayList<Position>p:this.l )   { 
     if (p.contains(new Position(x, y))){//pas de tours syur le chemin des ballons
         return false;

@@ -53,7 +53,7 @@ public abstract  class Board {
  * @param y position y sur le plateau
  * @return true si la tour a été placée avec succès, false sinon
  */
-public abstract boolean  putTower(Tour t, int x, int y);
+public abstract boolean  putTower(Tour t, Position p);
 
     
 
