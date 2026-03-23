@@ -43,32 +43,48 @@ public class FinalGame extends Game{
         this.towers.add(ralentit);
 
     }
-    private void achatTour(Player p){
+    private void achatTour(Player p,Board b){
 
         Tour t=(Tour) this.c.choose("choisir une tour à acheter l indice 0 veut dire que vous n acheter plus", this.towers);
-        p.acheter(t);;
          while(t!=null){
-        t=(Tour) this.c.choose("choisir une tour à acheter l indice 0 veut dire que vous n acheter plus", this.towers);
-        p.acheter(t);
+        if (p.acheter(t)){
         p.towers.add(t);
+
+        this.placerTour(t, b);}
+        t=(Tour) this.c.choose("choisir une tour à acheter l indice 0 veut dire que vous n acheter plus", this.towers);
+        
          }
     }
 
+    private void placerTour(Tour t,Board b){
+    
+        Position position=(Position) this.c.choose("choisir une position placement de la grille",b.getAllPositions());
+        while (position==null){
+            b.putTower(t, position);
+            position=(Position) this.c.choose("choisir une position placement de la grille",b.getAllPositions());
+        }
+    }
+
+private void  FaireEvoluer(Player p){
+    
+Tour t=(Tour) this.c.choose("choisir une tour a faire evoluer", p.towers);
+while(t!=null){
+    Evolution e=(Evolution) this.c.choose("choisir une evolution", t.getEvolutions());
+    while (e!=null){
+        p.acheterEvolution(t, e);
+    }
+}
+
+
+
+
+
+
+}
     public void Playerer(){
         Player p=new Player();
-        Tour t;
-        Tour t1;
+        
 
-        do{
-        t=(Tour) this.c.choose("choisir une tour à acheter l indice 0 veut dire que vous n acheter plus", this.towers);
-        p.acheter(t);
-        Position position=(Position) this.c.choose("choisir une position placement de la grille",this.b.getAllPositions());
-        this.b.putTower(t, position);
-        t1=(Tour) this.c.choose("choisir une tour à faire Evoluer", p.towers);
-        p.acheter(t);
-        Evolution e=(Evolution) this.c.choose("choisir une evolution", t1.getEvolutions());
-        p.acheter(t);
-    }while(t!=null);
 
       return;
 
