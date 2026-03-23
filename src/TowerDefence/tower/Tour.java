@@ -139,9 +139,9 @@ public abstract class Tour {
      */
     protected ArrayList<Balloon> neighborhood(Board board) {
     ArrayList<Balloon> voisins = new ArrayList<>();
-
-    for (int dx = -portee; dx <= portee; dx++) {
-        for (int dy = -portee; dy <= portee; dy++) {
+    int distanceUtilise=portee%(board.getNbColonne()*board.getNbLigne());
+    for (int dx = -distanceUtilise; dx <= distanceUtilise; dx++) {
+        for (int dy = -distanceUtilise; dy <= distanceUtilise; dy++) {
             int newX = this.position.getNbLigne() + dx;
             int newY = this.position.getNbColonne() + dy;
 
