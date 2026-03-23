@@ -64,13 +64,13 @@ public class FinalGame extends Game{
     }
 
 private void  FaireEvoluer(Player p){
-    
+Evolution e;
 Tour t=(Tour) this.c.choose("choisir une tour a faire evoluer", p.towers);
 while(t!=null){
     t=(Tour) this.c.choose("choisir une tour a faire evoluer", p.towers);
-
-    Evolution e=(Evolution) this.c.choose("choisir une evolution", t.getEvolutions());
-    while (e!=null){
+    if(t!=null){
+    e=(Evolution) this.c.choose("choisir une evolution", t.getEvolutions());
+     } while (e!=null){
         p.acheterEvolution(t, e);
         e=(Evolution) this.c.choose("choisir une evolution", t.getEvolutions());
     }
