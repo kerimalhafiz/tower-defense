@@ -76,27 +76,23 @@ public boolean  acheter(Tour t){
  * la methode qui permet d'acheter une evolution
  * @param t le tour au quel on doit acheter l'evoluton
  */
-private void acheterEvolution(Tour t){
-    ArrayList<Evolution>evo=t.getEvolutions();
-    int i=0;
-    while(i<evo.size()&&((evo.get(i).isbuy())||evo.get(i).getCout()>this.credit)){
-        i++;
+public void acheterEvolution(Tour t,Evolution e){
+    if (e.getCout()>this.credit|e.isbuy()){
+        return;
     }
-    if(i<evo.size()){
-    evo.get(i).appliquer(t);
-    evo.get(i).buy();
-    this.credit-=evo.get(i).getCout();
-    System.out.println("Evolution de la tour nom de l evolution: "+evo.get(i).getNom());
-}}
-/**
- * achete une tour choisie au hasard parmis les tours 
- */
-public void evoluer(){
-    Random r = new Random();
-    int i=r.nextInt(this.towers.size());
-    Tour t=this.towers.get(i);
-    this.acheterEvolution(t);   
+    else{
+        this.credit-=e.getCout();
+        e.appliquer(t);
+        e.buy();
+    }
+   
 }
+public void revendreTour(Tour t){
+    this.credit+=t.getCout();
+    this.towers.remove(t);
+}
+
+
 
 }
 
