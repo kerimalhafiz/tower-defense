@@ -4,7 +4,9 @@ import java.util.ArrayList;
 
 import TowerDefence.Balloon.Balloon;
 import TowerDefence.board.Board;
+import TowerDefence.board.Position;
 import TowerDefence.listchooser.ListChooser;
+import TowerDefence.tower.Evolution;
 import TowerDefence.tower.Gorille;
 import TowerDefence.tower.SingeFlechettes;
 import TowerDefence.tower.SingeTireurElite;
@@ -47,10 +49,19 @@ public class FinalGame extends Game{
     public void Play(){
         Player p=new Player();
         Tour t;
+        Tour t1;
         do{
         t=(Tour) this.c.choose("choisir une tour à acheter l indice 0 veut dire que vous n acheter plus", this.towers);
         p.acheter(t);
-        }while(t!=null);
+        Position position=(Position) this.c.choose("choisir une position placement de la grille",this.b.getAllPositions());
+        this.b.putTower(t, position);
+        t1=(Tour) this.c.choose("choisir une tour à faire Evoluer", p.towers);
+        p.acheter(t);
+        Evolution e=(Evolution) this.c.choose("choisir une evolution", t1.getEvolutions());
+        p.acheter(t);
+    }while(t!=null);
+
+    
       
 
 
