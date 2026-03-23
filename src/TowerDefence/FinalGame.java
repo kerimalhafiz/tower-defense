@@ -1,8 +1,5 @@
 package TowerDefence;
 
-import java.util.ArrayList;
-
-import TowerDefence.Balloon.Balloon;
 import TowerDefence.board.Board;
 import TowerDefence.board.Position;
 import TowerDefence.listchooser.ListChooser;
@@ -15,6 +12,7 @@ import TowerDefence.tower.TourBombe;
 import TowerDefence.tower.TourRballoon;
 import TowerDefence.tower.TourelleAiguille;
 import TowerDefence.tower.TourfrozenBalloon;
+import java.util.ArrayList;
 
 public class FinalGame extends Game{
     ListChooser c;
@@ -83,9 +81,8 @@ while(t!=null){
 }
     public void Playerer(){
         Player p=new Player();
-        
-
-
+        this.achatTour(p, this.b);
+        this.FaireEvoluer(p);
       return;
 
 
