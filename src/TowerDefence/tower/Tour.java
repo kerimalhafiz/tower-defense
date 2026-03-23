@@ -158,9 +158,9 @@ public abstract class Tour {
 /**
  * it's to string to affiche
  */
-public String toString(){
-    return "T";
-}
+    public String toString(){
+        return this.getClass().getName();
+    }
 
 
     /**
@@ -177,6 +177,7 @@ public  void tirer(Board b){
         this.ancienneCadence=this.cadence;
     }
 }
+
 
 
 
