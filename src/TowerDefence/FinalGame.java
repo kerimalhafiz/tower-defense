@@ -70,6 +70,7 @@ while(t!=null){
     Evolution e=(Evolution) this.c.choose("choisir une evolution", t.getEvolutions());
     while (e!=null){
         p.acheterEvolution(t, e);
+        e=(Evolution) this.c.choose("choisir une evolution", t.getEvolutions());
     }
 }
 
