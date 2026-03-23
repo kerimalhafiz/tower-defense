@@ -83,6 +83,7 @@ while(t!=null){
         Player p=new Player();
         this.achatTour(p, this.b);
         this.FaireEvoluer(p);
+        super.play();
       return;
 
     }
