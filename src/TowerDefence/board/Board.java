@@ -159,6 +159,14 @@ public abstract boolean  putTower(Tour t, Position p);
 
     
 }
+public ArrayList<Position>getAllPositions(){
+    ArrayList<Position> res=new ArrayList<>();
+    for(int i=0 ;i<this.getNbLigne();i++){
+        for(int j=0;j<this.getNbColonne();j++){
+            res.add(new Position(i,j));
+        }
+    }return res;
+}
 /**
  *  it's the getteur we return the listBalloon
  * @return listeBallon 
