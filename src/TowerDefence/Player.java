@@ -91,7 +91,10 @@ public void revendreTour(Tour t){
     this.credit+=t.getCout();
     this.towers.remove(t);
 }
-
+public void RevendreEvolution(Tour T,Evolution e){
+    e.retirer(T);
+    this.credit+=e.getCout();
+}
 
 
 }
