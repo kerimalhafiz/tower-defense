@@ -6,70 +6,71 @@ import java.util.ArrayList;
 
 /**
  * Abstract class representing a balloon.
- * 
+ *
  * A Balloon has:
  * - a speed (movement per tick),
- * - a resistance (number of damages it can take),
+ * - a resistance (number of damages it can absorb),
  * - a progress value inside the current cell,
  * - a frozen state,
- * 
  * - a path it follows,
- * - and a position index inside that path.
- * 
- * This class provides the base logic for movement, damage handling,
- * freezing behavior, and path tracking.
+ * - a position index inside that path.
+ *
+ * Note: awarding credits when a balloon is destroyed is the responsibility
+ * of the game loop (Game.play()), not of the balloon itself.
  */
 public abstract class Balloon {
 
-    /** Current cell occupied by the balloon */
+    /** Current cell occupied by the balloon. */
     protected Cell cell;
 
-    /** Speed of the balloon (distance progressed per tick) */
+    /** Speed of the balloon (distance progressed per tick). */
     protected float speed;
 
-    /** Resistance of the balloon (health points) */
+    /** Resistance of the balloon (health points). */
     protected int resistance;
 
-    /** Progress inside the current cell (between 0 and 1) */
+    /** Progress inside the current cell (between 0 and 1). */
     protected float progress;
 
-    /** Indicates whether the balloon is frozen */
+    /** Whether the balloon is frozen. */
     protected boolean frozen;
 
-    /** Remaining ticks while the balloon is frozen */
+    /** Remaining ticks while the balloon is frozen. */
     protected int frozenTicks;
 
-    /** Current index of the balloon on the path */
+    /** Current index of the balloon on the path. */
     protected int currentPathIndex = 0;
 
-    /** Unique identifier of the balloon */
+    /** Unique identifier of the balloon. */
     protected String id;
 
-    /** Static points shared by all balloons (global score counter) */
-    protected static int points = 0;
-
-    /** Time elapsed since the balloon started moving */
+    /** Time elapsed since the balloon started moving. */
     protected float time;
 
-    /** Position index representing advancement along the path */
+    /** Position index representing advancement along the path. */
     public int position = 0;
 
-    /** The path followed by the balloon */
+    /** The path followed by the balloon. */
     protected ArrayList<Position> path;
-    /**baseSpeed for the memorisation */
+
+    /** Base speed saved before any slow/freeze effect. */
     protected float baseSpeed;
-    /**it attribut for precise de state of balloon */
-    protected boolean slowed=false;
-    /** slowedTick for the  speed  */
-    protected int slowedTick=0;
-    /**slowedfactor */
-    protected float slowedfactor=1.0f;
+
+    /** Whether the balloon is currently slowed. */
+    protected boolean slowed = false;
+
+    /** Remaining ticks of the slow effect. */
+    protected int slowedTick = 0;
+
+    /** Speed reduction factor during slow effect. */
+    protected float slowedFactor = 1.0f;
+
     /**
      * Constructs a Balloon with the given speed, resistance and identifier.
      *
-     * @param speed movement speed per tick
-     * @param resistance health value of the balloon
-     * @param id unique identifier of the balloon
+     * @param speed      movement speed per tick
+     * @param resistance initial health value
+     * @param id         unique identifier
      */
     public Balloon(float speed, int resistance, String id) {
         this.speed = speed;
@@ -81,270 +82,215 @@ public abstract class Balloon {
         this.time = 0;
         this.cell = null;
         this.path = null;
-        this.baseSpeed=speed;
+        this.baseSpeed = speed;
     }
 
-    /**
-     * Assigns a path to the balloon.
-     *
-     * @param p list of positions representing the path
-     */
+    // -------------------------------------------------------------------------
+    // Path
+    // -------------------------------------------------------------------------
+
+    /** Assigns a path to the balloon. */
     public void putPath(ArrayList<Position> p) {
         this.path = p;
     }
 
-    /**
-     * Returns the current path of the balloon.
-     *
-     * @return the path followed by the balloon
-     */
+    /** Returns the current path of the balloon. */
     public ArrayList<Position> getPath() {
         return this.path;
     }
 
-    /**
-     * Returns the balloon identifier.
-     *
-     * @return balloon id
-     */
-    public String getId() {
-        return this.id;
-    }
+    // -------------------------------------------------------------------------
+    // Getters
+    // -------------------------------------------------------------------------
 
-    /**
-     * Returns the speed of the balloon.
-     *
-     * @return speed value
-     */
-    public float getSpeed() {
-        return this.speed;
-    }
+    /** Returns the balloon identifier. */
+    public String getId() { return this.id; }
 
+    /** Returns the current speed. */
+    public float getSpeed() { return this.speed; }
 
-    /**
-     * Returns the resistance of the balloon.
-     * @return resistance balloon
-     */
-    public int getResistance(){
-        return this.resistance;
-    }
+    /** Returns the resistance. */
+    public int getResistance() { return this.resistance; }
 
-    /**
-     * Checks if the balloon is currently frozen.
-     *
-     * @return true if frozen, false otherwise
-     */
-    public boolean isFrozen() {
-        return this.frozen;
-    }
+    /** Returns true if the balloon is currently frozen. */
+    public boolean isFrozen() { return this.frozen; }
 
-    /**
-     * Increases the progress of the balloon according to its speed.
-     */
+    /** Returns the elapsed time. */
+    public float getTime() { return this.time; }
+
+    /** Returns the current cell. */
+    public Cell getCell() { return this.cell; }
+
+    /** Returns the current progress inside the cell. */
+    public float getprogress() { return this.progress; }
+
+    /** Returns the current position index on the path. */
+    public int getPosition() { return this.position; }
+
+    /** Returns the current path index. */
+    public int getcurrentPathIndex() { return this.currentPathIndex; }
+
+    /** Returns true if the balloon is currently slowed. */
+    public boolean isSlowed() { return this.slowed; }
+
+    // -------------------------------------------------------------------------
+    // Movement
+    // -------------------------------------------------------------------------
+
+    /** Increases progress by the balloon's current speed. */
     public void AjoutProgress() {
         this.progress += this.speed;
     }
 
-    /**
-     * Decreases the progress by one full cell (used when passing to next cell).
-     */
+    /** Decreases progress by 1 (when crossing to the next cell). */
     public void enleveProgress() {
         this.progress -= 1;
     }
 
-    /**
-     * Increments the internal time counter by one tick.
-     */
+    /** Increments the internal time counter by one tick. */
     public void setTime() {
         this.time++;
     }
 
-    /**
-     * Returns the elapsed time of the balloon.
-     *
-     * @return time value
-     */
-    public float getTime() {
-        return this.time;
-    }
-
-    /**
-     * Returns the current cell occupied by the balloon.
-     *
-     * @return current cell
-     */
-    public Cell getCell() {
-        return this.cell;
-    }
-
-    /**
-     * Sets the current cell of the balloon.
-     *
-     * @param c new cell
-     */
+    /** Sets the current cell. */
     public void SetCell(Cell c) {
         this.cell = c;
     }
 
-    /**
-     * Applies damage to the balloon.
-     * If resistance becomes zero, global points are increased.
-     *
-     * @param damage amount of damage to apply
-     */
-    public void takeDamage(int damage) {
-    resistance -= damage;
-    if (resistance < 0) {
-        resistance = 0;
-    }
-
-    System.out.println(this.time + " : " + this.id + " touché (" + damage + " dmg)");
-
-    if (resistance == 0) {
-        points += 10;
-        System.out.println(this.time + " : " + this.id + " détruit");
-    }
-}
-
-
-    /**
-     * Freezes the balloon for a given number of ticks.
-     *
-     * @param ticks number of ticks to freeze
-     */
-   public void freeze(int ticks) {
-    frozen = true;
-    frozenTicks = ticks;
-    System.out.println(this.time + " : " + this.id + " gelé pendant " + ticks + " ticks");
-}
-
-
-    /**
-     * Updates the frozen state at each tick.
-     * When frozenTicks reaches zero, the balloon becomes active again.
-     */
-    public void updateFrozenState() {
-    if (frozen) {
-        frozenTicks--;
-        if (frozenTicks <= 0) {
-            frozen = false;
-            System.out.println(this.time + " : " + this.id + " redémarre");
-        }
-    }
-}
-
-
-    /**
-     * Checks if the balloon has been destroyed.
-     *
-     * @return true if resistance is zero or below
-     */
-    public boolean isDestroyed() {
-        return resistance <= 0;
-    }
-
-    /**
-     * Returns the current index of the balloon on the path.
-     *
-     * @return current path index
-     */
-    public int getcurrentPathIndex() {
-        return this.currentPathIndex;
-    }
-
-    /**
-     * Returns the current progress value inside the cell.
-     *
-     * @return progress value
-     */
-    public float getprogress() {
-        return this.progress;
-    }
-
-    /**
-     * String representation of the balloon (displayed on the board).
-     *
-     * @return "X" symbol
-     */
-    public String toString() {
-        return "X";
-    }
-
-    /**
-     * Returns the current position index of the balloon.
-     *
-     * @return position index
-     */
-    public int getPosition() {
-        return this.position;
-    }
-
-    /**
-     * Increments the position index of the balloon.
-     */
+    /** Increments the position index by 1. */
     public void setPosition() {
         this.position += 1;
     }
 
     /**
-     * Checks whether the balloon has reached the end of its path.
+     * Returns true if the balloon has reached the end of its path.
      *
-     * @return true if balloon reached or exceeded last position
+     * @return true if at or past the last path position
      */
     public Boolean isOut() {
         return this.position >= (this.path.size() - 1);
     }
-    /***
-     * which subtracts the speed
-     * @param Speed  soustaire   
+
+    // -------------------------------------------------------------------------
+    // Damage
+    // -------------------------------------------------------------------------
+
+    /**
+     * Applies damage to the balloon.
+     *
+     * Resistance is decremented by {@code damage}.
+     * It cannot go below 0.
+     * Awarding credits to the player when resistance reaches 0 is handled
+     * by {@code Game.play()}, not here.
+     *
+     * @param damage amount of damage to apply
      */
-    public void Subtractspeed(double Speed){
-    this.speed -= Speed;
-    System.out.println(this.time + " : " + this.id + " ralenti");
-}
-   /**
-    * it's slow the speed for the tick of time
-    * @param factor i use this for slowed the speed
-    * @param tick  use this for number of tick
-    */
-   public void slow(float factor,int tick){
-      if (tick<=0) {
-        return;
-      }
-      if (factor<=0) factor=0.1f;
-      this.slowed=true;
-      this.slowedTick=tick;
-      this.slowedfactor=factor;
-      this.speed=baseSpeed*slowedfactor;
-    System.out.println(this.time + " : " + this.id + " ralenti");
-
-
-
-   }
-   /**
-    * it update de slowedtick
-    * and restor the speed normal
-    */
-   public void updateSlowedState(){
-     if(slowed){
-        slowedTick--;
-        if (slowedTick<=0) {
-            slowed=false;
-            slowedfactor=1.0f;
-            this.speed=baseSpeed;
-            System.out.println(this.time + " : " + this.id + " ralenti");
-
+    public void takeDamage(int damage) {
+        resistance -= damage;
+        if (resistance < 0) {
+            resistance = 0;
         }
-     }
-   }
-   /**
-    * it'the getteur
-    * @return slowed the state
-    */
-   public boolean isSlowed(){
-      return this.slowed;
-   }
+        System.out.println(this.time + " : " + this.id
+                + " touché (" + damage + " dmg)"
+                + " — résistance restante : " + this.resistance);
 
+        if (resistance == 0) {
+            System.out.println(this.time + " : " + this.id + " détruit !");
+        }
+    }
+
+    /**
+     * Returns true if the balloon has been destroyed (resistance = 0).
+     *
+     * @return true if destroyed
+     */
+    public boolean isDestroyed() {
+        return resistance <= 0;
+    }
+
+    // -------------------------------------------------------------------------
+    // Freeze
+    // -------------------------------------------------------------------------
+
+    /**
+     * Freezes the balloon for a given number of ticks.
+     *
+     * @param ticks number of ticks to stay frozen
+     */
+    public void freeze(int ticks) {
+        frozen = true;
+        frozenTicks = ticks;
+        System.out.println(this.time + " : " + this.id
+                + " gelé pendant " + ticks + " ticks");
+    }
+
+    /**
+     * Updates the frozen state each tick.
+     * Unfreezes the balloon when frozenTicks reaches 0.
+     */
+    public void updateFrozenState() {
+        if (frozen) {
+            frozenTicks--;
+            if (frozenTicks <= 0) {
+                frozen = false;
+                System.out.println(this.time + " : " + this.id + " redémarre");
+            }
+        }
+    }
+
+    // -------------------------------------------------------------------------
+    // Slow
+    // -------------------------------------------------------------------------
+
+    /**
+     * Slows the balloon by a given factor for a given number of ticks.
+     *
+     * @param factor speed multiplier (0 < factor < 1 to slow down)
+     * @param tick   duration of the effect in ticks
+     */
+    public void slow(float factor, int tick) {
+        if (tick <= 0) return;
+        if (factor <= 0) factor = 0.1f;
+        this.slowed = true;
+        this.slowedTick = tick;
+        this.slowedFactor = factor;
+        this.speed = baseSpeed * slowedFactor;
+        System.out.println(this.time + " : " + this.id + " ralenti");
+    }
+
+    /**
+     * Updates the slow state each tick.
+     * Restores normal speed when slowedTick reaches 0.
+     */
+    public void updateSlowedState() {
+        if (slowed) {
+            slowedTick--;
+            if (slowedTick <= 0) {
+                slowed = false;
+                slowedFactor = 1.0f;
+                this.speed = baseSpeed;
+                System.out.println(this.time + " : " + this.id
+                        + " vitesse normale rétablie");
+            }
+        }
+    }
+
+    /**
+     * Subtracts a fixed amount from the balloon's current speed.
+     *
+     * @param amount speed reduction
+     */
+    public void Subtractspeed(double amount) {
+        this.speed -= amount;
+        System.out.println(this.time + " : " + this.id + " ralenti");
+    }
+
+    // -------------------------------------------------------------------------
+    // Display
+    // -------------------------------------------------------------------------
+
+    @Override
+    public String toString() {
+        return "X";
+    }
 }
-
-
