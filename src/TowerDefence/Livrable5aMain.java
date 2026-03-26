@@ -3,6 +3,7 @@ package TowerDefence;
 import TowerDefence.board.BoardOne;
 import TowerDefence.listchooser.InteractiveListChooser;
 import TowerDefence.listchooser.ListChooser;
+import TowerDefence.listchooser.RandomListChooser;
 
 public class Livrable5aMain {
     /**
@@ -16,16 +17,24 @@ public class Livrable5aMain {
  * le main pour le livrable 4a
  * @param args les arguments en ligne de commande 
  */
- public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    int width=10;
-    int height=10;
-    int nbBallons=10;
+       if (args.length != 4) {
+            System.out.println(
+                "Usage : java Livrable5a <mode> <height> <width> <number_of_ballons>"
+            );
+            return;
+        }
+        String mode      = args[0];
+        int hauteur   = Integer.parseInt(args[1]);
+        int  largeur   = Integer.parseInt(args[2]);
+        int  nbBallons = Integer.parseInt(args[3]);
 
-    BoardOne board=new BoardOne(height, width);
-    ListChooser c=new InteractiveListChooser<>();
-        // Create the game with the given board and number of balloons
-    FinalGame game1 = new FinalGame(board, nbBallons,c);
+        System.out.println("=== Informations ===");
+        System.out.println("  Mode      : " + mode);
+        System.out.println("  Plateau   : " + hauteur + " x " + largeur);
+        System.out.println("  Ballons/m : " + nbBallons);
+        System.out.println("=====================");
 
-    game1.Playerer();
-}}
+
+    }}
