@@ -35,6 +35,17 @@ public class Livrable5aMain {
         System.out.println("  Plateau   : " + hauteur + " x " + largeur);
         System.out.println("  Ballons/m : " + nbBallons);
         System.out.println("=====================");
+        ListChooser c;
+        if (mode.equalsIgnoreCase("automatique")) {
+            c = new RandomListChooser<>();
+        } else {
+            if (!mode.equalsIgnoreCase("interactif")) {
+                System.out.println("Mode inconnu \"" + mode
+                        + "\" — mode interactif utilisé par défaut.");
+            }
+            c = new InteractiveListChooser<>();
+        }
+
 
 
     }}
