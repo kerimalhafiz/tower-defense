@@ -21,6 +21,7 @@ public class FinalGame extends Game{
     ListChooser c;
       ArrayList<Tour> catalogue;
           private int manche;
+        Player p;
     public FinalGame(Board b,int n,ListChooser c){
         super(b, n);
         this.c = c;
@@ -162,21 +163,53 @@ public class FinalGame extends Game{
         }
     }
 
+   private void vendreTour(Player p, Board b) {
 
+        if (p.towers.isEmpty()) {
+            System.out.println("Vous n'avez aucune tour à vendre.");
+            return;
+        }
 
+        Tour t = (Tour) this.c.choose(
+                "Vendre une tour (0 = annuler) | Crédits : " + p.getCredits(),
+                p.towers);
 
-
-
-}
-    public void Playerer(){
-        Player p=new Player();
-        this.achatTour(p, this.b);
-        this.FaireEvoluer(p);
-        super.play();
-      return;
-
+        while (t != null) {
+            t.stopTir();
+            p.vendre(t);  
+            if (p.towers.isEmpty()){t=null;}
+            else{t = (Tour) this.c.choose(
+                    "Vendre une autre tour (0 = terminer) | Crédits : " + p.getCredits(),
+                    p.towers);}
+        }
     }
 
+
+
+
+
+
+    public void play(String mode) {
+    this.p = new Player();
+    System.out.println("=== Tower Defense — mode "
+            + (mode) + " ===");
+    System.out.println(this.p);
+
+    while (this.p.isAlive()) {
+        System.out.println("\n--- Phase d'achat — Manche " + this.manche + " ---");
+        System.out.println(this.p);
+
+        this.achatTour(this.p, this.b);
+        this.faireEvoluer(this.p);
+        this.vendreTour(this.p, this.b);
+        this.vendreEvolution(this.p);
+
+        super.play();
+        this.manche++;
+    }
+
+    System.out.println("\n=== Game Over — Plus de vies ! ===");
+}
 
 
 
