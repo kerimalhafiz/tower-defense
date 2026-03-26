@@ -71,13 +71,15 @@ public class FinalGame extends Game{
                     this.catalogue);
         }
     }
-    private void placerTour(Tour t,Board b){
-    
-        Position position=(Position) this.c.choose("choisir une position placement de la grille",b.getAllPositions());
-        while (position==null){
-            b.putTower(t, position);
-            position=(Position) this.c.choose("choisir une position placement de la grille",b.getAllPositions());
+    private void placerTour(Tour t, Board b) {
+        Position position = (Position) this.c.choose(
+                "Choisir une case pour placer la tour", b.getAllPositions());
+
+        while (position == null) {
+            position = (Position) this.c.choose(
+                    "Position invalide — choisir une case :", b.getAllPositions());
         }
+        b.putTower(t, position);
     }
 
 private void  FaireEvoluer(Player p){
