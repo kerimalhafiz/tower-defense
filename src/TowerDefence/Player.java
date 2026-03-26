@@ -140,6 +140,11 @@ public boolean acheterEvolution(Tour t, Evolution e) {
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "Joueur | Crédits : " + this.credits + " | Vies : " + this.vies;
+    }
+
 }
 
 
