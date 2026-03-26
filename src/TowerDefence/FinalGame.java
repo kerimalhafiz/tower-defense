@@ -3,6 +3,7 @@ package TowerDefence;
 import TowerDefence.board.Board;
 import TowerDefence.board.Position;
 import TowerDefence.listchooser.ListChooser;
+import TowerDefence.listchooser.RandomListChooser;
 import TowerDefence.tower.Evolution;
 import TowerDefence.tower.Gorille;
 import TowerDefence.tower.SingeFlechettes;
@@ -16,31 +17,23 @@ import java.util.ArrayList;
 
 public class FinalGame extends Game{
     ListChooser c;
-      ArrayList<Tour> towers;
+      ArrayList<Tour> catalogue;
+          private int manche;
     public FinalGame(Board b,int n,ListChooser c){
         super(b, n);
-        this.c=c;
-        this.towers = new ArrayList<>();
-
-        // Creation of this.towers (two instances for several types)
-        SingeFlechettes fleche = new SingeFlechettes();
-        SingeTireurElite tireur = new SingeTireurElite();
-        TourelleAiguille aiguille = new TourelleAiguille();
-        Gorille gorille = new Gorille();
-        TourBombe bombe = new TourBombe();
-        TourRballoon ralentit = new TourRballoon(3);
-        TourfrozenBalloon frozen = new TourfrozenBalloon(4);
-
-        // Add this.towers to the list
-        this.towers.add(fleche);
-        this.towers.add(tireur);
-        this.towers.add(aiguille);
-        this.towers.add(bombe);
-        this.towers.add(gorille);
-        this.towers.add(frozen);
-        this.towers.add(ralentit);
-
+        this.c = c;
+        this.manche = 1;
+    
+        this.catalogue = new ArrayList<>();
+        this.catalogue.add(new SingeFlechettes());
+        this.catalogue.add(new SingeTireurElite());
+        this.catalogue.add(new TourelleAiguille());
+        this.catalogue.add(new TourBombe());
+        this.catalogue.add(new Gorille());
+        this.catalogue.add(new TourfrozenBalloon(4));
+        this.catalogue.add(new TourRballoon(3));
     }
+
     private void achatTour(Player p,Board b){
 
         Tour t=(Tour) this.c.choose("choisir une tour à acheter l indice 0 veut dire que vous n acheter plus", this.towers);
