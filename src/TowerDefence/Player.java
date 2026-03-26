@@ -39,11 +39,12 @@ public void ajouterCredits(double amount) {
 }
 
 /**
- * obtient le nombre qu'a un joueur
- * @return les credits du joueur
+ * Returns the current credits of the player.
+ *
+ * @return credits
  */
-public double  getCredit(){
-    return this.credit;
+public double getCredits() {
+    return this.credits;
 }
 /**
  * diminue le nombre de vie 
