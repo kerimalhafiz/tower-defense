@@ -88,7 +88,6 @@ public class FinalGame extends Game{
             return;
         }
 
-        int evolutionsEffectuees = 0;
         
         Tour t = (Tour) this.c.choose(
                 "Choisir une tour à faire évoluer (0 = terminer)", p.towers);
@@ -109,12 +108,14 @@ public class FinalGame extends Game{
 
                 while (e != null ) {
                     if (p.acheterEvolution(t, e)) {
-                        evolutionsEffectuees++;
+                        
                         disponibles.remove(e);
                     }
-                    if (disponibles.isEmpty()  ) break;
+                    if (disponibles.isEmpty()  ){
+                        e=null;
+                    }else{
                     e = (Evolution) this.c.choose(
-                            "Choisir une autre évolution (0 = terminer)", disponibles);
+                            "Choisir une autre évolution (0 = terminer)", disponibles);}
                 }
             }
 
