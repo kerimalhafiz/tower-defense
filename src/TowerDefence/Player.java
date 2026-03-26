@@ -67,16 +67,23 @@ public int getVie(){
     return this.vies;
 }
 /**
- * renvoie true si on a pu acheter la tour et false sinon 
- * @param t la tour qu'on veut acheter 
- * @return true si on a pu acheter la tour et false sinon 
+ * Attempts to buy a tower.
+ * Deducts the tower cost from credits if the player can afford it.
+ *
+ * @param t the tower to buy
+ * @return true if purchase succeeded, false if not enough credits
  */
-public boolean  acheter(Tour t){
-    if(this.credit>=t.getCout()){
-        this.credit-=t.getCout();
-        this.towers.add(t);
+public boolean acheter(Tour t) {
+    if (this.credits >= t.getCout()) {
+        this.credits -= t.getCout();
+        System.out.println("Tour achetée : " + t.getClass().getSimpleName()
+                + " | Coût : " + t.getCout()
+                + " | Crédits restants : " + this.credits);
         return true;
     }
+    System.out.println("Crédits insuffisants pour acheter "
+            + t.getClass().getSimpleName()
+            + " (coût : " + t.getCout() + ", crédits : " + this.credits + ")");
     return false;
 }
 /**
