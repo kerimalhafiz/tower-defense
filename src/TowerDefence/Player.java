@@ -87,19 +87,29 @@ public boolean acheter(Tour t) {
     return false;
 }
 /**
- * la methode qui permet d'acheter une evolution
- * @param t le tour au quel on doit acheter l'evoluton
+ * Attempts to buy an evolution for a given tower.
+ * The evolution is applied immediately if the player can afford it
+ * and the evolution has not already been purchased.
+ *
+ * @param t the tower to evolve
+ * @param e the evolution to apply
+ * @return true if the evolution was bought and applied, false otherwise
  */
-public void acheterEvolution(Tour t,Evolution e){
-    if (e.getCout()>this.credit|e.isbuy()){
-        return;
+public boolean acheterEvolution(Tour t, Evolution e) {
+
+    if (this.credits < e.getCout()) {
+        System.out.println("Crédits insuffisants pour l'évolution "
+                + e.getNom()
+                + " (coût : " + e.getCout() + ", crédits : " + this.credits + ")");
+        return false;
     }
-    else{
-        this.credit-=e.getCout();
-        e.appliquer(t);
-        e.buy();
-    }
-   
+    this.credits -= e.getCout();
+    e.appliquer(t);
+    e.buy();
+    System.out.println("Évolution achetée : " + e.getNom()
+            + " sur " + t.getClass().getSimpleName()
+            + " | Crédits restants : " + this.credits);
+    return true;
 }
 public void revendreTour(Tour t){
     this.credit+=t.getCout();
