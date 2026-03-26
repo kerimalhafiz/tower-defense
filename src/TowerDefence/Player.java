@@ -11,7 +11,7 @@ public class Player {
 /**
 les credits du joueur pour acheter des tours 
  */
-protected double credit;
+protected double credits;
 /**
 le nombre de vie qu'un joueur peut avoir 
 */
@@ -24,17 +24,20 @@ ArrayList<Tour>towers;
  * le constructeur de la classe player  
  * */
 public Player(){
-    this.credit=2500;
+    this.credits=2500;
     this.vies=20;
     this.towers=new ArrayList<>();
 }
-/**
- * les credits qu'un joueur detient pour pour acheter une tour
- * @param n le nombre de credit 
- */
-public void setCredit(int n){
-    this.credit=n;
+/** 
+* Adds credits to the player's balance (e.g. after destroying a balloon).
+*
+* @param amount amount to add
+*/
+public void ajouterCredits(double amount) {
+    this.credits += amount;
+    System.out.println("Credits +" + amount + " → total : " + this.credits);
 }
+
 /**
  * obtient le nombre qu'a un joueur
  * @return les credits du joueur
