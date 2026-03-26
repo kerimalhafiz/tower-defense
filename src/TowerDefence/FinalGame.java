@@ -208,7 +208,7 @@ public class FinalGame extends Game{
         this.manche++;
     }
 
-    System.out.println("\n=== Game Over — Plus de vies ! ===");
+    System.out.println("\n=== Game Over — Plus de vies ! Tu as perdu hahahaha ===");
 }
 
 
