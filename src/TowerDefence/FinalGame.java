@@ -123,6 +123,44 @@ public class FinalGame extends Game{
         }
     }
 
+    
+    private void vendreEvolution(Player p) {
+
+        if (p.towers.isEmpty()) {
+            System.out.println("Vous n'avez aucune tour.");
+            return;
+        }
+
+        Tour t = (Tour) this.c.choose(
+                "Choisir une tour dont vendre une évolution (0 = terminer)", p.towers);
+
+        while (t != null) {
+            ArrayList<Evolution> achetees = new ArrayList<>();
+            for (Evolution e : t.getEvolutions()) {
+                if (e.isbuy()) achetees.add(e);
+            }
+		
+            if (achetees.isEmpty()) {
+                System.out.println("Aucune évolution achetée sur cette tour.");
+            } else {
+                Evolution e = (Evolution) this.c.choose(
+                        "Choisir une évolution à vendre (0 = annuler)", achetees);
+                while (e != null) {
+                    p.vendreEvolution(t, e);
+                    achetees.remove(e);
+                    if (!achetees.isEmpty()) {
+                    e = (Evolution) this.c.choose(
+                            "Autre évolution à vendre (0 = terminer)", achetees);}
+                    else{
+                    e=null;}
+                }
+            }
+
+            t = (Tour) this.c.choose(
+                    "Choisir une autre tour (0 = terminer)", p.towers);
+        }
+    }
+
 
 
 
