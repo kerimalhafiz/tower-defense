@@ -144,7 +144,9 @@ public boolean acheterEvolution(Tour t, Evolution e) {
     public String toString() {
         return "Joueur | Crédits : " + this.credits + " | Vies : " + this.vies;
     }
-
+    public boolean isAlive(){
+        return this.credits>0;
+    }
 }
 
 
