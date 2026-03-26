@@ -129,11 +129,16 @@ public boolean acheterEvolution(Tour t, Evolution e) {
         return true;
     }
 
-public void RevendreEvolution(Tour T,Evolution e){
-    e.retirer(T);
-    this.credit+=e.getCout();
-}
-
+    public boolean vendreEvolution(Tour t, Evolution e) {
+  
+        this.credits +=  e.getCout();
+        e.retirer(t);
+        e.unbuy();
+        System.out.println("Évolution vendue : " + e.getNom()
+                + " | Remboursement : " + e.getCout()
+                + " | Crédits : " + this.credits);
+        return true;
+    }
 
 }
 
