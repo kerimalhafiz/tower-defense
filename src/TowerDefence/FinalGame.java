@@ -82,18 +82,46 @@ public class FinalGame extends Game{
         b.putTower(t, position);
     }
 
-private void  FaireEvoluer(Player p){
-Evolution e = null;
-Tour t=(Tour) this.c.choose("choisir une tour a faire evoluer", p.towers);
-while(t!=null){
-    t=(Tour) this.c.choose("choisir une tour a faire evoluer", p.towers);
-    if(t!=null){
-    e=(Evolution) this.c.choose("choisir une evolution", t.getEvolutions());
-     } while (e!=null){
-        p.acheterEvolution(t, e);
-        e=(Evolution) this.c.choose("choisir une evolution", t.getEvolutions());
+    private void faireEvoluer(Player p) {
+        if (p.towers.isEmpty()) {
+            System.out.println("Vous n'avez aucune tour à faire évoluer.");
+            return;
+        }
+
+        int evolutionsEffectuees = 0;
+        
+        Tour t = (Tour) this.c.choose(
+                "Choisir une tour à faire évoluer (0 = terminer)", p.towers);
+
+        while (t != null ) {
+
+            ArrayList<Evolution> disponibles = new ArrayList<>();
+            for (Evolution e : t.getEvolutions()) {
+                if (!e.isbuy()) disponibles.add(e);
+            }
+
+            if (disponibles.isEmpty()) {
+                System.out.println(t.getClass().getSimpleName()
+                        + " : aucune évolution disponible.");
+            } else {
+                Evolution e = (Evolution) this.c.choose(
+                        "Choisir une évolution (0 = annuler)", disponibles);
+
+                while (e != null ) {
+                    if (p.acheterEvolution(t, e)) {
+                        evolutionsEffectuees++;
+                        disponibles.remove(e);
+                    }
+                    if (disponibles.isEmpty()  ) break;
+                    e = (Evolution) this.c.choose(
+                            "Choisir une autre évolution (0 = terminer)", disponibles);
+                }
+            }
+
+            t = (Tour) this.c.choose(
+                    "Choisir une autre tour à faire évoluer (0 = terminer)", p.towers);
+        }
     }
-}
 
 
 
