@@ -46,6 +46,8 @@ public class Livrable5aMain {
             c = new InteractiveListChooser<>();
         }
 
-
+        BoardOne board = new BoardOne(hauteur, largeur);
+        FinalGame game = new FinalGame(board, nbBallons, c);
+        game.play();
 
     }}
