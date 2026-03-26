@@ -52,19 +52,25 @@ public class FinalGame extends Game{
         System.out.println("\n=== Manche " + this.manche
                 + " — " + this.n + " ballons générés ===");
     }
-    private void achatTour(Player p,Board b){
 
-        Tour t=(Tour) this.c.choose("choisir une tour à acheter l indice 0 veut dire que vous n acheter plus", this.towers);
-         while(t!=null){
-        if (p.acheter(t)){
-        p.towers.add(t);
 
-        this.placerTour(t, b);}
-        t=(Tour) this.c.choose("choisir une tour à acheter l indice 0 veut dire que vous n acheter plus", this.towers);
-        
-         }
+    private void achatTour(Player p, Board b) {
+        int achatsEffectues = 0;
+        Tour t = (Tour) this.c.choose(
+                "Acheter une tour (0 = terminer) | Crédits : " + p.getCredits(),
+                this.catalogue);
+
+        while (t != null  ) {
+            if (p.acheter(t)) {
+                p.towers.add(t);
+                this.placerTour(t, b);
+                achatsEffectues++;
+            }
+            t = (Tour) this.c.choose(
+                    "Acheter une tour (0 = terminer) | Crédits : " + p.getCredits(),
+                    this.catalogue);
+        }
     }
-
     private void placerTour(Tour t,Board b){
     
         Position position=(Position) this.c.choose("choisir une position placement de la grille",b.getAllPositions());
