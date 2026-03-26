@@ -111,10 +111,24 @@ public boolean acheterEvolution(Tour t, Evolution e) {
             + " | Crédits restants : " + this.credits);
     return true;
 }
-public void revendreTour(Tour t){
-    this.credit+=t.getCout();
-    this.towers.remove(t);
-}
+    public boolean vendre(Tour t) {
+   
+     	//Sum of the all buyed  evolution
+        for (Evolution e : t.getEvolutions()) {
+            if (e.isbuy()) {
+                double remboursement = e.getCout() ;
+                this.credits += remboursement;
+            }
+        }
+     
+        this.credits += t.getCout();
+        this.towers.remove(t);
+        System.out.println("Tour vendue : " + t.getClass().getSimpleName()
+                + " | Remboursement : " + t.getCout()
+                + " | Crédits : " + this.credits);
+        return true;
+    }
+
 public void RevendreEvolution(Tour T,Evolution e){
     e.retirer(T);
     this.credit+=e.getCout();
