@@ -47,14 +47,17 @@ public double getCredits() {
     return this.credits;
 }
 /**
- * diminue le nombre de vie 
- * @param n le nombre de vie qu'a un joueur
+ * Decrements the player's lives by the given amount.
+ * Lives cannot go below 0.
+ *
+ * @param amount number of lives to lose
  */
-public void diminueVieDe(double  n){
-    this.vies-=n;
-    if (this.vies<0){
-        this.vies=0;
+public void diminueVieDe(int amount) {
+    this.vies -= amount;
+    if (this.vies < 0) {
+        this.vies = 0;
     }
+    System.out.println("Vie perdue ! Vies restantes : " + this.vies);
 }
 /**
  * renvoie le nombre de vie que detient un joueur
