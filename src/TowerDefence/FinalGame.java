@@ -1,5 +1,7 @@
 package TowerDefence;
 
+import TowerDefence.Balloon.Balloon;
+import TowerDefence.Balloon.BasicBalloon;
 import TowerDefence.board.Board;
 import TowerDefence.board.Position;
 import TowerDefence.listchooser.ListChooser;
@@ -33,7 +35,23 @@ public class FinalGame extends Game{
         this.catalogue.add(new TourfrozenBalloon(4));
         this.catalogue.add(new TourRballoon(3));
     }
+    @Override
+    public void createBalloons() {
+        this.listeBallon = new ArrayList<>();
+        float vitesse = this.manche  +0.5f;
 
+        for (int i = 1; i <= this.n; i++) {
+            Balloon ballon;
+            String id = "Ballon-M" + this.manche + "-" + i;
+ 
+                ballon = new BasicBalloon(vitesse, this.manche,id);    // resistance 4
+
+            this.listeBallon.add(ballon);
+        }
+
+        System.out.println("\n=== Manche " + this.manche
+                + " — " + this.n + " ballons générés ===");
+    }
     private void achatTour(Player p,Board b){
 
         Tour t=(Tour) this.c.choose("choisir une tour à acheter l indice 0 veut dire que vous n acheter plus", this.towers);
