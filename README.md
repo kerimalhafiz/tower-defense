@@ -266,8 +266,8 @@ l'ajout de nouveau projectille ne sera pas un probleme juste son nom et son nomb
 ### pour la cretation du jar executable  du livrable3b et livrable3a :
     ```make jar ```
 ### pour l'execution du jar
-```java -jar livrable3a.jar parm parm parm parm```
-```java -jar livrable3b.jar parm parm parm parm```
+```java -jar livrable3a.jar parm parm parm```
+```java -jar livrable3b.jar parm parm parm```
 ### pour la documentation:
 ```make docs ```
 ### pour le test
@@ -284,6 +284,7 @@ l'ajout de nouveau projectille ne sera pas un probleme juste son nom et son nomb
 
 ## Livrable 4
 # choix de modelisation
+![Diagramme ](diagrammeLivrable4.png)
 
 ##  Modélisation des évolutions
 

@@ -64,14 +64,7 @@ public  void addBalloon(ArrayList<Balloon> b){
     }
 }
 
-/**
- * Place une tour sur le plateau à la position donnée.
- *
- * @param t la tour à placer
- * @param x position x sur le plateau
- * @param y position y sur le plateau
- * @return true si la tour a été placée avec succès, false sinon
- */
+
 public boolean  putTower(Tour t,int x,int y){
     if (this.l.contains(new Position(x, y))){//pas de tours syur le chemin des ballons
         return false;

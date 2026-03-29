@@ -139,9 +139,9 @@ public abstract class Tour {
      */
     protected ArrayList<Balloon> neighborhood(Board board) {
     ArrayList<Balloon> voisins = new ArrayList<>();
-
-    for (int dx = -portee; dx <= portee; dx++) {
-        for (int dy = -portee; dy <= portee; dy++) {
+    int distanceUtilise=(int)(this.portee * 0.002 + 1);
+    for (int dx = -distanceUtilise; dx <= distanceUtilise; dx++) {
+        for (int dy = -distanceUtilise; dy <= distanceUtilise; dy++) {
             int newX = this.position.getNbLigne() + dx;
             int newY = this.position.getNbColonne() + dy;
 
@@ -158,9 +158,9 @@ public abstract class Tour {
 /**
  * it's to string to affiche
  */
-public String toString(){
-    return "T";
-}
+    public String toString(){
+        return this.getClass().getName();
+    }
 
 
     /**
@@ -177,6 +177,7 @@ public  void tirer(Board b){
         this.ancienneCadence=this.cadence;
     }
 }
+
 
 
 

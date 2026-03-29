@@ -70,6 +70,9 @@ public abstract class Evolution {
     public void unbuy(){
         this.acheter=false;
     }
+    public String toString(){
+        return this.getClass().getName();
+    }
 
     /**
      * Applies the evolution effect to a tower.

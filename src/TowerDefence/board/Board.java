@@ -53,7 +53,7 @@ public abstract  class Board {
  * @param y position y sur le plateau
  * @return true si la tour a été placée avec succès, false sinon
  */
-public abstract boolean  putTower(Tour t, int x, int y);
+public abstract boolean  putTower(Tour t, Position p);
 
     
 
@@ -158,6 +158,14 @@ public abstract boolean  putTower(Tour t, int x, int y);
     b.setTime();
 
     
+}
+public ArrayList<Position>getAllPositions(){
+    ArrayList<Position> res=new ArrayList<>();
+    for(int i=0 ;i<this.getNbLigne();i++){
+        for(int j=0;j<this.getNbColonne();j++){
+            res.add(new Position(i,j));
+        }
+    }return res;
 }
 /**
  *  it's the getteur we return the listBalloon
