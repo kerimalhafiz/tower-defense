@@ -562,9 +562,10 @@ la séparation de responsabilité du ballon de certains actions , pourquoi pas u
 -Kerim Abdoulaye `Documentation ` et  `Diagramme UML ` mettre a jour et simplification du code 
 
 ## Semaine 12
-
+Pour la semaine du 12  on a a eu a travailler sur le livrable 5 qu'on a dejà commencé pendant les congés d'hiver , on a verifier le mail que le prof de cours nous avait envoyé , qu'on devait utilisé pour pouvoir basculé d'un player a une AI , on s'est pris une trentaine de mn à le consulter et consulter les classes données , apres on a eu une idée la deçu , sur comment basculer d'un player au jeu , c'est que en fait on a deux modes : jeu de manière iteractif ou on fait que l'ordi joue seul sans interaction avec le joueur .
 ### Ce qui a été réalisé
-
+On a eu a mettre les classes dont on a besoin dans notre package du projet pour pouvoir implementer ce qui est attendu , apres dans le livrable 5 on choisi un mode soit automatic ou interactif , si le mode est automatic , on appel notre game avec ce mode , sinon si le mode est different du mode interactif , on choisit le mode interactif par defaut et on appel le game avec ce mode interactif apres le game essaie daller avec le mode qui lui est entré en parametre .
 ### Difficultés rencontrées
-
+on a unpeu eu du mal à pouvoir implementer le bon fonctionnement de ce livrable en fin de compte a cause des erreurs de package et tout , mais au final quand même , on a su corriger les erreurs pour permettre la compilation et le bon fonctionnement du livrable . 
+Et ensuite , on a discuter sur le game final du jeu en cours de semaine , on attend juste le mail du prof pour connaitre ce qui est attendu ou pas pour pouvoir mieux le corriger en fonction des attentes .
 ### Objectifs pour finaliser le projet et répartition du travail par membre
