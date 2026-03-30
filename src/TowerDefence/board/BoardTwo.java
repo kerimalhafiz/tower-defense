@@ -42,8 +42,7 @@ public class BoardTwo extends Board {
     /**
      * place une tour comme indiqué
      * @param t la tour à placer 
-     * @param x la position x sur le plateau
-     * @param y la position y sur le plateau
+     * @param position la position du plateau 
      * @return true si la tour a été bien placé
      */
     public boolean  putTower(Tour t,Position position){
