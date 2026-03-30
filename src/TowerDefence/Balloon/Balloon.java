@@ -245,7 +245,7 @@ public abstract class Balloon {
     /**
      * Slows the balloon by a given factor for a given number of ticks.
      *
-     * @param factor speed multiplier (0 < factor < 1 to slow down)
+     * @param factor speed multiplier 
      * @param tick   duration of the effect in ticks
      */
     public void slow(float factor, int tick) {
