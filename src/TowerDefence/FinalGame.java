@@ -189,10 +189,9 @@ public class FinalGame extends Game{
 
 
 
-    public void play(String mode) {
+    public void play() {
     this.p = new Player();
-    System.out.println("=== Tower Defense — mode "
-            + (mode) + " ===");
+    
     System.out.println(this.p);
 
     while (this.p.isAlive()) {
