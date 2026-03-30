@@ -88,13 +88,17 @@ public abstract class Balloon {
     // -------------------------------------------------------------------------
     // Path
     // -------------------------------------------------------------------------
-
-    /** Assigns a path to the balloon. */
+    /**
+    * Assigns a path to the balloon
+    * @param p the  news path 
+    */
     public void putPath(ArrayList<Position> p) {
         this.path = p;
     }
-
-    /** Returns the current path of the balloon. */
+    /**
+    * Assigns a path to the balloon.
+     * @return path the current path 
+     */
     public ArrayList<Position> getPath() {
         return this.path;
     }
@@ -102,69 +106,104 @@ public abstract class Balloon {
     // -------------------------------------------------------------------------
     // Getters
     // -------------------------------------------------------------------------
-
-    /** Returns the balloon identifier. */
+    /**
+    * Returns the balloon identifier
+     * @return id the current id
+     */
     public String getId() { return this.id; }
 
-    /** Returns the current speed. */
+   /**
+    * Returns the current speed
+    * @return speed  the current 
+    */
     public float getSpeed() { return this.speed; }
-
-    /** Returns the resistance. */
+     /**
+      * Returns the resistance. 
+      * @return resistance the current resistance 
+      */
     public int getResistance() { return this.resistance; }
 
-    /** Returns true if the balloon is currently frozen. */
+    /** Returns true if the balloon is currently frozen. 
+    * @return frozen 
+    */
     public boolean isFrozen() { return this.frozen; }
 
-    /** Returns the elapsed time. */
+    /** Returns the elapsed time. 
+     * @return time
+    */
     public float getTime() { return this.time; }
 
-    /** Returns the current cell. */
+    /** Returns the current cell. 
+     * @return cell
+    */
     public Cell getCell() { return this.cell; }
 
-    /** Returns the current progress inside the cell. */
+    /** Returns the current progress inside the cell. 
+     * @return progress
+    */
     public float getprogress() { return this.progress; }
 
-    /** Returns the current position index on the path. */
+    /**
+     *  Returns the current position index on the path.
+     * @return  position
+     */
     public int getPosition() { return this.position; }
 
-    /** Returns the current path index. */
+    /** 
+     * Returns the current path index. 
+     * @return currentPathIndex
+     */
     public int getcurrentPathIndex() { return this.currentPathIndex; }
 
-    /** Returns true if the balloon is currently slowed. */
+    /** 
+     * Returns true if the balloon is currently slowed.
+     * @return slowed
+      */
     public boolean isSlowed() { return this.slowed; }
 
     // -------------------------------------------------------------------------
     // Movement
     // -------------------------------------------------------------------------
 
-    /** Increases progress by the balloon's current speed. */
+    /** 
+     * Increases progress by the balloon's current speed.
+       */
     public void AjoutProgress() {
         this.progress += this.speed;
     }
 
-    /** Decreases progress by 1 (when crossing to the next cell). */
+    /** 
+     * Decreases progress by 1 (when crossing to the next cell). 
+      */
     public void enleveProgress() {
         this.progress -= 1;
     }
 
-    /** Increments the internal time counter by one tick. */
+    /** 
+     * Increments the internal time counter by one tick. 
+      */
     public void setTime() {
         this.time++;
     }
 
-    /** Sets the current cell. */
+    /**
+     *  Sets the current cell. 
+     * @param c the  new  cell 
+     */
     public void SetCell(Cell c) {
         this.cell = c;
     }
 
-    /** Increments the position index by 1. */
+    /**
+     *  Increments the position index by 1.
+     */
     public void setPosition() {
         this.position += 1;
     }
 
     /**
      * Returns true if the balloon has reached the end of its path.
-     *
+    
      * @return true if at or past the last path position
      */
     public Boolean isOut() {
@@ -201,7 +240,7 @@ public abstract class Balloon {
 
     /**
      * Returns true if the balloon has been destroyed (resistance = 0).
-     *
+     
      * @return true if destroyed
      */
     public boolean isDestroyed() {
@@ -214,7 +253,6 @@ public abstract class Balloon {
 
     /**
      * Freezes the balloon for a given number of ticks.
-     *
      * @param ticks number of ticks to stay frozen
      */
     public void freeze(int ticks) {
@@ -288,7 +326,10 @@ public abstract class Balloon {
     // -------------------------------------------------------------------------
     // Display
     // -------------------------------------------------------------------------
-
+    /**
+     * to displaye
+     * @return X
+     */
     @Override
     public String toString() {
         return "X";
