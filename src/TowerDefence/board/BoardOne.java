@@ -65,7 +65,9 @@ public  void addBalloon(ArrayList<Balloon> b){
 }
 
 
-public boolean  putTower(Tour t,int x,int y){
+public boolean  putTower(Tour t,Position p){
+    int x= p.getNbLigne();
+    int y=p.getNbColonne();
     if (this.l.contains(new Position(x, y))){//pas de tours syur le chemin des ballons
         return false;
     }
