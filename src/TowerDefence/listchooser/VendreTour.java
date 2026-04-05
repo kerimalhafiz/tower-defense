@@ -1,4 +1,9 @@
 package TowerDefence.listchooser;
+
+import TowerDefence.Player;
+import TowerDefence.board.Board;
+import TowerDefence.tower.Tour;
+
 public class VendreTour implements Choice  {
       private final ListChooser c;
 
@@ -21,6 +26,12 @@ public class VendreTour implements Choice  {
     @Override
     public String toString(){
         return "Vendre une Tour";
+    }
+
+    @Override
+    public void apply() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'apply'");
     }
 
 }

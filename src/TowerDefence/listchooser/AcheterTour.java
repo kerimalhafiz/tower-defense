@@ -3,6 +3,12 @@ package TowerDefence.listchooser;
 import java.util.ArrayList;
 import java.util.List;
 
+import TowerDefence.Player;
+import TowerDefence.board.Board;
+import TowerDefence.board.Position;
+import TowerDefence.listchooser.util.Input;
+import TowerDefence.tower.Tour;
+
 public class AcheterTour implements Choice {
     private final ListChooser c;
     private final ArrayList<Tour> catalogue;
@@ -15,7 +21,7 @@ public class AcheterTour implements Choice {
     @Override
     public void apply(Player p, Board b) {
         Tour t = (Tour) c.choose(
-            "Acheter une tour | Crédits : " + p.getCredits(), catalogue);
+            "Acheter une tour | Crédits : " + p.getCredits(), this.catalogue);
         if (t == null) return;
 
         if (p.acheter(t)) {
