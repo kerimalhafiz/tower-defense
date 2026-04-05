@@ -18,13 +18,13 @@ import TowerDefence.tower.TourfrozenBalloon;
 import java.util.ArrayList;
 
 public class FinalGame extends Game{
-    ListChooser c;
+    
       ArrayList<Tour> catalogue;
           private int manche;
         Player p;
-    public FinalGame(Board b,int n,ListChooser c){
+    public FinalGame(Board b,int n){
         super(b, n);
-        this.c = c;
+        
         this.manche = 1;
     
         this.catalogue = new ArrayList<>();

@@ -2,6 +2,10 @@ package TowerDefence.listchooser;
 
 import java.util.ArrayList;
 
+import src.TowerDefence.FinalGame;
+import src.TowerDefence.Player;
+import src.TowerDefence.board.Board;
+
 public class Jouer implements Choice {
     private final ListChooser c;
     private final Board b;
@@ -11,6 +15,7 @@ public class Jouer implements Choice {
         this.c = c;
         this.b = b;
         this.n = n;
+        this.game = new FinalGame(this.b, this.n);
         
     }
 
@@ -29,8 +34,8 @@ public class Jouer implements Choice {
         } else {
             chooser = new RandomListChooser<>();
         }
-        this.game = new FinalGame(this.b, this.n, chooser);
-        game.play();
+        
+        this.game.play();
     }
 
     @Override
