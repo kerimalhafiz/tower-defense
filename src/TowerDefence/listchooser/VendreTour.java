@@ -12,6 +12,9 @@ public class VendreTour implements Choice  {
             System.out.println("Vous n'avez aucune tour à vendre.");
             return;
         }
+        Tour t=(Tour) c.choose("Vendre une tour | credits: "+p.getCredits(),p.towers);
+        t.stopTir();
+        p.vendre(t);
     
     
     }
