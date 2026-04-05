@@ -2,12 +2,8 @@ package TowerDefence;
 
 import TowerDefence.Balloon.*;
 import TowerDefence.board.Board;
-import TowerDefence.board.*;
-import TowerDefence.listchooser.Choice;
 import TowerDefence.listchooser.*;
-
 import TowerDefence.tower.*;
-
 import java.util.ArrayList;
 
 public class FinalGame extends Game{
@@ -20,11 +16,7 @@ public class FinalGame extends Game{
         super(b, n);
         this.c = c;
         this.manche = 1;
-        this.actions = new ArrayList<>();
-        this.actions.add(new AcheterTour(c, this.catalogue));
-        this.actions.add(new VendreTour(c));
-        this.actions.add(new AcheterEvolution(c));
-        this.actions.add(new VendreEvolution(c));
+        
        
     
     
@@ -36,6 +28,12 @@ public class FinalGame extends Game{
         this.catalogue.add(new Gorille());
         this.catalogue.add(new TourfrozenBalloon(4));
         this.catalogue.add(new TourRballoon(3));
+
+        this.actions = new ArrayList<>();
+        this.actions.add(new AcheterTour(c, this.catalogue));
+        this.actions.add(new VendreTour(c));
+        this.actions.add(new AcheterEvolution(c));
+        this.actions.add(new VendreEvolution(c));
     }
     @Override
     public void createBalloons() {
