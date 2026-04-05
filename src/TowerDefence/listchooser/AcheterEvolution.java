@@ -40,5 +40,8 @@ private final ListChooser c;
 
         p.acheterEvolution(t, e);
     }
-
+     @Override
+    public String toString(){
+        return "Achater une Evolution";
+    }
 }
