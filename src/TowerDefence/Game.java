@@ -87,9 +87,11 @@ public void play() {
             if (ballon.isOut()) {
                 System.out.println(ballon.getTime() + " : "
                                    + ballon.getId() + " est sorti");
+                
                 this.p.diminueVieDe(1);
                 this.b.removeBalloon(ballon);   // enlève de la cellule + board
-                this.listeBallon.remove(i);     // enlève de la liste du jeu
+                this.listeBallon.remove(i);  
+                this.b.toString();   // enlève de la liste du jeu
                 continue;
             }
 
@@ -98,6 +100,7 @@ public void play() {
                 // PAS d’affichage ici : déjà fait dans Balloon.takeDamage()
                 this.b.removeBalloon(ballon);
                 this.listeBallon.remove(i);
+                this.b.toString();
                 continue;
             }
         }
