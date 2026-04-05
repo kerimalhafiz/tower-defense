@@ -159,7 +159,7 @@ public abstract class Tour {
  * it's to string to affiche
  */
     public String toString(){
-        return this.getClass().getName();
+        return this.getClass().getSimpleName();
     }
 
 
