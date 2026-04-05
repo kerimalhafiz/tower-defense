@@ -1,3 +1,3 @@
-public class VendreEvolution {
+public class VendreEvolution implements Choice  {
 
 }

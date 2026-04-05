@@ -1,3 +1,3 @@
-public class Jouer {
+public class Jouer implements Choice  {
 
 }

@@ -1,3 +1,3 @@
-public class AcheterTour {
+public class AcheterTour implements Choice {
 
 }
