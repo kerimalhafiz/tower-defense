@@ -42,4 +42,8 @@ public class AcheterTour implements Choice {
             b.putTower(t, pos);
         }
     }
+    @Override
+    public String toString(){
+        return "Achater une Tour";
+    }
 }
