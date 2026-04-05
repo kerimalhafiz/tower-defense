@@ -18,6 +18,7 @@ import java.util.Random;
  * The game stops automatically when all balloons have exited the board.
  */
 public class Game{
+    protected Player p;
     /** The game board */
     protected  Board b;
     /** Number of balloons to generate */
@@ -39,7 +40,7 @@ public class Game{
       this.b=b;
       this.n=nbBallons;
       this.listeBallon = new ArrayList<>();
-
+      this.p=new Player();  
    
 
     }
@@ -86,7 +87,7 @@ public void play() {
             if (ballon.isOut()) {
                 System.out.println(ballon.getTime() + " : "
                                    + ballon.getId() + " est sorti");
-
+                this.p.diminueVieDe(1);
                 this.b.removeBalloon(ballon);   // enlève de la cellule + board
                 this.listeBallon.remove(i);     // enlève de la liste du jeu
                 continue;

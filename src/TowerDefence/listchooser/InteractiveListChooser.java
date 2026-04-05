@@ -1,8 +1,7 @@
 package TowerDefence.listchooser;
 
-import java.util.List;
-
 import TowerDefence.listchooser.util.Input;
+import java.util.List;
 
 
 

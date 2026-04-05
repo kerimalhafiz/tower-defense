@@ -3,7 +3,6 @@ package TowerDefence;
 import TowerDefence.tower.Evolution;
 import TowerDefence.tower.Tour;
 import java.util.ArrayList;
-import java.util.Random;
 /**
  * la classe player 
  */
@@ -19,7 +18,7 @@ protected int vies;
 /**
 la liste des tours  
 */
-ArrayList<Tour>towers;
+public ArrayList<Tour>towers;
 /**
  * le constructeur de la classe player  
  * */

@@ -19,16 +19,11 @@ public class Livrable5aMain {
  */
     public static void main(String[] args) {
 
-       if (args.length != 4) {
-            System.out.println(
-                "Usage : java Livrable5a <mode> <height> <width> <number_of_ballons>"
-            );
-            return;
-        }
-        String mode      = args[0];
-        int hauteur   = Integer.parseInt(args[1]);
-        int  largeur   = Integer.parseInt(args[2]);
-        int  nbBallons = Integer.parseInt(args[3]);
+       
+        String mode      = "interactif";
+        int hauteur   = 5;
+        int  largeur   =5;
+        int  nbBallons = 2;
 
         System.out.println("=== Informations ===");
         System.out.println("  Mode      : " + mode);

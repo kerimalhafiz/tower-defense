@@ -10,7 +10,6 @@ public class FinalGame extends Game{
     ListChooser c;
       ArrayList<Tour> catalogue;
           private int manche;
-        Player p;
         ArrayList <Choice> actions;
     public FinalGame(Board b,int n,ListChooser c){
         super(b, n);
@@ -34,6 +33,7 @@ public class FinalGame extends Game{
         this.actions.add(new VendreTour(c));
         this.actions.add(new AcheterEvolution(c));
         this.actions.add(new VendreEvolution(c));
+        this.actions.add(new Jouer());
     }
     @Override
     public void createBalloons() {
@@ -59,7 +59,7 @@ private void phaseAchat(Player p, Board b) {
             "Que voulez-vous faire ? | Crédits : " + p.getCredits(),
             this.actions);
 
-    while (choix != null) {
+    while (!(choix instanceof Jouer)) {
 
         choix.apply(p, b);
         choix = (Choice) this.c.choose(
@@ -68,7 +68,7 @@ private void phaseAchat(Player p, Board b) {
     }
 }
     public void play() {
-    this.p = new Player();
+    
     
     System.out.println(this.p);
 
