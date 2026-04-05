@@ -30,7 +30,7 @@ public class AcheterTour implements Choice {
             System.out.println("Il y a " + positions.size()
                 + " positions disponibles. Choisissez un numéro (1-"
                 + positions.size() + ") :");
-
+            b.toString();
             Position pos = null;
             while (pos == null) {
                 int choix;
