@@ -26,7 +26,7 @@ public class FinalGame extends Game{
         this.actions.add(new AcheterEvolution(c));
         this.actions.add(new VendreEvolution(c));
        
-    }
+    
     
         this.catalogue = new ArrayList<>();
         this.catalogue.add(new SingeFlechettes());
@@ -76,7 +76,7 @@ private void phaseAchat(Player p, Board b) {
 
     while (this.p.isAlive()) {
         System.out.println("\n--- Phase d'achat — Manche " + this.manche + " ---");
-        System.out.println(this.p);
+        this.phaseAchat(this.p, this.b);
 
        
 
