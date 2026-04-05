@@ -100,24 +100,27 @@ public abstract boolean  putTower(Tour t, Position p);
      * the toString method for the board *
      * @return res it the point for display
     */
-    public String tostring(){
-        String res = "";
-        for (int i = 0 ; i<this.nbLigne ; i++){
-            for (int j = 0 ;j<this.nbColonne;j++){
-                res += "+---";
-            }
-            res += "+\n";
-            for (int j = 0 ; j<this.nbColonne ; j++){
-                res += "|   ";
-            }
-            res += "|\n";
+   public String toString() {
+    String res = "";
+    // Ligne du haut
+    for (int j = 0; j < this.nbColonne; j++) res += "+---";
+    res += "+\n";
+
+    for (int i = 0; i < this.nbLigne; i++) {
+        // Ligne de contenu
+        for (int j = 0; j < this.nbColonne; j++) {
+            String cellStr = this.board[i][j].toString();
+            char firstLetter = (cellStr != null && !cellStr.isEmpty()) ? cellStr.charAt(0) : ' ';
+            res += "| " + firstLetter + " ";
         }
-        for (int j = 0 ;j<this.nbColonne ; j++){
-            res += "+---";
-        }
+        res += "|\n";
+
+        // Ligne séparatrice
+        for (int j = 0; j < this.nbColonne; j++) res += "+---";
         res += "+\n";
-        return res;
     }
+    return res;
+}
     /**
      *this function move the balloon and also 
      * @param b the balloon for move in the board 

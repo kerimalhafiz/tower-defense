@@ -29,7 +29,7 @@ public class EvolutionPortee extends Evolution{
      * @param t the tower to upgrade
      */
     public void appliquer(Tour t) {
-        t.portee *= pourcentage;
+        t.portee +=t.portee* pourcentage;
     }
 
     /**
