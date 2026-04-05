@@ -20,30 +20,26 @@ public class InteractiveListChooser<T> implements ListChooser<T> {
 	 * @param list The list of items of type T from which one must choose one.
 	 * @return The chosen item. null if the list of items is empty or if the user chooses not to make no choice
 	 */
-	public T choose(String msg, List<? extends T> list) {
-		// is there is not possible choice, null is returned
-		if (list.isEmpty()) {
-			return null;
-		}
-		// shows the items until the user made a valid choice
-		int choice = -1;
-		while ((choice < 0) || (choice > list.size())) {
-			System.out.println(msg);
-			System.out.println("      0 - none");
-			int index = 1;
-			for (T element : list) {
-				System.out.println("      " + (index++) + " - " + element);
-			}
-			System.out.println("            choice ?");
-			try {
-				choice = Input.readInt();
-			} catch (java.io.IOException e) {
-				System.out.println("Please, enter a number between 0 and " + (index-1));
-			}
-		}
-		if (choice == 0) {
-				return null;
-		}
-		return list.get(choice-1);
-	}
+public T choose(String msg, List<? extends T> list) {
+    if (list.isEmpty()) return null;
+
+    int choice = -1;
+    while (choice < 1 || choice > list.size()) {
+        System.out.println(msg);
+        int index = 1;
+        for (T element : list) {
+            System.out.println("      " + (index++) + " - " + element);
+        }
+        System.out.println("            choix ?");
+        try {
+            choice = Input.readInt();
+            if (choice < 1 || choice > list.size()) {
+                System.out.println("Entrez un numéro entre 1 et " + list.size() + ".");
+            }
+        } catch (java.io.IOException e) {
+            System.out.println("Entrez un numéro entre 1 et " + list.size() + ".");
+        }
+    }
+    return list.get(choice - 1);
+}
 }
