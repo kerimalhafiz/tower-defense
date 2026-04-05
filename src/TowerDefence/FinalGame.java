@@ -77,9 +77,6 @@ private void phaseAchat(Player p, Board b) {
     while (this.p.isAlive()) {
         System.out.println("\n--- Phase d'achat — Manche " + this.manche + " ---");
         this.phaseAchat(this.p, this.b);
-
-       
-
         super.play();
         this.manche++;
     }
