@@ -6,4 +6,14 @@ public class VendreTour implements Choice  {
         this.c = c;
     }
 
+    @Override
+    public void apply(Player p, Board b) {
+        if (p.towers.isEmpty()) {
+            System.out.println("Vous n'avez aucune tour à vendre.");
+            return;
+        }
+    
+    
+    }
+
 }
