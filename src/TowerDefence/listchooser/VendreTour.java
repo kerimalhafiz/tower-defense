@@ -18,5 +18,9 @@ public class VendreTour implements Choice  {
     
     
     }
+    @Override
+    public String toString(){
+        return "Vendre une Tour";
+    }
 
 }
