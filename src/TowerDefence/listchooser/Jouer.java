@@ -2,25 +2,24 @@ package TowerDefence.listchooser;
 
 import java.util.ArrayList;
 
-import src.TowerDefence.FinalGame;
-import src.TowerDefence.Player;
-import src.TowerDefence.board.Board;
+import TowerDefence.FinalGame;
+import TowerDefence.Player;
+import TowerDefence.board.Board;
 
 public class Jouer implements Choice {
     private final ListChooser c;
     private final Board b;
-    private final int n;
+    private final Player p;
     public final FinalGame game;
-    public Jouer(ListChooser c, Board b, int n) {
-        this.c = c;
+    public Jouer( Board b, Player p) {
         this.b = b;
-        this.n = n;
-        this.game = new FinalGame(this.b, this.n);
+        this.p = p;
+        this.game = new FinalGame(this.b, this.p);
         
     }
 
     @Override
-    public void apply(Player p, Board b) {
+    public void apply() {
         ArrayList<String> modes = new ArrayList<>();
         modes.add("Interactif");
         modes.add("Automatique");
