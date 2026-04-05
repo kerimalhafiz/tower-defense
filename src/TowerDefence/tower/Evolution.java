@@ -71,7 +71,7 @@ public abstract class Evolution {
         this.acheter=false;
     }
     public String toString(){
-        return this.getClass().getName();
+        return this.getClass().getSimpleName();
     }
 
     /**
