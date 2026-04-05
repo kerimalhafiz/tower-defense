@@ -100,6 +100,7 @@ public abstract boolean  putTower(Tour t, Position p);
      * the toString method for the board *
      * @return res it the point for display
     */
+   @Override
    public String toString() {
     String res = "";
     // Ligne du haut
