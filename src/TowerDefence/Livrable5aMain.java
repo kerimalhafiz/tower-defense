@@ -20,10 +20,10 @@ public class Livrable5aMain {
     public static void main(String[] args) {
 
        
-        String mode      = "interactif";
+        String mode      = "automatique";
         int hauteur   = 5;
         int  largeur   =5;
-        int  nbBallons = 2;
+        int  nbBallons = 12;
 
         System.out.println("=== Informations ===");
         System.out.println("  Mode      : " + mode);

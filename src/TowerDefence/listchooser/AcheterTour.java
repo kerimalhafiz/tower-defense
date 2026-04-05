@@ -1,13 +1,13 @@
 package TowerDefence.listchooser;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import TowerDefence.Player;
 import TowerDefence.board.Board;
 import TowerDefence.board.Position;
 import TowerDefence.listchooser.util.Input;
 import TowerDefence.tower.Tour;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class AcheterTour implements Choice {
     private final ListChooser c;
@@ -33,9 +33,17 @@ public class AcheterTour implements Choice {
 
             Position pos = null;
             while (pos == null) {
+                int choix;
                 try {
                     System.out.print("Votre choix : ");
-                    int choix = Input.readInt();
+                    if (this.c instanceof RandomListChooser) {
+                        
+                        Random rand = new Random();
+                        choix = rand.nextInt(positions.size()) + 1;
+                        
+                    }
+                    else{choix = Input.readInt();}
+                    
                     if (choix >= 1 && choix <= positions.size()) {
                         pos = positions.get(choix - 1);
                     } else {
