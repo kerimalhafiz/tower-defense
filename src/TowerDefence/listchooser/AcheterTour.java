@@ -54,6 +54,7 @@ public class AcheterTour implements Choice {
                 }
             }
             b.putTower(t, pos);
+            System.out.println(b.toString());
         }
     }
     @Override
