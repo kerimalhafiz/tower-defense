@@ -28,10 +28,5 @@ public class VendreTour implements Choice  {
         return "Vendre une Tour";
     }
 
-    @Override
-    public void apply() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'apply'");
-    }
 
 }
