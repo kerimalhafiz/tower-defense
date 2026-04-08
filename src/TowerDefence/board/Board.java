@@ -211,31 +211,7 @@ public ArrayList <Balloon> getBalloons(){
 
 
 
-   /* public void afficheWithBalloons(ArrayList<BalloonRfor> balloons, ArrayList<ArrayList<Position>> paths) {
-    String[][] display = new String[nbLigne][nbColonne];
-    
-    for (int i = 0; i < nbLigne; i++) {
-        for (int j = 0; j < nbColonne; j++) {
-            display[i][j] = board[i][j].toString();
-        }
-    }   
-        // on ajoute les ballon 
-    for (int i = 0; i < balloons.size(); i++) {
-        BalloonRfor b = balloons.get(i);
-        ArrayList<Position> path = paths.get(i);
-        int index = b.getcurrentPathIndex();
-        if (index < path.size()) {
-            Position p = path.get(index);
-            display[p.getNbLigne()][p.getNbColonne()] = "B"; // B for the  balloon
-        }
-    }
-    for (int i = 0; i < nbLigne; i++) {
-        for (int j = 0; j < nbColonne; j++) {
-            System.out.print(display[i][j] + " ");
-        }
-        System.out.println();
-    }
-} */
+   
 }
 
     
