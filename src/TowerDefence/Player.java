@@ -23,7 +23,7 @@ public ArrayList<Tour>towers;
  * le constructeur de la classe player  
  * */
 public Player(){
-    this.credits=2500;
+    this.credits=999999999;
     this.vies=205555;
     this.towers=new ArrayList<>();
 }
