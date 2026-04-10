@@ -24,7 +24,7 @@ public ArrayList<Tour>towers;
  * */
 public Player(){
     this.credits=2500;
-    this.vies=20;
+    this.vies=205555;
     this.towers=new ArrayList<>();
 }
 /** 
