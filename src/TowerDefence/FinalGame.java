@@ -90,10 +90,10 @@ private void mancheUnCinq(int n){
         ArrayList <Evolution> evolutions =t.getEvolutions();
         int choiceEvo = rand.nextInt(evolutions.size());
         Evolution e=evolutions.get(choiceEvo);
-        this.p.acheterEvolution(t, e);       
-    }
-
-}
+        this.p.acheterEvolution(t, e);   
+        System.out.println("L evolution: "+e.toString() +" de la tour "+ t.toString()+" a été acheté à la manche "+n);
+}}    
+    
 private void mancheSixDix(int n){
     if(n>10 &n<11){
 
@@ -122,6 +122,7 @@ private void mancheSixDix(int n){
         int choiceEvo=rand.nextInt(disponibles.size());
         Evolution e=disponibles.get(choiceEvo);
         this.p.vendreEvolution(t, e);
+        System.out.println("L evolution: "+e.toString() +" de la tour "+ t.toString()+" a été vencdu à la manche "+n);
 }}
 
 public void play() {
@@ -134,7 +135,7 @@ public void play() {
         System.out.println("\n--- Phase d'achat — Manche " + this.manche + " ---");
         this.achatManche1(this.manche);
         this.mancheUnCinq(manche);
-        this.phaseAchat(this.p, this.b);
+        this.mancheSixDix(manche);
         super.play();
         this.manche++;
     }
