@@ -18,18 +18,26 @@ public class FinalGame extends Game{
         super(b, n);
         this.c = c;
         this.manche = 1;
+        this.p.ajouterCredits(900000);
         
        
     
     
         this.catalogue = new ArrayList<>();
-        this.catalogue.add(new SingeFlechettes());
-        this.catalogue.add(new SingeTireurElite());
-        this.catalogue.add(new TourelleAiguille());
-        this.catalogue.add(new TourBombe());
-        this.catalogue.add(new Gorille());
-        this.catalogue.add(new TourfrozenBalloon(4));
-        this.catalogue.add(new TourRballoon(3));
+this.catalogue.add(new SingeFlechettes());
+this.catalogue.add(new SingeFlechettes());
+this.catalogue.add(new SingeTireurElite());
+this.catalogue.add(new SingeTireurElite());
+this.catalogue.add(new TourelleAiguille());
+this.catalogue.add(new TourelleAiguille());
+this.catalogue.add(new TourBombe());
+this.catalogue.add(new TourBombe());
+this.catalogue.add(new Gorille());
+this.catalogue.add(new Gorille());
+this.catalogue.add(new TourfrozenBalloon(4));
+this.catalogue.add(new TourfrozenBalloon(4));
+this.catalogue.add(new TourRballoon(3));
+this.catalogue.add(new TourRballoon(3));
 
         this.actions = new ArrayList<>();
         this.actions.add(new AcheterTour(c, this.catalogue));
@@ -56,23 +64,17 @@ private void phaseAchat(Player p, Board b) {
 }
     
 
-private void achatManche1(int n){
-    if (n==1){
-    for (Tour t : this.catalogue) {
-        for(int i=1;i<2;i++){
+private void achatManche1(int n) {
+    if (n == 1) {
+        Random rand = new Random();
+        for (Tour t : this.catalogue) {
             this.p.acheter(t);
-            Random rand = new Random();
             int x = rand.nextInt(this.b.getNbLigne());
             int y = rand.nextInt(this.b.getNbColonne());
-            Position p=new Position(x,y);
-            this.b.putTower(t, p);
+            this.b.putTower(t, new Position(x, y));
+            System.out.println("Tour achetée : " + t.getClass().getSimpleName());
         }
-
-        
     }
-
-}
-    return ;
 }
 
 private void mancheUnCinq(int n){
@@ -80,11 +82,14 @@ private void mancheUnCinq(int n){
         ArrayList <Tour> liste=this.p.towers;
         ArrayList <Tour> listeEvo = new ArrayList<>();
         for (Tour t : liste) {
-            if (t.getEvolutions().size()!=0){
+            if (!t.getEvolutions().isEmpty()){
                 listeEvo.add(t);
             }
         }
+        if (listeEvo.isEmpty()) return;
+
         Random rand = new Random();
+
         int choice = rand.nextInt(listeEvo.size());
         Tour t=listeEvo.get(choice);
         ArrayList <Evolution> evolutions =t.getEvolutions();
