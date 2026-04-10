@@ -1,6 +1,5 @@
 package TowerDefence;
 
-import TowerDefence.Balloon.*;
 import TowerDefence.board.Board;
 import TowerDefence.listchooser.*;
 import TowerDefence.tower.*;
@@ -35,23 +34,7 @@ public class FinalGame extends Game{
         this.actions.add(new VendreEvolution(c));
         this.actions.add(new Jouer());
     }
-    @Override
-    public void createBalloons() {
-        this.listeBallon = new ArrayList<>();
-        float vitesse = this.manche  +0.5f;
 
-        for (int i = 1; i <= this.n; i++) {
-            Balloon ballon;
-            String id = "Ballon-M" + this.manche + "-" + i;
- 
-                ballon = new BasicBalloon(vitesse, this.manche,id);    // resistance 4
-
-            this.listeBallon.add(ballon);
-        }
-
-        System.out.println("\n=== Manche " + this.manche
-                + " — " + this.n + " ballons générés ===");
-    }
 
 
 private void phaseAchat(Player p, Board b) {
