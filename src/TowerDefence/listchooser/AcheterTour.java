@@ -30,7 +30,7 @@ public class AcheterTour implements Choice {
             System.out.println("Il y a " + positions.size()
                 + " positions disponibles. Choisissez un numéro (1-"
                 + positions.size() + ") :");
-             System.out.println(b.toString());
+    
             Position pos = null;
             while (pos == null) {
                 int choix;
@@ -54,11 +54,11 @@ public class AcheterTour implements Choice {
                 }
             }
             b.putTower(t, pos);
-            System.out.println(b.toString());
+            
         }
     }
     @Override
     public String toString(){
-        return "Achater une Tour";
+        return "Acheter une Tour";
     }
 }
