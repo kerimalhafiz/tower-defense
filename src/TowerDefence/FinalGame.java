@@ -50,12 +50,26 @@ private void phaseAchat(Player p, Board b) {
                 this.actions);
     }
 }
-    public void play() {
+    
+
+private void achatManche1(int n){
+    if (n==1){
+    for (Tour t : this.catalogue) {
+        for(int i=1;i<2;i++){
+            this.p.acheter(t);
+        }
+        
+    }}
+}
+
+
+public void play() {
     
     
     System.out.println(this.p);
 
-    while (this.p.isAlive()) {
+    while (this.p.isAlive() && this.manche<=10) {
+
         System.out.println("\n--- Phase d'achat — Manche " + this.manche + " ---");
         this.phaseAchat(this.p, this.b);
         super.play();
