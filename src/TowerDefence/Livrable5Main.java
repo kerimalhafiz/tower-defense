@@ -20,17 +20,17 @@ public class Livrable5Main {
  */
     public static void main(String[] args) {
 
-       if (args.length != 5) {
+       if (args.length < 5) {
             System.out.println(
                 "Usage : java Livrable5  <height> <width> <number_of_ballons> <type Plateau> <type joueur>"
             );
             return;
         }
-        String mode      = args[0];
-        int hauteur   = Integer.parseInt(args[1]);
-        int  largeur   = Integer.parseInt(args[2]);
-        int  nbBallons = Integer.parseInt(args[3]);
-        String typeboard=args[4];
+         String mode      = args[4];
+        int hauteur   = Integer.parseInt(args[0]);
+        int  largeur   = Integer.parseInt(args[1]);
+        int  nbBallons = Integer.parseInt(args[2]);
+        String typeboard=args[3];
     
 
 
@@ -49,13 +49,18 @@ public class Livrable5Main {
             }
             c = new InteractiveListChooser<>();
         }
-        if(typeboard=="BoardOne"){
+        if(typeboard.equals("BoardOne")){
         BoardOne board = new BoardOne(hauteur, largeur);
         FinalGame game = new FinalGame(board, nbBallons, c);
         game.play();
 
         }
-        if(typeboard=="BoardTwo"){
+        else if(typeboard.equals("BoardTwo")){
+
+             if (args.length < 6) {
+         System.out.println("Manque nbPath pour BoardTwo");
+          return;
+    }
         System.out.println("which number of path do you need ");
           int nbpath=Integer.parseInt(args[5]);
 
