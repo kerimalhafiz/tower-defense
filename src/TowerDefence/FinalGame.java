@@ -1,9 +1,13 @@
 package TowerDefence;
 
 import TowerDefence.board.Board;
+import TowerDefence.board.Position;
 import TowerDefence.listchooser.*;
 import TowerDefence.tower.*;
 import java.util.ArrayList;
+import java.util.Random;
+
+
 
 public class FinalGame extends Game{
     ListChooser c;
@@ -57,9 +61,17 @@ private void achatManche1(int n){
     for (Tour t : this.catalogue) {
         for(int i=1;i<2;i++){
             this.p.acheter(t);
+            Random rand = new Random();
+            int x = rand.nextInt(this.b.getNbLigne());
+            int y = rand.nextInt(this.b.getNbColonne());
+            Position p=new Position(x,y);
+            this.b.putTower(t, p);
         }
+
         
-    }}
+    }
+
+}
     return ;
 }
 
