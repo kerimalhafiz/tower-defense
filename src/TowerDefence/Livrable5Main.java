@@ -24,11 +24,11 @@ public class Livrable5Main {
 
       
 
-        int hauteur      = 10;
-        int largeur      = 10;
-        int nbBallons    = 10;
-        String typeboard = "chemin";
-        String typeJoueur = "humain";
+        int hauteur      = Integer.parseInt(args[0]);
+        int largeur      = Integer.parseInt(args[1]);
+        int nbBallons    = Integer.parseInt(args[2]);
+        String typeboard = args[3];
+        String typeJoueur = args[4];
 
         System.out.println("=== Informations ===");
         System.out.println("  typeJoueur : " + typeJoueur);
