@@ -75,6 +75,7 @@ public int getVie(){
 public boolean acheter(Tour t) {
     if (this.credits >= t.getCout()) {
         this.credits -= t.getCout();
+        this.towers.add(t); 
         System.out.println("Tour achetée : " + t.getClass().getSimpleName()
                 + " | Coût : " + t.getCout()
                 + " | Crédits restants : " + this.credits);
