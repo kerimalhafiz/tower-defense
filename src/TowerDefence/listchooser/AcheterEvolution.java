@@ -1,11 +1,10 @@
 package TowerDefence.listchooser;
 
-import java.util.ArrayList;
-
 import TowerDefence.Player;
 import TowerDefence.board.Board;
 import TowerDefence.tower.Evolution;
 import TowerDefence.tower.Tour;
+import java.util.ArrayList;
 
 public class AcheterEvolution  implements Choice{
 private final ListChooser c;
@@ -39,6 +38,7 @@ private final ListChooser c;
             "Choisir une évolution", disponibles);
 
         p.acheterEvolution(t, e);
+        
     }
      @Override
     public String toString(){
