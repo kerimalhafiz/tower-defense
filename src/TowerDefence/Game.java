@@ -90,8 +90,7 @@ public void play() {
                 
                 this.p.diminueVieDe(1);
                 this.b.removeBalloon(ballon);   // enlève de la cellule + board
-                this.listeBallon.remove(i);  
-                System.out.println(this.b.toString());   // enlève de la liste du jeu
+                this.listeBallon.remove(i);   // enlève de la liste du jeu
                 continue;
             }
 
@@ -99,8 +98,7 @@ public void play() {
             if (ballon.isDestroyed()) {
                 // PAS d’affichage ici : déjà fait dans Balloon.takeDamage()
                 this.b.removeBalloon(ballon);
-                this.listeBallon.remove(i);
-                System.out.println(this.b.toString());   // enlève de la liste du jeu
+                this.listeBallon.remove(i); // enlève de la liste du jeu
                 continue;
             }
         }
