@@ -75,6 +75,54 @@ private void achatManche1(int n){
     return ;
 }
 
+private void mancheUnCinq(int n){
+    if (n<6){
+        ArrayList <Tour> liste=this.p.towers;
+        ArrayList <Tour> listeEvo = new ArrayList<>();
+        for (Tour t : liste) {
+            if (t.getEvolutions().size()!=0){
+                listeEvo.add(t);
+            }
+        }
+        Random rand = new Random();
+        int choice = rand.nextInt(listeEvo.size());
+        Tour t=listeEvo.get(choice);
+        ArrayList <Evolution> evolutions =t.getEvolutions();
+        int choiceEvo = rand.nextInt(evolutions.size());
+        Evolution e=evolutions.get(choiceEvo);
+        this.p.acheterEvolution(t, e);       
+    }
+
+}
+private void mancheSixDix(int n){
+    if(n>10 &n<11){
+
+       ArrayList <Tour> liste=this.p.towers;
+        ArrayList <Tour> listeEvo = new ArrayList<>();
+        for (Tour t : liste) {
+            
+            if (t.getEvolutions().size()!=0){
+                 ArrayList<Evolution> evolutions=t.getEvolutions();
+                 for (Evolution e : evolutions) {
+                    if(e.isbuy()){
+                        liste.add(t);
+                    } 
+                 }
+            }
+        }
+        /*Choix de la tour */
+        Random rand = new Random();
+        int choice = rand.nextInt(listeEvo.size());
+        Tour t=listeEvo.get(choice);
+        ArrayList <Evolution> evolutionsT =t.getEvolutions();
+        ArrayList<Evolution> disponibles = new ArrayList<>();
+        for (Evolution e : evolutionsT) {
+            if (e.isbuy()) disponibles.add(e);
+        }
+        int choiceEvo=rand.nextInt(disponibles.size());
+        Evolution e=disponibles.get(choiceEvo);
+        this.p.vendreEvolution(t, e);
+}}
 
 public void play() {
     
@@ -85,6 +133,7 @@ public void play() {
 
         System.out.println("\n--- Phase d'achat — Manche " + this.manche + " ---");
         this.achatManche1(this.manche);
+        this.mancheUnCinq(manche);
         this.phaseAchat(this.p, this.b);
         super.play();
         this.manche++;
