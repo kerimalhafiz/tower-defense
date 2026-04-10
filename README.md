@@ -587,3 +587,5 @@ On a eu a mettre les classes dont on a besoin dans notre package du projet pour 
 on a unpeu eu du mal à pouvoir implementer le bon fonctionnement de ce livrable en fin de compte a cause des erreurs de package et tout , mais au final quand même , on a su corriger les erreurs pour permettre la compilation et le bon fonctionnement du livrable . 
 Et ensuite , on a discuter sur le game final du jeu en cours de semaine , on attend juste le mail du prof pour connaitre ce qui est attendu ou pas pour pouvoir mieux le corriger en fonction des attentes .
 ### Objectifs pour finaliser le projet et répartition du travail par membre
+
+après une reflexion c'est l ensemble de l equipe  qui vont s'enchargé de faire le travail restant c'est a dire couvrir le projet de test ,et la simplification des code et la tgestion de tout erreur ou beug improvisé .ensuite faire des réunion pour preparer la soutenance , la methode d 'application de code et pourquoi le choix de modelisation  
