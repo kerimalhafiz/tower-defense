@@ -36,7 +36,7 @@ livrable4a.jar:jar
 livrable4b.jar:jar
 	java -classpath classes TowerDefence.Livrable4bMain $(ARGS)
 
-livrable5a.jar:jar
+livrable5.jar:jar
 	java -classpath classes TowerDefence.Livrable5aMain $(ARGS)	
 clean:
 	rm -rf classes docs livrable3a.jar livrable3b.jar livrable4a.jar livrable4b.jar

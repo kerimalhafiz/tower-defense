@@ -5,23 +5,23 @@ import TowerDefence.listchooser.InteractiveListChooser;
 import TowerDefence.listchooser.ListChooser;
 import TowerDefence.listchooser.RandomListChooser;
 
-public class Livrable5aMain {
+public class Livrable5Main {
     /**
      * le constructeur par defaut de la classe 
      */
-    public Livrable5aMain(){
+    public Livrable5Main(){
 
     }
 
 /**
- * le main pour le livrable 4a
+ * le main pour le livrable 5a 
  * @param args les arguments en ligne de commande 
  */
     public static void main(String[] args) {
 
        if (args.length != 4) {
             System.out.println(
-                "Usage : java Livrable5a <mode> <height> <width> <number_of_ballons>"
+                "Usage : java Livrable5 <mode> <height> <width> <number_of_ballons>"
             );
             return;
         }
