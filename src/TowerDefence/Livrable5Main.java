@@ -1,6 +1,7 @@
 package TowerDefence;
 
 import TowerDefence.board.BoardOne;
+import TowerDefence.board.BoardTwo;
 import TowerDefence.listchooser.InteractiveListChooser;
 import TowerDefence.listchooser.ListChooser;
 import TowerDefence.listchooser.RandomListChooser;
@@ -19,9 +20,9 @@ public class Livrable5Main {
  */
     public static void main(String[] args) {
 
-       if (args.length != 4) {
+       if (args.length != 5) {
             System.out.println(
-                "Usage : java Livrable5 <mode> <height> <width> <number_of_ballons>"
+                "Usage : java Livrable5  <height> <width> <number_of_ballons> <type Plateau> <type joueur>"
             );
             return;
         }
@@ -29,6 +30,9 @@ public class Livrable5Main {
         int hauteur   = Integer.parseInt(args[1]);
         int  largeur   = Integer.parseInt(args[2]);
         int  nbBallons = Integer.parseInt(args[3]);
+        String typeboard=args[4];
+    
+
 
         System.out.println("=== Informations ===");
         System.out.println("  Mode      : " + mode);
@@ -45,9 +49,18 @@ public class Livrable5Main {
             }
             c = new InteractiveListChooser<>();
         }
-
+        if(typeboard=="BoardOne"){
         BoardOne board = new BoardOne(hauteur, largeur);
         FinalGame game = new FinalGame(board, nbBallons, c);
         game.play();
 
+        }
+        if(typeboard=="BoardTwo"){
+        System.out.println("which number of path do you need ");
+          int nbpath=Integer.parseInt(args[5]);
+
+        BoardTwo board = new BoardTwo(hauteur, largeur, nbpath);
+        FinalGame game = new FinalGame(board, nbBallons, c);
+        game.play();
+        }
     }}

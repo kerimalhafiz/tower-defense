@@ -22,7 +22,7 @@ jar:classes
 	jar cvfe livrable3b.jar TowerDefence.Livrable3bMain -C classes .
 	jar cvfe livrable4a.jar TowerDefence.Livrable4aMain -C classes .
 	jar cvfe livrable4b.jar TowerDefence.Livrable4bMain -C classes .
-	jar cvfe livrable5a.jar TowerDefence.Livrable5aMain -C classes .
+	jar cvfe livrable5a.jar TowerDefence.Livrable5Main -C classes .
 
 
 livrable3a.jar:jar
@@ -37,6 +37,6 @@ livrable4b.jar:jar
 	java -classpath classes TowerDefence.Livrable4bMain $(ARGS)
 
 livrable5.jar:jar
-	java -classpath classes TowerDefence.Livrable5aMain $(ARGS)	
+	java -classpath classes TowerDefence.Livrable5Main $(ARGS)	
 clean:
 	rm -rf classes docs livrable3a.jar livrable3b.jar livrable4a.jar livrable4b.jar
