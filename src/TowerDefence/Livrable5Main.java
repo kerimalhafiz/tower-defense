@@ -5,6 +5,7 @@ import TowerDefence.board.BoardTwo;
 import TowerDefence.listchooser.InteractiveListChooser;
 import TowerDefence.listchooser.ListChooser;
 import TowerDefence.listchooser.RandomListChooser;
+import java.util.Random;
 
 public class Livrable5Main {
     /**
@@ -26,7 +27,7 @@ public class Livrable5Main {
             );
             return;
         }
-         String mode      = args[4];
+         String typeJoueur      = args[4];
         int hauteur   = Integer.parseInt(args[0]);
         int  largeur   = Integer.parseInt(args[1]);
         int  nbBallons = Integer.parseInt(args[2]);
@@ -35,35 +36,31 @@ public class Livrable5Main {
 
 
         System.out.println("=== Informations ===");
-        System.out.println("  Mode      : " + mode);
+        System.out.println("  typeJoueur      : " + typeJoueur);
         System.out.println("  Plateau   : " + hauteur + " x " + largeur);
         System.out.println("  Ballons/m : " + nbBallons);
         System.out.println("=====================");
         ListChooser c;
-        if (mode.equalsIgnoreCase("automatique")) {
+        if (typeJoueur.equalsIgnoreCase("aleatoire")) {
             c = new RandomListChooser<>();
         } else {
-            if (!mode.equalsIgnoreCase("interactif")) {
-                System.out.println("Mode inconnu \"" + mode
-                        + "\" — mode interactif utilisé par défaut.");
+            if (!typeJoueur.equalsIgnoreCase("humain")) {
+                System.out.println("typeJoueur inconnu \"" + typeJoueur
+                        + "\" — typeJoueur interactif utilisé par défaut.");
             }
             c = new InteractiveListChooser<>();
         }
-        if(typeboard.equals("BoardOne")){
+        if(typeboard.equals("chemin")){
         BoardOne board = new BoardOne(hauteur, largeur);
         FinalGame game = new FinalGame(board, nbBallons, c);
         game.play();
 
         }
-        else if(typeboard.equals("BoardTwo")){
+        else if(typeboard.equals("libre")){
 
-             if (args.length < 6) {
-         System.out.println("Manque nbPath pour BoardTwo");
-          return;
-    }
-        System.out.println("which number of path do you need ");
-          int nbpath=Integer.parseInt(args[5]);
-
+        Random rand = new Random();
+        int max = hauteur + largeur;
+        int nbpath = rand.nextInt(max) + 1;
         BoardTwo board = new BoardTwo(hauteur, largeur, nbpath);
         FinalGame game = new FinalGame(board, nbBallons, c);
         game.play();
