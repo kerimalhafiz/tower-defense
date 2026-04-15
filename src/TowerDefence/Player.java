@@ -110,7 +110,12 @@ public boolean acheterEvolution(Tour t, Evolution e) {
             + " sur " + t.getClass().getSimpleName()
             + " | Crédits restants : " + this.credits);
     return true;
-}
+}    
+    /**
+     * action pour vendre une tour 
+     * @param t la tour a vendre 
+     * @return true si et seulement la tour a été vendu correctement 
+     */
     public boolean vendre(Tour t) {
    
      	//Sum of the all buyed  evolution
@@ -128,7 +133,12 @@ public boolean acheterEvolution(Tour t, Evolution e) {
                 + " | Crédits : " + this.credits);
         return true;
     }
-
+    /**
+     * action pour vendre une evolution 
+     * @param t la tour concernée par la vente de l'evolution 
+     * @param e l'evolution a vendre et qui est retiré de la tour 
+     * @return true si et seulement si la vente s'est bien deroulé 
+     */
     public boolean vendreEvolution(Tour t, Evolution e) {
   
         this.credits +=  e.getCout();
