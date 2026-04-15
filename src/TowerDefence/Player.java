@@ -1,5 +1,6 @@
 package TowerDefence;
 
+import TowerDefence.board.Board;
 import TowerDefence.tower.Evolution;
 import TowerDefence.tower.Tour;
 import java.util.ArrayList;
@@ -116,7 +117,7 @@ public boolean acheterEvolution(Tour t, Evolution e) {
      * @param t la tour a vendre 
      * @return true si et seulement la tour a été vendu correctement 
      */
-    public boolean vendre(Tour t) {
+  public boolean vendre(Tour t,Board b) {
    
      	//Sum of the all buyed  evolution
         for (Evolution e : t.getEvolutions()) {
@@ -131,6 +132,9 @@ public boolean acheterEvolution(Tour t, Evolution e) {
         System.out.println("Tour vendue : " + t.getClass().getSimpleName()
                 + " | Remboursement : " + t.getCout()
                 + " | Crédits : " + this.credits);
+        int x=t.getPosition().getNbLigne();
+        int y=t.getPosition().getNbColonne();
+        b.getCell(x,y).setvalueX(null);
         return true;
     }
     /**
