@@ -116,6 +116,7 @@ public boolean acheterEvolution(Tour t, Evolution e) {
     this.credits -= e.getCout();
     e.appliquer(t);
     e.buy();
+    t.getEvolutions().add(e);
     System.out.println("Évolution achetée : " + e.getNom()
             + " sur " + t.getClass().getSimpleName()
             + " | Crédits restants : " + this.credits);
