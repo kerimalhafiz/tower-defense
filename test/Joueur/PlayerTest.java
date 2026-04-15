@@ -109,5 +109,47 @@ public class PlayerTest {
         assertFalse(player.towers.contains(tour2));
     }
 
+    
+    @Test
+    public void vendre_retourneTrue() {
+        player.acheter(tour1);
+        assertTrue(player.vendre(tour1));
+    }
+
+    @Test
+    public void vendre_rembourseLesCouts() {
+        player.acheter(tour1);
+        double after = player.getCredits();
+        player.vendre(tour1);
+        assertEquals(after + tour1.getCout(), player.getCredits(), 0.001);
+    }
+
+    @Test
+    public void vendre_supprimeLaTourDeLaListe() {
+        player.acheter(tour1);
+        player.vendre(tour1);
+        assertFalse(player.towers.contains(tour1));
+    }
+
+    @Test
+    public void vendre_rembourseAussiLesEvolutionsAchetees() {
+        player.acheter(tour1);
+        player.acheterEvolution(tour1, evol1); // évol achetée
+        double after = player.getCredits();
+
+        player.vendre(tour1);
+        assertEquals(after + tour1.getCout() + evol1.getCout(), player.getCredits(), 0.001);
+    }
+
+    @Test
+    public void vendre_nRemboursesPasLesEvolutionsNonAchetees() {
+        player.acheter(tour1);
+        // evol1 jamais achetée
+        double after = player.getCredits();
+        player.vendre(tour1);
+        assertEquals(after + tour1.getCout(), player.getCredits(), 0.001);
+    }
+
+
 
 }
