@@ -109,7 +109,7 @@ public class PlayerTest {
         assertFalse(player.towers.contains(tour2));
     }
 
-    
+
     @Test
     public void vendre_retourneTrue() {
         player.acheter(tour1);
@@ -148,6 +148,41 @@ public class PlayerTest {
         double after = player.getCredits();
         player.vendre(tour1);
         assertEquals(after + tour1.getCout(), player.getCredits(), 0.001);
+    }
+
+
+     @Test
+    public void acheterEvolution_succes_retourneTrue() {
+        player.acheter(tour1);
+        assertTrue(player.acheterEvolution(tour1, evol1));
+    }
+
+    @Test
+    public void acheterEvolution_succes_deduitLesCout() {
+        player.acheter(tour1);
+        double before = player.getCredits();
+        player.acheterEvolution(tour1, evol1);
+        assertEquals(before - evol1.getCout(), player.getCredits(), 0.001);
+    }
+
+    @Test
+    public void acheterEvolution_succes_marqueEvolCommeAchetee() {
+        player.acheter(tour1);
+        player.acheterEvolution(tour1, evol1);
+        assertTrue(evol1.isbuy());
+    }
+
+    @Test
+    public void acheterEvolution_echecSiCreditsInsuffisants() {
+        player.setCredits(10);
+        assertFalse(player.acheterEvolution(tour1, evol2)); // evol2 coûte 250
+    }
+
+    @Test
+    public void acheterEvolution_echecNeMarquePasCommeAchetee() {
+        player.setCredits(10);
+        player.acheterEvolution(tour1, evol2);
+        assertFalse(evol2.isbuy());
     }
 
 
