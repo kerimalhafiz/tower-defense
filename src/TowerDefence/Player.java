@@ -45,6 +45,16 @@ public void ajouterCredits(double amount) {
 public double getCredits() {
     return this.credits;
 }
+
+/**
+ * Sets the player's credits to a specific value.
+ * This method is mainly used for testing or controlled updates.
+ *
+ * @param credits the new amount of credits to assign to the player
+ */
+public void setCredits(double credits) {
+    this.credits = credits;
+}
 /**
  * Decrements the player's lives by the given amount.
  * Lives cannot go below 0.
