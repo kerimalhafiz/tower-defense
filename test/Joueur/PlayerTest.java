@@ -40,4 +40,17 @@ public class PlayerTest {
         assertFalse(player.isAlive());
     }
 
+    @Test
+    public void ajouterCredits_augmenteLeSolde() {
+        double before = player.getCredits();
+        player.ajouterCredits(500);
+        assertEquals(before + 500, player.getCredits(), 0.001);
+    }
+    @Test
+    public void ajouterCredits_montantNulNeChangePasLeSolde() {
+        double before = player.getCredits();
+        player.ajouterCredits(0);
+        assertEquals(before, player.getCredits(), 0.001);
+    }
+
 }
