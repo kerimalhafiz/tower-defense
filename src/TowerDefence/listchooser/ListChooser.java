@@ -1,7 +1,9 @@
 package TowerDefence.listchooser;
 
 import java.util.List;
-
+/**
+ * interface permettant de selectionner un element dans une liste
+ */
 public interface ListChooser<T> {
 
 	/**

@@ -2,10 +2,14 @@ package TowerDefence.listchooser;
 
 import TowerDefence.Player;
 import TowerDefence.board.Board;
-
+/**
+ * la classe permettant de lancer une action du jeu
+ */
 public class Jouer implements Choice {
     
-
+    /**
+     * cree une action du jeu 
+     */
     public Jouer( ) {
         
     }
