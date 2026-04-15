@@ -52,5 +52,24 @@ public class PlayerTest {
         player.ajouterCredits(0);
         assertEquals(before, player.getCredits(), 0.001);
     }
+    
+    @Test
+    public void diminueVieDe_reduitLesVies() {
+        int before = player.getVie();
+        player.diminueVieDe(3);
+        assertEquals(before - 3, player.getVie());
+    }
+
+    @Test
+    public void diminueVieDe_viesNePasDescendreSousZero() {
+        player.diminueVieDe(player.getVie() + 9999);
+        assertEquals(0, player.getVie());
+    }
+
+    @Test
+    public void diminueVieDe_exactementZero() {
+        player.diminueVieDe(player.getVie());
+        assertEquals(0, player.getVie());
+    }
 
 }
