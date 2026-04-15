@@ -5,10 +5,15 @@ import java.util.ArrayList;
 import TowerDefence.Player;
 import TowerDefence.board.Board;
 import TowerDefence.tower.*;
-
+/**
+ * action permettant au joueur de vendre une evolution 
+ */
 public class VendreEvolution implements Choice  {
     private final ListChooser c;
-
+    /**
+     * realise une action qui permette au joueur de vendre une evolution 
+     * @param c le code listChooser utilisé pour permettre au joueur de choisir une evolution  a vendre parmis celles disponibles 
+     */
     public VendreEvolution(ListChooser c) {
         this.c = c;
     }

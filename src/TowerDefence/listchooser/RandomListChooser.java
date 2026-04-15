@@ -4,8 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-
+/**
+ * implemntation de la classe qui choisit aleatoirement un element de la liste 
+ */
 public class RandomListChooser<T> implements ListChooser<T> {
+    /**
+     * constructeur de ma classe 
+     */
+    public RandomListChooser(){}
 
     private final Random random = new Random();
 

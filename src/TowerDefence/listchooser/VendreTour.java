@@ -3,7 +3,9 @@ package TowerDefence.listchooser;
 import TowerDefence.Player;
 import TowerDefence.board.Board;
 import TowerDefence.tower.Tour;
-
+/**
+ * action permettant au joueur de vendre une evolution 
+ */
 public class VendreTour implements Choice  {
     private final ListChooser c;
     /**
