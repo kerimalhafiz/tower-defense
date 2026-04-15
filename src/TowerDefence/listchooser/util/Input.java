@@ -10,7 +10,9 @@ import java.util.Scanner;
 public class Input {
 	
 	private Scanner scanner; 
-
+    /**
+	 * classe utilitaire gerant la lecture des entrée de l'utilisateur 
+	 */
 	public Input() {
 	   this.scanner = new Scanner(System.in);
 	}

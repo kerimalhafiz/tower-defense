@@ -114,6 +114,10 @@ public class Game1 extends Game {
     public ArrayList<Tour>getTours(){
         return this.towers;
     }
+    /**
+     * methode permettant d'afficher une manche du jeu 
+     * @param nbNombre le numero de la manche a afficher 
+     */
     protected void  display_manche(int nbNombre){
     
         for(int manche =1 ;manche<=nbNombre ;manche++){

@@ -18,6 +18,7 @@ import java.util.Random;
  * The game stops automatically when all balloons have exited the board.
  */
 public class Game{
+    /** la joueur courant  */
     protected Player p;
     /** The game board */
     protected  Board b;
