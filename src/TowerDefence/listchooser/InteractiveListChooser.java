@@ -2,11 +2,16 @@ package TowerDefence.listchooser;
 
 import TowerDefence.listchooser.util.Input;
 import java.util.List;
-
-
-
+/**
+ * implementation de la classe permettant de choisir un element dans une liste de maniere interactive
+ */
 public class InteractiveListChooser<T> implements ListChooser<T> {
+    /**
+     * le constructeur par defaut 
+     */
+    public InteractiveListChooser(){
 
+    }
 	/**
 	 * Allows one to choose an item from a list of items of type T.
 	 * If the list of items is empty, null is returned.
