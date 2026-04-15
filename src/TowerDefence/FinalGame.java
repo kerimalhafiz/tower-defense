@@ -6,14 +6,21 @@ import TowerDefence.listchooser.*;
 import TowerDefence.tower.*;
 import java.util.ArrayList;
 import java.util.Random;
-
+/**
+ * version final du jeu 
+ */
 public class FinalGame extends Game {
 
     ListChooser c;
     ArrayList<Tour> catalogue;
     private int manche;
     ArrayList<Choice> actions;
-
+    /**
+     * cree une partie finale du jeu 
+     * @param b le plateau de jeu
+     * @param n le nombre de manche du jeu
+     * @param c le listchooser utilisé pour realiser  un choix du joueur
+     */
     public FinalGame(Board b, int n, ListChooser c) {
         super(b, n);
         this.c = c;
