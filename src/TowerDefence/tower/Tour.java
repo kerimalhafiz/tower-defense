@@ -91,7 +91,9 @@ public abstract class Tour {
     public void setPosition(Position p){
         this.position=p;
     }
-
+    public Position getPosition(){
+        return this.position;
+    }
     /**
      * Returns the projectile used by the tower.
      *
