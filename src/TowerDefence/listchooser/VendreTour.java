@@ -24,7 +24,7 @@ public class VendreTour implements Choice  {
         }
         Tour t=(Tour) c.choose("Vendre une tour | credits: "+p.getCredits(),p.towers);
         t.stopTir();
-        p.vendre(t);
+        p.vendre(t,b);
     
     
     }
