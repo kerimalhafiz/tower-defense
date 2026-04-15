@@ -162,6 +162,10 @@ public abstract boolean  putTower(Tour t, Position p);
 
     
 }
+/**
+ * methode permettant d'avoir toute la liste des positions
+ * @return la liste des positions de toutes les positions du plateau 
+ */
 public ArrayList<Position>getAllPositions(){
     ArrayList<Position> res=new ArrayList<>();
     for(int i=0 ;i<this.getNbLigne();i++){

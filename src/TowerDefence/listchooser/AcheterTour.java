@@ -8,11 +8,17 @@ import TowerDefence.tower.Tour;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
+/**
+ * action permettant de realiser un achat de tour 
+ */
 public class AcheterTour implements Choice {
     private final ListChooser c;
     private final ArrayList<Tour> catalogue;
-
+    /**
+     * le constructeur de la classe 
+     * @param c le code listchooser permettant de chosir la tour a acheter 
+     * @param catalogue  la liste des tours disponibles pour achat 
+     */
     public AcheterTour(ListChooser c, ArrayList<Tour> catalogue) {
         this.c = c;
         this.catalogue = catalogue;
