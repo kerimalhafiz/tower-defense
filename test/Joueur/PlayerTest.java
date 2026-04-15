@@ -52,7 +52,7 @@ public class PlayerTest {
         player.ajouterCredits(0);
         assertEquals(before, player.getCredits(), 0.001);
     }
-    
+
     @Test
     public void diminueVieDe_reduitLesVies() {
         int before = player.getVie();
@@ -71,5 +71,43 @@ public class PlayerTest {
         player.diminueVieDe(player.getVie());
         assertEquals(0, player.getVie());
     }
+
+    public void acheter_succes_retourneTrue() {
+        assertTrue(player.acheter(tour1));
+    }
+
+    @Test
+    public void acheter_succes_deduitLesCouts() {
+        double before = player.getCredits();
+        player.acheter(tour1);
+        assertEquals(before - tour1.getCout(), player.getCredits(), 0.001);
+    }
+
+    @Test
+    public void acheter_succes_ajouteLaTourDansLaListe() {
+        player.acheter(tour1);
+        assertTrue(player.towers.contains(tour1));
+    }
+
+     @Test
+    public void acheter_echecSiCreditsInsuffisants() {
+        player.setCredits(50);
+        assertFalse(player.acheter(tour2)); // tour2 coûte 1200
+    }
+
+    @Test
+    public void acheter_echecNeModifiePasLesCredits() {
+        player.setCredits(50);
+        player.acheter(tour2);
+        assertEquals(50, player.getCredits(), 0.001);
+    }
+
+    @Test
+    public void acheter_echecNAjoutePasDansLaListe() {
+        player.setCredits(50);
+        player.acheter(tour2);
+        assertFalse(player.towers.contains(tour2));
+    }
+
 
 }
