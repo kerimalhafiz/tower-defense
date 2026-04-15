@@ -6,6 +6,7 @@ import java.util.Random;
 
 /**
  * implemntation de la classe qui choisit aleatoirement un element de la liste 
+ * @param <T> type des elements de ma liste 
  */
 public class RandomListChooser<T> implements ListChooser<T> {
     /**

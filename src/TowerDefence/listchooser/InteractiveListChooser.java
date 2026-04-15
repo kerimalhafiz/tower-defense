@@ -4,6 +4,7 @@ import TowerDefence.listchooser.util.Input;
 import java.util.List;
 /**
  * implementation de la classe permettant de choisir un element dans une liste de maniere interactive
+ * @param <T> type des elements de ma liste 
  */
 public class InteractiveListChooser<T> implements ListChooser<T> {
     /**
