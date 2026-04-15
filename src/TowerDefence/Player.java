@@ -154,6 +154,10 @@ public boolean acheterEvolution(Tour t, Evolution e) {
     public String toString() {
         return "Joueur | Crédits : " + this.credits + " | Vies : " + this.vies;
     }
+    /**
+     * la methode qui verifie si le joueur est toujour en vie (si il a toujour des vies )
+     * @return true si le joueur est toujours en vie c'est - dire si sa vie est superieur à 0
+     */
     public boolean isAlive(){
         return this.vies>0;
     }
