@@ -187,4 +187,30 @@ public class PlayerTest {
 
 
 
+    @Test
+    public void vendreEvolution_retourneTrue() {
+        player.acheter(tour1);
+        player.acheterEvolution(tour1, evol1);
+        assertTrue(player.vendreEvolution(tour1, evol1));
+    }
+
+    @Test
+    public void vendreEvolution_rembourseLesCout() {
+        player.acheter(tour1);
+        player.acheterEvolution(tour1, evol1);
+        double after = player.getCredits();
+        player.vendreEvolution(tour1, evol1);
+        assertEquals(after + evol1.getCout(), player.getCredits(), 0.001);
+    }
+
+    @Test
+    public void vendreEvolution_marqueCommeNonAchetee() {
+        player.acheter(tour1);
+        player.acheterEvolution(tour1, evol1);
+        player.vendreEvolution(tour1, evol1);
+        assertFalse(evol1.isbuy());
+    }
+
+
+
 }
