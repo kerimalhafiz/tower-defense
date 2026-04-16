@@ -1,8 +1,6 @@
 package inputtest;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
+
 
 import java.io.*;
 import java.util.*;
@@ -10,9 +8,9 @@ import org.junit.*;
 import TowerDefence.listchooser.*;
 import TowerDefence.listchooser.util.*;
 import TowerDefence.tower.*;
+import static org.junit.Assert.*;
 
-
-public class testinput {
+public class InputTest {
 
     private static InputStream systemIn;
     private static PrintStream systemOut;
