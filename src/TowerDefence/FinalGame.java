@@ -1,6 +1,5 @@
 package TowerDefence;
 
-import TowerDefence.Balloon.*;
 import TowerDefence.board.Board;
 import TowerDefence.listchooser.*;
 import TowerDefence.tower.*;
@@ -41,23 +40,8 @@ public class FinalGame extends Game {
     /**
      * Override wave generation per round
      */
-    @Override
-    public void createBalloons() {
-        this.listeBallon = new ArrayList<>();
 
-        float vitesse = 0.5f + (this.manche * 0.2f);
 
-        for (int i = 1; i <= this.n; i++) {
-            String id = "Ballon-M" + this.manche + "-" + i;
-
-            Balloon ballon = new BasicBalloon(vitesse, this.manche, id);
-
-            this.listeBallon.add(ballon);
-        }
-
-        System.out.println("\n=== Manche " + this.manche +
-                " — " + this.n + " ballons générés ===");
-    }
 
     /**
      * Phase d'achat
@@ -77,22 +61,29 @@ public class FinalGame extends Game {
                     this.actions);
         }
     }
+   
 
     /**
      * Main game loop
      */
     @Override
     public void play() {
-
+    
         while (this.p.isAlive()) {
-
             System.out.println("\n--- Phase d'achat — Manche " + this.manche + " ---");
             this.phaseAchat(this.p, this.b);
-
+        
             System.out.println("\n--- Combat ---");
+            for (Tour t : this.p.towers) {
+            t.startTir(this.b);
+        }
             super.play();
 
-            this.manche++;
+            
+             for (Tour t : this.p.towers) {
+            t.stopTir();
+        }
+        this.manche++;
         }
 
         System.out.println("\n=== GAME OVER ===");
