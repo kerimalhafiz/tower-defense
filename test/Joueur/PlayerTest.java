@@ -22,13 +22,14 @@ public class PlayerTest {
         this.evol2 = new EvolutionPuissance(1, 250);
     }
 
-     @Test
+    @Test
     public void player_creditsInitiaux() {
         assertEquals(999999999, player.getCredits(), 0.001);
         assertEquals(205_555, player.getVie());
         assertTrue(player.towers.isEmpty());
     }
 
+    // Tests pour la methode isAlive  //
     @Test
     public void isAlive_vraiAvecDesVies() {
         assertTrue(player.isAlive());
@@ -40,6 +41,7 @@ public class PlayerTest {
         assertFalse(player.isAlive());
     }
 
+    // Tests de la methode ajouterCredits //
     @Test
     public void ajouterCredits_augmenteLeSolde() {
         double before = player.getCredits();
@@ -52,7 +54,7 @@ public class PlayerTest {
         player.ajouterCredits(0);
         assertEquals(before, player.getCredits(), 0.001);
     }
-
+    // TESTS DE LA METHODE diminueViesDe
     @Test
     public void diminueVieDe_reduitLesVies() {
         int before = player.getVie();
@@ -75,7 +77,7 @@ public class PlayerTest {
     public void acheter_succes_retourneTrue() {
         assertTrue(player.acheter(tour1));
     }
-
+    // TESTS DE LA METHODE acheter
     @Test
     public void acheter_succes_deduitLesCouts() {
         double before = player.getCredits();
@@ -89,7 +91,7 @@ public class PlayerTest {
         assertTrue(player.towers.contains(tour1));
     }
 
-     @Test
+    @Test
     public void acheter_echecSiCreditsInsuffisants() {
         player.setCredits(50);
         assertFalse(player.acheter(tour2)); // tour2 coûte 1200
@@ -109,7 +111,7 @@ public class PlayerTest {
         assertFalse(player.towers.contains(tour2));
     }
 
-
+    // TESTS DE LA METHODE VENDRE 
     @Test
     public void vendre_retourneTrue() {
         player.acheter(tour1);
@@ -150,8 +152,8 @@ public class PlayerTest {
         assertEquals(after + tour1.getCout(), player.getCredits(), 0.001);
     }
 
-
-     @Test
+    // TESTS DE LA METHODE ACHETER EVOLUTION
+    @Test
     public void acheterEvolution_succes_retourneTrue() {
         player.acheter(tour1);
         assertTrue(player.acheterEvolution(tour1, evol1));
@@ -186,7 +188,7 @@ public class PlayerTest {
     }
 
 
-
+    // TESTS DE LA METHODE VENDRE EVOLUTION 
     @Test
     public void vendreEvolution_retourneTrue() {
         player.acheter(tour1);
