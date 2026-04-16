@@ -16,7 +16,7 @@ public abstract  class Board {
 
     /**the list of ballon */
 
-    protected  ArrayList<Balloon> listeBallon;
+    public  ArrayList<Balloon> listeBallon;
     /** The array of cells composing the board. */
     protected Cell[][] board;
 
@@ -38,20 +38,7 @@ public abstract  class Board {
             }
         }
     }
-    /**
-     * renvoie le tableau
-     * @return le tableau de cellule 
-     */
-    public Cell[][] getBoard(){
-        return this.board;
-    }
-/**
- * Place une tour sur le plateau à la position donnée.
- *
- * @param t la tour à placer
- * @param p la position sur le  plateau 
- * @return true si la tour a été placée avec succès, false sinon
- */
+
 public abstract boolean  putTower(Tour t, Position p);
 
     
@@ -100,36 +87,30 @@ public abstract boolean  putTower(Tour t, Position p);
      * the toString method for the board *
      * @return res it the point for display
     */
-   @Override
-   public String toString() {
-    String res = "";
-    // Ligne du haut
-    for (int j = 0; j < this.nbColonne; j++) res += "+---";
-    res += "+\n";
-
-    for (int i = 0; i < this.nbLigne; i++) {
-        // Ligne de contenu
-        for (int j = 0; j < this.nbColonne; j++) {
-            String cellStr = this.board[i][j].toString();
-            char firstLetter = (cellStr != null && !cellStr.isEmpty()) ? cellStr.charAt(0) : ' ';
-            res += "| " + firstLetter + " ";
+    public String tostring(){
+        String res = "";
+        for (int i = 0 ; i<this.nbLigne ; i++){
+            for (int j = 0 ;j<this.nbColonne;j++){
+                res += "+---";
+            }
+            res += "+\n";
+            for (int j = 0 ; j<this.nbColonne ; j++){
+                res += "|   ";
+            }
+            res += "|\n";
         }
-        res += "|\n";
-
-        // Ligne séparatrice
-        for (int j = 0; j < this.nbColonne; j++) res += "+---";
+        for (int j = 0 ;j<this.nbColonne ; j++){
+            res += "+---";
+        }
         res += "+\n";
+        return res;
     }
-    return res;
-}
     /**
      *this function move the balloon and also 
      * @param b the balloon for move in the board 
      */
     public void move(Balloon b) {
     b.setTime();
-    b.updateSlowedState();
-
         // Si le ballon est gelé
         if (b.isFrozen()) {
             b.updateFrozenState();
@@ -161,18 +142,6 @@ public abstract boolean  putTower(Tour t, Position p);
     b.setTime();
 
     
-}
-/**
- * methode permettant d'avoir toute la liste des positions
- * @return la liste des positions de toutes les positions du plateau 
- */
-public ArrayList<Position>getAllPositions(){
-    ArrayList<Position> res=new ArrayList<>();
-    for(int i=0 ;i<this.getNbLigne();i++){
-        for(int j=0;j<this.getNbColonne();j++){
-            res.add(new Position(i,j));
-        }
-    }return res;
 }
 /**
  *  it's the getteur we return the listBalloon
@@ -208,14 +177,45 @@ public ArrayList <Balloon> getBalloons(){
     if (b.getCell() != null) {
         b.getCell().setvalueX(null);
     }
-   /** if (this.listeBallon != null) {
+    if (this.listeBallon != null) {
         this.listeBallon.remove(b);
-    }*/
+    }
+}
+
+public ArrayList<Position>getAllPositions(){
+    ArrayList<Position> res=new ArrayList<>();
+    for(int i=0 ;i<this.getNbLigne();i++){
+        for(int j=0;j<this.getNbColonne();j++){
+            res.add(new Position(i,j));
+        }
+    }return res;
 }
 
 
 
-   
-}
-
+   /* public void afficheWithBalloons(ArrayList<BalloonRfor> balloons, ArrayList<ArrayList<Position>> paths) {
+    String[][] display = new String[nbLigne][nbColonne];
     
+    for (int i = 0; i < nbLigne; i++) {
+        for (int j = 0; j < nbColonne; j++) {
+            display[i][j] = board[i][j].toString();
+        }
+    }   
+        // on ajoute les ballon 
+    for (int i = 0; i < balloons.size(); i++) {
+        BalloonRfor b = balloons.get(i);
+        ArrayList<Position> path = paths.get(i);
+        int index = b.getcurrentPathIndex();
+        if (index < path.size()) {
+            Position p = path.get(index);
+            display[p.getNbLigne()][p.getNbColonne()] = "B"; // B for the  balloon
+        }
+    }
+    for (int i = 0; i < nbLigne; i++) {
+        for (int j = 0; j < nbColonne; j++) {
+            System.out.print(display[i][j] + " ");
+        }
+        System.out.println();
+    }
+} */
+}

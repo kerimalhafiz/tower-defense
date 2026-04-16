@@ -45,6 +45,7 @@ public class BoardTwo extends Board {
      * @param position la position du plateau 
      * @return true si la tour a été bien placé
      */
+    @Override
     public boolean  putTower(Tour t,Position position){
         int x=position.getNbLigne();
         int y =position.getNbColonne();
