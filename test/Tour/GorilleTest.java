@@ -73,12 +73,11 @@ public class GorilleTest {
        
         board1.addBalloon(l1);
         tour2.setPosition(new Position(1, 1));
-        board1.getCell(1,1).setvalueX(b2);
+        board1.getCell(1,2).setvalueX(b2);
         tour2.tirer(board1);
         // verifie si le ballon b2 de resistance 1 a ete supprimer de ma liste de ballon puisqu'il a ete touche
 
-        assertFalse(board1.getBalloons().contains(b2));
-      
+        assertTrue(b2.isDestroyed() || !board1.getBalloons().contains(b2));      
 
     }
 

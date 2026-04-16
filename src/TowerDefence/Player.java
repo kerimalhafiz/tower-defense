@@ -46,6 +46,16 @@ public void ajouterCredits(double amount) {
 public double getCredits() {
     return this.credits;
 }
+
+/**
+ * Sets the player's credits to a specific value.
+ * This method is mainly used for testing or controlled updates.
+ *
+ * @param credits the new amount of credits to assign to the player
+ */
+public void setCredits(double credits) {
+    this.credits = credits;
+}
 /**
  * Decrements the player's lives by the given amount.
  * Lives cannot go below 0.
@@ -107,6 +117,7 @@ public boolean acheterEvolution(Tour t, Evolution e) {
     this.credits -= e.getCout();
     e.appliquer(t);
     e.buy();
+    t.getEvolutions().add(e);
     System.out.println("Évolution achetée : " + e.getNom()
             + " sur " + t.getClass().getSimpleName()
             + " | Crédits restants : " + this.credits);

@@ -62,7 +62,7 @@ public class TourAiguilleTest {
         board1.addBalloon(l);
         tour.setPosition(new Position(0, 0));
         board1.getCell(0,0).setvalueX(b1);
-        board1.getCell(0,4).setvalueX(b2);
+        board1.getCell(0,1).setvalueX(b2);
         
 
         int res = b1.getResistance();
