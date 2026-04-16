@@ -1,4 +1,4 @@
-all:docs classes livrable3a.jar livrable3b.jar livrable4a.jar livrable4b.jar 
+all:docs classes livrable3a.jar livrable3b.jar livrable4a.jar livrable4b.jar livrable5.jar
 docs:
 	mkdir -p docs
 	javadoc -sourcepath src -subpackages TowerDefence -d docs
@@ -15,6 +15,9 @@ tests:classes
 	javac -classpath junit-console.jar:classes test/TowerDefence/*.java 
 	javac -classpath junit-console.jar:classes test/Tour/*.java
 	javac -classpath junit-console.jar:classes test/pathsT/*.java
+	javac -classpath junit-console.jar:classes test/Joueur/*.java
+    javac -classpath junit-console.jar:classes test/inputtest/*.java
+
 runtests: 
 	java -jar junit-console.jar -classpath test:classes -scan-classpath
 jar:classes
@@ -39,4 +42,4 @@ livrable4b.jar:jar
 livrable5.jar:jar
 	java -classpath classes TowerDefence.Livrable5Main $(ARGS)	
 clean:
-	rm -rf classes docs livrable3a.jar livrable3b.jar livrable4a.jar livrable4b.jar
+	rm -rf classes docs livrable3a.jar livrable3b.jar livrable4a.jar livrable4b.jar livrable5a.jar
