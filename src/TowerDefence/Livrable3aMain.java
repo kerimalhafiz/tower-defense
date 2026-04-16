@@ -27,18 +27,19 @@ public class Livrable3aMain {
      */
     public static void main(String[] args) {
 
-        // Check if the correct number of arguments is provided
+         // Check if the correct number of arguments is provided
         if (args.length != 3) {
             System.out.println(
-                "Usage : java Livrable3a <height> <width> <number_of_ballons>"
+                "Usage : java Livrable3b <height> <width> <number_of_paths>"
             );
             return;
         }
 
         // Read command-line arguments
-        int width = Integer.parseInt(args[0]);
-        int height = Integer.parseInt(args[1]);
+        int height = Integer.parseInt(args[0]);
+        int width = Integer.parseInt(args[1]);
         int nbBallons = Integer.parseInt(args[2]);
+
 
         // Create the game board
         BoardOne board = new BoardOne(height, width);
