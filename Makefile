@@ -16,7 +16,9 @@ tests:classes
 	javac -classpath junit-console.jar:classes test/Tour/*.java
 	javac -classpath junit-console.jar:classes test/pathsT/*.java
 	javac -classpath junit-console.jar:classes test/Joueur/*.java
-    javac -classpath junit-console.jar:classes test/inputtest/*.java
+		javac -classpath junit-console.jar:classes test/inputtest/*.java
+
+
 
 runtests: 
 	java -jar junit-console.jar -classpath test:classes -scan-classpath
