@@ -1,5 +1,9 @@
 package inputtest;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+
 import java.io.*;
 import java.util.*;
 import org.junit.*;
@@ -11,7 +15,7 @@ import TowerDefence.tower.*;
 public class testinput {
 
     private static InputStream systemIn;
-    private static InputStream systemOut;
+    private static PrintStream systemOut;
     private InteractiveListChooser <Tour> interactiveChooser;
     private RandomListChooser <Tour> randomChooser;
     private List<Tour>listes;
@@ -52,6 +56,48 @@ public class testinput {
 
     }
     @Test
-    public void testInteractive(){
+    public void testInteractivechoixvalide(){
+        this.simulateInput("4");
+        Tour   result=this.interactiveChooser.choose("choisissez une tour",this.listes);
+        assertTrue(result instanceof  SingeTireurElite );
+
+    }
+    @Test
+    public void  testInteractive(){
+      for (int i = 1; i < this.listes.size(); i++) {
+        this.simulateInput(String.valueOf(i));
+        Tour resul=this.interactiveChooser.choose("le  choix est large", listes);
+        assertEquals(this.listes.get(i-1),resul);
+      }
+
+
+
+    }
+
+
+
+    //----------------k
+    //test de alea ou random comm on dit
+    //---------------k
+
+    @Test 
+    public void testRandomchooser(){
+        Tour resul=this.randomChooser.choose("choix aléa ", this.listes);
+        assertTrue(this.listes.contains(resul));
+    }
+    @Test
+    public void testRandomlistevide(){
+        List<Tour>listevide=new ArrayList<>();
+        Tour resul=this.randomChooser.choose("pas de choix", listevide);
+        assertNull(resul);
+    }
+
+    @Test
+    public void testRandomuneseulechoix(){
+    List<Tour> listune=new ArrayList<>();
+    listune.add(new SingeFlechettes());
+    listune.add(new SingeFlechettes());
+    Tour result=this.randomChooser.choose("choix", listune);
+    assertTrue(result instanceof SingeFlechettes);
     }
 }
