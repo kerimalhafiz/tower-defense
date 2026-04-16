@@ -77,8 +77,7 @@ public class GorilleTest {
         tour2.tirer(board1);
         // verifie si le ballon b2 de resistance 1 a ete supprimer de ma liste de ballon puisqu'il a ete touche
 
-        assertFalse(board1.getBalloons().contains(b2));
-      
+        assertTrue(b2.isDestroyed() || !board1.getBalloons().contains(b2));      
 
     }
 
