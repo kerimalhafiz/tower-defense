@@ -70,16 +70,16 @@ public class Game{
 public void play() {
 
     // Ajouter les ballons au plateau
-    createBalloons();
+    this.createBalloons();
     this.b.addBalloon(this.listeBallon);
 
     // Boucle principale du jeu
-    while (!this.listeBallon.isEmpty()) {
+    while (!this.b.listeBallon.isEmpty()) {
 
         // Parcours à l’envers pour supprimer sans bug
-        for (int i = this.listeBallon.size() - 1; i >= 0; i--) {
+        for (int i = this.b.listeBallon.size() - 1; i >= 0; i--) {
 
-            Balloon ballon = this.listeBallon.get(i);
+            Balloon ballon = this.b.listeBallon.get(i);
 
             // Déplacer le ballon
             this.b.move(ballon);
@@ -91,7 +91,7 @@ public void play() {
                 
                 this.p.diminueVieDe(1);
                 this.b.removeBalloon(ballon);   // enlève de la cellule + board
-                this.listeBallon.remove(i);   // enlève de la liste du jeu
+                 // enlève de la liste du jeu
                 continue;
             }
 
@@ -99,7 +99,7 @@ public void play() {
             if (ballon.isDestroyed()) {
                 // PAS d’affichage ici : déjà fait dans Balloon.takeDamage()
                 this.b.removeBalloon(ballon);
-                this.listeBallon.remove(i); // enlève de la liste du jeu
+                // enlève de la liste du jeu
                 continue;
             }
         }
