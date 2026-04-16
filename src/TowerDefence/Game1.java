@@ -3,28 +3,15 @@ package TowerDefence;
 import TowerDefence.board.Board;
 import TowerDefence.board.Position;
 import TowerDefence.tower.*;
-
 import java.util.ArrayList;
 import java.util.Random;
 
 /**
- * Game mode implementation that automatically places a set of towers on the board.
  *
- * This class extends {@link Game} and initializes a list of towers (two instances
- * of several tower types) that are randomly placed on the board.
- *
- * During {@link #play()}, each tower starts its automatic shooting process
- * (see {@link Tour#startTir(Board)}) before the game loop starts, and stops it
- * after the game loop ends.
- *
- * Note: The placement uses random coordinates and retries until a valid position
- * is found for each tower (depending on the board rules and {@code putTower}).
  */
 public class Game1 extends Game {
 
-    /** 
-     * List of towers currently used in the game. 
-     * */
+    /** List of towers currently used in the game. */
     ArrayList<Tour> towers;
 
     /**
@@ -57,8 +44,8 @@ public class Game1 extends Game {
         Gorille gorille = new Gorille();
         TourBombe bombe = new TourBombe();
 
-        TourRballoon ralentit = new TourRballoon(3);
-        TourRballoon ralentit2 = new TourRballoon(2);
+        TourRballoon ralentit = new TourRballoon(5);
+        TourRballoon ralentit2 = new TourRballoon(9);
 
         TourfrozenBalloon frozen = new TourfrozenBalloon(4);
         TourfrozenBalloon frozen2 = new TourfrozenBalloon(9);
@@ -81,11 +68,12 @@ public class Game1 extends Game {
         for (Tour t : this.towers) {
             x = r.nextInt(this.b.getNbLigne());
             y = r.nextInt(this.b.getNbColonne());
-
+            Position p=new Position(x, y);
             // Retry until a valid position is found
-            while (!(this.b.putTower(t, new Position(x, y)))) {
+            while (!(this.b.putTower(t, p))) {
                 x = r.nextInt(this.b.getNbLigne());
                 y = r.nextInt(this.b.getNbColonne());
+                p=new Position(x, y);
             }
         }
     }
@@ -107,34 +95,4 @@ public class Game1 extends Game {
             t.stopTir();
         }
     }
-    /**
-     * renvoie la liste des tours 
-     * @return la liste des tours 
-     */
-    public ArrayList<Tour>getTours(){
-        return this.towers;
-    }
-    /**
-     * methode permettant d'afficher une manche du jeu 
-     * @param nbNombre le numero de la manche a afficher 
-     */
-    protected void  display_manche(int nbNombre){
-    
-        for(int manche =1 ;manche<=nbNombre ;manche++){
-            System.out.println("\n===Manche"+ manche+ "===");
-
-            if(manche<=5){
-                for(Tour tower:this.getTours()){
-                    tower.towersApplication();
-                }
-            }
-
-            else{
-                for (Tour tower :this.getTours()){
-                    tower.towers_revome();
-                }
-            }
-            this.play();
-        }
-  }
 }
