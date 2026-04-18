@@ -3,6 +3,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import TowerDefence.Player;
+import TowerDefence.board.Board;
+import TowerDefence.board.BoardOne;
+import TowerDefence.board.BoardTwo;
 import TowerDefence.tower.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,6 +15,8 @@ public class PlayerTest {
     private Tour tour2;
     private Evolution evol1;
     private Evolution evol2;
+    private Board board1;
+    private Board board2;
 
     @BeforeEach
     public void before() {
@@ -20,6 +25,8 @@ public class PlayerTest {
         this.tour2 = new Gorille(); // coût 1200
         this.evol1 = new EvolutionPortee(0.25, 100);
         this.evol2 = new EvolutionPuissance(1, 250);
+        this.board1=new BoardOne(10, 10);
+        this.board2=new  BoardTwo(10, 10, 7);
     }
 
     @Test
@@ -115,21 +122,21 @@ public class PlayerTest {
     @Test
     public void vendre_retourneTrue() {
         player.acheter(tour1);
-        assertTrue(player.vendre(tour1));
+        assertTrue(player.vendre(tour1,board1));
     }
 
     @Test
     public void vendre_rembourseLesCouts() {
         player.acheter(tour1);
         double after = player.getCredits();
-        player.vendre(tour1);
+        player.vendre(tour1,board2);
         assertEquals(after + tour1.getCout(), player.getCredits(), 0.001);
     }
 
     @Test
     public void vendre_supprimeLaTourDeLaListe() {
         player.acheter(tour1);
-        player.vendre(tour1);
+        player.vendre(tour1,board1);
         assertFalse(player.towers.contains(tour1));
     }
 
@@ -139,7 +146,7 @@ public class PlayerTest {
         player.acheterEvolution(tour1, evol1); // évol achetée
         double after = player.getCredits();
 
-        player.vendre(tour1);
+        player.vendre(tour1,board2);
         assertEquals(after + tour1.getCout() + evol1.getCout(), player.getCredits(), 0.001);
     }
 
@@ -148,7 +155,7 @@ public class PlayerTest {
         player.acheter(tour1);
         // evol1 jamais achetée
         double after = player.getCredits();
-        player.vendre(tour1);
+        player.vendre(tour1,board2);
         assertEquals(after + tour1.getCout(), player.getCredits(), 0.001);
     }
 
