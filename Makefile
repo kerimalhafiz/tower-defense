@@ -16,7 +16,7 @@ tests:classes
 	javac -classpath junit-console.jar:classes test/Tour/*.java
 	javac -classpath junit-console.jar:classes test/pathsT/*.java
 	javac -classpath junit-console.jar:classes test/Joueur/*.java
-		javac -classpath junit-console.jar:classes test/inputtest/*.java
+	javac -classpath junit-console.jar:classes test/inputtest/*.java
 
 
 
@@ -28,6 +28,7 @@ jar:classes
 	jar cvfe livrable4a.jar TowerDefence.Livrable4aMain -C classes .
 	jar cvfe livrable4b.jar TowerDefence.Livrable4bMain -C classes .
 	jar cvfe livrable5.jar TowerDefence.Livrable5Main -C classes .
+	jar cvfe towerdefense-a-random.jar TowerDefence.LivrableFinalMain -C classes .
 
 
 livrable3a.jar:jar
