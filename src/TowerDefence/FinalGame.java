@@ -19,11 +19,13 @@ public class FinalGame extends Game {
      * @param n le nombre de manche du jeu 
      * @param c le code listeChooser qui permet de faire le choix daction  
      */
+    private ArrayList<Tour> towers;
     public FinalGame(Board b, int n, ListChooser c){
         super(b, n);
 
         this.c = c;
         this.manche = 1;
+        this.towers=new ArrayList<>();
 
         // catalogue de tours
         this.catalogue = new ArrayList<>();
@@ -42,6 +44,7 @@ public class FinalGame extends Game {
         this.actions.add(new AcheterEvolution(c));
         this.actions.add(new VendreEvolution(c));
         this.actions.add(new Jouer());
+
     }
 
     /**
@@ -79,15 +82,15 @@ public class FinalGame extends Game {
         while (this.p.isAlive()) {
             System.out.println("\n--- Phase d'achat — Manche " + this.manche + " ---");
             this.phaseAchat(this.p, this.b);
-        
+            this.towers =this.p.towers;
             System.out.println("\n--- Combat ---");
-            for (Tour t : this.p.towers) {
+            for (Tour t : this.towers) {
             t.startTir(this.b);
         }
             super.play();
 
             
-             for (Tour t : this.p.towers) {
+             for (Tour t : this.towers) {
             t.stopTir();
         }
         this.manche++;
