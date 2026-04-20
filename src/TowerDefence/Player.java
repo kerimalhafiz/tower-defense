@@ -145,9 +145,9 @@ public boolean acheterEvolution(Tour t, Evolution e) {
         System.out.println("Tour vendue : " + t.getClass().getSimpleName()
                 + " | Remboursement : " + t.getCout()
                 + " | Crédits : " + this.credits);
-        int x=t.getPosition().getNbLigne();
+        /*int x=t.getPosition().getNbLigne();
         int y=t.getPosition().getNbColonne();
-        b.getCell(x,y).setvalueX(null);
+        b.getCell(x,y).setvalueX(null);*/
         return true;
     }
     /**
