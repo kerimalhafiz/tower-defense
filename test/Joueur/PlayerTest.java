@@ -6,6 +6,7 @@ import TowerDefence.Player;
 import TowerDefence.board.Board;
 import TowerDefence.board.BoardOne;
 import TowerDefence.board.BoardTwo;
+import TowerDefence.board.Position;
 import TowerDefence.tower.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -119,43 +120,58 @@ public class PlayerTest {
     }
 
     // TESTS DE LA METHODE VENDRE 
+    // methode Helper pour placer une tour sur une cellule libre
+    private void placerTour(Tour t, Board b) {
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                if (b.putTower(t, new Position(i, j))) {
+                    return;
+                }
+            }
+        }
+    }
+
+    // TESTS VENDRE
     @Test
     public void vendre_retourneTrue() {
         player.acheter(tour1);
-        assertTrue(player.vendre(tour1,board1));
+        placerTour(tour1, board1);
+        assertTrue(player.vendre(tour1, board1));
     }
 
     @Test
     public void vendre_rembourseLesCouts() {
         player.acheter(tour1);
+        placerTour(tour1, board1);
         double after = player.getCredits();
-        player.vendre(tour1,board2);
+        player.vendre(tour1, board1);
         assertEquals(after + tour1.getCout(), player.getCredits(), 0.001);
     }
 
     @Test
     public void vendre_supprimeLaTourDeLaListe() {
         player.acheter(tour1);
-        player.vendre(tour1,board1);
+        placerTour(tour1, board1);
+        player.vendre(tour1, board1);
         assertFalse(player.towers.contains(tour1));
     }
 
     @Test
     public void vendre_rembourseAussiLesEvolutionsAchetees() {
         player.acheter(tour1);
-        player.acheterEvolution(tour1, evol1); // évol achetée
+        placerTour(tour1, board1);
+        player.acheterEvolution(tour1, evol1);
         double after = player.getCredits();
-
-        player.vendre(tour1,board2);
+        player.vendre(tour1, board1);
         assertEquals(after + tour1.getCout() + evol1.getCout(), player.getCredits(), 0.001);
     }
 
     @Test
     public void vendre_nRemboursesPasLesEvolutionsNonAchetees() {
         player.acheter(tour1);
-        // evol1 jamais achetée
+        placerTour(tour1, board1);
         double after = player.getCredits();
-        player.vendre(tour1,board2);
+        player.vendre(tour1, board1);
         assertEquals(after + tour1.getCout(), player.getCredits(), 0.001);
     }
 
