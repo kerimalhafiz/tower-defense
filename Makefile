@@ -28,8 +28,10 @@ jar:classes
 	jar cvfe livrable4a.jar TowerDefence.Livrable4aMain -C classes .
 	jar cvfe livrable4b.jar TowerDefence.Livrable4bMain -C classes .
 	jar cvfe livrable5.jar TowerDefence.Livrable5Main -C classes .
-	jar cvfe towerdefense-a-random.jar TowerDefence.LivrableFinalMain -C classes .
-
+	jar cvfe towerdefense-a-random.jar TowerDefence.LivrableFinalMaina_random -C classes .
+	jar cvfe towerdefense-a-interactive.jar TowerDefence.LivrableFinalMaina_itera -C classes .
+	jar cvfe towerdefense-b-random.jar TowerDefence.LivrableFinalMainb_random -C classes .
+	jar cvfe towerdefense-b-interactive.jar TowerDefence.LivrableFinalMainb_iter -C classes .
 
 livrable3a.jar:jar
 	java -classpath classes TowerDefence.Livrable3aMain $(ARGS)
@@ -45,4 +47,4 @@ livrable4b.jar:jar
 livrable5.jar:jar
 	java -classpath classes TowerDefence.Livrable5Main $(ARGS)	
 clean:
-	rm -rf classes docs livrable3a.jar livrable3b.jar livrable4a.jar livrable4b.jar livrable5.jar
+	rm -rf classes docs livrable3a.jar livrable3b.jar livrable4a.jar livrable4b.jar livrable5.jar towerdefense-a-interactive.jar towerdefense-b-interactive.jar towerdefense-a-random.jar towerdefense-b-random.jar

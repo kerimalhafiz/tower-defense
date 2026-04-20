@@ -8,12 +8,12 @@ import TowerDefence.listchooser.RandomListChooser;
 /**
  * le livrable 5 du jeu 
  */
-public class LivrableFinalMain {
+public class LivrableFinalMainb_iter {
 
     /**
      * le constructeur par defaut de la classe
      */
-    public LivrableFinalMain() {
+    public LivrableFinalMainb_iter() {
     }
 
     /**
@@ -37,8 +37,8 @@ public class LivrableFinalMain {
         System.out.println("=== Informations ===");
         System.out.println("  typeJoueur : " + typeJoueur);
         System.out.println("  Plateau    : " + hauteur + " x " + largeur);
-        System.out.println("  Ballons/m  : " + nbpaths);
-        System.out.println("  Plateau    : " + "");
+        System.out.println("  nbchemin  : " + nbpaths);
+        System.out.println("  Plateau    : " + "b");
         System.out.println("=====================");
 
         ListChooser c;
