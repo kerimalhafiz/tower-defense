@@ -4,6 +4,7 @@ import TowerDefence.board.Board;
 import TowerDefence.tower.Evolution;
 import TowerDefence.tower.Tour;
 import java.util.ArrayList;
+import java.util.Random;
 /**
  * la classe player 
  */
