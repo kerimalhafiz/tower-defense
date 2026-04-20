@@ -96,11 +96,17 @@ public class Game1 extends Game {
         }
     }
   
-      
+    /**
+     * retourns les tours du jeu
+     * @return les tours du jeu 
+     */
      public ArrayList<Tour>getTours(){
          return this.towers;
      }
-
+      /**
+       * affiche les manches du jeu 
+       * @param nbNombre le nombre de manche du jeu a afficher 
+       */
       protected void  display_manche(int nbNombre){
     
         for(int manche =1 ;manche<=nbNombre ;manche++){

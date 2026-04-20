@@ -53,43 +53,60 @@ public abstract class Tour {
         this.evolutions = new ArrayList<>();
     }
 
-    /** retourne les évolutions possibles */
+    /** retourne les évolutions possibles 
+     * @return la liste des evolutions 
+    */
     public ArrayList<Evolution> getEvolutions() {
         return this.evolutions;
     }
 
-    /** définit la position de la tour */
+    /** définit la position de la tour 
+     * @param p la position ou se trouve la tour 
+    */
     public void setPosition(Position p) {
         this.position = p;
     }
 
-    /** retourne la position de la tour */
+    /** retourne la position de la tour
+     * @return la position de la tour
+     */
     public Position getPosition() {
         return this.position;
     }
 
-    /** retourne le projectile utilisé */
+
+    /** retourne le projectile utilisé
+     * @return le projectile 
+     */
     public Projectile getprojectile() {
         return this.projectile;
     }
 
-    /** retourne la portée */
+    /** retourne la portée
+     * @return retourne la portée de tour 
+     */
     public int getPortee() {
         return portee;
     }
 
-    /** retourne la cadence */
+    /** retourne la cadence 
+     * @return la cadence de la tour 
+    */
     public int getCadence() {
         return cadence;
     }
 
-    /** retourne le coût */
+    /** retourne le coût 
+     * @return le cout de la tour 
+    */
     public double getCout() {
         return this.cout;
     }
 
     /**
      * cherche les ballons dans la zone de portée
+     * @param board le plateau dans le quel se trouve les ballons
+     * @return les ballons les plus proches  
      */
     protected ArrayList<Balloon> neighborhood(Board board) {
         ArrayList<Balloon> voisins = new ArrayList<>();
@@ -121,6 +138,7 @@ public abstract class Tour {
 
     /**
      * déclenche le tir si la cadence change
+     * @param b le  board sur le quel on declanche le tir 
      */
     public void tirer(Board b) {
         if (this.ancienneCadence != this.cadence) {
@@ -132,6 +150,7 @@ public abstract class Tour {
 
     /**
      * démarre le tir automatique
+     * @param b le board sur le quel on tir 
      */
     public void startTir(Board b) {
         if (scheduler == null || scheduler.isShutdown() || scheduler.isTerminated()) {
@@ -153,6 +172,8 @@ public abstract class Tour {
 
     /**
      * choisit la meilleure cible à attaquer
+     * @param b le board sur le quel on cible 
+     * @return le ballon ciblé 
      */
     public Balloon cibler(Board b) {
         ArrayList<Balloon> candidate = neighborhood(b);
@@ -179,6 +200,7 @@ public abstract class Tour {
 
     /**
      * attaque la cible et applique les dégâts
+     * @param b le board sur le quel on cible pour pouvoir recuperer le ballon  le plus proche de la sortie 
      */
     public void generate(Board b) {
         Balloon cible = this.cibler(b);

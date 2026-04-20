@@ -127,9 +127,10 @@ public boolean acheterEvolution(Tour t, Evolution e) {
     /**
      * action pour vendre une tour 
      * @param t la tour a vendre 
+     * @param b le plateau de jeu 
      * @return true si et seulement la tour a été vendu correctement 
      */
-  public boolean vendre(Tour t,Board b) {
+    public boolean vendre(Tour t,Board b) {
    
      	//Sum of the all buyed  evolution
         for (Evolution e : t.getEvolutions()) {
