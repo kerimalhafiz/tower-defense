@@ -4,7 +4,9 @@ import TowerDefence.board.Board;
 import TowerDefence.listchooser.*;
 import TowerDefence.tower.*;
 import java.util.ArrayList;
-
+/**classe principale du jeu final
+ * elle gere les manches , les actions du joueur et le deroulement global 
+ */
 public class FinalGame extends Game {
 
     private ListChooser c;

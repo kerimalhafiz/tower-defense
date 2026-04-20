@@ -38,7 +38,12 @@ public abstract  class Board {
             }
         }
     }
-
+/**
+ * placee une tour sur le plateau a une position donnée 
+ * @param t la tour a placer 
+ * @param p la position ou placer la tour 
+ * @return true si la tour a été placer correctement 
+ */
 public abstract boolean  putTower(Tour t, Position p);
 
     
@@ -181,7 +186,10 @@ public ArrayList <Balloon> getBalloons(){
         this.listeBallon.remove(b);
     }
 }
-
+/**
+ * renvoie toute les positions 
+ * @return toutes les positions du plateau 
+ */
 public ArrayList<Position>getAllPositions(){
     ArrayList<Position> res=new ArrayList<>();
     for(int i=0 ;i<this.getNbLigne();i++){
@@ -218,7 +226,10 @@ public ArrayList<Position>getAllPositions(){
         System.out.println();
     }
 } */
- 
+/**
+ * renvoie le plateau de jeu 
+ * @return le plateau de cellule 
+ */
 public Cell[][] getBoard(){
    return this.board;
 }

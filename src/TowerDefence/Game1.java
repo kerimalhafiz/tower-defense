@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- *
+ * lance une partie du jeu 
  */
 public class Game1 extends Game {
 
