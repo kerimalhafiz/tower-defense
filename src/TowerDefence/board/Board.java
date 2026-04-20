@@ -218,4 +218,10 @@ public ArrayList<Position>getAllPositions(){
         System.out.println();
     }
 } */
+ 
+public Cell[][] getBoard(){
+   return this.board;
+}
+                                                   
+
 }
