@@ -6,9 +6,7 @@ import TowerDefence.listchooser.InteractiveListChooser;
 import TowerDefence.listchooser.ListChooser;
 import TowerDefence.listchooser.RandomListChooser;
 import java.util.Random;
-/**
- * le livrable 5 du jeu 
- */
+
 public class Livrable5Main {
 
     /**
@@ -25,7 +23,10 @@ public class Livrable5Main {
     public static void main(String[] args) {
 
       
-
+         if (args.length != 5) {
+        System.out.println("Usage : java Livrable5Main <hauteur> <largeur> <nbBallons> <typePlateau> <typeJoueur>");
+        return;
+     }
         int hauteur      = Integer.parseInt(args[0]);
         int largeur      = Integer.parseInt(args[1]);
         int nbBallons    = Integer.parseInt(args[2]);
