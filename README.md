@@ -335,7 +335,7 @@ les classes compilent correctement et tout est  clair .
 ### pour l'execution du jar
 ```java -jar livrable5a.jar  parm parm parm parm ```
 ```java -jar livrable5b.jar parm parm parm parm ```
-```java -jar jar/towerdefense-a-random.jar```
+
 ### pour la documentation:
 ```make docs``` 
 ### pour le test
@@ -349,6 +349,23 @@ les classes compilent correctement et tout est  clair .
 pour aujourd'hui il reste à résoudre les beugs  et la gestion  aléatoire du jeu . c'est -à-dire le mode automatic en utilisant ListChooser , la simplification des responsabilités de la classe Ballon , avant qu'on reçoive le mail . les test pour la classe Player , et aussi pour couvrir en fait tout ce que doit faire le livrable 5 .   
 
 ## Livrable 6
+### pour compiler:
+````make classes```
+### pour la cretation du jar executable  :
+  ```make jar```
+### pour l'execution du jar
+```java -jar jar/towerdefense-a-random.jar```
+```java -jar jar/towerdefense-a-interactive.jar```
+```java -jar jar/towerdefense-b-random.jar```
+```java -jar jar/towerdefense-b-interactive.jar```
+### pour la documentation:
+```make docs```
+### pour les tests
+```make test``
+### pour executer les tests:
+```make  runtests```
+### pour  supprimer :
+```make clean ```
 
 ### Atteinte des objectifs
 
