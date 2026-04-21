@@ -6,7 +6,9 @@ import TowerDefence.listchooser.InteractiveListChooser;
 import TowerDefence.listchooser.ListChooser;
 import TowerDefence.listchooser.RandomListChooser;
 import java.util.Random;
-
+/**
+ * la classe du livrable 5n du jeu 
+ */
 public class Livrable5Main {
 
     /**

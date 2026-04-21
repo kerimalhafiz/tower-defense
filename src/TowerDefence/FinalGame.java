@@ -14,6 +14,13 @@ public class FinalGame extends Game {
     private int manche;
     private ArrayList<Choice> actions;
     private ArrayList<Tour> towers;
+    /**
+     * le programme de jeu final 
+     * @param b le plateau de jeu final
+     * @param n le nombre de manche 
+     * @param c le code listChooser qui choisit une action a realiser 
+     *
+     */
     public FinalGame(Board b, int n, ListChooser c){
         super(b, n);
 
