@@ -354,10 +354,10 @@ pour aujourd'hui il reste à résoudre les beugs  et la gestion  aléatoire du j
 ### pour la cretation du jar executable  :
   ```make jar```
 ### pour l'execution du jar
-```java -jar jar/towerdefense-a-random.jar```
-```java -jar jar/towerdefense-a-interactive.jar```
-```java -jar jar/towerdefense-b-random.jar```
-```java -jar jar/towerdefense-b-interactive.jar```
+```java -jar jar/towerdefense-a-random.jar parm parm param```
+```java -jar jar/towerdefense-a-interactive.jar param param param```
+```java -jar jar/towerdefense-b-random.jar param param param ```
+```java -jar jar/towerdefense-b-interactive.jar param param param ```
 ### pour la documentation:
 ```make docs```
 ### pour les tests
@@ -368,8 +368,13 @@ pour aujourd'hui il reste à résoudre les beugs  et la gestion  aléatoire du j
 ```make clean ```
 
 ### Atteinte des objectifs
+en gros la realisation du jeux au complet , le tire de tour , la vente , l achat, le deplacement de balloons , la gestion de clavier , mode du jeu et mode du plateau
 
 ### Difficultés restant à résoudre
+-gestion du clavier,
+-choix de modelisation 
+-gestion de l equipe
+
 
 # Journal de bord
 
