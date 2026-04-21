@@ -594,8 +594,11 @@ après une reflexion c'est l ensemble de l equipe  qui vont s'enchargé de faire
 ### Semaine 13
 Pour la semaine du 13  on  a eu a finaliser  le dernier livrable et la fin du projet .on a commencer a s'organiser sur la presentation finale de la soutenance.
 ### Ce qui a été réalisé
-Tous les tests de chaque classe ont ete realises avec succes  selon la repartition des taches dans le groupe .
-
+DIALLO IBRAHIMA s'est occuper des tests  de la classe PLayer 
+DIALLO THIERNO ABDOULAYE s'est charger de la documentation 
+DIALLO ALPHA ABDOULAYE s'est occuper du moteur du jeu 
+KERIM ABDOULAYE a fait les tests  avec DIALLO IBRAHIMA de la classe LISTchooser avec le mode interactif et automatique 
+Une reunion entre les membres a eu lieu le 20/04/2026 pour la finalisation finale du projet et l'organisation pour la soutenance 
 ### Difficultés rencontrées
 pas de difficultes important mais celle majeure rencontrer c'etait on etais obliger de changer les test puisqu'il y'a eu modification de certaines fonctions dans certaines classes comme l'ajout de certains attributs .
 
