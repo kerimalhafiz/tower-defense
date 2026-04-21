@@ -335,6 +335,7 @@ les classes compilent correctement et tout est  clair .
 ### pour l'execution du jar
 ```java -jar livrable5a.jar  parm parm parm parm ```
 ```java -jar livrable5b.jar parm parm parm parm ```
+```java -jar jar/towerdefense-a-random.jar```
 ### pour la documentation:
 ```make docs``` 
 ### pour le test
@@ -589,3 +590,15 @@ Et ensuite , on a discuter sur le game final du jeu en cours de semaine , on att
 ### Objectifs pour finaliser le projet et répartition du travail par membre
 
 après une reflexion c'est l ensemble de l equipe  qui vont s'enchargé de faire le travail restant c'est a dire couvrir le projet de test ,et la simplification des code et la tgestion de tout erreur ou beug improvisé .ensuite faire des réunion pour preparer la soutenance , la methode d 'application de code et pourquoi le choix de modelisation  
+
+### Semaine 13
+Pour la semaine du 13  on  a eu a finaliser  le dernier livrable et la fin du projet .on a commencer a s'organiser sur la presentation finale de la soutenance.
+### Ce qui a été réalisé
+Tous les tests de chaque classe ont ete realises avec succes  selon la repartition des taches dans le groupe .
+
+### Difficultés rencontrées
+pas de difficultes important mais celle majeure rencontrer c'etait on etais obliger de changer les test puisqu'il y'a eu modification de certaines fonctions dans certaines classes comme l'ajout de certains attributs .
+
+### Objectifs pour la soutenance 
+on a commencer a se repartir les taches pour la soutenance notamment l'ordre de passsage des membres 
+et une reunion telephonique finale sera prevu ce weekend pour la similation de la soutenance .
