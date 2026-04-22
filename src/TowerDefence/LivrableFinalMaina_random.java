@@ -6,7 +6,7 @@ import TowerDefence.listchooser.InteractiveListChooser;
 import TowerDefence.listchooser.ListChooser;
 import TowerDefence.listchooser.RandomListChooser;
 /**
- * le livrable final  du jeu 
+ * le livrable final  du jeu de maniere aleatoire 
  */
 public class LivrableFinalMaina_random {
 
