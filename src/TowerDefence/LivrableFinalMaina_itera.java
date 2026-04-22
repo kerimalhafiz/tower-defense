@@ -6,7 +6,7 @@ import TowerDefence.listchooser.InteractiveListChooser;
 import TowerDefence.listchooser.ListChooser;
 import TowerDefence.listchooser.RandomListChooser;
 /**
- * le livrable 5 du jeu 
+ * le livrable final du jeu 
  */
 public class LivrableFinalMaina_itera {
 
@@ -17,7 +17,7 @@ public class LivrableFinalMaina_itera {
     }
 
     /**
-     * le main pour le livrable 5
+     * le main pour le livrable 
      * @param args les arguments en ligne de commande :
      *             hauteur largeur nbBallons typePlateau typeJoueur
      */

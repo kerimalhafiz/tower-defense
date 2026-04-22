@@ -6,7 +6,7 @@ import TowerDefence.listchooser.InteractiveListChooser;
 import TowerDefence.listchooser.ListChooser;
 import TowerDefence.listchooser.RandomListChooser;
 /**
- * le livrable 5 du jeu 
+ * le livrable finall  du jeu 
  */
 public class LivrableFinalMainb_random {
 
@@ -17,7 +17,7 @@ public class LivrableFinalMainb_random {
     }
 
     /**
-     * le main pour le livrable 5
+     * le main pour le livrable 
      * @param args les arguments en ligne de commande :
      *             hauteur largeur nbBallons typePlateau typeJoueur
      */
