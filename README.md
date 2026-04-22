@@ -24,6 +24,7 @@ Les paragraphes concernant les livrables doivent être remplis avant la date de 
 Un lien vers une image de l'UML doit être fourni (une photo d'un diagramme UML fait à la main est suffisant).
 
 ## Livrable 1 Plateaux et chemins
+![Diagramme ](Livrable1.png)
 
 ##  Modélisation du plateau
 
@@ -133,6 +134,8 @@ NB: dans ce fichier il doit y avoir 2 lignes a l'interieur.(la seconde est vide)
 ### Difficultés restant à résoudre
 
 ## Livrable 2
+![Diagramme ](Livrable2.png)
+
 # Choix de modelisation
 
 ## Modélisation des ballons
@@ -210,6 +213,8 @@ Compilation, exécution et lancement des tests via la ligne de commande
 ### Difficultés restant à résoudre
    
 ## Livrable 3
+![Diagramme ](Livrable3.png)
+
 
 # Choix de modelisation Tours et tir
 
@@ -283,6 +288,8 @@ l'ajout de nouveau projectille ne sera pas un probleme juste son nom et son nomb
 ### Difficultés restant à résoudre
 
 ## Livrable 4
+![Diagramme ](Livrable4.png)
+
 # choix de modelisation
 ![Diagramme ](diagrammeLivrable4.png)
 
@@ -323,6 +330,8 @@ les classes compilent correctement et tout est  clair .
 ### pour  supprimer les compilé :
 ```make  clean```
 ## Livrable 5
+![Diagramme ](Livrable5.png)
+
 
 ### Atteinte des objectifs
 -Création de la classe Player Diallo Alpha Abdoulaye
